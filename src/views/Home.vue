@@ -1,32 +1,35 @@
 <template>
   <div>
-    <section class="bienvenidos">
-      <div class="container-fluid">
-        <div class="texto_bienvenido text-center">
-          <img src="../assets/images/conocenos/logo_conocenos.svg" alt="logo" class="w-25 w-md-50"><br/>
-          <button class="btn btn-primary btn-lg mb-5 w-md-50">Comprar ahora &nbsp;&nbsp;<font-awesome-icon icon="arrow-right" size="xs" /></button></br>
-          <a href="#"><img src="../assets/images/scroll.svg" alt="Scroll" class="d-none d-md-inline-block" data-target="#section1"></a>
-        </div>
-      </div>
+    <section class="bienvenidos d-flex align-items-center flex-column justify-content-center " :style="{ backgroundImage: `url('${background}')` }">
+      <img src="../assets/images/conocenos/logo_conocenos.svg" alt="logo" class=""><br/>
+      <button class="btn btn-primary text-white  btn-lg mb-5 w-md-50"><i>Comprar ahora </i>&nbsp;&nbsp;<font-awesome-icon
+        icon="arrow-right" size="xs"/>
+      </button>
+      </br>
+      <a href="#"><img src="../assets/images/scroll.svg" alt="Scroll" class="d-none d-md-inline-block"
+                       data-target="#section1"></a>
     </section>
     <!-- Inicio seccion de productos-->
     <section class="py-3 position-relative" id="section1">
       <img src="../assets/images/hoja.png" class="hoja_home position-absolute d-none d-md-inline-block">
       <div class="container">
         <form class="form-inline active-pink-4 justify-content-center">
-          <input class="form-control form-control-sm mr-3 w-75 shadow p-4 mb-4 bg-white rounded" type="text" placeholder="Encuentra yogurt, granola y mucho más.."
+          <input class="form-control form-control-sm mr-3 w-75 shadow p-4 mb-4 bg-white rounded" type="text"
+                 placeholder="Encuentra yogurt, granola y mucho más.."
                  aria-label="Search">
           <img src="../assets/images/search.svg" alt="Buscar" class="img_search">
         </form>
         <div class="row ">
           <div class="col order-12">
 
-            <a href="#"><img src="../assets/images/whatsapp.svg" alt="Whatsapp" class="img_whatsapp rounded float-right"></a>
+            <a href="#"><img src="../assets/images/whatsapp.svg" alt="Whatsapp"
+                             class="img_whatsapp rounded float-right"></a>
           </div>
         </div>
         <div class="row justify-content-between mx-auto rounded shadow">
           <div class="img_productos col-6 col-md-4">
-            <img src="../assets/images/yogurt_griego.jpg" alt="Papas" class="w-100 mx-auto d-block" style="margin-top: -10%;">
+            <img src="../assets/images/yogurt_griego.jpg" alt="Papas" class="w-100 mx-auto d-block"
+                 style="margin-top: -10%;">
           </div>
           <div class="text_productos col-6 col-md-4">
             <h2 class="font-weight-bold font-italic text-info mt-md-5">Nuestro productos nuevos</h2>
@@ -35,7 +38,9 @@
             <hr class="hr_producto">
           </div>
           <div class="align-self-center col-md-3 d-md-block d-none">
-            <button type="button" class="btn btn-info btn-lg"><font-awesome-icon icon="arrow-right" size="xs" /></button>
+            <button type="button" class="btn btn-info btn-lg">
+              <font-awesome-icon icon="arrow-right" size="xs"/>
+            </button>
           </div>
         </div>
       </div>
@@ -46,7 +51,7 @@
         <div class="row justify-content-around">
           <img src="../assets/images/bg_slide1.png" class="bg_slide position-absolute">
           <div class="align-self-center d-none d-md-inline-block col-md-2 text-center">
-            <font-awesome-icon icon="angle-left" size="xs" />&nbsp;<font-awesome-icon icon="angle-right" size="xs" />
+            <font-awesome-icon icon="angle-left" size="xs"/>&nbsp;<font-awesome-icon icon="angle-right" size="xs"/>
 
           </div>
           <div class="d-none col-md-3 d-md-inline-block shadow-sm">
@@ -80,7 +85,8 @@
         <div class="container">
           <div class="row justify-content-between mx-auto rounded shadow">
             <div class="img_productos col-6 col-md-4">
-              <img src="../assets/images/sorpresa.png" alt="Papas" class="w-100 mx-auto d-block" style="margin-top: -10%;">
+              <img src="../assets/images/sorpresa.png" alt="Papas" class="w-100 mx-auto d-block"
+                   style="margin-top: -10%;">
             </div>
             <div class="text_productos col-6 col-md-4">
               <h2 class="font-weight-bold font-italic text-info mt-md-5">Nuestro productos nuevos</h2>
@@ -89,7 +95,9 @@
               <hr class="hr_producto">
             </div>
             <div class="align-self-center col-md-3 d-md-block d-none">
-              <button type="button" class="btn btn-danger btn-lg"><font-awesome-icon icon="arrow-right" size="xs" /></button>
+              <button type="button" class="btn btn-danger btn-lg">
+                <font-awesome-icon icon="arrow-right" size="xs"/>
+              </button>
             </div>
           </div>
         </div>
@@ -103,7 +111,7 @@
         <div class="row justify-content-around">
           <img src="../assets/images/bg_slide2.png" class="bg_slide position-absolute">
           <div class="align-self-center d-none d-md-inline-block col-md-2 text-center">
-            <font-awesome-icon icon="angle-left" size="xs" />&nbsp;<font-awesome-icon icon="angle-right" size="xs" />
+            <font-awesome-icon icon="angle-left" size="xs"/>&nbsp;<font-awesome-icon icon="angle-right" size="xs"/>
 
           </div>
           <div class="d-none col-md-3 d-md-inline-block shadow-sm">
@@ -137,7 +145,8 @@
         <div class="container">
           <div class="row justify-content-between mx-auto rounded shadow">
             <div class="img_productos col-6 col-md-4">
-              <img src="../assets/images/producto1.png" alt="Papas" class="w-100 mx-auto d-block" style="margin-top: -10%;">
+              <img src="../assets/images/producto1.png" alt="Papas" class="w-100 mx-auto d-block"
+                   style="margin-top: -10%;">
             </div>
             <div class="text_productos col-6 col-md-4">
               <h2 class="font-weight-bold font-italic text-info mt-md-5">Nuestro productos nuevos</h2>
@@ -146,7 +155,9 @@
               <hr class="hr_producto">
             </div>
             <div class="align-self-center col-md-3 d-md-block d-none">
-              <button type="button" class="btn btn-info btn-lg"><font-awesome-icon icon="arrow-right" size="xs" /></button>
+              <button type="button" class="btn btn-info btn-lg">
+                <font-awesome-icon icon="arrow-right" size="xs"/>
+              </button>
             </div>
           </div>
         </div>
@@ -160,7 +171,7 @@
         <div class="row justify-content-around">
           <img src="../assets/images/bg_slide1.png" class="bg_slide position-absolute">
           <div class="align-self-center d-none d-md-inline-block col-md-2 text-center">
-            <font-awesome-icon icon="angle-left" size="xs" />&nbsp;<font-awesome-icon icon="angle-right" size="xs" />
+            <font-awesome-icon icon="angle-left" size="xs"/>&nbsp;<font-awesome-icon icon="angle-right" size="xs"/>
 
           </div>
           <div class="d-none col-md-3 d-md-inline-block shadow-sm">
@@ -190,25 +201,32 @@
 <script>
 
 
-import api from '../plugins/api'
-export default {
-  name: 'home',
-  components: {
-    // HelloWorld
-  },
-  mounted () {
-    api.Users().getAll()
-  }
-}
+    import api from '../plugins/api'
+    import background from './../assets/images/img_bienvenido.png'
+
+    export default {
+        name: 'home',
+        data() {
+            return {
+                background: background
+            }
+        },
+        components: {
+            // HelloWorld
+        },
+        mounted() {
+            api.Users().getAll()
+        }
+    }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
   .bienvenidos {
-    background: url('./../assets/images/img_bienvenido.png');
     background-size: cover;
-    height: auto;
+    height: 100vh;
     overflow: hidden;
+    width: 100vw;
   }
 
 </style>
