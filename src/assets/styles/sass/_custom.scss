@@ -165,7 +165,12 @@ Imagenes
 .hr_producto{
   margin-left: -5%;
   margin-right: 92%;
-  border: 1px solid rgb(21, 162, 184);
+  border: 1px solid #1ed6d9
+}
+.hr_conocenos{
+  margin-left: 45%;
+  margin-right: 47%;
+  border: 1px solid #ffc215
 }
 
 /*
@@ -197,6 +202,7 @@ Buscador
 .fresa{
   top: 23rem;
   left: 3rem;
+  z-index: 10;
 }
 .fresa_mitad_conocenos{
   left: 90%;
@@ -233,13 +239,12 @@ Buscador
     background-size: cover;
     height: auto;
   }
-  .conocenos_col{
-    background-color: transparent;
-  }
+
   .fresa {
     right: -5rem;
     top: 17rem;
     left: unset;
+    z-index: 10;
   }
   .fresa2_conocenos{
     left: 91%;

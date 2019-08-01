@@ -34,15 +34,15 @@
                     </ul>
                 </div>
             </div>
-            <div class="row bg-white">
-                <div class="col-md-6 d-flex justify-content-center">
+            <div class="row bg-white justify-content-around">
+                <div class="col-12 col-md-6 d-flex justify-content-center justify-content-md-start">
                     <a href="#"><img src="../assets/images/tarjetas.svg" class="w-100"></a>
                 </div>
-                <div class="col-md-6 d-flex justify-content-center">
+                <div class="col-12 col-md-3 d-flex justify-content-center justify-content-md-end mr-md-2">
                     <p class="align-self-end"><small>2019. LUSUAU S.A.S</small></p>
                 </div>
             </div>
-            <img src="../assets/images/fresa_home.png" class="fresa_home_footer w-25 d-inline-block d-md-none position-absolute">
+            <img src="../assets/images/fresa_home.png" class="fresa_home_footer w-25  d-none position-absolute">
         </div>
     </section>
 </template>

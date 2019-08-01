@@ -10,7 +10,7 @@
                        data-target="#section1"></a>
     </section>
     <!-- Inicio seccion de productos-->
-    <section class="py-3 position-relative" id="section1">
+    <section class="py-5 position-relative" id="section1">
       <img src="../assets/images/hoja.png" class="hoja_home position-absolute d-none d-md-inline-block">
       <div class="container">
         <form class="form-inline active-pink-4 justify-content-center">
@@ -28,8 +28,7 @@
         </div>
         <div class="row justify-content-between mx-auto rounded shadow">
           <div class="img_productos col-6 col-md-4">
-            <img src="../assets/images/yogurt_griego.jpg" alt="Papas" class="w-100 mx-auto d-block"
-                 style="margin-top: -10%;">
+            <img src="../assets/images/producto1.png" alt="Papas" class="w-100 mx-auto d-block" style="margin-top: -10%;">
           </div>
           <div class="text_productos col-6 col-md-4">
             <h2 class="font-weight-bold font-italic text-info mt-md-5">Nuestro productos nuevos</h2>
@@ -54,23 +53,29 @@
             <font-awesome-icon icon="angle-left" size="xs"/>&nbsp;<font-awesome-icon icon="angle-right" size="xs"/>
 
           </div>
-          <div class="d-none col-md-3 d-md-inline-block shadow-sm">
-            <img src="../assets/images/yogurt_griego.jpg" alt="Papas" class="w-75 mx-auto d-block mt-5">
-            <h6 class="font-italic mt-2">Papas BBQ <span class="badge badge-secondary">New</span></h6>
-            <p class="align-self-end mt-n1"><small>1 litro</small></p>
-            <p class="align-self-end text-right mt-n2"><small>$115.000</small></p>
+          <div class="d-none col-md-3 d-md-inline-block shadow-sm bg-white rounded">
+            <div>
+              <img src="../assets/images/yogurt_griego.png" alt="Papas" class="img-fluid d-block">
+              <h6 class="font-italic mt-2">Papas BBQ <span class="badge badge-secondary">New</span></h6>
+              <p class="align-self-end mt-n1"><small>1 litro</small></p>
+              <p class="align-self-end text-right mt-n2"><small>$115.000</small></p>
+            </div>
           </div>
-          <div class="col-4 col-md-3 shadow-sm">
-            <img src="../assets/images/yogurt_griego.jpg" alt="Papas" class="w-75 mx-auto d-block mt-5">
-            <h6 class="font-italic mt-2">Papas BBQ <span class="badge badge-secondary">New</span></h6>
-            <p class="align-self-end mt-n1"><small>1 litro</small></p>
-            <p class="align-self-end text-right mt-n2"><small>$115.000</small></p>
+          <div class="col-4 col-md-3 shadow-sm bg-white rounded">
+            <div>
+              <img src="../assets/images/yogurt_griego.png" alt="Papas" class="img-fluid d-block">
+              <h6 class="font-italic mt-2">Papas BBQ <span class="badge badge-secondary">New</span></h6>
+              <p class="align-self-end mt-n1"><small>1 litro</small></p>
+              <p class="align-self-end text-right mt-n2"><small>$115.000</small></p>
+            </div>
           </div>
-          <div class="col-4 col-md-3 shadow-sm">
-            <img src="../assets/images/yogurt_griego.jpg" alt="Papas" class="d-block mt-5 mx-auto w-75">
-            <h6 class="font-italic mt-2">Papas BBQ <span class="badge badge-secondary">New</span></h6>
-            <p class="align-self-end mt-n1"><small>1 litro</small></p>
-            <p class="align-self-end text-right mt-n2"><small>$115.000</small></p>
+          <div class="col-4 col-md-3 shadow-sm bg-white rounded">
+            <div>
+              <img src="../assets/images/yogurt_griego.png" alt="Papas" class="img-fluid d-block">
+              <h6 class="font-italic mt-2">Papas BBQ <span class="badge badge-secondary">New</span></h6>
+              <p class="align-self-end mt-n1"><small>1 litro</small></p>
+              <p class="align-self-end text-right mt-n2"><small>$115.000</small></p>
+            </div>
           </div>
         </div>
       </div>
@@ -79,14 +84,13 @@
     <!-- Fin seccion de productos-->
 
     <!-- Segunda seccion productos-->
-    <section class="row py-3 position-relative">
+    <section class="row py-5 position-relative">
       <img src="../assets/images/fresa_home.png" class="fresa_home d-none d-md-inline-block position-absolute">
       <div class="col-sm-12">
         <div class="container">
           <div class="row justify-content-between mx-auto rounded shadow">
             <div class="img_productos col-6 col-md-4">
-              <img src="../assets/images/sorpresa.png" alt="Papas" class="w-100 mx-auto d-block"
-                   style="margin-top: -10%;">
+              <img src="../assets/images/yogurt.png" alt="Papas" class="w-100 mx-auto d-block" style="margin-top: -10%;">
             </div>
             <div class="text_productos col-6 col-md-4">
               <h2 class="font-weight-bold font-italic text-info mt-md-5">Nuestro productos nuevos</h2>
@@ -114,20 +118,20 @@
             <font-awesome-icon icon="angle-left" size="xs"/>&nbsp;<font-awesome-icon icon="angle-right" size="xs"/>
 
           </div>
-          <div class="d-none col-md-3 d-md-inline-block shadow-sm">
-            <img src="../assets/images/sorpresa.png" alt="Papas" class="w-75 mx-auto d-block mt-5">
+          <div class="d-none col-md-3 d-md-inline-block shadow-sm bg-white rounded">
+            <img src="../assets/images/yogurt_griego.png" alt="Papas" class="w-75 mx-auto d-block mt-5">
             <h6 class="font-italic mt-2">Papas BBQ <span class="badge badge-secondary">New</span></h6>
             <p class="align-self-end mt-n1"><small>1 litro</small></p>
             <p class="align-self-end text-right mt-n2"><small>$115.000</small></p>
           </div>
-          <div class="col-4 col-md-3 shadow-sm">
-            <img src="../assets/images/sorpresa.png" alt="Papas" class="w-75 mx-auto d-block mt-5">
+          <div class="col-4 col-md-3 shadow-sm bg-white rounded">
+            <img src="../assets/images/yogurt_griego.png" alt="Papas" class="w-75 mx-auto d-block mt-5">
             <h6 class="font-italic mt-2">Papas BBQ <span class="badge badge-secondary">New</span></h6>
             <p class="align-self-end mt-n1"><small>1 litro</small></p>
             <p class="align-self-end text-right mt-n2"><small>$115.000</small></p>
           </div>
-          <div class="col-4 col-md-3 shadow-sm">
-            <img src="../assets/images/sorpresa.png" alt="Papas" class="d-block mt-5 mx-auto w-75">
+          <div class="col-4 col-md-3 shadow-sm bg-white rounded">
+            <img src="../assets/images/yogurt_griego.png" alt="Papas" class="d-block mt-5 mx-auto w-75">
             <h6 class="font-italic mt-2">Papas BBQ <span class="badge badge-secondary">New</span></h6>
             <p class="align-self-end mt-n1"><small>1 litro</small></p>
             <p class="align-self-end text-right mt-n2"><small>$115.000</small></p>
@@ -139,14 +143,13 @@
 
 
     <!-- Tercera seccion productos-->
-    <section class="row py-3 position-relative">
+    <section class="row py-5 position-relative">
       <img src="../assets/images/fresa2_home.png" class="fresa2_home d-none d-md-inline-block position-absolute">
       <div class="col-sm-12">
         <div class="container">
           <div class="row justify-content-between mx-auto rounded shadow">
             <div class="img_productos col-6 col-md-4">
-              <img src="../assets/images/producto1.png" alt="Papas" class="w-100 mx-auto d-block"
-                   style="margin-top: -10%;">
+              <img src="../assets/images/sorpresa.png" alt="Papas" class="w-100 mx-auto d-block" style="margin-top: -10%;">
             </div>
             <div class="text_productos col-6 col-md-4">
               <h2 class="font-weight-bold font-italic text-info mt-md-5">Nuestro productos nuevos</h2>
@@ -174,20 +177,20 @@
             <font-awesome-icon icon="angle-left" size="xs"/>&nbsp;<font-awesome-icon icon="angle-right" size="xs"/>
 
           </div>
-          <div class="d-none col-md-3 d-md-inline-block shadow-sm">
-            <img src="../assets/images/producto1.png" alt="Papas" class="w-75 mx-auto d-block mt-5">
+          <div class="d-none col-md-3 d-md-inline-block shadow-sm bg-white rounded">
+            <img src="../assets/images/yogurt_griego.png" alt="Papas" class="w-75 mx-auto d-block mt-5">
             <h6 class="font-italic mt-2">Papas BBQ <span class="badge badge-secondary">New</span></h6>
             <p class="align-self-end mt-n1"><small>1 litro</small></p>
             <p class="align-self-end text-right mt-n2"><small>$115.000</small></p>
           </div>
-          <div class="col-4 col-md-3 shadow-sm">
-            <img src="../assets/images/producto1.png" alt="Papas" class="w-75 mx-auto d-block mt-5">
+          <div class="col-4 col-md-3 shadow-sm bg-white rounded">
+            <img src="../assets/images/yogurt_griego.png" alt="Papas" class="w-75 mx-auto d-block mt-5">
             <h6 class="font-italic mt-2">Papas BBQ <span class="badge badge-secondary">New</span></h6>
             <p class="align-self-end mt-n1"><small>1 litro</small></p>
             <p class="align-self-end text-right mt-n2"><small>$115.000</small></p>
           </div>
-          <div class="col-4 col-md-3 shadow-sm">
-            <img src="../assets/images/producto1.png" alt="Papas" class="d-block mt-5 mx-auto w-75">
+          <div class="col-4 col-md-3 shadow-sm bg-white rounded">
+            <img src="../assets/images/yogurt_griego.png" alt="Papas" class="d-block mt-5 mx-auto w-75">
             <h6 class="font-italic mt-2">Papas BBQ <span class="badge badge-secondary">New</span></h6>
             <p class="align-self-end mt-n1"><small>1 litro</small></p>
             <p class="align-self-end text-right mt-n2"><small>$115.000</small></p>
