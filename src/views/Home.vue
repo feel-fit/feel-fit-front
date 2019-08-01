@@ -4,7 +4,7 @@
       <div class="container-fluid">
         <div class="texto_bienvenido text-center">
           <img src="../assets/images/conocenos/logo_conocenos.svg" alt="logo" class="w-25 w-md-50"><br/>
-          <button class="btn btn-primary btn-lg mb-5 w-md-50">Comprar ahora &nbsp;&nbsp;<i class="fas fa-arrow-right"></i></button></br>
+          <button class="btn btn-primary btn-lg mb-5 w-md-50">Comprar ahora &nbsp;&nbsp;<font-awesome-icon icon="arrow-right" size="xs" /></button></br>
           <a href="#"><img src="../assets/images/scroll.svg" alt="Scroll" class="d-none d-md-inline-block" data-target="#section1"></a>
         </div>
       </div>
@@ -35,7 +35,7 @@
             <hr class="hr_producto">
           </div>
           <div class="align-self-center col-md-3 d-md-block d-none">
-            <button type="button" class="btn btn-info btn-lg"><i class="fas fa-arrow-right"></i></button>
+            <button type="button" class="btn btn-info btn-lg"><font-awesome-icon icon="arrow-right" size="xs" /></button>
           </div>
         </div>
       </div>
@@ -46,7 +46,7 @@
         <div class="row justify-content-around">
           <img src="../assets/images/bg_slide1.png" class="bg_slide position-absolute">
           <div class="align-self-center d-none d-md-inline-block col-md-2 text-center">
-            <i class="fas fa-angle-left"></i>&nbsp;&nbsp;<i class="fas fa-angle-right"></i>
+            <font-awesome-icon icon="angle-left" size="xs" />&nbsp;<font-awesome-icon icon="angle-right" size="xs" />
 
           </div>
           <div class="d-none col-md-3 d-md-inline-block shadow-sm">
@@ -89,13 +89,12 @@
               <hr class="hr_producto">
             </div>
             <div class="align-self-center col-md-3 d-md-block d-none">
-              <button type="button" class="btn btn-danger btn-lg"><i class="fas fa-arrow-right"></i></button>
+              <button type="button" class="btn btn-danger btn-lg"><font-awesome-icon icon="arrow-right" size="xs" /></button>
             </div>
           </div>
         </div>
       </div>
     </section>
-
 
     <!--Slide de productos 2-->
     <section class="position-relative">
@@ -104,7 +103,7 @@
         <div class="row justify-content-around">
           <img src="../assets/images/bg_slide2.png" class="bg_slide position-absolute">
           <div class="align-self-center d-none d-md-inline-block col-md-2 text-center">
-            <i class="fas fa-angle-left"></i>&nbsp;&nbsp;<i class="fas fa-angle-right"></i>
+            <font-awesome-icon icon="angle-left" size="xs" />&nbsp;<font-awesome-icon icon="angle-right" size="xs" />
 
           </div>
           <div class="d-none col-md-3 d-md-inline-block shadow-sm">
@@ -147,7 +146,7 @@
               <hr class="hr_producto">
             </div>
             <div class="align-self-center col-md-3 d-md-block d-none">
-              <button type="button" class="btn btn-info btn-lg"><i class="fas fa-arrow-right"></i></button>
+              <button type="button" class="btn btn-info btn-lg"><font-awesome-icon icon="arrow-right" size="xs" /></button>
             </div>
           </div>
         </div>
@@ -161,7 +160,7 @@
         <div class="row justify-content-around">
           <img src="../assets/images/bg_slide1.png" class="bg_slide position-absolute">
           <div class="align-self-center d-none d-md-inline-block col-md-2 text-center">
-            <i class="fas fa-angle-left"></i>&nbsp;&nbsp;<i class="fas fa-angle-right"></i>
+            <font-awesome-icon icon="angle-left" size="xs" />&nbsp;<font-awesome-icon icon="angle-right" size="xs" />
 
           </div>
           <div class="d-none col-md-3 d-md-inline-block shadow-sm">
