@@ -4,6 +4,8 @@
     <div id="page-content-wrapper">
       <cabecera/>
       <router-view/>
+      <whatsapp></whatsapp>
+      <producto1/>
       <foot/>
     </div>
   </div>
@@ -22,13 +24,16 @@
 
     import cabecera from '@/components/header.vue'
     import slider from '@/components/slider.vue'
+    import producto1 from '@/components/home/producto1.vue'
+    import whatsapp from '@/components/home/whatsapp.vue'
+    
 
     import foot from '@/components/footer.vue'
 
     export default {
         name: 'app',
         components: {
-            cabecera, foot, slider
+            cabecera, foot, slider, producto1, whatsapp
         }
     }
 </script>
