@@ -1,14 +1,6 @@
 <template>
   <div>
-    <section class="bienvenidos d-flex align-items-center flex-column justify-content-center " :style="{ backgroundImage: `url('${background}')` }">
-      <img src="../assets/images/conocenos/logo_conocenos.svg" alt="logo" class=""><br/>
-      <button class="btn btn-primary text-white  btn-lg mb-5 w-md-50"><i>Comprar ahora </i>&nbsp;&nbsp;<font-awesome-icon
-        icon="arrow-right" size="xs"/>
-      </button>
-      </br>
-      <a href="#"><img src="../assets/images/scroll.svg" alt="Scroll" class="d-none d-md-inline-block"
-                       data-target="#section1"></a>
-    </section>
+    <portada></portada>
     <!-- Inicio seccion de productos-->
     <section class="py-3 position-relative" id="section1">
       <img src="../assets/images/hoja.png" class="hoja_home position-absolute d-none d-md-inline-block">
@@ -200,19 +192,17 @@
 </template>
 <script>
 
-
     import api from '../plugins/api'
-    import background from './../assets/images/img_bienvenido.png'
-
+    import portada from '../components/home/portada'
     export default {
         name: 'home',
         data() {
             return {
-                background: background
+
             }
         },
         components: {
-            // HelloWorld
+            portada
         },
         mounted() {
             api.Users().getAll()
@@ -222,11 +212,6 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-  .bienvenidos {
-    background-size: cover;
-    height: 100vh;
-    overflow: hidden;
-    width: 100vw;
-  }
+
 
 </style>
