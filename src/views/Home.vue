@@ -1,20 +1,9 @@
 <template>
   <div>
     <portada></portada>
-    <!-- Inicio seccion de productos-->
-    <section class="py-5 position-relative" id="section1">
-      <img src="../assets/images/hoja.png" class="hoja_home position-absolute d-none d-md-inline-block">
-      <div class="container">
-        <form class="form-inline active-pink-4 justify-content-center">
-          <input class="form-control form-control-sm mr-3 w-75 shadow p-4 mb-4 bg-white rounded" type="text"
-                 placeholder="Encuentra yogurt, granola y mucho más.."
-                 aria-label="Search">
-          <img src="../assets/images/search.svg" alt="Buscar" class="img_search">
-        </form>
-        
-        <producto1></producto1>
-      </div>
-    </section>
+    <buscador></buscador>    
+    <producto1></producto1>
+    
     <!--Slide de productos-->
     <section>
       <div class="container-fluid position-relative my-5">

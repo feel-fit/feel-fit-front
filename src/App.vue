@@ -4,7 +4,8 @@
     <div id="page-content-wrapper">
       <cabecera/>
       <router-view/>
-      <whatsapp></whatsapp>
+      <buscador/>
+      <whatsapp/>
       <producto1/>
       <foot/>
     </div>
@@ -26,6 +27,7 @@
     import slider from '@/components/slider.vue'
     import producto1 from '@/components/home/producto1.vue'
     import whatsapp from '@/components/home/whatsapp.vue'
+    import buscador from '@/components/home/buscador.vue'
     
 
     import foot from '@/components/footer.vue'
@@ -33,7 +35,7 @@
     export default {
         name: 'app',
         components: {
-            cabecera, foot, slider, producto1, whatsapp
+            cabecera, foot, slider, producto1, whatsapp, buscador, buscador
         }
     }
 </script>
