@@ -1,9 +1,9 @@
 <template>
-  <div class="container">
+  <div class="container-fluid">
     <div class="row">
         <div class="col order-12">
 
-        <a href="#"><img :src="whatsapp" alt="Whatsapp" class="img_whatsapp rounded float-right"></a>
+        <a href="#"><img :src="whatsapp" alt="Whatsapp" class="float-right mb-4"></a>
         </div>
        
     </div>

@@ -1,47 +1,12 @@
 <template>
   <div>
     <portada></portada>
-    <buscador></buscador>    
-    <producto1></producto1>
     
-    <!--Slide de productos-->
-    <section>
-      <div class="container-fluid position-relative my-5">
-        <div class="row justify-content-around">
-          <img src="../assets/images/bg_slide1.png" class="bg_slide position-absolute">
-          <div class="align-self-center d-none d-md-inline-block col-md-2 text-center">
-            <font-awesome-icon icon="angle-left" size="xs"/>&nbsp;<font-awesome-icon icon="angle-right" size="xs"/>
-
-          </div>
-          <div class="d-none col-md-3 d-md-inline-block shadow-sm bg-white rounded">
-            <div>
-              <img src="../assets/images/yogurt_griego.png" alt="Papas" class="img-fluid d-block">
-              <h6 class="font-italic mt-2">Papas BBQ <span class="badge badge-secondary">New</span></h6>
-              <p class="align-self-end mt-n1"><small>1 litro</small></p>
-              <p class="align-self-end text-right mt-n2"><small>$115.000</small></p>
-            </div>
-          </div>
-          <div class="col-4 col-md-3 shadow-sm bg-white rounded">
-            <div>
-              <img src="../assets/images/yogurt_griego.png" alt="Papas" class="img-fluid d-block">
-              <h6 class="font-italic mt-2">Papas BBQ <span class="badge badge-secondary">New</span></h6>
-              <p class="align-self-end mt-n1"><small>1 litro</small></p>
-              <p class="align-self-end text-right mt-n2"><small>$115.000</small></p>
-            </div>
-          </div>
-          <div class="col-4 col-md-3 shadow-sm bg-white rounded">
-            <div>
-              <img src="../assets/images/yogurt_griego.png" alt="Papas" class="img-fluid d-block">
-              <h6 class="font-italic mt-2">Papas BBQ <span class="badge badge-secondary">New</span></h6>
-              <p class="align-self-end mt-n1"><small>1 litro</small></p>
-              <p class="align-self-end text-right mt-n2"><small>$115.000</small></p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!--fin slide-->
-    <!-- Fin seccion de productos-->
+    <buscador></buscador>
+    <whatsapp></whatsapp>
+    <producto></producto>
+    <fresa></fresa>
+    <producto></producto>
 
     <!-- Segunda seccion productos-->
     <section class="row py-5 position-relative">
@@ -164,7 +129,15 @@
 <script>
 
     import api from '../plugins/api'
+    import cabecera from '../components/header.vue'
     import portada from '../components/home/portada'
+    import slider from '../components/slider.vue'
+    import producto from '../components/home/producto.vue'
+    import whatsapp from '../components/home/whatsapp.vue'
+    import buscador from '../components/home/buscador.vue'
+    import fresa from '../components/home/fresa.vue'
+    import foot from '../components/footer.vue'
+    
     export default {
         name: 'home',
         data() {
@@ -173,7 +146,7 @@
             }
         },
         components: {
-            portada
+            portada, slider, producto, whatsapp, buscador, fresa, foot
         },
         mounted() {
             api.Users().getAll()

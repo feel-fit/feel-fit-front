@@ -1,7 +1,7 @@
 <template>
   <section>
     <div class="container">
-      <div class="row justify-content-between mx-auto rounded shadow">
+      <div class="producto row justify-content-between mx-auto shadow pb-3">
         <div class="img_productos col-6 col-md-4">
           <img :src="producto1" alt="Papas" class="w-100 mx-auto d-block" style="margin-top: -10%;">
         </div>
@@ -25,10 +25,10 @@
 import producto1 from './../../assets/images/producto1.png'
 
     export default {
-        name: "producto1",
+        name: "producto",
         data() {
             return {
-                producto1: producto1,
+                producto1: producto1
     
             }
         },
@@ -36,7 +36,20 @@ import producto1 from './../../assets/images/producto1.png'
 </script>
 
 <style scoped>
+  .btn-info {
+    color: #ffffff;
+  }
   .boton {
     padding: 0rem 19%;
+  }
+  .producto{
+    border-radius: 1.25rem;
+  }
+  .hr_producto{
+    margin-top: 0%;
+    margin-bottom: 2%;
+  }
+  .text_productos p{
+    color: #B2B2B2;
   }
 </style>

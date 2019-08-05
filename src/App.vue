@@ -4,13 +4,6 @@
     <div id="page-content-wrapper">
       <cabecera/>
       <router-view/>
-      <buscador/>
-      <whatsapp/>
-      <producto1/>
-      <fresa/>
-      <producto1/>
-      <fresa/>
-      
       <foot/>
     </div>
   </div>
@@ -29,7 +22,7 @@
 
     import cabecera from '@/components/header.vue'
     import slider from '@/components/slider.vue'
-    import producto1 from '@/components/home/producto1.vue'
+    import producto from '@/components/home/producto.vue'
     import whatsapp from '@/components/home/whatsapp.vue'
     import buscador from '@/components/home/buscador.vue'
     import fresa from '@/components/home/fresa.vue'
@@ -38,7 +31,7 @@
     export default {
         name: 'app',
         components: {
-            cabecera, foot, slider, producto1, whatsapp, buscador, fresa
+            cabecera, foot, slider, producto, whatsapp, buscador, fresa
         }
     }
 </script>
