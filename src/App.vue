@@ -4,6 +4,8 @@
     <div id="page-content-wrapper">
       <cabecera/>
       <router-view/>
+
+
       <foot/>
     </div>
   </div>

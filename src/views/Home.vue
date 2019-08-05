@@ -1,70 +1,13 @@
 <template>
   <div>
     <portada></portada>
-    
     <buscador></buscador>
-    <whatsapp></whatsapp>
+    <whatsapp/>
     <producto></producto>
-    <fresa></fresa>
-    <producto></producto>
-
-    <!-- Segunda seccion productos-->
-    <section class="row py-5 position-relative">
-      <img src="../assets/images/fresa_home.png" class="fresa_home d-none d-md-inline-block position-absolute">
-      <div class="col-sm-12">
-        <div class="container">
-          <div class="row justify-content-between mx-auto rounded shadow">
-            <div class="img_productos col-6 col-md-4">
-              <img src="../assets/images/yogurt.png" alt="Papas" class="w-100 mx-auto d-block" style="margin-top: -10%;">
-            </div>
-            <div class="text_productos col-6 col-md-4">
-              <h2 class="font-weight-bold font-italic text-info mt-md-5">Nuestro productos nuevos</h2>
-              <hr class="hr_producto">
-              <p class="font-italic"><a href="#">Entra y sorprendente</a></p>
-              <hr class="hr_producto">
-            </div>
-            <div class="align-self-center col-md-3 d-md-block d-none">
-              <button type="button" class="btn btn-danger btn-lg">
-                <font-awesome-icon icon="arrow-right" size="xs"/>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!--Slide de productos 2-->
-    <section class="position-relative">
-      <img src="../assets/images/hoja2.png" class="hoja_slide position-absolute d-none d-md-inline-block">
-      <div class="container-fluid  position-relative my-5">
-        <div class="row justify-content-around">
-          <img src="../assets/images/bg_slide2.png" class="bg_slide position-absolute">
-          <div class="align-self-center d-none d-md-inline-block col-md-2 text-center">
-            <font-awesome-icon icon="angle-left" size="xs"/>&nbsp;<font-awesome-icon icon="angle-right" size="xs"/>
-
-          </div>
-          <div class="d-none col-md-3 d-md-inline-block shadow-sm bg-white rounded">
-            <img src="../assets/images/yogurt_griego.png" alt="Papas" class="w-75 mx-auto d-block mt-5">
-            <h6 class="font-italic mt-2">Papas BBQ <span class="badge badge-secondary">New</span></h6>
-            <p class="align-self-end mt-n1"><small>1 litro</small></p>
-            <p class="align-self-end text-right mt-n2"><small>$115.000</small></p>
-          </div>
-          <div class="col-4 col-md-3 shadow-sm bg-white rounded">
-            <img src="../assets/images/yogurt_griego.png" alt="Papas" class="w-75 mx-auto d-block mt-5">
-            <h6 class="font-italic mt-2">Papas BBQ <span class="badge badge-secondary">New</span></h6>
-            <p class="align-self-end mt-n1"><small>1 litro</small></p>
-            <p class="align-self-end text-right mt-n2"><small>$115.000</small></p>
-          </div>
-          <div class="col-4 col-md-3 shadow-sm bg-white rounded">
-            <img src="../assets/images/yogurt_griego.png" alt="Papas" class="d-block mt-5 mx-auto w-75">
-            <h6 class="font-italic mt-2">Papas BBQ <span class="badge badge-secondary">New</span></h6>
-            <p class="align-self-end mt-n1"><small>1 litro</small></p>
-            <p class="align-self-end text-right mt-n2"><small>$115.000</small></p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!--fin slide-->
+    <products-new></products-new>
+    <fresa/>
+    <producto/>
+    <products-new></products-new>
 
 
     <!-- Tercera seccion productos-->
@@ -74,7 +17,8 @@
         <div class="container">
           <div class="row justify-content-between mx-auto rounded shadow">
             <div class="img_productos col-6 col-md-4">
-              <img src="../assets/images/sorpresa.png" alt="Papas" class="w-100 mx-auto d-block" style="margin-top: -10%;">
+              <img src="../assets/images/sorpresa.png" alt="Papas" class="w-100 mx-auto d-block"
+                   style="margin-top: -10%;">
             </div>
             <div class="text_productos col-6 col-md-4">
               <h2 class="font-weight-bold font-italic text-info mt-md-5">Nuestro productos nuevos</h2>
@@ -92,38 +36,7 @@
       </div>
     </section>
 
-
-    <!--Slide de productos 3-->
-    <section>
-      <div class="container-fluid position-relative my-5">
-        <div class="row justify-content-around">
-          <img src="../assets/images/bg_slide1.png" class="bg_slide position-absolute">
-          <div class="align-self-center d-none d-md-inline-block col-md-2 text-center">
-            <font-awesome-icon icon="angle-left" size="xs"/>&nbsp;<font-awesome-icon icon="angle-right" size="xs"/>
-
-          </div>
-          <div class="d-none col-md-3 d-md-inline-block shadow-sm bg-white rounded">
-            <img src="../assets/images/yogurt_griego.png" alt="Papas" class="w-75 mx-auto d-block mt-5">
-            <h6 class="font-italic mt-2">Papas BBQ <span class="badge badge-secondary">New</span></h6>
-            <p class="align-self-end mt-n1"><small>1 litro</small></p>
-            <p class="align-self-end text-right mt-n2"><small>$115.000</small></p>
-          </div>
-          <div class="col-4 col-md-3 shadow-sm bg-white rounded">
-            <img src="../assets/images/yogurt_griego.png" alt="Papas" class="w-75 mx-auto d-block mt-5">
-            <h6 class="font-italic mt-2">Papas BBQ <span class="badge badge-secondary">New</span></h6>
-            <p class="align-self-end mt-n1"><small>1 litro</small></p>
-            <p class="align-self-end text-right mt-n2"><small>$115.000</small></p>
-          </div>
-          <div class="col-4 col-md-3 shadow-sm bg-white rounded">
-            <img src="../assets/images/yogurt_griego.png" alt="Papas" class="d-block mt-5 mx-auto w-75">
-            <h6 class="font-italic mt-2">Papas BBQ <span class="badge badge-secondary">New</span></h6>
-            <p class="align-self-end mt-n1"><small>1 litro</small></p>
-            <p class="align-self-end text-right mt-n2"><small>$115.000</small></p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!--fin slide-->
+    <products-new></products-new>
   </div>
 </template>
 <script>
@@ -131,22 +44,19 @@
     import api from '../plugins/api'
     import cabecera from '../components/header.vue'
     import portada from '../components/home/portada'
-    import slider from '../components/slider.vue'
-    import producto from '../components/home/producto.vue'
-    import whatsapp from '../components/home/whatsapp.vue'
-    import buscador from '../components/home/buscador.vue'
-    import fresa from '../components/home/fresa.vue'
-    import foot from '../components/footer.vue'
-    
+    import buscador from '../components/home/buscador'
+    import producto from '../components/home/producto1'
+    import whatsapp from '../components/home/whatsapp'
+    import fresa from '../components/home/fresa'
+    import productsNew from "../components/home/productsNew";
+
     export default {
         name: 'home',
         data() {
-            return {
-
-            }
+            return {}
         },
         components: {
-            portada, slider, producto, whatsapp, buscador, fresa, foot
+            portada, buscador, producto, whatsapp, fresa,productsNew
         },
         mounted() {
             api.Users().getAll()
