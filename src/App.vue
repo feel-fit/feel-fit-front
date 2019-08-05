@@ -7,6 +7,10 @@
       <buscador/>
       <whatsapp/>
       <producto1/>
+      <fresa/>
+      <producto1/>
+      <fresa/>
+      
       <foot/>
     </div>
   </div>
@@ -28,14 +32,13 @@
     import producto1 from '@/components/home/producto1.vue'
     import whatsapp from '@/components/home/whatsapp.vue'
     import buscador from '@/components/home/buscador.vue'
-    
-
+    import fresa from '@/components/home/fresa.vue'
     import foot from '@/components/footer.vue'
 
     export default {
         name: 'app',
         components: {
-            cabecera, foot, slider, producto1, whatsapp, buscador, buscador
+            cabecera, foot, slider, producto1, whatsapp, buscador, fresa
         }
     }
 </script>

@@ -12,7 +12,7 @@
           <hr class="hr_producto">
         </div>
         <div class="align-self-center col-md-3 d-md-block d-none">
-          <button type="button" class="btn btn-info btn-lg">
+          <button type="button" class="boton btn btn-info btn-lg">
             <font-awesome-icon icon="arrow-right" size="xs"/>
           </button>
         </div>
@@ -34,3 +34,9 @@ import producto1 from './../../assets/images/producto1.png'
         },
     }
 </script>
+
+<style scoped>
+  .boton {
+    padding: 0rem 19%;
+  }
+</style>
