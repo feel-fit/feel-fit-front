@@ -45,7 +45,7 @@
     import cabecera from '../components/header.vue'
     import portada from '../components/home/portada'
     import buscador from '../components/home/buscador'
-    import producto from '../components/home/producto1'
+    import producto from '../components/home/producto'
     import whatsapp from '../components/home/whatsapp'
     import fresa from '../components/home/fresa'
     import productsNew from "../components/home/productsNew";
