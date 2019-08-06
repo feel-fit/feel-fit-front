@@ -1,27 +1,36 @@
 <template>
   <section>
     <div class="container-fluid position-relative my-5">
-      <div class="row justify-content-around">
+      <div class="row line-background bg-primary"></div>
+      <div class="row justify-content-around flex-row flex-wrap flex-sm-nowrap">
         <!-- <img src="../../assets/images/bg_slide1.png" class="bg_slide position-absolute">
        -->
-        <div class="line-background bg-primary"></div>
-        <div class="align-self-end d-none d-sm-block p-5">
-          <font-awesome-icon icon="angle-left" size="lg" class="mr-3"/>
-          <font-awesome-icon icon="angle-right" size="lg"/>
+
+        <div class="col-12 col-sm align-self-end flex-nowrap flex-row order-3 order-sm-1 ">
+         <div class="d-flex justify-content-center">
+           <font-awesome-icon icon="angle-left" size="lg" class="mr-3"/>
+           <font-awesome-icon icon="angle-right" size="lg"/>
+         </div>
         </div>
-        <div class="col-10 col-sm-4 col-md-3 col-xl-2">
-          <product></product>
+        <div class="container  order-1 order-sm-2">
+          <div class="row">
+            <div class="col">
+              <product></product>
+            </div>
+            <div class="d-none d-sm-block col">
+              <product></product>
+            </div>
+            <div class="d-none d-md-block col">
+              <product></product>
+            </div>
+            <div class="d-none d-xl-block col">
+              <product></product>
+            </div>
+          </div>
         </div>
-        <div class="d-none d-sm-block col-sm-4 col-md-3 col-xl-2">
-          <product></product>
-        </div>
-        <div class="d-none d-md-block col-md-3 col-xl-2">
-          <product></product>
-        </div>
-        <div class="d-none d-xl-block col-xl-2">
-          <product></product>
-        </div>
+        <div class="col-12 col-sm order-2 p-4 order-sm-3"></div>
       </div>
+
     </div>
   </section>
 </template>

@@ -6,7 +6,7 @@
       </div>
       <div class="col-auto">
         <a href="#" class="toggle text-body">
-          <font-awesome-icon class="m-4" icon="times"></font-awesome-icon>
+          <font-awesome-icon class="m-4 icon" icon="times"></font-awesome-icon>
         </a>
       </div>
     </div>
