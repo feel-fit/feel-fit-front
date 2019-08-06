@@ -1,11 +1,9 @@
 <template>
   <div class="container-fluid p-0 d-flex toggled" id="app">
     <slider/>
-    <div id="page-content-wrapper">
+    <div class="w-100" id="page-content-wrapper">
       <cabecera/>
       <router-view/>
-
-
       <foot/>
     </div>
   </div>
