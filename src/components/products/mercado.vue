@@ -1,12 +1,21 @@
 <template>
-    <section class="mercado">
-        <div class="contain border">
-            <div class="row d-flex justify-conted-around">
-                <div class="col-6">
-                    <img :src="food" alt="food">
+    <section class="mx-4">
+        <div class="container mercado shadow mx-auto">
+            <div class="row d-flex justify-conted-around position-relative">
+                <div></div>
+                <div class="col-8 col-md-6">
+                    <img :src="pasta" alt="food" class="img-fluid">
                 </div>
-                <div class="col-6">
-                    <h2>Mercado sano</h2>
+                <div class="col-4 col-md-6 mt-5">
+                <div class="oval_mercado position-absolute d-none d-md-block">
+                    <img src="./../../assets/images/conocenos/oval.svg" class="w-50">
+                </div>
+                    <h5>Mercado sano</h5>
+                    <p>Sano</p>
+                    <!--<hr class="hr_producto">-->
+                <div class="oval2_mercado position-absolute">
+                    <img src="./../../assets/images/conocenos/oval.svg" class="w-50">
+                </div>
                 </div>
             </div>
         </div>
@@ -14,19 +23,38 @@
 </template>
 
 <script>
-    import food from './../../assets/images/product/image.svg'
+    import pasta from './../../assets/images/product/pasta.png'
 
     export default {
-        name: "portada",
+        name: "mercado",
         data() {
             return {
-                food:food,
+                pasta:pasta
             }
         },
     }
 </script>
 
 <style scoped>
+.oval_mercado{
+    left: 89%;
+    top: -15%;
+}
+.oval2_mercado{
+    left: -24%;
+    bottom: 21%;
+}
+.mercado{
+    margin-top: 2rem;
+    border-radius: .7rem
+}
+
+@media(min-width: 768px) {
+    .mercado{
+        margin: 7rem 10rem;
+        
+    }
+}
 
     
 </style>
