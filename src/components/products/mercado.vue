@@ -10,8 +10,8 @@
                 <div class="oval_mercado position-absolute d-none d-md-block">
                     <img src="./../../assets/images/conocenos/oval.svg" class="w-50">
                 </div>
-                    <h5>Mercado sano</h5>
-                    <p>Sano</p>
+                    <h5 class="mb-0 font-italic" style="color: #00D0D2;"><strong>Mercado</strong></h5>
+                    <p class="mb-0 font-italic" style="color: #CCCCCD;">Sano</p>
                     <!--<hr class="hr_producto">-->
                 <div class="oval2_mercado position-absolute">
                     <img src="./../../assets/images/conocenos/oval.svg" class="w-50">
