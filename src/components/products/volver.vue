@@ -4,7 +4,10 @@
             <div class="row d-flex justify-conted-around">
                 <div class="col-12 mx-auto pl-4">
                     <div>
-                        <a><font-awesome-icon icon="angle-left" size="lg" class="mr-2"/><i>Volver</i></a>
+                        <ol class="breadcrumb bg-white">
+                            <li class="breadcrumb-item"><a href="#"><font-awesome-icon icon="angle-left" size="lg" class="mr-2"/>Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Product</li>
+                        </ol>
                     </div>
                 </div>
             </div>
