@@ -1,23 +1,29 @@
 <template>
-    <section class="mx-4">
-        <div class="container mercado shadow mx-auto">
-            <div class="row d-flex justify-conted-around position-relative">
-                <div></div>
-                <div class="col-8 col-md-6">
-                    <img :src="pasta" alt="food" class="img-fluid">
-                </div>
-                <div class="col-4 col-md-6 mt-5">
-                <div class="oval_mercado position-absolute d-none d-md-block">
-                    <img src="./../../assets/images/conocenos/oval.svg" class="w-50">
-                </div>
-                    <h5 class="mb-0 font-italic" style="color: #00D0D2;"><strong>Mercado</strong></h5>
-                    <p class="mb-0 font-italic" style="color: #CCCCCD;">Sano</p>
-                    <!--<hr class="hr_producto">-->
-                <div class="oval2_mercado position-absolute">
-                    <img src="./../../assets/images/conocenos/oval.svg" class="w-50">
-                </div>
-                </div>
-            </div>
+    <section class="mx-4 "> 
+        <div class="container mercado mb-5 mx-auto position-relative bg-white">
+           <div class="row">
+               <div class="col-md-9 mx-auto">
+                    <div class="fondo position-absolute bg-info d-none d-md-block shadow"></div>
+                    <div class="row d-flex justify-conted-around position-relative bg-white shadow" style="border-radius:1rem;">
+                        <div></div>
+                        <div class="col-8 col-md-6">
+                            <img :src="pasta" alt="food" class="img-fluid">
+                        </div>
+                        <div class="col-4 col-md-6 mt-5">
+                        <div class="oval_mercado position-absolute d-none d-md-block">
+                            <img src="./../../assets/images/conocenos/oval.svg" class="w-50">
+                        </div>
+                            <h3 class="mercado_letra mb-0 font-italic mt-5" style="color: #00D0D2;"><strong>Mercado</strong></h3>
+                            <span class="mercado_letra h5 mb-0 font-italic" style="color: #CCCCCD;"><strong>Sano</strong></span>
+                            <hr class="hr_mercado ml-0 mt-1 border-info">
+                            <!--<hr class="hr_producto">-->
+                        <div class="ml-md-0 ml-md-5 oval2_mercado position-absolute">
+                            <img src="./../../assets/images/conocenos/oval.svg" class="w-50">
+                        </div>
+                        </div>
+                    </div>
+               </div>
+           </div>
         </div>
     </section>
 </template>
@@ -36,6 +42,19 @@
 </script>
 
 <style scoped>
+.mercado_letra{
+    font-family: CircularStd Bold Italic;
+}
+.hr_mercado{
+    width: 1.5rem;
+}
+.fondo{
+    height: 78%;
+    width: 4rem;
+    top: 12%;
+    border-radius: .7rem;
+    right: -16px;
+}
 .oval_mercado{
     left: 89%;
     top: -15%;
@@ -46,14 +65,10 @@
 }
 .mercado{
     margin-top: 2rem;
-    border-radius: .7rem
 }
 
 @media(min-width: 768px) {
-    .mercado{
-        margin: 7rem 10rem;
-        
-    }
+    
 }
 
     

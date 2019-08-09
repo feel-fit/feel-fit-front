@@ -23,7 +23,6 @@
         </div>
         <div class="col-12 col-sm order-2 p-4 order-sm-3"></div>
       </div>
-      
     </div>
   
 </template>

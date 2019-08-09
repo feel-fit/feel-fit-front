@@ -1,8 +1,8 @@
 <template>
-    <section class="volver d-md-none mb-3">
-        <div class="contain-fluid">
+    <section class="volver mb-3">
+        <div class="container">
             <div class="row d-flex justify-conted-around">
-                <div class="col-12 pl-4">
+                <div class="col-12 mx-auto pl-4">
                     <div>
                         <a><font-awesome-icon icon="angle-left" size="lg" class="mr-2"/><i>Volver</i></a>
                     </div>
@@ -13,7 +13,7 @@
 </template>
 
 <script>
-    import food from './../../assets/images/product/pasta.png'
+    
 
     export default {
         name: "portada",

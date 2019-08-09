@@ -1,7 +1,7 @@
 <template>
   <!--Slide de productos 2-->
     <section class="position-relative">
-        <div class="fresa_product position-absolute d-none d-md-block">
+        <div class="fresa_product position-absolute">
             <img :src="fresa" class="img-fluid">
         </div>
     </section>
@@ -23,10 +23,18 @@ import fresa from './../../assets/images/product/fresa.png'
 
 <style scoped>
 .fresa_product{
-    bottom: 3rem;
+    bottom: -12rem;
     z-index: 10;
     width: 10rem;
     left: -1rem;
+}
+@media(min-width: 768px) {
+    .fresa_product {
+        bottom: 3rem;
+        z-index: 10;
+        width: 10rem;
+        left: -1rem;
+    }
 }
   
 </style>
