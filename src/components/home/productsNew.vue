@@ -3,8 +3,6 @@
     <div class="container-fluid position-relative my-5">
       <div class="row line-background bg-primary"></div>
       <div class="row justify-content-around flex-row flex-wrap flex-sm-nowrap">
-        <!-- <img src="../../assets/images/bg_slide1.png" class="bg_slide position-absolute">
-       -->
 
         <div class="col-12 col-sm align-self-end flex-nowrap flex-row order-3 order-sm-1 ">
          <div class="d-flex justify-content-center">
