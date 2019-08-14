@@ -4,6 +4,7 @@
         <catalogo></catalogo>
         <hoja></hoja>
         <producto></producto>
+        <hoja2></hoja2>
         
         
     </div>
@@ -15,6 +16,7 @@
     import hoja from '../components/products/hoja.vue'
     import volver from '../components/products/volver.vue'
     import producto from '../components/catalogo/producto.vue'
+    import hoja2 from '../components/home/hoja'
     
     
 
@@ -24,7 +26,7 @@
             return {}
         },
         components: {
-            catalogo,hoja,volver,producto
+            catalogo,hoja,volver,producto,hoja2
            
         },
         mounted() {
