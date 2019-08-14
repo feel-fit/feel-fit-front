@@ -21,7 +21,7 @@ export function getGuestToken () {
   return token
 }
 
-export function setGuestToken (token) {
+export function GuestToken (token) {
   setAxiosHeader(token)
   return sessionStorage.setItem(GUEST_TOKEN, token)
 }

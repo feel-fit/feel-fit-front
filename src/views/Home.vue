@@ -42,12 +42,14 @@
 <script>
 
     import api from '../plugins/api'
+    import { logout, getUserToken, getGuestToken } from './../plugins/auth'
     import portada from '../components/home/portada'
     import buscador from '../components/home/buscador'
     import producto from '../components/home/producto'
     import whatsapp from '../components/home/whatsapp'
     import fresa from '../components/home/fresa'
     import productsNew from "../components/home/productsNew";
+    import isEmpty from 'lodash/isEmpty'
 
     export default {
         name: 'home',
@@ -58,8 +60,25 @@
             portada, buscador, producto, whatsapp, fresa,productsNew
         },
         mounted() {
-            api.Users().getAll()
+          // verificamos el token de invitado
+          if (!getGuestToken()) {
+            this.$store.dispatch('setGuestToken')
+          } else {
+            this.$store.dispatch('checkToken')
+          }
+          if (getUserToken() && !this.me) this.$store.dispatch('getMe')
+          
+        },
+      computed: {
+        me () {
+          let me = this.$store.state.me
+          if (isEmpty(me)) return null
+          return me
+        },
+        name () {
+          return upperFirst(first(words(this.me.name)))
         }
+      },
     }
 </script>
 
