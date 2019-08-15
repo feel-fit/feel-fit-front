@@ -11,7 +11,7 @@
                             <div class="fondo_catalogo position-absolute bg-info"></div>
                             <div class="align-items-center bg-white d-flex h-100 position-relative">
                                 <img :src="refrigerados" class="refri card-img-top img-fluid">
-                                <span class="letra_catalogo position-absolute font-italic font-weight-bold">Refigerados</br> & canaelados</span>
+                                <span class="letra_catalogo position-absolute font-italic font-weight-bold">Refigerados</br> & Canaelados</span>
                             </div>   
                         </div>                      
                     </div>
@@ -22,7 +22,7 @@
                                     <div class="fondo_catalogo position-absolute bg-info"></div>
                                     <div class="position-relative pb-3 bg-white catalogo_border shadow">
                                         <img :src="refrigerados" class="img-fluid w-50">
-                                        <span class="letra_catalogo position-absolute font-italic font-weight-bold">Refigerados</br> & canaelados</span>  
+                                        <span class="letra_catalogo position-absolute font-italic font-weight-bold">Refigerados</br> & Canaelados</span>  
                                     </div>
                                 </div>
                             </div>
@@ -31,7 +31,7 @@
                                     <div class="fondo_catalogo position-absolute bg-info"></div>
                                     <div class="position-relative pb-3 bg-white catalogo_border shadow">
                                         <img :src="refrigerados" class="img-fluid w-50">
-                                        <span class="letra_catalogo position-absolute font-italic font-weight-bold">Refigerados</br> & canaelados</span>
+                                        <span class="letra_catalogo position-absolute font-italic font-weight-bold">Aceites</br> & Mantequillas</span>
                                     </div>
                                 </div>
                             </div>
@@ -40,7 +40,7 @@
                                     <div class="fondo_catalogo position-absolute bg-info"></div>
                                     <div class="bg-white catalogo_border mb-3 mb-sm-0 pb-3 position-relative shadow">
                                         <img :src="refrigerados" class="img-fluid w-50">
-                                        <span class="letra_catalogo position-absolute font-italic font-weight-bold">Refigerados</br> & canaelados</span>   
+                                        <span class="letra_catalogo position-absolute font-italic font-weight-bold">Panaderia</br> & Pastas</span>   
                                     </div>
                                 </div>
                             </div>
@@ -50,7 +50,7 @@
                                     <div class="fondo_catalogo position-absolute bg-info"></div>
                                     <div class="position-relative  pb-3 bg-white catalogo_border shadow">
                                     	<img :src="refrigerados" class="img-fluid w-50">
-                                        <span class="letra_catalogo position-absolute font-italic font-weight-bold">Refigerados</br> & canaelados</span>
+                                        <span class="letra_catalogo position-absolute font-italic font-weight-bold">Chocolates</br> & Cacao</span>
                                     </div>
                                 </div>
                             </div>
@@ -59,7 +59,7 @@
                                     <div class="fondo_catalogo position-absolute bg-info"></div>
                                     <div class="position-relative  pb-3 bg-white catalogo_border shadow">
                                     	<img :src="refrigerados" class="img-fluid w-50">
-                                        <span class="letra_catalogo position-absolute font-italic font-weight-bold">Refigerados</br> & canaelados</span>
+                                        <span class="letra_catalogo position-absolute font-italic font-weight-bold">Granolas</br> & Cereales</span>
                                     </div>
                                 </div>
                             </div>
@@ -84,7 +84,7 @@
                                     <div class="fondo_catalogo position-absolute bg-info"></div>
                                     <div class="position-relative pb-3 bg-white catalogo_border shadow">
                                     	<img :src="refrigerados" class="img-fluid w-50">
-                                        <span class="letra_catalogo position-absolute font-italic font-weight-bold">Refigerados</br> & canaelados</span>
+                                        <span class="letra_catalogo position-absolute font-italic font-weight-bold">Mercado</br>Sano</span>
                                     </div>
                                 </div>
                             </div>
@@ -93,7 +93,7 @@
                                     <div class="fondo_catalogo position-absolute bg-info"></div>
                                     <div class="position-relative pb-3  bg-white catalogo_border shadow">
                                     	<img :src="refrigerados" class="img-fluid w-50">
-                                        <span class="letra_catalogo position-absolute font-italic font-weight-bold">Refigerados</br> & canaelados</span>
+                                        <span class="letra_catalogo position-absolute font-italic font-weight-bold">Niños</span>
                                     </div>
                                 </div>
                             </div>
@@ -103,7 +103,7 @@
                                     <div class="fondo_catalogo position-absolute bg-info"></div>
                                     <div class="position-relative  pb-3 bg-white catalogo_border shadow">
                                     	<img :src="refrigerados" class="img-fluid w-50">
-                                        <span class="letra_catalogo position-absolute font-italic font-weight-bold">Refigerados</br> & canaelados</span>
+                                        <span class="letra_catalogo position-absolute font-italic font-weight-bold">Suplementos</br> & Proteinas</span>
                                     </div>
                                 </div>
                             </div>
@@ -112,7 +112,7 @@
                                     <div class="fondo_catalogo position-absolute bg-info"></div>
                                     <div class="position-relative  pb-3 bg-white catalogo_border shadow">
                                     	<img :src="refrigerados" class="img-fluid w-50">
-                                        <span class="letra_catalogo position-absolute font-italic font-weight-bold">Refigerados</br> & canaelados</span>
+                                        <span class="letra_catalogo position-absolute font-italic font-weight-bold">Vinagres</br> & Aderezos</span>
                                     </div>
                                 </div>
                             </div>
@@ -120,8 +120,8 @@
                                 <div class="mb-3 mt-md-0 position-relative res_menos">
                                     <div class="fondo_catalogo position-absolute bg-info"></div>
                                     <div class="position-relative pb-3 bg-white catalogo_border shadow">
-                                    	<img :src="refrigerados" class="img-fluid w-50">
-                                        <span class="letra_catalogo position-absolute font-italic font-weight-bold">Refigerados</br> & canaelados</span>
+                                    	<img :src="snacks" class="img-fluid w-50">
+                                        <span class="letra_catalogo position-absolute font-italic font-weight-bold">Snacks</br> & Postres</span>
                                     </div>
                                 </div>
                             </div>
@@ -132,7 +132,7 @@
                             <div class="fondo_catalogo position-absolute bg-info"></div>
                             <div class="align-items-center bg-white d-flex h-100 position-relative">
                                 <img :src="snacks" class="refri card-img-top img-fluid">
-                                <span class="letra_catalogo position-absolute font-italic font-weight-bold">Refigerados</br> & canaelados</span>
+                                <span class="letra_catalogo position-absolute font-italic font-weight-bold">Snacks</br> & Postres</span>
                             </div>   
                         </div>                      
                     </div>
