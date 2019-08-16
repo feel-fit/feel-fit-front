@@ -4,14 +4,14 @@
             <!-- TODO:Ejemplo Item -->
             <div class="container d-flex justify-content-center">
                 
-                <div class="row line-background bg-primary"></div>
+                <div class="row d-none d-md-block line-background bg-primary"></div>
                 <div class="row">
                     <div class="col-auto col-md-4 col-lg-auto d-md-block d-none">
                         <div class="bg-white card h-100 position-relative shadow">
                             <div class="fondo_catalogo position-absolute bg-info"></div>
                             <div class="align-items-center bg-white d-flex h-100 position-relative">
                                 <img :src="refrigerados" class="refri card-img-top img-fluid">
-                                <span class="letra_catalogo position-absolute font-italic font-weight-bold">Refigerados</br> & Canaelados</span>
+                                <span class="letra_catalogo position-absolute font-italic font-weight-bold">Refigerados</br><p class="small font-weight-bold text-info">& Canaelados</p></span>
                             </div>   
                         </div>                      
                     </div>
@@ -22,7 +22,7 @@
                                     <div class="fondo_catalogo position-absolute bg-info"></div>
                                     <div class="position-relative pb-3 bg-white catalogo_border shadow">
                                         <img :src="refrigerados" class="img-fluid w-50">
-                                        <span class="letra_catalogo position-absolute font-italic font-weight-bold">Refigerados</br> & Canaelados</span>  
+                                        <span class="letra_catalogo position-absolute font-italic font-weight-bold">Refigerados</br><p class="small font-weight-bold text-info">& Canaelados</p></span>  
                                     </div>
                                 </div>
                             </div>
@@ -30,8 +30,8 @@
                                 <div class="mb-3 mt-md-0 position-relative">
                                     <div class="fondo_catalogo position-absolute bg-info"></div>
                                     <div class="position-relative pb-3 bg-white catalogo_border shadow">
-                                        <img :src="refrigerados" class="img-fluid w-50">
-                                        <span class="letra_catalogo position-absolute font-italic font-weight-bold">Aceites</br> & Mantequillas</span>
+                                        <img :src="aceites" class="img-fluid w-50">
+                                        <span class="letra_catalogo position-absolute font-italic font-weight-bold">Aceites</br><p class="small font-weight-bold text-info">& Mantequillas</p></span>
                                     </div>
                                 </div>
                             </div>
@@ -39,8 +39,8 @@
                                <div class="position-relative">
                                     <div class="fondo_catalogo position-absolute bg-info"></div>
                                     <div class="bg-white catalogo_border mb-3 mb-sm-0 pb-3 position-relative shadow">
-                                        <img :src="refrigerados" class="img-fluid w-50">
-                                        <span class="letra_catalogo position-absolute font-italic font-weight-bold">Panaderia</br> & Pastas</span>   
+                                        <img :src="panaderia" class="img-fluid w-50">
+                                        <span class="letra_catalogo position-absolute font-italic font-weight-bold">Panaderia</br><p class="small font-weight-bold text-info">& Pastas</p></span>   
                                     </div>
                                 </div>
                             </div>
@@ -49,8 +49,8 @@
                                 <div class="mb-3 position-relative respon_menos">
                                     <div class="fondo_catalogo position-absolute bg-info"></div>
                                     <div class="position-relative  pb-3 bg-white catalogo_border shadow">
-                                    	<img :src="refrigerados" class="img-fluid w-50">
-                                        <span class="letra_catalogo position-absolute font-italic font-weight-bold">Chocolates</br> & Cacao</span>
+                                    	<img :src="chocolates" class="img-fluid w-50">
+                                        <span class="letra_catalogo position-absolute font-italic font-weight-bold">Chocolates</br><p class="small font-weight-bold text-info">& Cacao</p></span>
                                     </div>
                                 </div>
                             </div>
@@ -58,8 +58,8 @@
                                 <div class="mb-3 mt-md-0 position-relative res_mas">
                                     <div class="fondo_catalogo position-absolute bg-info"></div>
                                     <div class="position-relative  pb-3 bg-white catalogo_border shadow">
-                                    	<img :src="refrigerados" class="img-fluid w-50">
-                                        <span class="letra_catalogo position-absolute font-italic font-weight-bold">Granolas</br> & Cereales</span>
+                                    	<img :src="granolas" class="img-fluid w-50">
+                                        <span class="letra_catalogo position-absolute font-italic font-weight-bold">Granolas</br><p class="small font-weight-bold text-info">& Cereales</p></span>
                                     </div>
                                 </div>
                             </div>
@@ -83,8 +83,8 @@
                                 <div class="mb-3 position-relative res_menos" >
                                     <div class="fondo_catalogo position-absolute bg-info"></div>
                                     <div class="position-relative pb-3 bg-white catalogo_border shadow">
-                                    	<img :src="refrigerados" class="img-fluid w-50">
-                                        <span class="letra_catalogo position-absolute font-italic font-weight-bold">Mercado</br>Sano</span>
+                                    	<img :src="mercado" class="img-fluid w-50">
+                                        <span class="letra_catalogo position-absolute font-italic font-weight-bold">Mercado</br><p class="small font-weight-bold text-info">Sano</p></span>
                                     </div>
                                 </div>
                             </div>
@@ -92,7 +92,7 @@
                                <div class="mb-3 position-relative">
                                     <div class="fondo_catalogo position-absolute bg-info"></div>
                                     <div class="position-relative pb-3  bg-white catalogo_border shadow">
-                                    	<img :src="refrigerados" class="img-fluid w-50">
+                                    	<img :src="ninos" class="img-fluid w-50">
                                         <span class="letra_catalogo position-absolute font-italic font-weight-bold">Niños</span>
                                     </div>
                                 </div>
@@ -102,8 +102,8 @@
                                 <div class="mb-3 position-relative res_menos" >
                                     <div class="fondo_catalogo position-absolute bg-info"></div>
                                     <div class="position-relative  pb-3 bg-white catalogo_border shadow">
-                                    	<img :src="refrigerados" class="img-fluid w-50">
-                                        <span class="letra_catalogo position-absolute font-italic font-weight-bold">Suplementos</br> & Proteinas</span>
+                                    	<img :src="suplementos" class="img-fluid w-50">
+                                        <span class="letra_catalogo position-absolute font-italic font-weight-bold">Suplementos</br> <p class="small font-weight-bold text-info">& Proteinas</p></span>
                                     </div>
                                 </div>
                             </div>
@@ -111,8 +111,8 @@
                                 <div class="mb-3 position-relative">
                                     <div class="fondo_catalogo position-absolute bg-info"></div>
                                     <div class="position-relative  pb-3 bg-white catalogo_border shadow">
-                                    	<img :src="refrigerados" class="img-fluid w-50">
-                                        <span class="letra_catalogo position-absolute font-italic font-weight-bold">Vinagres</br> & Aderezos</span>
+                                    	<img :src="vinagres" class="img-fluid w-50">
+                                        <span class="letra_catalogo position-absolute font-italic font-weight-bold">Vinagres</br><p class="small font-weight-bold text-info">& Aderezos</p></span>
                                     </div>
                                 </div>
                             </div>
@@ -121,7 +121,7 @@
                                     <div class="fondo_catalogo position-absolute bg-info"></div>
                                     <div class="position-relative pb-3 bg-white catalogo_border shadow">
                                     	<img :src="snacks" class="img-fluid w-50">
-                                        <span class="letra_catalogo position-absolute font-italic font-weight-bold">Snacks</br> & Postres</span>
+                                        <span class="letra_catalogo position-absolute font-italic font-weight-bold">Snacks</br><p class="small font-weight-bold text-info">& Postres</p></span>
                                     </div>
                                 </div>
                             </div>
@@ -132,7 +132,7 @@
                             <div class="fondo_catalogo position-absolute bg-info"></div>
                             <div class="align-items-center bg-white d-flex h-100 position-relative">
                                 <img :src="snacks" class="refri card-img-top img-fluid">
-                                <span class="letra_catalogo position-absolute font-italic font-weight-bold">Snacks</br> & Postres</span>
+                                <span class="letra_catalogo position-absolute font-italic font-weight-bold">Snacks</br><p class="small font-weight-bold text-info">& Postres</p></span>
                             </div>   
                         </div>                      
                     </div>
@@ -154,8 +154,7 @@
     import snacks from './../../assets/images/catalogo/snacks.png'
     import suplementos from './../../assets/images/catalogo/suplementos.png'
     import vinagres from './../../assets/images/catalogo/vinagres.png'
-    import items from './items.vue'
-    import item from './item.vue'
+    
 
     export default {
         name: "producto",
@@ -176,7 +175,7 @@
             }
         },
         components: {
-            items,item
+            
         }
     }
 </script>
@@ -190,7 +189,7 @@
 } */
 .letra_catalogo{
     top: 47%;
-    left: 49%;
+    left: 47%;
     color:#00D0D2;
     font-size:20px;
 }
@@ -218,8 +217,8 @@
 .line-background{
     position: absolute;
     width: 100%;
-    height: 33px;
-    top: 54%;
+    height: 27px;
+    top: 72%;
 }
 .line-background2{
     background-color: rgba(242, 240, 242, 1);
@@ -236,7 +235,7 @@
         margin-top: -30px;
     }
     .res_menos{
-        margin-top: -137px;
+        margin-top: -98px;
     }
     .letra_catalogo{
         top: 35%;
@@ -248,7 +247,8 @@
         font-size: 32px;
     }
         .letra_catalogo{
-        top: 39%;
+        top: 45%;
+        left: 42%;
         font-size:16px;
     }
 }

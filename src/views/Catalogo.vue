@@ -2,7 +2,7 @@
     <div>
         <volver></volver>
         <catalogo></catalogo>
-        <hoja></hoja>
+        <whatsapp></whatsapp>
         <producto></producto>
         <hoja2></hoja2>
         
@@ -13,6 +13,7 @@
 <script>
 
     import catalogo from '../components/catalogo/catalogo.vue'
+    import whatsapp from '../components/home/whatsapp'
     import hoja from '../components/products/hoja.vue'
     import volver from '../components/products/volver.vue'
     import producto from '../components/catalogo/producto.vue'
@@ -26,7 +27,7 @@
             return {}
         },
         components: {
-            catalogo,hoja,volver,producto,hoja2
+            catalogo,hoja,volver,producto,hoja2,whatsapp
            
         },
         mounted() {
