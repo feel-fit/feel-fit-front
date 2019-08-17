@@ -1,45 +1,67 @@
 <template>
     <div>
-        <div class="container-fluid">
-            
-                <div class="row">
-                    <div class="col-12 col-md-6 border">
-                        <div class="h-100 border align-items-center">
-                            <div class="card bg-white d-flex position-relative border-0">
-                                <!-- <img src="../../assets/images/product/producto_avena.png" alt="Papas" class="card-img-top"> -->
-                                <img src="../../assets/images/informacion/image.png" alt="Papas" class="card-img-top">
-                                <div>
-                                    <div class="car bg-white p-2 position-absolute shadow">
-                                        <img src="../../assets/images/cart.svg" alt="Car" class="img-fluid">
-                                    </div>
-                                    <div class="corazon bg-white p-2 position-absolute shadow">
-                                        <img src="../../assets/images/fav.svg" alt="Corazon" class="img-fluid">
-                                    </div>
+        
+        <div class="container-fluid">     
+            <div class="row">
+                
+                <div class="col-12 col-md-6">
+                    <div class="h-100 align-items-center">
+                        <div class="card bg-white d-flex position-relative border-0">
+                            <!-- <img src="../../assets/images/product/producto_avena.png" alt="Papas" class="card-img-top"> -->
+                            <img src="../../assets/images/informacion/image.png" alt="Papas" class="card-img-top">
+                            <div>
+                                <div class="car bg-white p-3 position-absolute shadow d-none d-md-block">
+                                    <img src="../../assets/images/cart.svg" alt="Car" class="img-fluid">
+                                </div>
+                                <div class="corazon bg-white p-3 position-absolute shadow d-none d-md-block">
+                                    <img src="../../assets/images/fav.svg" alt="Corazon" class="img-fluid">
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-5">
-                        <div class="mt-5">
-                            <h1>Pancake & Waffle <br>- Avena mix</h1>
-                            <p class="font-weight-bold text-dark">$15.000</p>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias magnam nam vitae odit nihil obcaecati, fuga ad, distinctio quidem maiores vel enim consequuntur dolorum aperiam officiis. Consectetur minus maxime inventore.</p>
-                        
+                </div>
+                <div class="col-12 col-md-5 position-relative">
+                    <div class="tabla position-absolute btn-warning btn-lg d-none d-md-block"><small> Tabla Nutricional</small></div>
+                    <div class="row h-100">
+                        <div class="col-12">
+                            <div class="row d-md-none mt-4 mb-4 d-flex align-content-center">
+                                <div class="col-6">
+                                    <span class="btn bg-white border"><img src="../../assets/images/fav.svg">&nbsp;&nbsp;Agregar</span>
+                                </div>
+                                <div class="col-6">
+                                    <span class="btn bg-info border"><img src="../../assets/images/cart.svg">&nbsp;&nbsp;Agregar</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="row">
-                            <div class="col-12 col-md-3">
-                                <h4>Categoria</h4>
+                        <div class="col-12 align-self-center">
+                            <div class="position-relative">
+                                <div class="tabla position-absolute d-md-none btn-warning btn-lg "><small> Tabla Nutricional</small></div>
+                                <h1 class="font-italic font-weight-bold mb-5">Pancake & Waffle <br>- Avena mix</h1>
+                                <p class="font-weight-bold text-dark text-right text-md-left">$15.000</p>
+                                <p class="mt-5">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias magnam nam vitae odit nihil obcaecati, fuga ad, distinctio quidem maiores vel enim consequuntur dolorum aperiam officiis. Consectetur minus maxime inventore.</p>
                             </div>
-                            <div class="col-12 col-md-3">
-                                <h4>Ingredientes</h4>
-                            </div>
-                            <div class="col-12 col-md-3">
-                                <h4>Etiquetas</h4>
+                        </div>
+                        <div class="col-12 align-self-end">
+                            <div class="row">
+                                <div class="col-12 col-lg-3">
+                                    <h4 class="text-lg-center font-italic font-weight-bold">Categoria</h4>
+                                    <p>Mercado Sano</p>
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <div class="ingre mb-3 ml-lg-2 pl-lg-4 pr-4 pt-3 pt-lg-0">
+                                        <h4 class="text-lg-center font-italic font-weight-bold">Ingredientes</h4>
+                                        <p>Avena, chocolate</p>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-3">
+                                    <h4 class="text-lg-center font-italic font-weight-bold">Etiquetas</h4>
+                                    <p>Chocolate natural, proteina, nueces fitness</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-        
+                </div>         
+            </div>
         </div>
     </div>
 </template>
@@ -49,6 +71,17 @@ export default {
 }
 </script>
 <style scoped>
+.ingre{
+        border-top:solid 1px;
+        border-bottom:solid 1px;
+    }
+.tabla{
+    z-index: 100;
+    top: 42%;
+    border-radius: 20px;
+    color:white;
+
+}
 .car{
     left: 10%;
     bottom: 6%;
@@ -63,24 +96,34 @@ export default {
 
 @media(min-width: 576px) {
     .car{
-    bottom: 25%;
+    bottom: 9%;
     }
 
     .corazon{
-    left: 74%;
-    bottom: 25%;
+    left: 77%;
+    bottom: 9%;
     border-radius: 50%;
     }
 }
 @media(min-width: 768px) {
     .car, .corazon{
-    bottom: 30%;
+    bottom: 7%;
+    }
+    .columna{
+        margin-top:45%;
     }
 }
 @media(min-width: 992px) {
     .car, .corazon{
-    bottom: 22%;
+    bottom: 7%;
     }
+    .ingre{
+        border-left:solid 1px;
+        border-right:solid 1px;
+        border-top:none;
+        border-bottom:none;
+    }
+    
 }
 </style>
 
