@@ -21,15 +21,15 @@
                     </div>
                 </div>
                 <div class="col-12 col-md-5 position-relative">
-                    <div class="tabla position-absolute btn-warning btn-lg d-none d-md-block"><small> Tabla Nutricional</small></div>
+                    <!-- <div class="tabla position-absolute btn-warning btn-lg d-none d-md-block"><small> Tabla Nutricional</small></div> -->
                     <div class="row h-100">
                         <div class="col-12">
-                            <div class="row d-md-none mt-4 mb-4 d-flex align-content-center">
-                                <div class="col-6">
-                                    <span class="btn bg-white border"><img src="../../assets/images/fav.svg">&nbsp;&nbsp;Agregar</span>
+                            <div class="row d-md-none mt-4 mb-5 d-flex justify-content-end">
+                                <div class="col-5">
+                                    <span class="btn bg-white border shadow" style="border-radius:1rem;"><img src="../../assets/images/fav.svg">&nbsp;&nbsp;Agregar</span>
                                 </div>
-                                <div class="col-6">
-                                    <span class="btn bg-info border"><img src="../../assets/images/cart.svg">&nbsp;&nbsp;Agregar</span>
+                                <div class="col-5">
+                                    <span class="btn bg-info border shadow" style="border-radius:1rem;"><img src="../../assets/images/cart.svg">&nbsp;&nbsp;Agregar</span>
                                 </div>
                             </div>
                         </div>
@@ -112,6 +112,12 @@ export default {
     .columna{
         margin-top:45%;
     }
+    .tabla{
+    left: 20%;
+    top: 2%;
+    
+
+}
 }
 @media(min-width: 992px) {
     .car, .corazon{
@@ -125,5 +131,6 @@ export default {
     }
     
 }
+
 </style>
 
