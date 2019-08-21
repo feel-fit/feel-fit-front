@@ -1,23 +1,19 @@
 <template>
-  <div>
-    <div class="bg-white" id="sidebar-wrapper">
-      <div class="row">
-        <div class="col">
-          <div class="sidebar-heading"><img class="img-fluid" :src="images.logo" alt=""></div>
-        </div>
-        <div class="col-auto">
-          <a href="#" class="toggle text-body">
-            <font-awesome-icon class="m-4 icon" icon="times"></font-awesome-icon>
-          </a>
-        </div>
+  <div class="bg-white" id="sidebar-wrapper">
+    <div class="row">
+      <div class="col">
+        <div class="sidebar-heading"><img class="img-fluid" :src="images.logo" alt=""></div>
       </div>
-      <div class="list-group list-group-flush">
-  
+      <div class="col-auto">
+        <a href="#" class="toggle text-body">
+          <font-awesome-icon class="m-4 icon" icon="times"></font-awesome-icon>
+        </a>
       </div>
     </div>
-    
+    <div class="list-group list-group-flush">
+
+    </div>
   </div>
-  
 </template>
 
 <script>
@@ -34,7 +30,7 @@
             }
         },
         mounted() {
-            $("#menu-toggle, .toggle").click(function (e) {
+            $("#menu-toggle-car, .toggle").click(function (e) {
                 e.preventDefault();
                 $("#app").toggleClass("toggled");
             });
@@ -62,9 +58,9 @@
     width: 20rem;
   }
 
-  // #page-content-wrapper {
-  //   //min-width: 100vw;
-  // }
+  #page-content-wrapper {
+    //min-width: 100vw;
+  }
 
   #app.toggled #sidebar-wrapper {
     margin-left: -20rem;
@@ -80,9 +76,9 @@
       width: 100%;
     }*/
 
-    // #app.toggled #sidebar-wrapper {
-    //   margin-left: -20rem;
-    // }
+    #app.toggled #sidebar-wrapper {
+      margin-left: -20rem;
+    }
   }
 
 

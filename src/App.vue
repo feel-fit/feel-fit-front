@@ -1,6 +1,7 @@
 <template>
   <div class="container-fluid p-0 d-flex toggled" id="app">
     <slider/>
+    <sliderCar/>
     <div class="w-100" id="page-content-wrapper">
       <cabecera/>
       <router-view/>
@@ -22,6 +23,7 @@
 
     import cabecera from '@/components/header.vue'
     import slider from '@/components/slider.vue'
+    import sliderCar from '@/components/sliderCar.vue'
     import producto from '@/components/home/producto.vue'
     import whatsapp from '@/components/home/whatsapp.vue'
     import buscador from '@/components/home/buscador.vue'
@@ -31,7 +33,7 @@
     export default {
         name: 'app',
         components: {
-            cabecera, foot, slider, producto, whatsapp, buscador, fresa
+            cabecera, foot, slider, producto, whatsapp, buscador, fresa, sliderCar
         }
     }
 </script>

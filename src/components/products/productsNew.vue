@@ -7,16 +7,16 @@
         </div>
         <div class="container  order-1 order-sm-2">
           <div class="row">
-            <div class="col">
+            <div class="col mt-4">
               <product></product>
             </div>
-            <div class="d-none d-sm-block col">
+            <div class="d-none d-sm-block col mt-4">
               <product></product>
             </div>
-            <div class="d-none d-md-block col">
+            <div class="d-none d-md-block col mt-4">
               <product></product>
             </div>
-            <div class="d-none d-xl-block col">
+            <div class="d-none d-xl-block col mt-4">
               <product></product>
             </div>
           </div>
