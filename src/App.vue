@@ -20,13 +20,13 @@
 
 <script>
 
-    import cabecera from '@/components/header.vue'
+    import cabecera from '@/components/cabecera.vue'
     import slider from '@/components/slider.vue'
     import producto from '@/components/home/producto.vue'
     import whatsapp from '@/components/home/whatsapp.vue'
     import buscador from '@/components/home/buscador.vue'
     import fresa from '@/components/home/fresa.vue'
-    import foot from '@/components/footer.vue'
+    import foot from '@/components/foot.vue'
 
     export default {
         name: 'app',

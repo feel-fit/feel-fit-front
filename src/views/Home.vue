@@ -54,7 +54,9 @@
     export default {
         name: 'home',
         data() {
-            return {}
+            return {
+                nuevos:[]
+            }
         },
         components: {
             portada, buscador, producto, whatsapp, fresa,productsNew
@@ -67,7 +69,10 @@
             this.$store.dispatch('checkToken')
           }
           if (getUserToken() && !this.me) this.$store.dispatch('getMe')
-          
+            api.Categories().products(1).getAll().then(response=>{
+                this.nuevos = response.data.data
+            })
+
         },
       computed: {
         me () {

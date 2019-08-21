@@ -55,7 +55,6 @@ export default new Vuex.Store({
       })
     },
     setGuestToken ({ state, commit, dispatch }) {
-      console.log(credentialsGuestToken())
       api.Token().getOne(credentialsGuestToken()).then(response => {
         GuestToken(response.data.access_token)
         dispatch('checkToken')

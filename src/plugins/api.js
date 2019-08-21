@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { setAxiosHeader} from './auth'
+import {setAxiosHeader} from './auth'
 import AWN from 'awesome-notifications'
 import map from 'lodash/map'
 
@@ -10,23 +10,29 @@ setAxiosHeader()
 
 console.log(axios.defaults.baseURL)
 
-function Categories (url = 'categories') {
+function Categories(url = 'categories') {
   return {
     getOne: (id) => axios.get(`${url}/${id}`),
     getAll: () => axios.get(`${url}?pagination=false`),
     getPaginate: () => axios.get(url),
     update: (id, toUpdate) => axios.put(`${url}/${id}`, toUpdate),
     create: (toCreate) => axios.post(url, toCreate),
-    delete: (id) => axios.delete(`${url}/${id}`)
+    delete: (id) => axios.delete(`${url}/${id}`),
+    products: (id) => {
+      return {
+        getAll: () => axios.get(`${url}/${id}/products`)
+      }
+
+    }
   }
 }
 
-function CheckUpdate (value, old) {
+function CheckUpdate(value, old) {
   if (typeof old !== 'undefined' && old != value) return true
   return false
 }
 
-function Products (url = 'products') {
+function Products(url = 'products') {
   return {
     getOne: (id) => axios.get(`${url}/${id}`),
     getAll: () => axios.get(`${url}?pagination=false`),
@@ -37,7 +43,7 @@ function Products (url = 'products') {
   }
 }
 
-function ProductMasters (url = 'product-masters') {
+function ProductMasters(url = 'product-masters') {
   return {
     getOne: (id) => axios.get(`${url}/${id}`),
     getAll: () => axios.get(`${url}?pagination=false`),
@@ -49,7 +55,7 @@ function ProductMasters (url = 'product-masters') {
   }
 }
 
-function Sliders (url = 'sliders') {
+function Sliders(url = 'sliders') {
   return {
     getOne: (id) => axios.get(`${url}/${id}`),
     getAll: () => axios.get(`${url}?pagination=false`),
@@ -60,14 +66,14 @@ function Sliders (url = 'sliders') {
   }
 }
 
-function Token (url = 'oauth/token') {
+function Token(url = 'oauth/token') {
   return {
     getOne: (credentials) => axios.post(url, credentials),
     checkToken: () => axios.get('oauth/check-token')
   }
 }
 
-function Users (url = 'users') {
+function Users(url = 'users') {
   return {
     getOne: (id) => axios.get(`${url}/${id}`),
     getAll: () => axios.get(`${url}?pagination=false`),
@@ -84,11 +90,11 @@ function Users (url = 'users') {
 
 // responders
 
-function SuccessResponse (response) {
+function SuccessResponse(response) {
   notifier.success(response.data.message)
 }
 
-function ErrorResponse (response) {
+function ErrorResponse(response) {
   if (typeof response.response.data.error === 'string') {
     notifier.alert(response.response.data.error)
   } else {
