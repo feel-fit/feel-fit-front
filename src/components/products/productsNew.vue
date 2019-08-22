@@ -40,7 +40,10 @@ export default {
     products: {
       required: true,
       type: Array
-    }
+    },
+      tag: {
+          default: 'Nuevo'
+      }
   },
   data () {
     return {
@@ -54,7 +57,7 @@ export default {
     next () {
       this.$refs.slick.next()
     },
-    
+
     prev () {
       this.$refs.slick.prev()
     },

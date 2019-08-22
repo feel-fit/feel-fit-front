@@ -3,7 +3,7 @@
     <div class="container">
       <div class="producto row justify-content-between mx-auto shadow pb-3">
         <div class="col-6 col-md-5">
-          <img :src="producto1" alt="Papas" class="w-100 mx-auto d-block" style="margin-top: -10%;">
+          <img data-lazy="img/lazyfonz1.png" :src="producto1" alt="Papas" class="w-100 mx-auto d-block" style="margin-top: -10%;">
         </div>
         <div class="text_productos col-6 col-md-4">
           <h2 class="font-weight-bold font-italic text-info mt-md-5">Nuestro productos nuevos</h2>
@@ -29,7 +29,7 @@ import producto1 from './../../assets/images/producto1.png'
         data() {
             return {
                 producto1: producto1
-    
+
             }
         },
     }
@@ -52,7 +52,7 @@ import producto1 from './../../assets/images/producto1.png'
   .text_productos p{
     color: #B2B2B2;
   }
- 
+
 
 
 </style>

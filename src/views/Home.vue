@@ -4,10 +4,10 @@
     <buscador></buscador>
     <whatsapp/>
     <producto></producto>
-    <products-new :products="nuevos"></products-new>
+    <products-new tag="nuevo" :products="nuevos"></products-new>
     <fresa/>
     <producto/>
-    <products-new :products="destacados"></products-new>
+    <products-new tag="destacado" :products="destacados"></products-new>
     <!-- Tercera seccion productos-->
     <section class="row py-5 position-relative">
       <img src="../assets/images/fresa2_home.png" class="fresa2_home d-none d-md-inline-block position-absolute">
@@ -66,14 +66,14 @@ export default {
       this.$store.dispatch('checkToken')
     }
     if (getUserToken() && !this.me) this.$store.dispatch('getMe')
-    
+
     api.Categories().products(1).getAll().then(response => {
       this.nuevos = response.data.data
     })
     api.Categories().products(2).getAll().then(response => {
       this.destacados = response.data.data
     })
-    
+
   },
   computed: {
     me () {

@@ -14,7 +14,7 @@
                  ref="slick"
                  :options="slickOptions">
             <div v-for="item in products" :key="item.id" class="col-auto">
-              <product :product="item" class="product"></product>
+              <product :tag="tag" :product="item" class="product"></product>
             </div>
           </slick>
         </div>
@@ -24,86 +24,91 @@
   </section>
 </template>
 <script>
-import Slick from 'vue-slick'
-import product from './product'
+    import Slick from 'vue-slick'
+    import product from './product'
 
-export default {
-  name: 'productsNew',
-  components: {
-    product, Slick
-  },
-  watch: {
-    products() {
-      this.reInitSlick(this.$refs.slick);
-    }
-  },
-  props: {
-    products: {
-      required: true,
-      type: Array
-    }
-  },
-  data () {
-    return {
-      slickOptions: {
-        slidesToShow: 4,
-        infinite: true,
-        arrows: false,
-        //centerMode: true,
-        responsive: [
-          {
-            breakpoint: 992,
-            settings: {
-              slidesToShow: 3
+    export default {
+        name: 'productsNew',
+        components: {
+            product, Slick
+        },
+        watch: {
+            products() {
+                this.reInitSlick(this.$refs.slick);
             }
-          },
-          {
-            breakpoint: 768,
-            settings: {
-              slidesToShow: 2
+        },
+        props: {
+            products: {
+                required: true,
+                type: Array
+            },
+            tag: {
+                default: 'Nuevo'
             }
-          },
-          {
-            breakpoint: 576,
-            settings: {
-              
-              slidesToShow: 1
+        },
+        data() {
+            return {
+                slickOptions: {
+                    slidesToShow: 4,
+                    infinite: true,
+                    arrows: false,
+                    lazyLoad:'ondemand',
+                    responsive: [
+                        {
+                            breakpoint: 992,
+                            settings: {
+                                slidesToShow: 3
+                            }
+                        },
+                        {
+                            breakpoint: 768,
+                            settings: {
+                                slidesToShow: 2
+                            }
+                        },
+                        {
+                            breakpoint: 576,
+                            settings: {
+                                centerMode: true,
+                                slidesToShow: 1
+                            }
+                        }
+                    ]
+                    // Any other options that can be got from plugin documentation
+                },
             }
-          }
-        ]
-        // Any other options that can be got from plugin documentation
-      },
+        },
+        methods: {
+            next() {
+
+                this.$refs.slick.next()
+            },
+
+            prev() {
+                this.$refs.slick.prev()
+            },
+            reInitSlick(slick) {
+                let currentIndex = slick.currentSlide()
+
+                slick.destroy()
+                this.$nextTick(() => {
+                    slick.create()
+                    slick.goTo(currentIndex, true)
+                })
+            },
+        }
     }
-  },
-  methods: {
-    next () {
-     
-      this.$refs.slick.next()
-    },
-    
-    prev () {
-      this.$refs.slick.prev()
-    },
-    reInitSlick(slick) {
-      let currentIndex = slick.currentSlide()
-    
-      slick.destroy()
-      this.$nextTick(() => {
-        slick.create()
-        slick.goTo(currentIndex, true)
-      })
-    },
-  }
-}
 </script>
 <style lang="scss">
   @import '~slick-carousel/slick/slick.scss';
+
   .line-background {
     position: absolute;
     width: 100%;
     height: 70px;
     top: 45%;
   }
+
   .slick-list {
     padding-bottom: 1rem !important;
     padding-top: 1rem !important;
