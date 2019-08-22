@@ -2,19 +2,19 @@
   <!--Slide de productos 2-->
     <section class="position-relative">
         <div class="fresa_product position-absolute">
-            <img :src="fresa" class="img-fluid">
+            <img :src="fresa_producto" class="img-fluid">
         </div>
     </section>
 </template>
 
 <script>
-import fresa from './../../assets/images/product/fresa.png'
+import fresa_producto from './../../assets/images/product/fresa.png'
 
     export default {
         name: "hoja",
         data() {
             return {
-                fresa:fresa
+                fresa_producto:fresa_producto
                 
             }
         },

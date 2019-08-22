@@ -15,9 +15,7 @@
   
       </div>
     </div>
-    
   </div>
-  
 </template>
 
 <script>
@@ -80,9 +78,9 @@
       width: 100%;
     }*/
 
-    // #app.toggled #sidebar-wrapper {
-    //   margin-left: -20rem;
-    // }
+    #app.toggled #sidebar-wrapper {
+      margin-left: -20rem;
+    }
   }
 
 

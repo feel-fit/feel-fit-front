@@ -79,6 +79,18 @@
 </template>
 <script>
 export default {
+    name:'info',
+    data(){
+        return {
+
+        }
+    },
+    mounted() {
+        $("#menu-toggle-car").click(function (e) {
+                e.preventDefault();
+                $("#wrapper").toggleClass("toggled");
+        });
+    }
     
 }
 </script>

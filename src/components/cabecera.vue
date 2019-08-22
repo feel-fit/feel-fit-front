@@ -35,7 +35,7 @@
     import logo from './../assets/images/logo_menu.svg'
 
     export default {
-        name: 'header',
+        name: 'cabecera',
         data() {
             return {
 
