@@ -16,7 +16,7 @@
     import mercado from '../components/products/mercado.vue'
     import productsNew from '../components/products/productsNew.vue'
     import hoja from '../components/products/hoja.vue'
-    import fresa from '../components/products/fresa.vue'
+    import fresa from '../components/products/fresa_producto.vue'
     
 
     export default {

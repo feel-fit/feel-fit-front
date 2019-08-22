@@ -11,13 +11,13 @@
             <div class="col">
               <product></product>
             </div>
-            <div class="d-none d-sm-block col">
+            <div class="d-none d-sm-block col mt-4">
               <product></product>
             </div>
-            <div class="d-none d-md-block col">
+            <div class="d-none d-md-block col mt-4">
               <product></product>
             </div>
-            <div class="d-none d-xl-block col">
+            <div class="d-none d-xl-block col mt-4">
               <product></product>
             </div>
           </slick>

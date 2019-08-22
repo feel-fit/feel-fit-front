@@ -1,7 +1,7 @@
 <template>
     <section class="position-fixed w-100 shadow py-3 sticky-top">
       <div class="container">
-        <div class="row ">
+        <div class="row">
           <div class="col">
             <a id="menu-toggle" href="#">
               <font-awesome-icon icon="bars" size="2x" class="icon"></font-awesome-icon>
