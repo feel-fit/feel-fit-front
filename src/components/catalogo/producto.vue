@@ -17,7 +17,10 @@
                     </div>
                     <div class="col">
                         <div class="row d-flex">
-                             <div class="col-sm-6 d-md-none">
+                             
+                            <!-- Producto refigerio pequeño - Aparece y desaparece -->
+                            
+                            <div class="col-sm-6 d-md-none">
                                 <div class="mb-3 mt-md-0 respon_mas position-relative">
                                     <div class="fondo_catalogo position-absolute bg-info"></div>
                                     <div class="position-relative pb-3 bg-white catalogo_border shadow">
@@ -26,6 +29,7 @@
                                     </div>
                                 </div>
                             </div>
+                            <!-- -------------- -->
                             <div class="col-sm-6">
                                 <div class="mb-3 mt-md-0 position-relative">
                                     <div class="fondo_catalogo position-absolute bg-info"></div>
