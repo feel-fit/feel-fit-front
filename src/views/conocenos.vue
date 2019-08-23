@@ -1,32 +1,54 @@
 <template>
-        <section>
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col col-md-4 conocenos d-flex flex-fill justify-content-around position-relative" style="height: 400px;">
+  <section>
+    <div class="container-fluid top-header">
+      <div class="row">
+        <div class="col col-md-5 conocenos d-flex flex-fill justify-content-around position-relative">
 
-                        <img src="../assets/images/conocenos/logo_conocenos.svg" alt="Feel Fit" class="mx-auto w-50 mt-4">
+          <img src="../assets/images/conocenos/logo_conocenos.svg" alt="Feel Fit" class="mx-auto w-50 mt-4">
 
 
-                        <img class="fresa position-absolute" src="../assets/images/conocenos/fresa_copy.svg" alt="Fresa">
+          <img class="fresa position-absolute" src="../assets/images/conocenos/fresa_copy.svg" alt="Fresa">
 
-                    </div>
-                    <div class="col col-sm-12 col-md-8 flex-fill conocenos_col bg-white text-center position-relative">
-                        <img src="../assets/images/conocenos/fresa2.png" class="fresa2_conocenos d-none d-md-inline-block position-absolute">
+        </div>
+        <div class="col col-sm-12 col-md-7 flex-fill conocenos_col bg-white text-center position-relative">
+          <img src="../assets/images/conocenos/fresa2.png"
+               class="fresa2_conocenos d-none d-md-inline-block position-absolute">
 
-                        <h4 class="letra text-warning text-center font-italic font-weight-bold" style="margin-top: 7%;">Conócenos</h4>
-                        <hr class="hr_conocenos">
+          <h4 class="letra text-warning text-center font-italic font-weight-bold" style="margin-top: 7%;">Conócenos</h4>
+          <hr class="hr_conocenos">
 
-                        <img src="../assets/images/conocenos/circulo.svg" class="circulo float-right float-md-left">
-                        <!--<img class="fresa position-absolute d-none" src="images/conocenos/fresa2.png" alt="Fresa">-->
+          <img src="../assets/images/conocenos/circulo.svg" class="circulo float-right float-md-left">
+          <!--<img class="fresa position-absolute d-none" src="images/conocenos/fresa2.png" alt="Fresa">-->
 
-                        <p class="text-center font-italic" style="margin-top: 60px;">En feel flit queremos que te olvides de las dietas y empieces adaptar un estilo de vida saludable donde consumas alimentos que realmente nutran tu cuerpo y te hagan sentir que tu alma y tu corazon se encuentren felices. Es por eso que eres nuestra razon de ser y buscamos acompañarte en tu estilo de vida saludable ofreciendote produtos de excelente calidad. </p>
+          <p class="text-center parrafo font-italic text-justify">En feel flit queremos que te olvides de las dietas y
+            empieces adaptar un estilo de vida saludable donde consumas alimentos que realmente nutran tu cuerpo y te
+            hagan sentir que tu alma y tu corazon se encuentren felices. Es por eso que eres nuestra razon de ser y
+            buscamos acompañarte en tu estilo de vida saludable ofreciendote produtos de excelente calidad. </p>
 
-                        <img src="../assets/images/conocenos/circulo.svg" class="circulo float-left float-md-right">
-                        <img src="../assets/images/conocenos/fresa_mitad.svg" alt="Fresa" class="fresa_mitad_conocenos position-absolute img-fluid d-md-none">
+          <img src="../assets/images/conocenos/circulo.svg" class="circulo float-left float-md-right">
+          <img src="../assets/images/conocenos/fresa_mitad.svg" alt="Fresa"
+               class="fresa_mitad_conocenos position-absolute img-fluid d-md-none">
 
-                    </div>
-                </div>
+        </div>
+      </div>
 
-            </div>
-        </section>
+    </div>
+  </section>
 </template>
+<style scoped lang="scss">
+  .top-header {
+    margin-top: 67px;
+  }
+
+  .parrafo {
+    margin: 50px 60px;
+
+  }
+
+  .conocenos {
+    background-size: cover !important;
+    background: url("../assets/images/conocenos/image.png");
+
+
+  }
+</style>

@@ -56,6 +56,11 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-
+.footer{
+  padding-top: 0;
+  &>.container-fluid>img{
+    margin-top: -2.1rem !important;
+  }
+}
 
 </style>

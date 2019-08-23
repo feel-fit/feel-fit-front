@@ -8,7 +8,7 @@
         <span>{{product.name}}</span><span
         class="badge small badge-secondary ">{{tag}}</span></h6>
       <p class="card-text"><small>{{product.name}}</small></p>
-      <p class="card-text h6 text-right mr-3 mb-1 small "><strong>$115.000</strong></p>
+      <p class="card-text h6 text-right mr-3 mb-1 small "><strong>{{product.price | money}}</strong></p>
     </div>
 
   </div>

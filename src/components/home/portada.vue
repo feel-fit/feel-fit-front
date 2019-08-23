@@ -32,6 +32,6 @@
         background-size: cover;
         height: 100vh;
         overflow: hidden;
-        width: 100vw;
+        width: 99vw;
     }
 </style>

@@ -3,89 +3,77 @@
     <portada></portada>
     <buscador></buscador>
     <whatsapp/>
-    <producto></producto>
+    <producto title="Nuestros Productos nuevos" :image="images.papas"></producto>
     <products-new tag="nuevo" :products="nuevos"></products-new>
     <fresa/>
-    <producto/>
+    <producto title="Nuestros Productos destacados" :image="images.yogurt"/>
     <products-new tag="destacado" :products="destacados"></products-new>
-    <!-- Tercera seccion productos-->
-    <section class="row py-5 position-relative">
-      <img src="../assets/images/fresa2_home.png" class="fresa2_home d-none d-md-inline-block position-absolute">
-      <div class="col-sm-12">
-        <div class="container">
-          <div class="row justify-content-between mx-auto rounded shadow">
-            <div class="img_productos col-6 col-md-4">
-              <img src="../assets/images/sorpresa.png" alt="Papas" class="w-100 mx-auto d-block"
-                   style="margin-top: -10%;">
-            </div>
-            <div class="text_productos col-6 col-md-4">
-              <h2 class="font-weight-bold font-italic text-info mt-md-5">Nuestro productos nuevos</h2>
-              <hr class="hr_producto">
-              <p class="font-italic"><a href="#">Entra y sorprendente</a></p>
-              <hr class="hr_producto">
-            </div>
-            <div class="align-self-center col-md-3 d-md-block d-none">
-              <button type="button" class="btn btn-info btn-lg">
-                <font-awesome-icon icon="arrow-right" size="xs"/>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!--<products-new></products-new>-->
+    <fresa/>
+    <producto title="Nuestras Cajas Sorpresa" :image="images.sorpresa"/>
+    <products-new tag="destacado" :products="sorpresas"></products-new>
+
   </div>
 </template>
 <script>
-import api from '../plugins/api'
-import { logout, getUserToken, getGuestToken } from './../plugins/auth'
-import portada from '../components/home/portada'
-import buscador from '../components/home/buscador'
-import producto from '../components/home/producto'
-import whatsapp from '../components/home/whatsapp'
-import fresa from '../components/home/fresa'
-import productsNew from '../components/home/productsNew'
-import isEmpty from 'lodash/isEmpty'
+    import api from '../plugins/api'
+    import {logout, getUserToken, getGuestToken} from './../plugins/auth'
+    import portada from '../components/home/portada'
+    import buscador from '../components/home/buscador'
+    import producto from '../components/home/producto'
+    import whatsapp from '../components/home/whatsapp'
+    import fresa from '../components/home/fresa'
+    import productsNew from '../components/home/productsNew'
+    import isEmpty from 'lodash/isEmpty'
+    import sorpresa from '../assets/images/sorpresa.png'
+    import papas from './../assets/images/producto1.png'
+    import yogurt from './../assets/images/destacados.png'
 
-export default {
-  name: 'home',
-  data () {
-    return {
-      nuevos: [],
-      destacados: [],
-    }
-  },
-  components: {
-    portada, buscador, producto, whatsapp, fresa, productsNew
-  },
-  mounted () {
-    // verificamos el token de invitado
-    if (!getGuestToken()) {
-      this.$store.dispatch('setGuestToken')
-    } else {
-      this.$store.dispatch('checkToken')
-    }
-    if (getUserToken() && !this.me) this.$store.dispatch('getMe')
+    export default {
+        name: 'home',
+        data() {
+            return {
+                nuevos: [],
+                destacados: [],
+                sorpresas: [],
+                images: {
+                    sorpresa, papas, yogurt
+                }
+            }
+        },
+        components: {
+            portada, buscador, producto, whatsapp, fresa, productsNew
+        },
+        mounted() {
+            // verificamos el token de invitado
+            if (!getGuestToken()) {
+                this.$store.dispatch('setGuestToken')
+            } else {
+                this.$store.dispatch('checkToken')
+            }
+            if (getUserToken() && !this.me) this.$store.dispatch('getMe')
 
-    api.Categories().products(1).getAll().then(response => {
-      this.nuevos = response.data.data
-    })
-    api.Categories().products(2).getAll().then(response => {
-      this.destacados = response.data.data
-    })
+            api.Categories().products(1).getAll().then(response => {
+                this.nuevos = response.data.data
+            })
+            api.Categories().products(2).getAll().then(response => {
+                this.destacados = response.data.data
+            })
+            api.Any('products?surprise_box=1').getPaginate().then(response => {
+                this.sorpresas = response.data.data
+            })
 
-  },
-  computed: {
-    me () {
-      let me = this.$store.state.me
-      if (isEmpty(me)) return null
-      return me
-    },
-    name () {
-      return upperFirst(first(words(this.me.name)))
+        },
+        computed: {
+            me() {
+                let me = this.$store.state.me
+                if (isEmpty(me)) return null
+                return me
+            },
+            name() {
+                return upperFirst(first(words(this.me.name)))
+            }
+        },
     }
-  },
-}
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">

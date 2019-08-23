@@ -43,26 +43,10 @@ function Products(url = 'products') {
   }
 }
 
-function ProductMasters(url = 'product-masters') {
+function Any(url) {
   return {
-    getOne: (id) => axios.get(`${url}/${id}`),
     getAll: () => axios.get(`${url}?pagination=false`),
     getPaginate: () => axios.get(url),
-    update: (id, toUpdate) => axios.put(`${url}/${id}`, toUpdate),
-    create: (toCreate) => axios.post(url, toCreate),
-    delete: (id) => axios.delete(`${url}/${id}`),
-    getBySlug: (slug) => axios.get(`${url}?url=${slug}&pagination=false`)
-  }
-}
-
-function Sliders(url = 'sliders') {
-  return {
-    getOne: (id) => axios.get(`${url}/${id}`),
-    getAll: () => axios.get(`${url}?pagination=false`),
-    getPaginate: () => axios.get(url),
-    update: (id, toUpdate) => axios.put(`${url}/${id}`, toUpdate),
-    create: (toCreate) => axios.post(url, toCreate),
-    delete: (id) => axios.delete(`${url}/${id}`)
   }
 }
 
@@ -109,8 +93,7 @@ export default {
   Categories,
   ErrorResponse,
   Products,
-  ProductMasters,
-  Sliders,
+  Any,
   SuccessResponse,
   Token,
   Users
