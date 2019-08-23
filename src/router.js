@@ -23,7 +23,7 @@ export default new Router({
     }
     ,
     {
-      path: '/product',
+      path: '/productos',
       name: 'product',
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route

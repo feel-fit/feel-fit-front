@@ -58,6 +58,9 @@
             api.Categories().products(2).getAll().then(response => {
                 this.destacados = response.data.data
             })
+            api.Any('products?surprise_box=1').getPaginate().then(response => {
+                this.sorpresas = response.data.data
+            })
 
         },
         computed: {
