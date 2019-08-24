@@ -27,47 +27,47 @@
                         <div class="col-12">
                             <div class="row d-md-none mt-4 mb-5 d-flex justify-content-between">
                                 <div class="col-6">
-                                    <span class="btn bg-white border shadow px-5" style="border-radius:1rem; color: #00D0D2;"><img src="../../assets/images/fav.svg">&nbsp;&nbsp;Agregar</span>
+                                    <span class="btn bg-white border shadow px-5 color_texto1" style="border-radius:1rem;"><img src="../../assets/images/fav.svg">&nbsp;&nbsp;Agregar</span>
                                 </div>
                                 <div class="col-6 text-center">
-                                    <span class="btn bg-info border shadow px-5" style="border-radius:1rem; color:rgb(255, 255, 255);"><img src="../../assets/images/informacion/cartBlanco.svg" style="width: 25px;">&nbsp;&nbsp;Agregar</span>
+                                    <span class="btn bg-info border shadow px-5 color_border"><img src="../../assets/images/informacion/cartBlanco.svg" style="width: 25px;">&nbsp;&nbsp;Agregar</span>
                                 </div>
                             </div>
                         </div>
                         <div class="col-12 align-self-center">
                             <div class="position-relative">
                                 <!-- <div class="tabla position-absolute d-md-none btn-warning btn-lg "><small> Tabla Nutricional</small></div> -->
-                                <h1 class="font-italic font-weight-bold" style="color: #00D0D2;">Pancake & Waffle <br>- Avena mix</h1>
-                                <p class="mb-5 d-md-none" style="color: #CCCCCD;">Lok</p>
+                                <h1 class="font-italic font-weight-bold color_texto1">Pancake & Waffle <br>- Avena mix</h1>
+                                <p class="mb-5 d-md-none color_texto2">Lok</p>
                                 <div class="row">
                                     <div class="col-6 d-md-none">
-                                        <span class="btn btn-warning border shadow px-4 font-italic font-weight-bold" style="border-radius:1rem; color:rgb(255, 255, 255);">Tabla Nutricional</span>
+                                        <span class="btn btn-warning border shadow px-4 font-italic font-weight-bold color_border">Tabla Nutricional</span>
                                     </div>
                                     <div class="col-6">
                                         <p class="font-weight-bold text-dark text-right text-md-left mr-5 mr-md-0">$15.000</p>
                                     </div>
                                 </div>
                                 
-                                <p class="mt-5" style="color: #CCCCCD;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias magnam nam vitae odit nihil obcaecati, fuga ad, distinctio quidem maiores vel enim consequuntur dolorum aperiam officiis. Consectetur minus maxime inventore.</p>
+                                <p class="mt-5 color_texto2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias magnam nam vitae odit nihil obcaecati, fuga ad, distinctio quidem maiores vel enim consequuntur dolorum aperiam officiis. Consectetur minus maxime inventore.</p>
                             </div>
                         </div>
                         <div class="col-12 align-self-end">
                             <div class="row">
                                 <div class="col-12 col-lg-3">
-                                    <h4 class="text-lg-center font-italic font-weight-bold" style="color: #00D0D2;">Categoria</h4>
-                                    <p style="color: #CCCCCD;">Mercado Sano</p>
+                                    <h4 class="text-lg-center font-italic font-weight-bold color_texto1">Categoria</h4>
+                                    <p class="color_texto2">Mercado Sano</p>
                                 </div>
                                 <div class="col-12 col-lg-6">
                                     <div class="ingre mb-3 ml-lg-2 pl-lg-4 pr-4 pt-3 pt-lg-0">
-                                        <hr class="linea d-lg-none mt-0" style="border-color:#979797;">
-                                        <h4 class="text-lg-center font-italic font-weight-bold" style="color: #00D0D2;">Ingredientes</h4>
-                                        <p style="color: #CCCCCD;">Avena, chocolate</p>
-                                        <hr class="linea d-lg-none mt-0" style="border-color:#979797;">
+                                        <hr class="linea d-lg-none mt-0 color_border2">
+                                        <h4 class="text-lg-center font-italic font-weight-bold color_texto1">Ingredientes</h4>
+                                        <p class="color_texto2">Avena, chocolate</p>
+                                        <hr class="linea d-lg-none mt-0 color_border2">
                                     </div>
                                 </div>
                                 <div class="col-12 col-lg-3">
-                                    <h4 class="text-lg-center font-italic font-weight-bold" style="color: #00D0D2;">Etiquetas</h4>
-                                    <p style="color: #CCCCCD;">Chocolate natural, proteina, nueces fitness</p>
+                                    <h4 class="text-lg-center font-italic font-weight-bold color_texto1">Etiquetas</h4>
+                                    <p class="color_texto2">Chocolate natural, proteina, nueces fitness</p>
                                 </div>
                             </div>
                         </div>
@@ -95,6 +95,19 @@ export default {
 }
 </script>
 <style scoped>
+.color_texto1{
+    color: #00D0D2;
+}
+.color_texto2{
+    color: #CCCCCD;
+}
+.color_border{
+    border-radius:1rem; 
+    color:rgb(255, 255, 255);
+}
+.color_border2{
+    border-color:#979797;
+}
 .linea{
         margin-left: 0px;
         width: 9rem;

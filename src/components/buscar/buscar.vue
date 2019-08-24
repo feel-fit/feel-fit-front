@@ -10,7 +10,7 @@
                         <div class=" col-sm-10">
                             <div class="text-center mb-3">
                                 <div class="mb-5">
-                                    <span class="buscar h2 font-italic">Buscar</span>
+                                    <span class="buscar h2 font-italic font-weight-bold">Buscar</span>
                                     <!-- <hr class="border-dark d-md-none mt-0 w-25"> -->
                                 </div>
                                 <div class="shadow caja_buscar">
