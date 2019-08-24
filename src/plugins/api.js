@@ -18,9 +18,11 @@ function Categories(url = 'categories') {
     update: (id, toUpdate) => axios.put(`${url}/${id}`, toUpdate),
     create: (toCreate) => axios.post(url, toCreate),
     delete: (id) => axios.delete(`${url}/${id}`),
+    getBySlug:(slug)=> axios.get(`${url}?url=${slug}`),
     products: (id) => {
       return {
-        getAll: () => axios.get(`${url}/${id}/products`)
+        getAll: () => axios.get(`${url}/${id}/products?pagination=false`),
+        getPaginate: () => axios.get(`${url}/${id}/products`),
       }
 
     }

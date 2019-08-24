@@ -1,6 +1,6 @@
 <template>
   <section>
-    <div class="container">
+    <div @click="link" class="container">
       <div class="producto row justify-content-between mx-auto shadow pb-3">
         <div class="col-6 col-md-5 col-lg-4">
           <img :src="image" alt="Papas" class="w-100 mx-auto d-block"
@@ -21,54 +21,56 @@
     </div>
   </section>
 </template>
-
 <script>
-    export default {
-        name: "producto",
-        props: {
-            image: {
-                required: true
-            },
-            title: {
-                required: true
-            }
-        },
-        data() {
-            return {}
-        },
+export default {
+  name: 'producto',
+  props: {
+    image: {
+      required: true
+    },
+    title: {
+      required: true
+    },
+    id: {
+      required: true
+    },
+    url: {
+      required: true
     }
+  },
+  data () {
+    return {}
+  },
+  methods: {
+    link () {
+      this.$router.push({ name: 'category', params: { id: this.id, category: this.url } })
+    }
+  }
+}
 </script>
-
 <style lang="scss">
   @import "~bootstrap/scss/bootstrap";
-
   .min-width {
     min-width: 80px;
     @include media-breakpoint-up(md) {
       min-width: 120px;
     }
   }
-
-
   .boton {
     padding: 0rem 19%;
     border-radius: 1rem !important;
   }
-
   .producto {
     border-radius: 1.25rem;
   }
-
   .hr_producto {
     margin-top: 0;
     margin-bottom: 2%;
   }
-
   .text_productos {
     p {
       color: #B2B2B2;
     }
-
     h2 {
       @include media-breakpoint-up(xs) {
         font-size: 20px
@@ -81,6 +83,4 @@
       }
     }
   }
-
-
 </style>

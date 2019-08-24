@@ -3,14 +3,14 @@
     <portada></portada>
     <buscador></buscador>
     <whatsapp/>
-    <producto title="Nuestros Productos nuevos" :image="images.papas"></producto>
+    <producto url="productos-nuevos" title="Nuestros Productos nuevos" :id="1" :image="images.papas"></producto>
     <products-new tag="nuevo" :products="nuevos"></products-new>
     <fresa/>
-    <producto title="Nuestros Productos destacados" :image="images.yogurt"/>
+    <producto url="productos-destacados" title="Nuestros Productos destacados" :id="2" :image="images.yogurt"/>
     <products-new tag="destacado" :products="destacados"></products-new>
     <fresa/>
-    <producto title="Nuestras Cajas Sorpresa" :image="images.sorpresa"/>
-    <products-new tag="destacado" :products="sorpresas"></products-new>
+    <producto url="cajas-sorpresa" title="Nuestras Cajas Sorpresa" :id="3" :image="images.sorpresa"/>
+    <products-new tag="caja sorpresa" :products="sorpresas"></products-new>
 
   </div>
 </template>
@@ -52,16 +52,15 @@
             }
             if (getUserToken() && !this.me) this.$store.dispatch('getMe')
 
-            api.Categories().products(1).getAll().then(response => {
+            api.Categories().products(1).getPaginate().then(response => {
                 this.nuevos = response.data.data
             })
-            api.Categories().products(2).getAll().then(response => {
+            api.Categories().products(2).getPaginate().then(response => {
                 this.destacados = response.data.data
             })
-            api.Any('products?surprise_box=1').getPaginate().then(response => {
+            api.Categories().products(3).getPaginate().then(response => {
                 this.sorpresas = response.data.data
             })
-
         },
         computed: {
             me() {
