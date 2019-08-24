@@ -12,6 +12,35 @@
         </div>
       </div>
       <div class="list-group list-group-flush">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 font-weight-bold font-italic text-center mt-3"><a href="#"><span class="text-dark">Inicio</span></a></div>
+            <div class="col-12 font-weight-bold font-italic text-center mt-3"><a href="#"><span class="text-dark">Búsqueda</span></a></div>
+            <div class="col-12 font-weight-bold font-italic text-center mt-3"><a href="#"><span class="text-dark">Cátalogo</span></a></div>
+            <div class="col-12 font-weight-bold font-italic text-center mt-3"><a href="#"><span class="text-dark">Caja Sorpresa</span></a></div>
+          </div>
+          
+          <div class="row espaciado text-center">
+            <div class="col-12 font-weight-bold font-italic text-center mt-3"><a href="#"><span class="text-dark">Conocenos</span></a></div>
+            <div class="col-12 font-weight-bold font-italic text-center mt-3"><a href="#"><span class="text-dark">Contactos</span></a></div>
+            <div class="col-12 font-weight-bold font-italic text-center mt-3"><a href=""><span class="text-dark">Politicas de envio</span></a></div>
+          </div>
+          <div class="row espaciado">
+            <div class="col-12 text-md-center my-auto">
+                <a href="#"><img src="../assets/images/facebook.svg" alt="Facebook" class="mr-3"></a>
+                <a href="#"><img src="../assets/images/instagram.svg" alt="Instagram"></a>
+                <a href="#"><img src="../assets/images/mail.svg" alt="Email" class="ml-3"></a>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col contenedor-img1">
+            	<img class="float-right" src="../assets/images/conocenos/fresa_copy.svg" alt="Fresa">
+            </div>
+            <div class="col contenedor-img2 mt-n4">
+            	<img class="d-block mx-auto" src="../assets/images/conocenos/fresa_copy.svg" alt="Fresa">
+            </div>
+          </div>
+        </div>
   
       </div>
     </div>
@@ -42,6 +71,15 @@
 
 
 <style lang="scss">
+.espaciado{
+  margin-top: 8rem;
+}
+.contenedor-img1 img{
+  transform: rotate(155deg);
+}
+.contenedor-img2 img{
+  transform: rotate(-138deg);
+}
   #sidebar-wrapper {
     min-height: 100vh;
     margin-left: 0;

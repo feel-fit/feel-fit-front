@@ -6,15 +6,54 @@
                     <div class="float-right">
                         <!-- <whatsapp></whatsapp> -->
                     </div>
-                    <div class="row justify-content-center">
-                        
+                    <div class="row justify-content-center mt-5">
                         <div class=" col-sm-10">
                             <div class="text-center mb-3">
                                 <div class="mb-5">
                                     <span class="buscar h2 font-italic">Buscar</span>
-                                    <hr class="border-dark d-md-none mt-0 w-25">
+                                    <!-- <hr class="border-dark d-md-none mt-0 w-25"> -->
                                 </div>
-                                <input class="inputBuscar form-control" type="search" placeholder="Que te apetece?">
+                                <div class="shadow caja_buscar">
+                                	<div class="row justify-content-center">
+                                		<div class="col-10">
+                                			<div class="row">
+                                			    <div class="col-12">
+                                			        <input class="inputBuscar form-control border-0" type="search" placeholder="Que te apetece?">
+                                			    </div>
+                                			    <div class="col-12 text-right">
+                                			        <span class="font-weight-bold text-dark"><small>PRODUCTOS</small></span>
+                                			    </div>
+                                			    <div class="col-12">
+                                			        <div class="row align-items-center">
+                                			            <div class="col"><img src="../../assets/images/catalogo/wakeup.png" alt="Papas" class="card-img-top p-3"></div>
+                                			            <div class="col"><span>Choco One Pack</span></div>
+                                			            <div class="col-3"><button type="button" class="close p-2" aria-label="Close">
+                                			                <span aria-hidden="true">&times;</span>
+                                			            </button></div>
+                                			        </div>
+                                			    </div>
+                                                <div class="col-12">
+                                			        <div class="row align-items-center">
+                                			            <div class="col"><img src="../../assets/images/catalogo/wakeup.png" alt="Papas" class="card-img-top p-3"></div>
+                                			            <div class="col"><span>Choco One Pack</span></div>
+                                			            <div class="col-3"><button type="button" class="close p-2" aria-label="Close">
+                                			                <span aria-hidden="true">&times;</span>
+                                			            </button></div>
+                                			        </div>
+                                			    </div>
+                                                <div class="col-12">
+                                			        <div class="row align-items-center">
+                                			            <div class="col"><img src="../../assets/images/catalogo/wakeup.png" alt="Papas" class="card-img-top p-3"></div>
+                                			            <div class="col"><span>Choco One Pack</span></div>
+                                			            <div class="col-3"><button type="button" class="close p-2" aria-label="Close">
+                                			                <span aria-hidden="true">&times;</span>
+                                			            </button></div>
+                                			        </div>
+                                			    </div>
+                                			</div>
+                                		</div>
+                                	</div>
+                                </div>
                             </div>
                             <div class="objeto">
                             	<div class="card shadow bg-white  rounded d-flex">
@@ -62,8 +101,11 @@ export default {
 }
 </script>
 <style scoped>
-.inputBuscar:hover{
-    display: none; 
+.caja_buscar{
+    border-radius: 1rem;
+}
+.inputBuscar:focus{
+    border-color: white;
 }
 
 
