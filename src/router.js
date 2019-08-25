@@ -11,7 +11,12 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      component: Home
+      component: Home,
+      meta: {
+        breadcrumb: [
+          { name: 'Inicio' }
+        ]
+      }
     },
     {
       path: '/conocenos',
@@ -24,11 +29,19 @@ export default new Router({
     {
       path: '/categorias/:category',
       name: 'category',
+      props: true,
+      meta: {
+        breadcrumb: [
+          { name: 'Inicio', link: 'home' },
+          { name: 'Categoria', link: 'catalogo' },
+          { name: 'Categoria' },
+        ]
+      },
       
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/Product.vue')
+      component: () => import(/* webpackChunkName: "about" */ './views/Categories.vue')
     },
     {
       path: '/productos',
@@ -36,7 +49,7 @@ export default new Router({
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/Product.vue')
+      component: () => import(/* webpackChunkName: "about" */ './views/Categories.vue')
     },
     {
       path: '/catalogo',

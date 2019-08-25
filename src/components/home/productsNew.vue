@@ -3,13 +3,13 @@
     <div class="container-fluid position-relative my-5">
       <div class="row line-background bg-primary"></div>
       <div class="row justify-content-around flex-row flex-wrap flex-sm-nowrap">
-        <div class="col-12 col-sm align-self-end flex-nowrap flex-row order-3 order-sm-1 ">
+        <div class="col-12 col-sm-auto align-self-end flex-nowrap flex-row order-3 order-sm-1 ">
           <div class="d-flex justify-content-center">
             <font-awesome-icon style="cursor: pointer" @click="prev" icon="angle-left" size="lg" class="mr-3"/>
             <font-awesome-icon style="cursor: pointer" @click="next" icon="angle-right" size="lg"/>
           </div>
         </div>
-        <div class="container  order-1 order-sm-2">
+        <div class="container   order-1 order-sm-2">
           <slick class="row"
                  ref="slick"
                  :options="slickOptions">
@@ -18,7 +18,6 @@
             </div>
           </slick>
         </div>
-        <div class="col-12 col-sm order-2 p-4 order-sm-3"></div>
       </div>
     </div>
   </section>

@@ -21,7 +21,8 @@
         props: {
             product: {
                 required: true,
-                type: Object
+                type: Object,
+             
             },
             tag: {
                 default: 'Nuevo'

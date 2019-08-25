@@ -12,6 +12,12 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { faArrowRight, faAngleLeft, faAngleRight , faBars, faTimes, faSearch} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 window.$ = window.jQuery = require('jquery')
+import { VLazyImagePlugin } from "v-lazy-image";
+import VueBreadcrumbs from 'vue-2-breadcrumbs';
+
+
+Vue.use(VueBreadcrumbs);
+Vue.use(VLazyImagePlugin);
 
 library.add(faArrowRight,faAngleLeft,faAngleRight,faBars,faTimes, faSearch)
 
