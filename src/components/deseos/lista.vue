@@ -17,9 +17,9 @@
                         </div>
                     </div>
                     <div class="col-2"><span class="text-left">Producto</span></div>
-                    <div class="col-4 text-center"><span>Nombre</span></div>
-                    <div class="col-2"><span>Cantidad</span></div>
-                    <div class="col-2"><span>Precio</span></div>
+                    <div class="col-md-3 col-lg-4 text-center"><span>Nombre</span></div>
+                    <div class="col-2 text-lg-center"><span>Cantidad</span></div>
+                    <div class="col-2 text-lg-center"><span>Precio</span></div>
                     <div class="col-1"></div>
                 </div>
                 <!-- Fila de deseos -->
@@ -39,7 +39,7 @@
                             <span class="h6 font-italic font-weight-bold text-primary">Pancake y Waffle <span class="d-none d-md-block">- Avena Mix</span></span><br>
                             <span class="h6 d-none d-md-block">Chocolate 300 Gr - Viva Natur</span>
                         </div>
-                        <div class="col-1 col-sm-2">
+                        <div class="col-1 col-sm-2 ml-2 ml-sm-0">
                             <div class="row">
                                 <div class="border col-12 col-md-4 p-0 rounded text-center"><span></span>-</div>
                                 <div class="col-12 col-md-4 border text-center p-0"><span></span>1</div>
@@ -55,7 +55,7 @@
                             <span>$15.000</span>
                         </div>
                         <div class="col-md-1 d-none d-md-block">
-                            <a href="#"><img src="../../assets/images/fav.svg" alt="Corazon" class="img-fluid"></a>
+                            <a href="#"><img src="../../assets/images/deseos/heart.svg" alt="Corazon" class="img-fluid"></a>
                         </div>
                     </div>
                 </div>
@@ -72,11 +72,11 @@
                 	            <img src="../../assets/images/carrito/pancake.png" class="img-fluid card-img-top rounded-left">
                 	        </div>
                         </div>
-                        <div class="col-3 col-lg-5 col-xl-5">
+                        <div class="col-3 col-lg-5">
                             <span class="h6 font-italic font-weight-bold text-primary">Pancake y Waffle <span class="d-none d-md-block">- Avena Mix</span></span><br>
                             <span class="h6 d-none d-md-block">Chocolate 300 Gr - Viva Natur</span>
                         </div>
-                        <div class="col-1 col-sm-2">
+                        <div class="col-1 col-sm-2 ml-2 ml-sm-0">
                             <div class="row">
                                 <div class="border col-12 col-md-4 p-0 rounded text-center"><span></span>-</div>
                                 <div class="col-12 col-md-4 border text-center p-0"><span></span>1</div>
@@ -92,7 +92,7 @@
                             <span>$15.000</span>
                         </div>
                         <div class="col-md-1 d-none d-md-block">
-                            <a href="#"><img src="../../assets/images/fav.svg" alt="Corazon" class="img-fluid"></a>
+                            <a href="#"><img src="../../assets/images/deseos/heart.svg" alt="Corazon" class="img-fluid"></a>
                         </div>
                     </div>
                 </div>
@@ -109,11 +109,11 @@
                 	            <img src="../../assets/images/carrito/pancake.png" class="img-fluid card-img-top rounded-left">
                 	        </div>
                         </div>
-                        <div class="col-3 col-lg-5 col-xl-5">
+                        <div class="col-3 col-lg-5">
                             <span class="h6 font-italic font-weight-bold text-primary">Pancake y Waffle <span class="d-none d-md-block">- Avena Mix</span></span><br>
                             <span class="h6 d-none d-md-block">Chocolate 300 Gr - Viva Natur</span>
                         </div>
-                        <div class="col-1 col-sm-2">
+                        <div class="col-1 col-sm-2 ml-2 ml-sm-0">
                             <div class="row">
                                 <div class="border col-12 col-md-4 p-0 rounded text-center"><span></span>-</div>
                                 <div class="col-12 col-md-4 border text-center p-0"><span></span>1</div>
@@ -129,7 +129,7 @@
                             <span>$15.000</span>
                         </div>
                         <div class="col-md-1 d-none d-md-block">
-                            <a href="#"><img src="../../assets/images/fav.svg" alt="Corazon" class="img-fluid"></a>
+                            <a href="#"><img src="../../assets/images/deseos/heart.svg" alt="Corazon" class="img-fluid"></a>
                         </div>
                     </div>
                 </div>
@@ -146,11 +146,11 @@
                 	            <img src="../../assets/images/carrito/pancake.png" class="img-fluid card-img-top rounded-left">
                 	        </div>
                         </div>
-                        <div class="col-3 col-lg-5 col-xl-5">
+                        <div class="col-3 col-lg-5">
                             <span class="h6 font-italic font-weight-bold text-primary">Pancake y Waffle <span class="d-none d-md-block">- Avena Mix</span></span><br>
                             <span class="h6 d-none d-md-block">Chocolate 300 Gr - Viva Natur</span>
                         </div>
-                        <div class="col-1 col-sm-2">
+                        <div class="col-1 col-sm-2 ml-2 ml-sm-0">
                             <div class="row">
                                 <div class="border col-12 col-md-4 p-0 rounded text-center"><span></span>-</div>
                                 <div class="col-12 col-md-4 border text-center p-0"><span></span>1</div>
@@ -166,10 +166,11 @@
                             <span>$15.000</span>
                         </div>
                         <div class="col-md-1 d-none d-md-block">
-                            <a href="#"><img src="../../assets/images/fav.svg" alt="Corazon" class="img-fluid"></a>
+                            <a href="#"><img src="../../assets/images/deseos/heart.svg" alt="Corazon" class="img-fluid"></a>
                         </div>
                     </div>
                 </div>
+                
                 
                 <div class="row mt-5">
                     <div class="col-12 text-center text-md-right">
