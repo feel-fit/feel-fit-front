@@ -13,7 +13,9 @@ export default new Vuex.Store({
     categories: [],
     brands: [],
     slides: [],
-    products_in_cart: []
+    products_in_cart: [],
+    open_cart:false,
+    open_menu:false,
   },
   getters: {
     // =computed
@@ -74,6 +76,12 @@ export default new Vuex.Store({
     }
   },
   mutations: {
+    open_cart(state,data){
+      state.open_cart = data
+    },
+    open_menu(state,data){
+      state.open_menu = data
+    },
     set_me (state, data) {
       state.me = data
     },
