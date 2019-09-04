@@ -36,6 +36,9 @@ export default {
     return {}
   },
   mounted () {
+  
+    window.addEventListener('scroll', this.onScroll)
+    
     $(window).scroll(function () {
       if ($(this).scrollTop() > 50) {
         $('.sticky-top').addClass('bg-white')
@@ -46,9 +49,7 @@ export default {
     })
     
   },
-  mounted(){
   
-  },
   computed: {
     open () {
       return this.$store.state.open_cart
@@ -63,7 +64,8 @@ export default {
     },
     open_cart () {
       this.$store.commit('open_cart', !this.open)
-    }
+    },
+   
   }
 }
 </script>

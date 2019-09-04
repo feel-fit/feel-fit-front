@@ -1,6 +1,6 @@
 <template>
-  <div class="card bg-white d-flex position-relative border-0">
-    <v-lazy-image class="card-img-top shadow" style="border-radius: 1rem;"
+  <div @click="link" class="card bg-white d-flex position-relative border-0 link">
+    <v-lazy-image  class="card-img-top shadow" style="border-radius: 1rem;"
                   :src="product.images.length > 0 ? product.images[0].url : imageDefault"
                   :src-placeholder="imageDefault"
     />
@@ -19,7 +19,7 @@
       </div>
     </div>
     <div class="mt-4">
-      <h6 class="Card-title font-italic text-capitalize text-center text-primary font-weight-bold mb-1">
+      <h6 @click="link" class="Card-title font-italic text-capitalize text-center text-primary font-weight-bold mb-1">
         {{product.name}}</h6>
       <p class="card-text text-center" style="color: #CCCCCD;">{{product.price | money}}</p>
     </div>
@@ -44,7 +44,13 @@ export default {
     }
   },
   mounted () {
-    console.log('hola')
+  
+  },
+  methods: {
+    link () {
+      console.log('click')
+      this.$router.push({ name: 'producto', params: { id: this.product.id, slug: this.product.slug } })
+    }
   }
 }
 </script>

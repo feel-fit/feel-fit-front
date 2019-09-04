@@ -44,12 +44,20 @@ export default new Router({
       component: () => import(/* webpackChunkName: "about" */ './views/Categories.vue')
     },
     {
-      path: '/productos',
-      name: 'product',
+      path: '/productos/:slug',
+      props: true,
+      name: 'producto',
+      meta: {
+        breadcrumb: [
+          { name: 'Inicio', link: 'home' },
+          { name: 'Categoria', link: 'catalogo' },
+          { name: 'Categoria' },
+        ]
+      },
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/Categories.vue')
+      component: () => import(/* webpackChunkName: "about" */ './views/Informacion.vue')
     },
     {
       path: '/catalogo',

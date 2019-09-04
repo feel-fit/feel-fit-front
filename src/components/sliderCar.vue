@@ -3,11 +3,16 @@
    <div :class="{'open':open}" class="bg-white shadow" id="sidebarCar-wrapper">
      <div class="container">
        <div class="row">
-         <div class="col-12">
+         <div class="col">
            <div class="mb-5 mt-5">
              <span class="h1 font-italic font-weight-bold text-center pb-1 text-primary">Tu carrito</span>
              <p class="font-weight-bold text-dark">Tiene 4 productos</p>
            </div>
+         </div>
+         <div class="col-auto">
+           <a @click="open_menu" href="#" class="toggle text-body">
+             <font-awesome-icon class="m-4 icon" icon="times"></font-awesome-icon>
+           </a>
          </div>
        </div>
      </div>
@@ -160,17 +165,26 @@ export default {
     open () {
       return this.$store.state.open_cart
     }
+  },
+  methods:{
+    open_menu () {
+      this.$store.commit('open_cart', !this.open)
+    },
   }
 }
 </script>
 <style scoped lang="scss">
   #sidebarCar-wrapper {
-    min-height: 100vh;
+    min-height: 95vh;
     margin-right: 0;
     -webkit-transition: margin .25s ease-out;
     -moz-transition: margin .25s ease-out;
     -o-transition: margin .25s ease-out;
     transition: margin .25s ease-out;
+    display: none;
+    position: fixed;
+    background: white;
+    z-index: 100000;
   }
   #sidebarCar-wrapper .sidebar-heading {
   }
@@ -181,6 +195,7 @@ export default {
     margin-right: -20rem;
     &.open {
       margin-right: 0;
+      display:block
     }
   }
   @media (min-width: 768px) {

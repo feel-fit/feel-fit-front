@@ -100,6 +100,9 @@ export default {
     -moz-transition: margin .25s ease-out;
     -o-transition: margin .25s ease-out;
     transition: margin .25s ease-out;
+    position: fixed;
+    background: white;
+    z-index: 100000;
   }
   #sidebar-wrapper .sidebar-heading {
     padding: 0.875rem 1.25rem;

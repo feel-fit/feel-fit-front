@@ -15,7 +15,9 @@ window.$ = window.jQuery = require('jquery')
 import { VLazyImagePlugin } from "v-lazy-image";
 import VueBreadcrumbs from 'vue-2-breadcrumbs';
 
+var VueScrollTo = require('vue-scrollto');
 
+Vue.use(VueScrollTo)
 Vue.use(VueBreadcrumbs);
 Vue.use(VLazyImagePlugin);
 

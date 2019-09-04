@@ -4,7 +4,7 @@
       <div class="row d-flex justify-conted-around">
         <div class="col-12 mx-auto pl-4">
           <div>
-            <ol class="breadcrumb bg-white">
+            <ol class="breadcrumb mb-0 bg-white">
               <li v-for="(breadcrumb,idx) in breadcrumbList" :key="idx" :class="{'active': !!breadcrumb.link}" class="breadcrumb-item">
                 {{ breadcrumb.name }}
               </li>

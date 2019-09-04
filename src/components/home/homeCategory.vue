@@ -23,7 +23,7 @@
 </template>
 <script>
 export default {
-  name: 'producto',
+  name: 'homeCategory',
   props: {
     image: {
       required: true

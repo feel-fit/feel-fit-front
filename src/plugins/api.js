@@ -24,7 +24,6 @@ function Categories(url = 'categories') {
         getAll: () => axios.get(`${url}/${id}/products?pagination=false`),
         getPaginate: () => axios.get(`${url}/${id}/products`),
       }
-
     }
   }
 }
@@ -37,6 +36,7 @@ function CheckUpdate(value, old) {
 function Products(url = 'products') {
   return {
     getOne: (id) => axios.get(`${url}/${id}`),
+    getBySlug:(slug)=> axios.get(`${url}?slug=${slug}`),
     getAll: () => axios.get(`${url}?pagination=false`),
     getPaginate: () => axios.get(url),
     update: (id, toUpdate) => axios.put(`${url}/${id}`, toUpdate),

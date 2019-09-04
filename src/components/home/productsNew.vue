@@ -14,7 +14,7 @@
                  ref="slick"
                  :options="slickOptions">
             <div v-for="item in products" :key="item.id" class="col-auto">
-              <product :product="item" class="product"></product>
+              <slick-product :product="item" class="product"></slick-product>
             </div>
           </slick>
         </div>
@@ -24,12 +24,13 @@
 </template>
 <script>
 import Slick from 'vue-slick'
-import product from './product'
+import slickProduct from './slickProduct'
+
 
 export default {
   name: 'productsNew',
   components: {
-    product, Slick
+    slickProduct, Slick
   },
   watch: {
     products() {

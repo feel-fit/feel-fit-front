@@ -3,7 +3,7 @@
     <portada></portada>
     <buscador></buscador>
     <whatsapp/>
-    <producto url="productos-nuevos" title="Nuestros Productos nuevos" :id="1" :image="images.papas"></producto>
+    <home-category url="productos-nuevos" title="Nuestros Productos nuevos" :id="1" :image="images.papas"></home-category>
     <products-new tag="nuevo" :products="nuevos"></products-new>
     <fresa/>
     <producto url="productos-destacados" title="Nuestros Productos destacados" :id="2" :image="images.yogurt"/>
@@ -15,11 +15,12 @@
   </div>
 </template>
 <script>
+
     import api from '../plugins/api'
     import {logout, getUserToken, getGuestToken} from './../plugins/auth'
     import portada from '../components/home/portada'
     import buscador from '../components/home/buscador'
-    import producto from '../components/home/producto'
+    import homeCategory from '../components/home/homeCategory'
     import whatsapp from '../components/home/whatsapp'
     import fresa from '../components/home/fresa'
     import productsNew from '../components/home/productsNew'
@@ -41,7 +42,7 @@
             }
         },
         components: {
-            portada, buscador, producto, whatsapp, fresa, productsNew
+            portada, buscador, homeCategory, whatsapp, fresa, productsNew
         },
         mounted() {
             // verificamos el token de invitado

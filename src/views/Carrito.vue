@@ -7,7 +7,7 @@
 <script>
 
 import volver from '../components/products/volver.vue'
-import producto from'../components/carrito/producto.vue'
+import producto from'../components/carrito/homeCategory.vue'
 
 export default {
     data(){
