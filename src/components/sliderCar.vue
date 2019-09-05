@@ -21,16 +21,19 @@
          <div class="row bg-light">
            <div class="col-11 ml-3 mt-3">
              <!-- Fila de carrito - producto adquirido -->
-             <div class="row align-items-center bg-white justify-content-between shadow mb-4" style="border-radius:1rem;">
+             <div v-for="item in cart.items" :key="item.id" class="row align-items-center bg-white justify-content-between shadow mb-4" style="border-radius:1rem;">
                <div class="col-4 px-0">
                  <div class="card border-0">
-                   <img src="../assets/images/carrito/pancake.png" class="img-fluid card-img-top rounded-left">
+                   <v-lazy-image  class="img-fluid card-img-top rounded-left"
+                                  :src="item.images.length > 0 ? item.images[0].url : imageDefault"
+                                  :src-placeholder="imageDefault"
+                   />
                  </div>
                </div>
                <div class="col-8">
                  <div class="row align-items-center">
                    <div class="col-7 mt-n3">
-                     <span class="h6 font-weight-bold font-italic text-primary">Pancake y waffle </span>
+                     <span class="h6 font-weight-bold font-italic text-primary">{{item.name}}</span>
                    </div>
                    <div class="col-5 d-none d-md-block">
                      <button type="button" class="close p-2" aria-label="Close">
@@ -41,72 +44,12 @@
                      <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
                        <div class="btn-group mr-2" role="group" aria-label="Second group">
                          <button type="button" class="bg-white border">-</button>
-                         <button type="button" class="bg-white border">1</button>
+                         <button type="button" class="bg-white border">{{ item.quantity }}</button>
                          <button type="button" class="bg-white border">+</button>
                        </div>
                      </div>
                    </div>
-                   <div class="col-6"><span class="h6 font-weight-bold text-dark">$15.000</span></div>
-                 </div>
-               </div>
-             </div>
-             <!-- Fila de carrito - producto adquirido -->
-             <div class="row align-items-center bg-white justify-content-between shadow mb-4" style="border-radius:1rem;">
-               <div class="col-4 px-0">
-                 <div class="card border-0">
-                   <img src="../assets/images/carrito/pancake.png" class="img-fluid card-img-top rounded-left">
-                 </div>
-               </div>
-               <div class="col-8">
-                 <div class="row align-items-center">
-                   <div class="col-7 mt-n3">
-                     <span class="h6 font-weight-bold font-italic text-primary">Pancake y waffle </span>
-                   </div>
-                   <div class="col-5 d-none d-md-block">
-                     <button type="button" class="close p-2" aria-label="Close">
-                       <span aria-hidden="true">&times;</span>
-                     </button>
-                   </div>
-                   <div class="col-6">
-                     <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-                       <div class="btn-group mr-2" role="group" aria-label="Second group">
-                         <button type="button" class="bg-white border">-</button>
-                         <button type="button" class="bg-white border">1</button>
-                         <button type="button" class="bg-white border">+</button>
-                       </div>
-                     </div>
-                   </div>
-                   <div class="col-6"><span class="h6 font-weight-bold text-dark">$15.000</span></div>
-                 </div>
-               </div>
-             </div>
-             <!-- Fila de carrito - producto adquirido -->
-             <div class="row align-items-center bg-white justify-content-between shadow mb-4" style="border-radius:1rem;">
-               <div class="col-4 px-0">
-                 <div class="card border-0">
-                   <img src="../assets/images/carrito/pancake.png" class="img-fluid card-img-top rounded-left">
-                 </div>
-               </div>
-               <div class="col-8">
-                 <div class="row align-items-center">
-                   <div class="col-7 mt-n3">
-                     <span class="h6 font-weight-bold font-italic text-primary">Pancake y waffle </span>
-                   </div>
-                   <div class="col-5 d-none d-md-block">
-                     <button type="button" class="close p-2" aria-label="Close">
-                       <span aria-hidden="true">&times;</span>
-                     </button>
-                   </div>
-                   <div class="col-6">
-                     <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-                       <div class="btn-group mr-2" role="group" aria-label="Second group">
-                         <button type="button" class="bg-white border">-</button>
-                         <button type="button" class="bg-white border">1</button>
-                         <button type="button" class="bg-white border">+</button>
-                       </div>
-                     </div>
-                   </div>
-                   <div class="col-6"><span class="h6 font-weight-bold text-dark">$15.000</span></div>
+                   <div class="col-6"><span class="h6 font-weight-bold text-dark">{{ item.price }}</span></div>
                  </div>
                </div>
              </div>
@@ -134,7 +77,7 @@
          <div class="row border-top pt-4">
            <div class="col-6">
              <span class="font-italic d-block mb-2 font-weight-bold" style="color:#CCCCCD;">Precio Total</span>
-             <span class=" font-weight-bold font-italic text-dark d-block h4">$60.000</span>
+             <span class=" font-weight-bold font-italic text-dark d-block h4">{{total | money}}</span>
            </div>
            <div class="col-6">
              <span class="btn btn-primary p-3 text-white font-italic font-weight-bold" style="border-radius:30px;">Ir a Pagar</span>
@@ -147,6 +90,8 @@
 </template>
 <script>
 import logo from './../assets/images/logo_menu.svg'
+import sumBy from 'lodash/sumBy'
+import imageDefault from './../assets/images/producto.png'
 
 export default {
   name: 'slider',
@@ -154,8 +99,8 @@ export default {
     return {
       images: {
         logo: logo,
-        
-      }
+      },
+      imageDefault
     }
   },
   mounted () {
@@ -164,6 +109,14 @@ export default {
   computed: {
     open () {
       return this.$store.state.open_cart
+    },
+    cart(){
+      return this.$store.state.cart
+    },
+    total(){
+      return sumBy(this.cart,item=>{
+        return item.quantity * item.price
+      })
     }
   },
   methods:{

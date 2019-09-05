@@ -14,8 +14,11 @@ export default new Vuex.Store({
     brands: [],
     slides: [],
     products_in_cart: [],
-    open_cart:false,
-    open_menu:false,
+    open_cart: false,
+    open_menu: false,
+    cart: {
+      items: [],
+    }
   },
   getters: {
     // =computed
@@ -68,18 +71,12 @@ export default new Vuex.Store({
         commit('set_categories', response.data.data)
       })
     },
-    addToCart ({ state, commit }, data) {
-      commit('add_to_cart', data)
-    },
-    removeProductCart ({ state, commit }, data) {
-      commit('remove_product_cart', data)
-    }
   },
   mutations: {
-    open_cart(state,data){
+    open_cart (state, data) {
       state.open_cart = data
     },
-    open_menu(state,data){
+    open_menu (state, data) {
       state.open_menu = data
     },
     set_me (state, data) {
@@ -89,21 +86,26 @@ export default new Vuex.Store({
       //data = data.filter(product => product.id)
       state.products_in_cart = data
     },
-    add_to_cart (state, data) {
-      let product = state.products_in_cart.find(item => {
-        if (item.id === data.id && item.variantSelected === data.variantSelected) return item
+    addToCart (state, data) {
+      let product = state.cart.items.find(item => {
+        if (item.id === data.id) return item
       })
       if (product) {
         // producto existe ya en el carrito
-        product.quantity = data.quantity + product.quantity
+        if (!data.quantity) {
+          product.quantity++
+        } else {
+          product.quantity = data.quantity
+        }
       } else {
-        Vue.set(data, 'quantity', data.quantity)
-        state.products_in_cart.push(data)
+        Vue.set(data, 'quantity', ( data.quantity || 1 ))
+        state.cart.items.push(data)
       }
+      state.open_cart = true
     },
-    remove_product_cart (state, data) {
+    removeProductCart (state, data) {
       state.products_in_cart = state.products_in_cart.filter(item => {
-        return item.id !== data.id || (item.id === data.id && item.variantSelected !== data.variantSelected)
+        return item.id !== data.id
       })
     },
     set_slides (state, data) {

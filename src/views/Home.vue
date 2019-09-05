@@ -6,12 +6,11 @@
     <home-category url="productos-nuevos" title="Nuestros Productos nuevos" :id="1" :image="images.papas"></home-category>
     <products-new tag="nuevo" :products="nuevos"></products-new>
     <fresa/>
-    <producto url="productos-destacados" title="Nuestros Productos destacados" :id="2" :image="images.yogurt"/>
+    <home-category url="productos-destacados" title="Nuestros Productos destacados" :id="2" :image="images.yogurt"/>
     <products-new tag="destacado" :products="destacados"></products-new>
     <fresa/>
-    <producto url="cajas-sorpresa" title="Nuestras Cajas Sorpresa" :id="3" :image="images.sorpresa"/>
+    <home-category url="cajas-sorpresa" title="Nuestras Cajas Sorpresa" :id="3" :image="images.sorpresa"/>
     <products-new tag="caja sorpresa" :products="sorpresas"></products-new>
-
   </div>
 </template>
 <script>
@@ -28,16 +27,17 @@
     import sorpresa from '../assets/images/sorpresa.png'
     import papas from './../assets/images/producto1.png'
     import yogurt from './../assets/images/destacados.png'
+    import imageDefault from './../assets/images/producto.png'
 
     export default {
         name: 'home',
         data() {
             return {
-                nuevos: [],
-                destacados: [],
-                sorpresas: [],
+                nuevos: [{images: [{ url: imageDefault }],price:0}],
+                destacados: [{images: [{ url: imageDefault }],price:0}],
+                sorpresas: [{images: [{ url: imageDefault }],price:0}],
                 images: {
-                    sorpresa, papas, yogurt
+                    sorpresa, papas, yogurt,imageDefault
                 }
             }
         },
@@ -55,12 +55,12 @@
 
             api.Categories().products(1).getPaginate().then(response => {
                 this.nuevos = response.data.data
-            })
-            api.Categories().products(2).getPaginate().then(response => {
+              api.Categories().products(2).getPaginate().then(response => {
                 this.destacados = response.data.data
-            })
-            api.Categories().products(3).getPaginate().then(response => {
-                this.sorpresas = response.data.data
+                api.Categories().products(3).getPaginate().then(response => {
+                  this.sorpresas = response.data.data
+                })
+              })
             })
         },
         computed: {
