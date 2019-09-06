@@ -3,7 +3,7 @@
     <volver></volver>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-12 col-md-6">
+        <div class="col-12 px-0 col-md-6">
           <div class="h-100 w-100 d-flex align-items-center">
             <div class="card bg-white d-flex position-relative border-0">
               <v-lazy-image class="img-fluid"
@@ -112,7 +112,7 @@ export default {
   },
   mounted () {
     console.log(this.id, this.slug)
-    
+
     if (this.id) {
       api.Products().getOne(this.id).then(response => {
         this.product = response.data.data
@@ -120,7 +120,7 @@ export default {
     } else {
       api.Products().getBySlug(this.slug).then(response => {
         this.product = response.data.data[0]
-        
+
       }).catch()
     }
   },
@@ -129,61 +129,61 @@ export default {
       this.$store.commit('addToCart', this.product);
     }
   }
-  
+
 }
 </script>
 <style scoped>
   .btn{
     cursor: pointer;
   }
-  
+
   .color_texto1{
     color: #00D0D2;
   }
-  
+
   .color_texto2{
     color: #CCCCCD;
   }
-  
+
   .color_border{
     border-radius: 1rem;
     color:         rgb(255, 255, 255);
   }
-  
+
   .car{
     left:          10%;
     bottom:        6%;
     border-radius: 2rem;
   }
-  
+
   .corazon{
     left:          77%;
     bottom:        6%;
     border-radius: 2rem;
   }
-  
+
   @media (min-width: 576px){
     .car{
       bottom: 9%;
     }
-    
+
     .corazon{
       left:          77%;
       bottom:        9%;
       border-radius: 50%;
     }
   }
-  
+
   @media (min-width: 768px){
     .car, .corazon{
       bottom: 7%;
     }
   }
-  
+
   @media (min-width: 992px){
     .car, .corazon{
       bottom: 7%;
     }
-    
+
   }
 </style>
