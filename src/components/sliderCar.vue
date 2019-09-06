@@ -6,7 +6,7 @@
          <div class="col">
            <div class="mb-5 mt-5">
              <span class="h1 font-italic font-weight-bold text-center pb-1 text-primary">Tu carrito</span>
-             <p class="font-weight-bold text-dark">Tiene 4 productos</p>
+             <p class="font-weight-bold text-dark">Tiene {{quantityCart}} productos</p>
            </div>
          </div>
          <div class="col-auto">
@@ -100,7 +100,7 @@ export default {
       images: {
         logo: logo,
       },
-      imageDefault
+      imageDefault,
     }
   },
   mounted () {
@@ -123,6 +123,11 @@ export default {
     open_menu () {
       this.$store.commit('open_cart', !this.open)
     },
+    quantityCart(){
+      return sumBy(this.$store.state.cart.items,item=>{
+        return item.quantity
+      })
+    }
   }
 }
 </script>

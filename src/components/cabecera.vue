@@ -13,7 +13,7 @@
         <div class="col">
           <div @click="open_cart" class="navbar-brand d-flex justify-content-end d-flex-inline float-right">
             <img src="../assets/images/cart.svg" alt="logo" class="w-100 icon">
-            <span class="badg badge-icon badge-pill badge-danger">{{quantityCart}}</span>
+            <span v-if="quantityCart > 0" class="badg badge-icon badge-pill badge-danger">{{quantityCart}}</span>
           </div>
           <a class="navbar-brand justify-content-end d-flex-inline float-right d-none d-md-flex" href="#!">
             <img src="../assets/images/perfil.svg" alt="logo" class="w-100 icon"> <span class="ml-2 text-body small">Perfil</span>

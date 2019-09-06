@@ -41,7 +41,7 @@
             <div class="col-12 align-self-center">
               <div class="position-relative">
                 <!-- <div class="tabla position-absolute d-md-none btn-warning btn-lg "><small> Tabla Nutricional</small></div> -->
-                <h1 class="font-italic font-weight-bold color_texto1">{{product.name}}</h1>
+                <h1 class="font-italic text-capitalize font-weight-bold color_texto1">{{product.name}}</h1>
                 <p class="mb-5 d-md-none color_texto2">{{product.brand}}</p>
                 <div class="row">
                   <div class="col-6 d-md-none">
