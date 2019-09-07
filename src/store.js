@@ -86,6 +86,9 @@ export default new Vuex.Store({
       //data = data.filter(product => product.id)
       state.products_in_cart = data
     },
+    setCart(state, data){
+      state.cart = data
+    },
     addToCart (state, data) {
       let product = state.cart.items.find(item => {
         if (item.id === data.id) return item
@@ -104,7 +107,7 @@ export default new Vuex.Store({
       state.open_cart = true
     },
     removeProductCart (state, data) {
-      state.products_in_cart = state.products_in_cart.filter(item => {
+      state.cart.items = state.cart.items.filter(item => {
         return item.id !== data.id
       })
     },

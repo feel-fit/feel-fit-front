@@ -35,7 +35,8 @@ export default {
     link () {
       console.log('click')
       this.$router.push({ name: 'producto', params: { id: this.product.id, slug: this.product.slug } })
-    }
+    },
+    
   }
 }
 </script>

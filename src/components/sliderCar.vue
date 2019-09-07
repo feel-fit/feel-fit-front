@@ -39,31 +39,35 @@
                         </div>
                         <div class="col-8">
                           <div class="row align-items-center">
-                            <div class="col-7 mt-n3">
-                              <span class="h6 font-weight-bold font-italic text-primary">{{item.name}}</span>
+                            <div class="col mt-n2">
+                              <span class="h6 text-capitalize font-weight-bold font-italic text-primary">{{item.name}}</span>
                             </div>
-                            <div class="col-5 d-none d-md-block">
-                              <button type="button" class="close p-2" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
+                            <div class=" mt-n4">
+                              <button @click="remove_product_cart(item)" type="button" class="close p-3" aria-label="Close">
+                                <small aria-hidden="true">&times;</small>
                               </button>
                             </div>
-                            <div class="col-6">
-                              <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-                                <div class="btn-group mr-2" role="group" aria-label="Second group">
-                                  <button type="button" class="bg-white border">-</button>
-                                  <button type="button" class="bg-white border">{{ item.quantity }}</button>
-                                  <button type="button" class="bg-white border">+</button>
+                          </div>
+                          <div class="row align-items-center">
+                            <div class="col">
+                              <div class="input-group input-group-sm mr-2" role="group" aria-label="Second group">
+                                <div @click="item.quantity--" class="input-group-prepend">
+                                  <button type="button" class="btn btn-outline-secondary">-</button>
+                                </div>
+                                <input type="text" v-model="item.quantity" class="form-control btn btn-outline-secondary">
+                                <div @click="item.quantity++" class="input-group-append">
+                                  <button class="btn btn-outline-secondary" type="button">+</button>
                                 </div>
                               </div>
                             </div>
-                            <div class="col-6"><span class="h6 font-weight-bold text-dark">{{ item.price }}</span></div>
+                            <div class="col-auto"><span class="h6 small font-weight-bold text-dark">{{ item.price | money }}</span>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
                   <!-- <div class="car_footer" style="height: 432px;"></div> -->
-
                 </div>
               </div>
             </div>
@@ -78,35 +82,29 @@
                     <li>Compra minima de productos $15.000.</li>
                     <li>Espera tus productos aproximadamente 1 hora y media después de realizado tu pago.</li>
                     <li>Puedes realizar tus pedidos entre las 8 am y 8:30 pm. Si haces tu pedido por fuera de estos
-                      horarios
-                      nos comunicaremos contigo al día siguiente y programaremos la hora de entrega.
+                      horarios nos comunicaremos contigo al día siguiente y programaremos la hora de entrega.
                     </li>
                     <li> Los Domingos y festivos también te llevamos tu domicilio pero nos comunicamos contigo para
-                      programar
-                      la hora de entrega.
+                      programar la hora de entrega.
                     </li>
                     <li> Si vives en la ciudad de Armenia el sistema automáticamente le sumara $1.500 a tu pedido por el
                       domicilio.
                     </li>
                     <li> Si vives en uno de los siguientes municipios: Calarcá, Circasia, La Tebaida, Montenegro o
-                      Quimbaya el
-                      domicilio tendrá un costo de $8,000 y nos comunicaremos contigo después de realizado tu pago para
-                      programar la hora de entrega.
+                      Quimbaya el domicilio tendrá un costo de $8,000 y nos comunicaremos contigo después de realizado
+                      tu pago para programar la hora de entrega.
                     </li>
                     <li> Puedes realizar tu compra desde cualquier lugar del país, te enviaremos tu pedido a través de
-                      empresa
-                      de mensajería y el pago del flete lo realizas contra entrega.
+                      empresa de mensajería y el pago del flete lo realizas contra entrega.
                     </li>
                     <li>Por políticas de calidad no enviamos productos que requieren refrigeración en los pedidos
-                      despachados
-                      mediante empresas de mensajería.
+                      despachados mediante empresas de mensajería.
                     </li>
                   </ul>
                 </div>
               </div>
             </div>
-
-            <div class="col-12 border-top pt-4 bg-white align-self-end position-fixed">
+            <div class="col-12 border-top pt-4 bg-white align-self-end total position-fixed">
               <div class="row">
                 <div class="col">
                   <span class="font-italic d-block mb-2 font-weight-bold" style="color:#CCCCCD;">Precio Total</span>
@@ -116,7 +114,6 @@
                   <span class="btn btn-primary p-3 text-white font-italic font-weight-bold" style="border-radius:30px;">Ir a Pagar</span>
                 </div>
               </div>
-
             </div>
           </div>
         </div>
@@ -125,58 +122,71 @@
   </div>
 </template>
 <script>
-    import logo from './../assets/images/logo_menu.svg'
-    import sumBy from 'lodash/sumBy'
-    import imageDefault from './../assets/images/producto.png'
+import logo from './../assets/images/logo_menu.svg'
+import sumBy from 'lodash/sumBy'
+import imageDefault from './../assets/images/producto.png'
 
-    export default {
-        name: 'slider',
-        data() {
-            return {
-                images: {
-                    logo: logo,
-                },
-                imageDefault,
-            }
-        },
-        mounted() {
-
-        },
-        computed: {
-            open() {
-                return this.$store.state.open_cart
-            },
-            cart() {
-                return this.$store.state.cart
-            },
-            total() {
-                return sumBy(this.cart, item => {
-                    return item.quantity * item.price
-                })
-            },
-            quantityCart() {
-                return sumBy(this.$store.state.cart.items, item => {
-                    return item.quantity
-                })
-            }
-        },
-        methods: {
-            open_menu() {
-                this.$store.commit('open_cart', !this.open)
-            },
-
-        }
+export default {
+  name: 'slider',
+  data () {
+    return {
+      images: {
+        logo: logo,
+      },
+      imageDefault,
     }
+  },
+  mounted () {
+  
+  },
+  computed: {
+    open () {
+      return this.$store.state.open_cart
+    },
+    cart () {
+      return this.$store.state.cart
+    },
+    total () {
+      return sumBy(this.cart.items, item => {
+        return item.quantity * item.price
+      })
+    },
+    quantityCart () {
+      return sumBy(this.$store.state.cart.items, item => {
+        return item.quantity
+      })
+    }
+  },
+  watch: {
+    cart: {
+      handler: function (newValue) {
+        this.$store.commit('setCart', newValue)
+      },
+      deep: true
+    }
+  },
+  methods: {
+    open_menu () {
+      this.$store.commit('open_cart', !this.open)
+    },
+    remove_product_cart(item){
+      this.$store.commit('removeProductCart',item)
+    }
+    
+  }
+}
 </script>
 <style scoped lang="scss">
-  .rounded-left{
+  .rounded-left {
     border-top-left-radius: 1rem !important;
     border-bottom-left-radius: 1rem !important;
   }
-  .card{
+  .card {
     background-color: inherit !important;
   }
-
+  .total {
+    z-index: 1000;
+  }
   #sidebarCar-wrapper {
     min-height: 100vh;
     margin-right: 0;
@@ -190,39 +200,31 @@
     z-index: 100000;
     overflow-y: auto;
   }
-
   #sidebarCar-wrapper .sidebar-heading {
   }
-
   #sidebarCar-wrapper {
     width: 20rem;
   }
-
   #sidebarCar-wrapper {
     margin-right: -20rem;
-
     &.open {
       margin-right: 0;
       display: block
     }
   }
-
   @media (min-width: 768px) {
     #sidebarCar-wrapper {
       margin-right: -20rem;
-
       &.open {
         margin-right: 0;
       }
     }
   }
-
   .position-fixed {
     width: 320px;
     bottom: 0;
   }
-
-  .politicas{
+  .politicas {
     margin-bottom: 100px;
   }
 </style>
