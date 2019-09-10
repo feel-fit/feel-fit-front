@@ -41,7 +41,8 @@ function Products(url = 'products') {
     getPaginate: () => axios.get(url),
     update: (id, toUpdate) => axios.put(`${url}/${id}`, toUpdate),
     create: (toCreate) => axios.post(url, toCreate),
-    delete: (id) => axios.delete(`${url}/${id}`)
+    delete: (id) => axios.delete(`${url}/${id}`),
+    search: (tosearch) => axios.post(`${url}/search/?search=${tosearch}`)
   }
 }
 
