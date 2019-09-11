@@ -91,11 +91,18 @@ function ErrorResponse(response) {
   }
 }
 
+function Departments(url='departments'){
+  return {
+    getAll: ()=>axios.get(`${url}`)
+  }
+}
+
 export default {
   CheckUpdate,
   Categories,
   ErrorResponse,
   Products,
+  Departments,
   Any,
   SuccessResponse,
   Token,
