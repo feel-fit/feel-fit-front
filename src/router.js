@@ -73,7 +73,12 @@ export default new Router({
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "checkout" */ './views/pagos.vue')
+      component: () => import(/* webpackChunkName: "checkout" */ './views/pagos.vue'),
+        children: [
+            { path: '/', component: () => import('./components/pagos/informacionCliente.vue') },
+            { path: 'datos', component: () => import('./components/pagos/datosEnvio.vue') },
+            { path: 'forma-pago', component: () => import('./components/pagos/seleccionarPago.vue') }
+        ]
     },
     {
       path: '/buscar',
