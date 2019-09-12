@@ -94,12 +94,20 @@ export default new Router({
       component: () => import(/* webpackChunkName: "about" */ './views/Deseos.vue')
     },
     {
-      path: '/404',
-      name: 'not-found',
+      path: '/404-product',
+      name: 'not-found-product',
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/404.vue')
+      component: () => import(/* webpackChunkName: "about" */ './views/404-productos.vue')
+    },
+    {
+      path: '/404-box',
+      name: 'not-found-box',
+      // route level code-splitting
+      // this generates a separate chunk (about.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import(/* webpackChunkName: "about" */ './views/404-cajas.vue')
     }
   ]
 })
