@@ -37,7 +37,6 @@ export default new Router({
           { name: 'Categoria' },
         ]
       },
-      
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
@@ -93,6 +92,14 @@ export default new Router({
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import(/* webpackChunkName: "about" */ './views/Deseos.vue')
+    },
+    {
+      path: '/404',
+      name: 'not-found',
+      // route level code-splitting
+      // this generates a separate chunk (about.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import(/* webpackChunkName: "about" */ './views/404.vue')
     }
   ]
 })

@@ -26,7 +26,7 @@ import fresa from './../../assets/images/conocenos/fresa2.png'
                 hoja: hoja,
                 fresa:fresa
             }
-        },
+        }
     }
 </script>
 
