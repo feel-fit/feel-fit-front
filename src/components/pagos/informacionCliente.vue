@@ -39,13 +39,15 @@
                             <label for="telefono">TELEFONO</label>
                             <input type="text" class="form-control" id="telefono">
                         </div>
-                        <div class="col-md-12 text-left">
-                            <span class="text-dark">
-                                <font-awesome-icon icon="arrow-right" size="xs"/> Regresa a comprar
-                            </span>
-                        </div>
-                        <div class="col-md-12 text-right">
-                            <button type="submit" class="btn btn-primary text-white  btn-lg my-4 w-md-50 ">CONTINUA A ENVIO</button>
+                        <div class="form-group col-md-12">
+                            <div class="row">
+                                <div class="col-sm-6  align-self-center ">
+                                    <span class="text-dark "><font-awesome-icon icon="arrow-right" size="xs"/> Regresa a comprar</span>
+                                </div>
+                                <div class="col-sm-6  text-right">
+                                    <button type="submit" class="btn btn-primary text-white  btn-lg w-md-100 ">CONTINUA A ENVIO</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </form>
