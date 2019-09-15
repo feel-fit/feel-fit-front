@@ -111,7 +111,7 @@
                   <span class=" font-weight-bold font-italic text-dark d-block h4">{{total | money}}</span>
                 </div>
                 <div class="col">
-                  <span class="btn btn-primary p-3 text-white font-italic font-weight-bold" style="border-radius:30px;">Ir a Pagar</span>
+                  <span @click="pagar" class="btn btn-primary p-3 text-white font-italic font-weight-bold" style="border-radius:30px;">Ir a Pagar</span>
                 </div>
               </div>
             </div>
@@ -171,6 +171,12 @@ export default {
     },
     remove_product_cart(item){
       this.$store.commit('removeProductCart',item)
+    },
+    
+    pagar(){
+      this.$router.push('/pagos')
+      this.open = false
+      this.open_menu()
     }
     
   }
