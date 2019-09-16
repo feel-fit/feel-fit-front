@@ -9,7 +9,7 @@ import store from './store'
 import './registerServiceWorker'
 import './assets/styles/sass/app.scss'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faArrowRight, faAngleLeft, faAngleRight , faBars, faTimes, faSearch} from '@fortawesome/free-solid-svg-icons'
+import { faArrowRight,faArrowLeft, faAngleLeft, faAngleRight , faBars, faTimes, faSearch} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 window.$ = window.jQuery = require('jquery')
 import { VLazyImagePlugin } from "v-lazy-image";
@@ -21,7 +21,7 @@ Vue.use(VueScrollTo)
 Vue.use(VueBreadcrumbs);
 Vue.use(VLazyImagePlugin);
 
-library.add(faArrowRight,faAngleLeft,faAngleRight,faBars,faTimes, faSearch)
+library.add(faArrowRight,faArrowLeft,faAngleLeft,faAngleRight,faBars,faTimes, faSearch)
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 

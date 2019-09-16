@@ -58,7 +58,7 @@
                                 </p>
                             </div>
                             <div class="col-sm-3 div-va justify-content-lg-end">
-                                <p class="mr-5 price font-weight-bold caja">
+                                <p class="mr-5 price font-weight-bold ">
                                     $ 3000
                                 </p>
                             </div>
@@ -80,7 +80,7 @@
                                 </p>
                             </div>
                             <div class="col-sm-3 div-va justify-content-lg-end">
-                                <p class="mr-5 price font-weight-bold caja">
+                                <p class="mr-5 price font-weight-bold ">
                                     $ 3000
                                 </p>
                             </div>
@@ -102,7 +102,7 @@
                                 </p>
                             </div>
                             <div class="col-sm-3 div-va justify-content-lg-end">
-                                <p class="mr-5 price font-weight-bold caja">
+                                <p class="mr-5 price font-weight-bold ">
                                     $ 3000
                                 </p>
                             </div>
@@ -112,7 +112,7 @@
 
                 <div class="row p-5">
                     <div class="col-sm-6  align-self-center ">
-                        <span class="text-dark "><font-awesome-icon icon="arrow-right" size="xs"/> Regresa a comprar</span>
+                        <span class="text-dark "><font-awesome-icon icon="arrow-left" size="xs"/> Regresa a comprar</span>
                     </div>
                     <div class="col-sm-6  text-right">
                         <button type="submit" class="btn btn-primary text-white  btn-lg w-md-100 ">CONTINUA A ENVIO</button>
