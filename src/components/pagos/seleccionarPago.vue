@@ -18,67 +18,51 @@
 
                 <div class="row pt-4">
                     <div class="col-sm-12">
-                        <div class="row my-li-own mb-3">
+                        <div class="row my-li-own mb-3 p-4 ">
                             <div class="col-sm-3 px-0 align-self-center">
                                 <div class="custom-control custom-radio  text-center">
-                                    <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
-                                    <label class="custom-control-label" for="customRadio1"></label>
+                                    <input type="radio" id="domicilio-armenia" name="customRadio" class="custom-control-input">
+                                    <label class="custom-control-label" for="domicilio-armenia"></label>
                                 </div>
                             </div>
-                            <div class="col-sm-6">
+                            <div class="col-sm-9">
                                 <h4 class="text-primary">Domicilio en Armenia</h4>
-                                <p>
-                                    Debe ser pagado contraentrega en efectivo al domicilio.
+                                <p class="text-muted">
+                                    Debe ser pagado contraentrega en efectivo al domiciliario.
                                     Revise las politicas de envio.
-                                </p>
-                            </div>
-                            <div class="col-sm-3 div-va justify-content-lg-end">
-                                <p class="mr-5 price font-weight-bold">
-                                    $ 3000
                                 </p>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-12">
-                        <div class="row my-li-own mb-3">
+                        <div class="row my-li-own mb-3 p-4">
                             <div class="col-sm-3 px-0 align-self-center">
                                 <div class="custom-control custom-radio  text-center">
-                                    <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
-                                    <label class="custom-control-label" for="customRadio1"></label>
+                                    <input type="radio" id="pago-pse" name="customRadio" class="custom-control-input">
+                                    <label class="custom-control-label" for="pago-pse"></label>
                                 </div>
                             </div>
-                            <div class="col-sm-6">
-                                <h4 class="text-primary">Domicilio en Armenia</h4>
-                                <p>
-                                    Debe ser pagado contraentrega en efectivo al domicilio.
-                                    Revise las politicas de envio.
-                                </p>
-                            </div>
-                            <div class="col-sm-3 div-va justify-content-lg-end">
-                                <p class="mr-5 price font-weight-bold">
-                                    $ 3000
+                            <div class="col-sm-9">
+                                <h4 class="text-primary">Pago con PSE</h4>
+                                <p class="text-muted">
+                                    Las transacciones son seguras y estan cifradas. Luego de hacer click en "finalizar pedido",
+                                  ser&aacute;s redirigido a Davivienda para completar tu compra de forma segura.
                                 </p>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-12">
-                        <div class="row my-li-own mb-3">
+                        <div class="row my-li-own mb-3 p-4">
                             <div class="col-sm-3 px-0 align-self-center">
                                 <div class="custom-control custom-radio  text-center">
-                                    <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
-                                    <label class="custom-control-label" for="customRadio1"></label>
+                                    <input type="radio" id="pago-credito" name="customRadio" class="custom-control-input">
+                                    <label class="custom-control-label" for="pago-credito"></label>
                                 </div>
                             </div>
-                            <div class="col-sm-6">
-                                <h4 class="text-primary">Domicilio en Armenia</h4>
-                                <p>
-                                    Debe ser pagado contraentrega en efectivo al domicilio.
-                                    Revise las politicas de envio.
-                                </p>
-                            </div>
-                            <div class="col-sm-3 div-va justify-content-lg-end">
-                                <p class="mr-5 price font-weight-bold ">
-                                    $ 3000
+                            <div class="col-sm-9">
+                                <h4 class="text-primary">Paga con tarjeta de cr&eacute;dito</h4>
+                                <p class="text-muted">
+                                    Ser&aacute;s redirigido a Davivienda para completar tu compra de forma segur&aacute;.
                                 </p>
                             </div>
                         </div>
@@ -89,7 +73,7 @@
                     <div class="col-12">
                         <div class="custom-control custom-checkbox">
                             <input type="checkbox" class="custom-control-input" id="facturaCheck">
-                            <label class="custom-control-label" for="facturaCheck">Necesita Factura</label>    
+                            <label class="custom-control-label" for="facturaCheck">Necesita Factura</label>
                         </div>
                     </div>
                     <div class="col-12">
@@ -97,17 +81,17 @@
                             <input type="checkbox" class="custom-control-input" id="condiciones">
                             <label class="custom-control-label" for="condiciones">
                                 He le&iacute;do  estoy de acuerdo con los <span class="font-weight-bold text-primary">t&eacute;rminos y cond&iacute;ciones </span> y <span class="font-weight-bold text-primary">politicas de privaidad.</span>
-                            </label>    
+                            </label>
                         </div>
                     </div>
                 </div>
 
                 <div class="row p-5">
                     <div class="col-sm-6  align-self-center ">
-                        <span class="text-dark "><font-awesome-icon icon="arrow-left" size="xs"/> Regresa a comprar</span>
+                        <a href="#" @click="back" class="text-dark text-decoration-none"><font-awesome-icon icon="arrow-left" size="xs"/> Regresa a comprar</a>
                     </div>
                     <div class="col-sm-6  text-right">
-                        <button type="submit" class="btn btn-primary text-white  btn-lg w-md-100 ">CONTINUA A ENVIO</button>
+                        <button @click="next" type="submit" class="btn btn-primary text-white  btn-lg w-md-100 text-uppercase">Realizar pedido</button>
                     </div>
                 </div>
             </div>
@@ -118,7 +102,15 @@
 
 <script>
     export default {
-        name: "seleccionarPago"
+        name: "seleccionarPago",
+        methods:{
+            next(){
+
+            },
+            back(){
+                $('#envios-tab').tab('show');
+            }
+        }
     }
 </script>
 

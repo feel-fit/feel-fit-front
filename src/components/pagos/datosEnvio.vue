@@ -43,16 +43,16 @@
 
                 <div class="row pt-4">
                     <div class="col-sm-12">
-                        <div class="row my-li-own mb-3">
+                        <div class="row my-li-own mb-3 p-4">
                             <div class="col-sm-3 px-0 align-self-center">
                                 <div class="custom-control custom-radio  text-center">
-                                    <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
-                                    <label class="custom-control-label" for="customRadio1"></label>
+                                    <input type="radio" id="armenia" name="customRadio" class="custom-control-input">
+                                    <label class="custom-control-label" for="armenia"></label>
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <h4 class="text-primary">Domicilio en Armenia</h4>
-                                <p>
+                                <p class="text-muted">
                                     Debe ser pagado contraentrega en efectivo al domicilio.
                                     Revise las politicas de envio.
                                 </p>
@@ -65,21 +65,21 @@
                         </div>
                     </div>
                     <div class="col-sm-12">
-                        <div class="row my-li-own mb-3">
+                        <div class="row my-li-own mb-3 p-4">
                             <div class="col-sm-3 px-0 align-self-center">
                                 <div class="custom-control custom-radio  text-center">
-                                    <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
-                                    <label class="custom-control-label" for="customRadio1"></label>
+                                    <input type="radio" id="quindio" name="customRadio" class="custom-control-input">
+                                    <label class="custom-control-label" for="quindio"></label>
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <h4 class="text-primary">Domicilio en Armenia</h4>
-                                <p>
+                                <p class="text-muted">
                                     Debe ser pagado contraentrega en efectivo al domicilio.
                                     Revise las politicas de envio.
                                 </p>
                             </div>
-                            <div class="col-sm-3 div-va justify-content-lg-end">
+                            <div class="col-sm-3 div-va justify-content-lg-end d-flex ">
                                 <p class="mr-5 price font-weight-bold ">
                                     $ 3000
                                 </p>
@@ -87,16 +87,16 @@
                         </div>
                     </div>
                     <div class="col-sm-12">
-                        <div class="row my-li-own mb-3">
+                        <div class="row my-li-own mb-3 p-4">
                             <div class="col-sm-3 px-0 align-self-center">
                                 <div class="custom-control custom-radio  text-center">
-                                    <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
-                                    <label class="custom-control-label" for="customRadio1"></label>
+                                    <input type="radio" id="otro" name="customRadio" class="custom-control-input">
+                                    <label class="custom-control-label" for="otro"></label>
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <h4 class="text-primary">Domicilio en Armenia</h4>
-                                <p>
+                                <p class="text-muted">
                                     Debe ser pagado contraentrega en efectivo al domicilio.
                                     Revise las politicas de envio.
                                 </p>
@@ -111,11 +111,11 @@
                 </div>
 
                 <div class="row p-5">
-                    <div class="col-sm-6  align-self-center ">
-                        <span class="text-dark "><font-awesome-icon icon="arrow-left" size="xs"/> Regresa a comprar</span>
+                    <div class="col-sm-6  align-self-center">
+                        <a href="#" @click="back" class="text-dark text-decoration-none"><font-awesome-icon icon="arrow-left" size="xs"/> Informaci&oacute;n del cliente</a>
                     </div>
                     <div class="col-sm-6  text-right">
-                        <button type="submit" class="btn btn-primary text-white  btn-lg w-md-100 ">CONTINUA A ENVIO</button>
+                        <button @click="next" type="submit" class="btn btn-primary text-white  btn-lg w-md-100 ">CONTINUA A ENVIO</button>
                     </div>
                 </div>
 
@@ -127,7 +127,15 @@
 
 <script>
     export default {
-        name: "datosEnvio"
+        name: "datosEnvio",
+        methods:{
+            next(){
+                $('#metodo-pago-tab').tab('show');
+            },
+            back(){
+                $('#informacion-tab').tab('show');
+            }
+        }
     }
 </script>
 
