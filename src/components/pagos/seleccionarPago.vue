@@ -12,7 +12,7 @@
                         Direccion de envio
                     </div>
                     <div class="col-12 ml-3">
-                        <span class="text-dark font-weight-bold h4">Calle 10a Norte</span>
+                        <span class="text-dark font-weight-bold h4 text-capitalize">{{$store.state.data_paying.dataClient.address}}</span>
                     </div>
                 </div>
 
@@ -21,12 +21,12 @@
                         <div class="row my-li-own mb-3 p-4 ">
                             <div class="col-sm-3 px-0 align-self-center">
                                 <div class="custom-control custom-radio  text-center">
-                                    <input type="radio" id="domicilio-armenia" name="customRadio" class="custom-control-input">
+                                    <input type="radio" id="domicilio-armenia" name="metodo-pago" class="custom-control-input" v-model="metodoPago" value="contraentrega">
                                     <label class="custom-control-label" for="domicilio-armenia"></label>
                                 </div>
                             </div>
                             <div class="col-sm-9">
-                                <h4 class="text-primary">Domicilio en Armenia</h4>
+                                <h4 class="text-primary">Contraentrega en Armenia</h4>
                                 <p class="text-muted">
                                     Debe ser pagado contraentrega en efectivo al domiciliario.
                                     Revise las politicas de envio.
@@ -38,7 +38,7 @@
                         <div class="row my-li-own mb-3 p-4">
                             <div class="col-sm-3 px-0 align-self-center">
                                 <div class="custom-control custom-radio  text-center">
-                                    <input type="radio" id="pago-pse" name="customRadio" class="custom-control-input">
+                                    <input type="radio" id="pago-pse" name="metodo-pago" class="custom-control-input" v-model="metodoPago" value="pse">
                                     <label class="custom-control-label" for="pago-pse"></label>
                                 </div>
                             </div>
@@ -55,7 +55,7 @@
                         <div class="row my-li-own mb-3 p-4">
                             <div class="col-sm-3 px-0 align-self-center">
                                 <div class="custom-control custom-radio  text-center">
-                                    <input type="radio" id="pago-credito" name="customRadio" class="custom-control-input">
+                                    <input type="radio" id="pago-credito" name="metodo-pago" class="custom-control-input" v-model="metodoPago" value="credito">
                                     <label class="custom-control-label" for="pago-credito"></label>
                                 </div>
                             </div>
@@ -72,13 +72,13 @@
                 <div class="row p-5">
                     <div class="col-12">
                         <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="facturaCheck">
+                            <input type="checkbox" class="custom-control-input" id="facturaCheck" v-model="factura">
                             <label class="custom-control-label" for="facturaCheck">Necesita Factura</label>
                         </div>
                     </div>
                     <div class="col-12">
                          <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="condiciones">
+                            <input type="checkbox" class="custom-control-input" id="condiciones" v-model="condiciones">
                             <label class="custom-control-label" for="condiciones">
                                 He le&iacute;do  estoy de acuerdo con los <span class="font-weight-bold text-primary">t&eacute;rminos y cond&iacute;ciones </span> y <span class="font-weight-bold text-primary">politicas de privaidad.</span>
                             </label>
@@ -91,7 +91,7 @@
                         <a href="#" @click="back" class="text-dark text-decoration-none"><font-awesome-icon icon="arrow-left" size="xs"/> Regresa a comprar</a>
                     </div>
                     <div class="col-sm-6  text-right">
-                        <button @click="next" type="submit" class="btn btn-primary text-white  btn-lg w-md-100 text-uppercase">Realizar pedido</button>
+                        <button @click="next" type="submit" class="btn btn-primary text-white font-italic font-weight-bold  btn-lg w-md-100 text-uppercase">Realizar pedido</button>
                     </div>
                 </div>
             </div>
@@ -103,9 +103,27 @@
 <script>
     export default {
         name: "seleccionarPago",
+        data(){
+          return {
+              metodoPago:'contraentrega',
+              factura:false,
+              condiciones:false
+          }
+        },
         methods:{
             next(){
-
+                if(this.factura&&this.condiciones){
+                    let dataClient = this.$store.state.data_paying.dataClient;
+                    let dataSend = this.$store.state.data_paying.dataSend;
+                    let dataPaying = {
+                        metodoPago: this.metodoPago
+                    };
+                    console.log({
+                        dataClient:dataClient,
+                        dataSend:dataSend,
+                        dataPaying:dataPaying
+                    });
+                }
             },
             back(){
                 $('#envios-tab').tab('show');

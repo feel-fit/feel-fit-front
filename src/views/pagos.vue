@@ -14,11 +14,11 @@
                         INFORMACIÓN DEL CLIENTE</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link font-weight-bold h6 font-italic mb-0" id="envios-tab" data-toggle="tab" href="#envios" role="tab" aria-controls="envios" aria-selected="false">02
+                      <a class="nav-link font-weight-bold h6 font-italic mb-0 disabled" id="envios-tab" data-toggle="tab" href="#envios" role="tab" aria-controls="envios" aria-selected="false">02
                         DATOS DE ENVIO</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link font-weight-bold h6 font-italic mb-0" id="metodo-pago-tab" data-toggle="tab" href="#metodo-pago" role="tab" aria-controls="metodo-pago" aria-selected="false">03
+                      <a class="nav-link font-weight-bold h6 font-italic mb-0 disabled" id="metodo-pago-tab" data-toggle="tab" href="#metodo-pago" role="tab" aria-controls="metodo-pago" aria-selected="false">03
                         SELECCI&Oacute;N DEL PAGO</a>
                     </li>
                   </ul>
@@ -57,7 +57,7 @@ import SeleccionarPago from '../components/pagos/seleccionarPago'
 
 export default {
   name: 'pago',
-  components: { SeleccionarPago, DatosEnvio, TuCarrito, InformacionCliente, volver }
+  components: { SeleccionarPago, DatosEnvio, TuCarrito, InformacionCliente, volver },
 }
 </script>
 <style scoped>

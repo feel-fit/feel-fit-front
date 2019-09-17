@@ -12,20 +12,24 @@
                         Direccion
                     </div>
                     <div class="col-12 ml-3">
-                        <span class="text-dark font-weight-bold h4">Calle 10a Norte</span>
+                        <span class="text-dark font-weight-bold h4 text-capitalize">{{$store.state.data_paying.dataClient.address}}</span>
                     </div>
                     <div class="col-12">
                         <div class="form-group form-check">
-                            <input type="checkbox" class="form-check-input" id="otra-direccion">
+                            <input type="checkbox" class="form-check-input" id="otra-direccion" v-model="otraDireccion">
                             <label class="form-check-label" for="otra-direccion">utilizar otra direccion</label>
                         </div>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row" v-if="otraDireccion">
                     <div class="col-12">
                         <div class="form-group">
-                            <label for="inputAddress">Direccion</label>
-                            <input type="text" class="form-control" id="inputAddress" >
+                            <label for="inputAddressAux">Direcci&oacute;n</label>
+                            <input type="text" class="form-control" id="inputAddressAux"
+                                   :class="{ 'is-invalid': $v.address.$error }"
+                                   v-model.trim="$v.address.$model"
+                                   v-model="address">
+                          <div class="invalid-feedback">Se requiere de un nombre</div>
                         </div>
                     </div>
                     <div class="form-group col-md-6">
@@ -36,8 +40,11 @@
                         </select>
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="inputCity">ciudad</label>
-                        <input type="text" class="form-control" id="inputCity">
+                        <label for="inputCityAux">ciudad</label>
+                        <input type="text" class="form-control" id="inputCityAux"
+                               :class="{ 'is-invalid': $v.city.$error }"
+                               v-model.trim="$v.city.$model"
+                               v-model="city">
                     </div>
                 </div>
 
@@ -46,7 +53,10 @@
                         <div class="row my-li-own mb-3 p-4">
                             <div class="col-sm-3 px-0 align-self-center">
                                 <div class="custom-control custom-radio  text-center">
-                                    <input type="radio" id="armenia" name="customRadio" class="custom-control-input">
+                                    <input type="radio" id="armenia" name="domicilio" class="custom-control-input"
+                                           v-model="domicilio"
+                                           value="armenia"
+                                           @change="selectDomicile">
                                     <label class="custom-control-label" for="armenia"></label>
                                 </div>
                             </div>
@@ -57,10 +67,9 @@
                                     Revise las politicas de envio.
                                 </p>
                             </div>
-                            <div class="col-sm-3 div-va justify-content-lg-end">
-                                <p class="mr-5 price font-weight-bold ">
-                                    $ 3000
-                                </p>
+                            <div class="col-sm-3 d-flex flex-column justify-content-center align-items-center">
+                              <small class="text-muted font-italic">Valor Env&iacute;o</small>
+                              <h5 class="text-dark font-weight-bold font-italic">$3.000</h5>
                             </div>
                         </div>
                     </div>
@@ -68,29 +77,34 @@
                         <div class="row my-li-own mb-3 p-4">
                             <div class="col-sm-3 px-0 align-self-center">
                                 <div class="custom-control custom-radio  text-center">
-                                    <input type="radio" id="quindio" name="customRadio" class="custom-control-input">
+                                    <input type="radio" id="quindio" name="domicilio" class="custom-control-input"
+                                           v-model="domicilio"
+                                           value="quindio"
+                                           @change="selectDomicile">
                                     <label class="custom-control-label" for="quindio"></label>
                                 </div>
                             </div>
                             <div class="col-sm-6">
-                                <h4 class="text-primary">Domicilio en Armenia</h4>
+                                <h4 class="text-primary">Domicilio en Quindio</h4>
                                 <p class="text-muted">
                                     Debe ser pagado contraentrega en efectivo al domicilio.
                                     Revise las politicas de envio.
                                 </p>
                             </div>
-                            <div class="col-sm-3 div-va justify-content-lg-end d-flex ">
-                                <p class="mr-5 price font-weight-bold ">
-                                    $ 3000
-                                </p>
-                            </div>
+                          <div class="col-sm-3 d-flex flex-column justify-content-center align-items-center">
+                            <small class="text-muted font-italic">Valor Env&iacute;o</small>
+                            <h5 class="text-dark font-weight-bold font-italic">$8.000</h5>
+                          </div>
                         </div>
                     </div>
                     <div class="col-sm-12">
                         <div class="row my-li-own mb-3 p-4">
                             <div class="col-sm-3 px-0 align-self-center">
                                 <div class="custom-control custom-radio  text-center">
-                                    <input type="radio" id="otro" name="customRadio" class="custom-control-input">
+                                    <input type="radio" id="otro" name="domicilio" class="custom-control-input"
+                                           v-model="domicilio"
+                                           value="otro"
+                                           @change="selectDomicile">
                                     <label class="custom-control-label" for="otro"></label>
                                 </div>
                             </div>
@@ -101,21 +115,19 @@
                                     Revise las politicas de envio.
                                 </p>
                             </div>
-                            <div class="col-sm-3 div-va justify-content-lg-end">
-                                <p class="mr-5 price font-weight-bold ">
-                                    $ 3000
-                                </p>
+                            <div class="col-sm-3 d-flex flex-column justify-content-center align-items-center">
+                              <small class="text-muted font-italic">Pago</small>
+                              <h5 class="text-dark font-weight-bold font-italic">Contraentrega</h5>
                             </div>
                         </div>
                     </div>
                 </div>
-
                 <div class="row p-5">
                     <div class="col-sm-6  align-self-center">
                         <a href="#" @click="back" class="text-dark text-decoration-none"><font-awesome-icon icon="arrow-left" size="xs"/> Informaci&oacute;n del cliente</a>
                     </div>
                     <div class="col-sm-6  text-right">
-                        <button @click="next" type="submit" class="btn btn-primary text-white  btn-lg w-md-100 ">CONTINUA A ENVIO</button>
+                        <button @click="next" type="submit" class="btn btn-primary text-white  btn-lg w-md-100  font-italic font-weight-bold">CONTINUA A PAGO</button>
                     </div>
                 </div>
 
@@ -126,14 +138,66 @@
 </template>
 
 <script>
+    import {required, numeric} from 'vuelidate/lib/validators'
     export default {
         name: "datosEnvio",
+        data(){
+          return {
+              otraDireccion:false,
+              address: '',
+              domicilio:'armenia',
+              city: '',
+          }
+        },
         methods:{
             next(){
-                $('#metodo-pago-tab').tab('show');
+                this.$v.$touch();
+                if (!this.$v.invalid) {
+                    let dataClient = this.$store.state.data_paying.dataClient;
+                    let dataSend = {
+                        address:this.address,
+                        domicilio: this.domicilio,
+                        city: this.city
+                    };
+                    this.$store.commit('dataPaying',{
+                        dataClient:dataClient,
+                        dataSend:dataSend
+                    });
+                    $('#metodo-pago-tab').removeClass("disabled").tab('show');
+                }
             },
             back(){
                 $('#informacion-tab').tab('show');
+            },
+            selectDomicile(){
+                let valor = 0;
+                switch (this.domicilio) {
+                    case 'armenia':
+                        valor = 3000;
+                        break;
+                    case 'quindio':
+                        valor = 8000;
+                        break;
+                    default:
+                        valor = 0;
+                }
+                this.$store.state.tool_paying.costSend = valor;
+            }
+        },
+        validations(){
+            if(this.otraDireccion){
+                return {
+                    address:{
+                        required
+                    },
+                    city:{
+                        required
+                    },
+                }
+            }else{
+                return{
+
+                };
             }
         }
     }

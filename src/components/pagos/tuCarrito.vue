@@ -66,21 +66,21 @@
           <div>
             <h6 class="my-0 font-weight-bold">Costo envio</h6>
           </div>
-          <span class="text-muted font-weight-bold">{{total | money}}</span>
+          <span class="text-muted font-weight-bold">{{$store.state.tool_paying.costSend | money}}</span>
         </div>
 
         <div class="row  pb-1 px-5 d-flex justify-content-between lh-condensed">
           <div>
             <h6 class="my-0 font-weight-bold">Descuento</h6>
           </div>
-          <span class="text-muted font-weight-bold">{{total | money}}</span>
+          <span class="text-muted font-weight-bold">{{ 0 | money}}</span>
         </div>
 
         <div class="row pt-3 pb-1 px-5 d-flex justify-content-between lh-condensed">
           <div>
             <h6 class="my-0 font-weight-bold">Precio Total</h6>
           </div>
-          <span class="font-weight-bold text-dark">{{total | money}}</span>
+          <span class="font-weight-bold text-dark">{{total+$store.state.tool_paying.costSend | money}}</span>
         </div>
 
       </div>

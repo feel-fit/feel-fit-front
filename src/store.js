@@ -18,6 +18,11 @@ export default new Vuex.Store({
     open_menu: false,
     cart: {
       items: [],
+    },
+    data_paying:{},
+    tool_paying:{
+      costSend:0,
+      discount:0,
     }
   },
   getters: {
@@ -117,7 +122,10 @@ export default new Vuex.Store({
     set_categories (state, data) {
       state.brands = sortBy(data.filter(item => item.type_category_id === 2), 'name')
       state.categories = data.filter(item => item.type_category_id === 1)
-    }
+    },
+    dataPaying (state, data) {
+      state.data_paying = data
+    },
   },
   plugins: [createPersistedState({ storage: window.sessionStorage })]
 })

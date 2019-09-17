@@ -14,12 +14,14 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 window.$ = window.jQuery = require('jquery')
 import { VLazyImagePlugin } from "v-lazy-image";
 import VueBreadcrumbs from 'vue-2-breadcrumbs';
+import Vuelidate from "vuelidate/src";
 
 var VueScrollTo = require('vue-scrollto');
 
 Vue.use(VueScrollTo)
 Vue.use(VueBreadcrumbs);
 Vue.use(VLazyImagePlugin);
+Vue.use(Vuelidate);
 
 library.add(faArrowRight,faArrowLeft,faAngleLeft,faAngleRight,faBars,faTimes, faSearch)
 
