@@ -113,16 +113,11 @@
         methods:{
             next(){
                 if(this.factura&&this.condiciones){
-                    let dataClient = this.$store.state.data_paying.dataClient;
-                    let dataSend = this.$store.state.data_paying.dataSend;
-                    let dataPaying = {
+                    let dataPaying = this.$store.state.data_paying;
+                    dataPaying.dataPaying = {
                         metodoPago: this.metodoPago
                     };
-                    console.log({
-                        dataClient:dataClient,
-                        dataSend:dataSend,
-                        dataPaying:dataPaying
-                    });
+                    console.log(dataPaying);
                 }
             },
             back(){

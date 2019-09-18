@@ -169,8 +169,4 @@ export default {
     color: black;
   }
 
-  .list-car{
-    height:     30rem;
-    overflow-y: scroll;
-  }
 </style>

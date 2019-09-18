@@ -118,7 +118,8 @@
         methods: {
             next() {
                 this.$v.$touch();
-                if(!this.$v.$invalid){
+                let itemsCart = this.$store.state.cart.items;
+                if(!this.$v.$invalid&&itemsCart.length>0){
                     let dataClient ={
                         name: this.name,
                         identification: this.identification,
@@ -129,8 +130,10 @@
                         phone: this.phone,
                     };
                     this.$store.commit('dataPaying',{
-                        dataClient:dataClient
+                        dataClient:dataClient,
+                        itemsCart:itemsCart
                     });
+                    this.$store.state.tool_paying.costSend = 3000;
                     $('#envios-tab').removeClass("disabled").tab('show');
                 }
             },
