@@ -17,12 +17,12 @@
           </div>
           <div class="col-12">
             <div class="form-group form-check">
-              <input type="checkbox" class="form-check-input" id="otra-direccion" v-model="otraDireccion">
+              <input type="checkbox" class="form-check-input" id="otra-direccion" v-model="otherAddress">
               <label class="form-check-label" for="otra-direccion">utilizar otra direccion</label>
             </div>
           </div>
         </div>
-        <div class="row" v-if="otraDireccion">
+        <div class="row" v-if="otherAddress">
           <div class="col-12">
             <div class="form-group">
               <label for="inputAddressAux">Direcci&oacute;n</label>
@@ -55,7 +55,7 @@
               <div class="col-sm-3 px-0 align-self-center">
                 <div class="custom-control custom-radio  text-center">
                   <input type="radio" id="armenia" name="domicilio" class="custom-control-input"
-                         v-model="domicilio"
+                         v-model="domicile"
                          value="armenia"
                          @change="selectDomicile">
                   <label class="custom-control-label" for="armenia"></label>
@@ -79,7 +79,7 @@
               <div class="col-sm-3 px-0 align-self-center">
                 <div class="custom-control custom-radio  text-center">
                   <input type="radio" id="quindio" name="domicilio" class="custom-control-input"
-                         v-model="domicilio"
+                         v-model="domicile"
                          value="quindio"
                          @change="selectDomicile">
                   <label class="custom-control-label" for="quindio"></label>
@@ -103,7 +103,7 @@
               <div class="col-sm-3 px-0 align-self-center">
                 <div class="custom-control custom-radio  text-center">
                   <input type="radio" id="otro" name="domicilio" class="custom-control-input"
-                         v-model="domicilio"
+                         v-model="domicile"
                          value="otro"
                          @change="selectDomicile">
                   <label class="custom-control-label" for="otro"></label>
@@ -149,14 +149,14 @@
         name: "datosEnvio",
         data() {
             return {
-                otraDireccion: false,
+                otherAddress: false,
                 address: '',
-                domicilio: 'armenia',
+                domicile: 'armenia',
                 city: '',
             }
         },
         created() {
-            this.$store.state.tool_paying.costSend = 0;
+            this.selectDomicile();
         },
         methods: {
             next() {
@@ -165,7 +165,7 @@
                     let dataPaying = this.$store.state.data_paying;
                     dataPaying.dataSend = {
                         address: this.address,
-                        domicilio: this.domicilio,
+                        domicile: this.domicile,
                         city: this.city
                     };
                     this.$store.commit('dataPaying', dataPaying);
@@ -177,7 +177,7 @@
             },
             selectDomicile() {
                 let valor = 0;
-                switch (this.domicilio) {
+                switch (this.domicile) {
                     case 'armenia':
                         valor = 3000;
                         break;
@@ -191,7 +191,7 @@
             }
         },
         validations() {
-            if (this.otraDireccion) {
+            if (this.otherAddress) {
                 return {
                     address: {
                         required

@@ -80,7 +80,7 @@
           <div>
             <h6 class="my-0 font-weight-bold">Precio Total</h6>
           </div>
-          <span class="font-weight-bold text-dark">{{total+$store.state.tool_paying.costSend | money}}</span>
+          <span class="font-weight-bold font-italic text-dark h5">{{total+$store.state.tool_paying.costSend | money}}</span>
         </div>
 
       </div>

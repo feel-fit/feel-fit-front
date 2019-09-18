@@ -119,7 +119,7 @@
             next() {
                 this.$v.$touch();
                 let itemsCart = this.$store.state.cart.items;
-                if(!this.$v.$invalid&&itemsCart.length>0){
+                if(!this.nextViewSend&&itemsCart.length>0){
                     let dataClient ={
                         name: this.name,
                         identification: this.identification,
@@ -133,8 +133,7 @@
                         dataClient:dataClient,
                         itemsCart:itemsCart
                     });
-                    this.$store.state.tool_paying.costSend = 3000;
-                    $('#envios-tab').removeClass("disabled").tab('show');
+                    $('#envios-tab').removeClass('disabled').tab('show');
                 }
             },
             back() {

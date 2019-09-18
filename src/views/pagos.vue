@@ -10,7 +10,7 @@
                 <div class="container mt-5 mb-2 ">
                   <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
                     <li class="nav-item">
-                      <a class="nav-link active h6 font-weight-bold font-italic mb-0" id="informacion-tab" data-toggle="tab" href="#informacion" role="tab" aria-controls="informacion" aria-selected="true">01
+                      <a class="nav-link active h6 font-weight-bold font-italic mb-0 " id="informacion-tab" data-toggle="tab" href="#informacion" role="tab" aria-controls="informacion" aria-selected="true">01
                         INFORMACIÓN DEL CLIENTE</a>
                     </li>
                     <li class="nav-item">
@@ -18,12 +18,12 @@
                         DATOS DE ENVIO</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link font-weight-bold h6 font-italic mb-0 disabled" id="metodo-pago-tab" data-toggle="tab" href="#metodo-pago" role="tab" aria-controls="metodo-pago" aria-selected="false">03
+                      <a class="nav-link font-weight-bold h6 font-italic mb-0 disabled"  id="metodo-pago-tab" data-toggle="tab" href="#metodo-pago" role="tab" aria-controls="metodo-pago" aria-selected="false">03
                         SELECCI&Oacute;N DEL PAGO</a>
                     </li>
                   </ul>
                   <div class="tab-content" id="myTabContent">
-                    <div class="tab-pane fade show active" id="informacion" role="tabpanel" aria-labelledby="informacion-tab">
+                    <div class="tab-pane fade show active" id="informacion" role="tabpanel" aria-labelledby="informacion-tab" >
                       <informacion-cliente/>
                     </div>
                     <div class="tab-pane fade" id="envios" role="tabpanel" aria-labelledby="envios-tab">
@@ -35,9 +35,6 @@
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="row">
-              <router-view></router-view>
             </div>
           </div>
           <div class="col-auto">
@@ -58,6 +55,14 @@ import SeleccionarPago from '../components/pagos/seleccionarPago'
 export default {
   name: 'pago',
   components: { SeleccionarPago, DatosEnvio, TuCarrito, InformacionCliente, volver },
+    computed:{
+        nextViewSend(){
+            return this.$store.state.tool_paying.nextViewSend;
+        },
+        nextViewPay(){
+            return this.$store.state.tool_paying.nextViewPay;
+        }
+    }
 }
 </script>
 <style scoped>

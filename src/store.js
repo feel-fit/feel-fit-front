@@ -19,7 +19,18 @@ export default new Vuex.Store({
     cart: {
       items: [],
     },
-    data_paying:{},
+    data_paying:{
+      dataClient:{
+        name: '',
+        identification: '',
+        address: '',
+        department: '',
+        city: '',
+        email: '',
+        phone: '',
+      },
+
+    },
     tool_paying:{
       costSend:0,
       discount:0,
