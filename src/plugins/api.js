@@ -10,6 +10,17 @@ setAxiosHeader()
 
 console.log(axios.defaults.baseURL)
 
+function Addresses(url = 'addresses') {
+  return {
+    getOne: (id) => axios.get(`${url}/${id}`),
+    getAll: () => axios.get(`${url}?pagination=false`),
+    getPaginate: () => axios.get(url),
+    update: (id, toUpdate) => axios.put(`${url}/${id}`, toUpdate),
+    create: (toCreate) => axios.post(url, toCreate),
+    delete: (id) => axios.delete(`${url}/${id}`),
+  }
+}
+
 function Categories(url = 'categories') {
   return {
     getOne: (id) => axios.get(`${url}/${id}`),
@@ -69,9 +80,21 @@ function Users(url = 'users') {
     create: (toCreate) => axios.post(url, toCreate),
     delete: (id) => axios.delete(`${url}/${id}`),
     checkEmail: (toCheck) => axios.post(`${url}/check-email`, toCheck),
+    checkDocumento: (toCheck) => axios.get(`${url}?identification=${toCheck}` ),
     login: (toLogin) => axios.post('oauth/login', toLogin),
     register: (toRegister) => axios.post('oauth/register', toRegister),
     facebook: (toLogin) => axios.post('oauth/facebook', toLogin)
+  }
+}
+
+function Shopping(url = 'shoppings') {
+  return {
+    getOne: (id) => axios.get(`${url}/${id}`),
+    getAll: () => axios.get(`${url}?pagination=false`),
+    getPaginate: () => axios.get(url),
+    update: (id, toUpdate) => axios.put(`${url}/${id}`, toUpdate),
+    create: (toCreate) => axios.post(url, toCreate),
+    delete: (id) => axios.delete(`${url}/${id}`),
   }
 }
 
@@ -91,6 +114,12 @@ function ErrorResponse(response) {
   }
 }
 
+function Cities(url='cities'){
+  return {
+    getAll: ()=>axios.get(`${url}`)
+  }
+}
+
 function Departments(url='departments'){
   return {
     getAll: ()=>axios.get(`${url}`)
@@ -98,12 +127,15 @@ function Departments(url='departments'){
 }
 
 export default {
+  Addresses,
   CheckUpdate,
   Categories,
   ErrorResponse,
   Products,
   Departments,
+  Cities,
   Any,
+  Shopping,
   SuccessResponse,
   Token,
   Users

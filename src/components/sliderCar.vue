@@ -175,7 +175,6 @@ export default {
     
     pagar(){
       this.$router.push('/pagos')
-      this.open = false
       this.open_menu()
     }
     

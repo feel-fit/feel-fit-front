@@ -18,12 +18,12 @@
                         DATOS DE ENVIO</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link font-weight-bold h6 font-italic mb-0 disabled"  id="metodo-pago-tab" data-toggle="tab" href="#metodo-pago" role="tab" aria-controls="metodo-pago" aria-selected="false">03
+                      <a class="nav-link font-weight-bold h6 font-italic mb-0 disabled" id="metodo-pago-tab" data-toggle="tab" href="#metodo-pago" role="tab" aria-controls="metodo-pago" aria-selected="false">03
                         SELECCI&Oacute;N DEL PAGO</a>
                     </li>
                   </ul>
                   <div class="tab-content" id="myTabContent">
-                    <div class="tab-pane fade show active" id="informacion" role="tabpanel" aria-labelledby="informacion-tab" >
+                    <div class="tab-pane fade show active" id="informacion" role="tabpanel" aria-labelledby="informacion-tab">
                       <informacion-cliente/>
                     </div>
                     <div class="tab-pane fade" id="envios" role="tabpanel" aria-labelledby="envios-tab">
@@ -52,25 +52,30 @@ import volver from '../components/products/volver.vue'
 import DatosEnvio from '../components/pagos/datosEnvio'
 import SeleccionarPago from '../components/pagos/seleccionarPago'
 
+
 export default {
   name: 'pago',
   components: { SeleccionarPago, DatosEnvio, TuCarrito, InformacionCliente, volver },
-    computed:{
-        nextViewSend(){
-            return this.$store.state.tool_paying.nextViewSend;
-        },
-        nextViewPay(){
-            return this.$store.state.tool_paying.nextViewPay;
-        }
+  created () {
+    this.$store.dispatch('getDepartments')
+    this.$store.dispatch('getCities')
+  },
+  computed: {
+    nextViewSend () {
+      return this.$store.state.tool_paying.nextViewSend
+    },
+    nextViewPay () {
+      return this.$store.state.tool_paying.nextViewPay
     }
+  }
 }
 </script>
 <style scoped>
   #pagos{
     background-color: #F6F6F6;
   }
-
-
+  
+  
   .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active{
     color:            #20D6D9 !important;
     line-height:      3;
@@ -81,20 +86,20 @@ export default {
     border-right:     none;
     border-bottom:    2px solid #20D6D9;
   }
-
+  
   .nav-link{
     display:     block;
     line-height: 3;
     padding:     .5rem 1rem;
     color:       silver !important;
   }
-
+  
   .nav-link:focus, .nav-link:hover{
     text-decoration: none;
     outline:         none;
     border:          none;
   }
-
+  
   .caja{
     border: solid red;
   }

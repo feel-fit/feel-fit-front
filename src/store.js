@@ -11,6 +11,8 @@ export default new Vuex.Store({
     // =data
     me: {},
     categories: [],
+    departments: [],
+    cities: [],
     brands: [],
     slides: [],
     products_in_cart: [],
@@ -20,15 +22,9 @@ export default new Vuex.Store({
       items: [],
     },
     data_paying:{
-      dataClient:{
-        name: '',
-        identification: '',
-        address: '',
-        department: '',
-        city: '',
-        email: '',
-        phone: '',
-      },
+      cliente:{},
+      address:{},
+      
 
     },
     tool_paying:{
@@ -64,6 +60,16 @@ export default new Vuex.Store({
     getSlides ({ state, commit }) {
       api.Sliders().getAll().then(response => {
         commit('set_slides', response.data.data)
+      })
+    },
+    getDepartments({ state, commit }){
+      api.Departments().getAll().then(response => {
+        commit('set_departments', response.data.data)
+      })
+    },
+    getCities({ state, commit }){
+      api.Cities().getAll().then(response => {
+        commit('set_cities', response.data.data)
       })
     },
     checkToken ({ state, commit, dispatch }) {
@@ -129,6 +135,12 @@ export default new Vuex.Store({
     },
     set_slides (state, data) {
       state.slides = data
+    },
+    set_departments(state, data){
+      state.departments = data
+    },
+    set_cities(state, data){
+      state.cities = data
     },
     set_categories (state, data) {
       state.brands = sortBy(data.filter(item => item.type_category_id === 2), 'name')
