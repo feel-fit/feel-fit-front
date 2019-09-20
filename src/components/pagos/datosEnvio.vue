@@ -12,7 +12,7 @@
             Direccion
           </div>
           <div class="col-12 ml-3">
-            <span class="text-dark font-weight-bold h4 text-capitalize">{{$store.state.me.addresses[0].address}}</span>
+            <span class="text-dark font-weight-bold h4 text-capitalize">{{me.addresses[0].address}}</span>
           </div>
           <div class="col-12">
             <div class="form-group form-check">
@@ -154,6 +154,9 @@ export default {
   computed: {
     departments () {
       return this.$store.state.departments
+    },
+    me () {
+      return this.$store.state.me
     }
   },
   methods: {
@@ -165,8 +168,7 @@ export default {
         //cambiar por result al finalizar pruebas
         if (result) {
          if(this.otherAddress){
-           api.Addresses().update(this.cliente.addresses[0].id,this.address).then(response => {
-             this.cliente.addresses[0] = response.data.data
+           api.Addresses().update(this.me.addresses[0].id,this.address).then(response => {
              this.$store.state.me.addresses[0] = response.data.data
            })
          }

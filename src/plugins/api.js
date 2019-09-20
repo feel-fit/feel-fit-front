@@ -98,6 +98,17 @@ function Shopping(url = 'shoppings') {
   }
 }
 
+function DetailShopping(url = 'detail-shoppings') {
+  return {
+    getOne: (id) => axios.get(`${url}/${id}`),
+    getAll: () => axios.get(`${url}?pagination=false`),
+    getPaginate: () => axios.get(url),
+    update: (id, toUpdate) => axios.put(`${url}/${id}`, toUpdate),
+    create: (toCreate) => axios.post(url, toCreate),
+    delete: (id) => axios.delete(`${url}/${id}`),
+  }
+}
+
 // responders
 
 function SuccessResponse(response) {
@@ -136,6 +147,7 @@ export default {
   Cities,
   Any,
   Shopping,
+  DetailShopping,
   SuccessResponse,
   Token,
   Users

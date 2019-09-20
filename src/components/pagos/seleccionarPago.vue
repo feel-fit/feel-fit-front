@@ -12,7 +12,7 @@
             Direccion de envio
           </div>
           <div class="col-12 ml-3">
-            <span class="text-dark font-weight-bold h4 text-capitalize">{{$store.state.me.addresses[0].address}}</span>
+            <span class="text-dark font-weight-bold h4 text-capitalize">{{me.addresses[0].address}}</span>
           </div>
         </div>
         <div class="row pt-4">
@@ -100,27 +100,33 @@
   </div>
 </template>
 <script>
+import { sumBy } from 'lodash'
 import api from '../../plugins/api'
 
 export default {
   name: 'seleccionarPago',
   data () {
     return {
-      metodoPago: 'contraentrega',
+      metodoPago: 1,
       factura: false,
-      condiciones: false
+      condiciones: false,
+      items:[],
     }
   },
   computed: {
+    me () {
+      return this.$store.state.me
+    },
     shopping () {
       return {
-        status_order_id:1,
-        cliente: this.$store.state.dataPaying.cliente,
-        items: this.$store.state.dataPaying.items,
+        status_order_id: 1,
+        user_id: this.me.id,
+        address_id: this.me.addresses[0].id,
+        items: this.cart.items,
         total: this.total + this.costo_envio - this.descuento,
         //crear descuento
-        discount_id: this.descuento ? this.descuento : null,
-        payment_id: this.metodoPago
+        discount_id: null,
+        payment_id: this.metodoPago,
         
       }
     },
@@ -143,7 +149,18 @@ export default {
     next () {
       if (this.condiciones) {
         api.Shopping().create(this.shopping).then(result => {
-          console.log(result.data.data)
+          this.cart.items = this.shopping.items.map(item => {
+            item.shopping_id = result.data.data.id
+            item.product_id = item.id
+            item.value = item.price
+            return item
+          })
+         
+          api.DetailShopping().create(this.cart).then(response => {
+              //TODO mandar a thankyou page o a pagina de pagos
+            console.log('pago exitoso')
+            }
+          )
         }).catch(error => {
           console.log(error)
         })
