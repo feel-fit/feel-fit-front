@@ -15,21 +15,24 @@ export default new Vuex.Store({
     cities: [],
     brands: [],
     slides: [],
+    nuevos: [],
+    destacados: [],
+    sorpresas: [],
     products_in_cart: [],
     open_cart: false,
     open_menu: false,
+    
     cart: {
       items: [],
     },
-    data_paying:{
-      cliente:{},
-      address:{},
+    data_paying: {
+      cliente: {},
+      address: {},
       
-
     },
-    tool_paying:{
-      costSend:0,
-      discount:0,
+    tool_paying: {
+      costSend: 0,
+      discount: 0,
     }
   },
   getters: {
@@ -62,16 +65,29 @@ export default new Vuex.Store({
         commit('set_slides', response.data.data)
       })
     },
-    getDepartments({ state, commit }){
+    getNuevos ({ state, commit }) {
+      api.Categories().products(1).getPaginate().then(response => {
+        commit('set_nuevos', response.data.data)
+        api.Categories().products(2).getPaginate().then(response => {
+          commit('set_destacados', response.data.data)
+          api.Categories().products(3).getPaginate().then(response => {
+            commit('set_sorpresas', response.data.data)
+          })
+        })
+      })
+    },
+    getDepartments ({ state, commit }) {
       api.Departments().getAll().then(response => {
         commit('set_departments', response.data.data)
       })
-    },
-    getCities({ state, commit }){
+    }
+    ,
+    getCities ({ state, commit }) {
       api.Cities().getAll().then(response => {
         commit('set_cities', response.data.data)
       })
-    },
+    }
+    ,
     checkToken ({ state, commit, dispatch }) {
       api.Token().checkToken().then(() => {
         console.log('valid token')
@@ -80,19 +96,22 @@ export default new Vuex.Store({
         clearUserToken()
         dispatch('setGuestToken')
       })
-    },
+    }
+    ,
     setGuestToken ({ state, commit, dispatch }) {
       api.Token().getOne(credentialsGuestToken()).then(response => {
         GuestToken(response.data.access_token)
         dispatch('checkToken')
       })
-    },
+    }
+    ,
     // categorias
     getAllCategories ({ state, commit, dispatch }) {
       api.Categories().getAll().then(response => {
         commit('set_categories', response.data.data)
       })
-    },
+    }
+    ,
   },
   mutations: {
     open_cart (state, data) {
@@ -104,11 +123,23 @@ export default new Vuex.Store({
     set_me (state, data) {
       state.me = data
     },
+    set_address (state, data) {
+      state.me.addresses[0] = data
+    },
+    set_nuevos (state, data) {
+      state.nuevos = data
+    },
+    set_destacados (state, data) {
+      state.destacados = data
+    },
+    set_sorpresas (state, data) {
+      state.sorpresas = data
+    },
     set_products_in_cart (state, data) {
       //data = data.filter(product => product.id)
       state.products_in_cart = data
     },
-    setCart(state, data){
+    setCart (state, data) {
       state.cart = data
     },
     addToCart (state, data) {
@@ -136,10 +167,10 @@ export default new Vuex.Store({
     set_slides (state, data) {
       state.slides = data
     },
-    set_departments(state, data){
+    set_departments (state, data) {
       state.departments = data
     },
-    set_cities(state, data){
+    set_cities (state, data) {
       state.cities = data
     },
     set_categories (state, data) {

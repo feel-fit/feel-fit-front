@@ -110,80 +110,84 @@ export default {
   components: {
     volver
   },
-  mounted () {
-    console.log(this.id, this.slug)
-
-    if (this.id) {
-      api.Products().getOne(this.id).then(response => {
-        this.product = response.data.data
-      }).catch()
+  beforeRouteEnter (to, from, next) {
+    if (to.params.id) {
+      api.Products().getOne(to.params.id).then(response => {
+        next(vm => ( vm.product = response.data.data ))
+      })
     } else {
-      api.Products().getBySlug(this.slug).then(response => {
-        this.product = response.data.data[0]
-
-      }).catch()
+      api.Products().getBySlug(to.params.slug).then(response => {
+        next(vm => ( vm.product = response.data.data[0] ))
+      })
     }
+    // called before the route that renders this component is confirmed.
+    // does NOT have access to `this` component instance,
+    // because it has not been created yet when this guard is called!
+  },
+  mounted () {
+  
+  
   },
   methods: {
-    addToCart() {
-      this.$store.commit('addToCart', this.product);
+    addToCart () {
+      this.$store.commit('addToCart', this.product)
     }
   }
-
+  
 }
 </script>
 <style scoped>
   .btn{
     cursor: pointer;
   }
-
+  
   .color_texto1{
     color: #00D0D2;
   }
-
+  
   .color_texto2{
     color: #CCCCCD;
   }
-
+  
   .color_border{
     border-radius: 1rem;
     color:         rgb(255, 255, 255);
   }
-
+  
   .car{
     left:          10%;
     bottom:        6%;
     border-radius: 2rem;
   }
-
+  
   .corazon{
     left:          77%;
     bottom:        6%;
     border-radius: 2rem;
   }
-
+  
   @media (min-width: 576px){
     .car{
       bottom: 9%;
     }
-
+    
     .corazon{
       left:          77%;
       bottom:        9%;
       border-radius: 50%;
     }
   }
-
+  
   @media (min-width: 768px){
     .car, .corazon{
       bottom: 7%;
     }
   }
-
+  
   @media (min-width: 992px){
     .car, .corazon{
       bottom: 7%;
     }
-
+    
   }
 </style>

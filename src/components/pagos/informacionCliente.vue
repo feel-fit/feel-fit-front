@@ -103,11 +103,13 @@ export default {
     }
   },
   mounted () {
-    if (this.me) {
+    if (this.me.id) {
       this.cliente = this.me
       if (this.me.addresses.length > 0) {
         this.address = this.me.addresses[0]
         this.changeDepartment()
+      } else {
+        this.address.user_id = this.me.id
       }
     }
   },
@@ -126,27 +128,28 @@ export default {
     },
     next () {
       //cambiar por result al finalizar pruebas
+      
       this.$validator.validateAll().then((result) => {
         if (result) {
           if (!this.nextViewSend) {
-            if (this.me) {
-              if (this.address.id) {
-                console.log('actualizacion de la direccion')
-                api.Addresses().update(this.address.id, this.address).then(response => this.address = response.data.data)
-              } else {
-                api.Addresses().create(this.address).then(response => thisaddress = response.data.data)
+            if (this.me.id) {
+              if (!this.address.id) {
+                api.Addresses().create(this.address).then(response => {
+                  this.address = response.data.data
+                  this.gotonext()
+                })
               }
+              this.gotonext()
             } else {
               api.Users().create(this.cliente).then(response => {
                 this.$store.commit('set_me', response.data.data)
                 this.address.user_id = response.data.data.id
-                api.Addresses().create(this.address).then(response => this.address = response.data.data)
+                api.Addresses().create(this.address).then(response => {
+                  this.address = response.data.data
+                  this.gotonext()
+                })
               })
             }
-            
-            this.$store.state.me.addresses[0] = this.address
-            
-            $('#envios-tab').removeClass('disabled').tab('show')
           }
         }
       })
@@ -160,6 +163,11 @@ export default {
     },
     back () {
     
+    },
+    gotonext () {
+      
+      this.$store.commit('set_address', this.address)
+      $('#envios-tab').removeClass('disabled').tab('show')
     }
   },
   

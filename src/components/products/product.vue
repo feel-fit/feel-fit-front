@@ -45,6 +45,7 @@ export default {
       imageDefault,
     }
   },
+  
   mounted () {
   
   },

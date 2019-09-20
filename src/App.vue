@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid p-0 d-flex" :class="{'toggled':open_menu}" id="app">
+  <div class="container-fluid p-0 d-flex" :class="{'toggled':!open_menu}" id="app">
     <slider/>
     <div class="w-100" id="page-content-wrapper" :class="{'open_cart':open_cart}">
       <cabecera/>
@@ -31,6 +31,9 @@ export default {
   components: {
     cabecera, foot, slider, producto, whatsapp, buscador, fresa, sliderCar
   },
+  mounted () {
+    if (this.$store.state.nuevos.length == 0) this.$store.dispatch('getNuevos')
+  },
   computed: {
     open_menu () {
       return this.$store.state.open_menu
@@ -42,7 +45,7 @@ export default {
 }
 </script>
 <style scoped lang="scss">
-  .open_cart{
+  .open_cart {
     margin-left: -20rem;
   }
 </style>

@@ -16,13 +16,13 @@ import { VLazyImagePlugin } from "v-lazy-image";
 import VueBreadcrumbs from 'vue-2-breadcrumbs';
 import VeeValidate from 'vee-validate'
 
-
 import VueScrollTo from 'vue-scrollto';
 
 Vue.use(VueScrollTo)
 Vue.use(VueBreadcrumbs);
 Vue.use(VLazyImagePlugin);
 Vue.use(VeeValidate);
+
 
 
 library.add(faArrowRight,faArrowLeft,faAngleLeft,faAngleRight,faBars,faTimes, faSearch)

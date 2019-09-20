@@ -15,13 +15,13 @@
         <div class="container">
           <div class="row">
             <div class="col-12 font-weight-bold font-italic text-center mt-3">
-              <router-link class="text-dark" to="/">Inicio</router-link>
+              <router-link  class="text-dark" to="/">Inicio</router-link>
             </div>
             <div class="col-12 font-weight-bold font-italic text-center mt-3">
               <router-link class="text-dark" to="/buscar">Buscar</router-link>
             </div>
             <div class="col-12 font-weight-bold font-italic text-center mt-3">
-              <router-link class="text-dark" to="/catalogo">Cátalogo</router-link>
+              <router-link class="text-dark"  to="/catalogo">Cátalogo</router-link>
             </div>
             <div class="col-12 font-weight-bold font-italic text-center mt-3">
               <router-link class="text-dark" to="/categorias/cajas-sorpresa">Caja sorpresa</router-link>
@@ -29,7 +29,7 @@
           </div>
           <div class="row espaciado text-center">
             <div class="col-12 font-weight-bold font-italic text-center mt-3">
-              <router-link class="text-dark" to="/conocenos">Conocenos</router-link>
+              <router-link  class="text-dark" to="/conocenos">Conocenos</router-link>
             </div>
             <div class="col-12 font-weight-bold font-italic text-center mt-3"><a href="#"><span class="text-dark">Contactos</span></a>
             </div>

@@ -18,7 +18,7 @@
                           <input @keyup="searchTimeOut" v-model="search" class="inputBuscar form-control border-0"
                                  type="search" placeholder="Que te apetece?">
                         </div>
-                        <div class="p-3">
+                        <div v-if="products.length>0" class="p-3">
                           <div class="col-12 text-right h5 text-body pr-md-5">
                             <small>PRODUCTOS</small>
                           </div>
@@ -36,52 +36,52 @@
     </div>
   </div>
 </template>
-
 <script>
+import whatsapp from '../../components/home/whatsapp'
+import itemSearch from './item-search'
+import api from '../../plugins/api'
 
-    import whatsapp from '../../components/home/whatsapp'
-    import itemSearch from './item-search'
-    import api from '../../plugins/api'
-
-    let timeout = null;
-    export default {
-        name: "buscar",
-        data() {
-            return {
-                search: '',
-                products: []
-            }
-        },
-        components: {
-            whatsapp, itemSearch
-        },
-        methods: {
-            searchTimeOut() {
-                clearTimeout(timeout);
-                // Make a new timeout set to go off in 800ms
-                timeout = setTimeout(() => {
-                    this.searching();
-                }, 600);
-            },
-            searching() {
-                console.log('hola');
-                api.Products().search(this.search).then(result => {
-                    this.products = result.data.data
-                }).catch(error => {
-                    console.log(error)
-                })
-            }
-        }
+let timeout = null
+export default {
+  name: 'buscar',
+  data () {
+    return {
+      search: '',
+      products: [],
+      timeout: null
     }
+  },
+  components: {
+    whatsapp, itemSearch
+  },
+  mounted () {
+    this.$store.commit('open_menu', false)
+  },
+  methods: {
+    searchTimeOut () {
+      clearTimeout(this.timeout)
+      // Make a new timeout set to go off in 800ms
+      this.timeout = setTimeout(() => {
+        this.searching()
+      }, 200)
+    },
+    searching () {
+      console.log('hola')
+      api.Products().search(this.search).then(result => {
+        this.products = result.data.data
+      }).catch(error => {
+        console.log(error)
+      })
+    }
+  }
+}
 </script>
 <style scoped>
-  .caja_buscar {
+  .caja_buscar{
     border-radius: 1rem;
   }
-
-  .inputBuscar:focus {
+  
+  .inputBuscar:focus{
     border-color: white;
   }
-
-
 </style>

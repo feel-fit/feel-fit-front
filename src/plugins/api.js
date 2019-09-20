@@ -127,13 +127,13 @@ function ErrorResponse(response) {
 
 function Cities(url='cities'){
   return {
-    getAll: ()=>axios.get(`${url}`)
+    getAll: ()=>axios.get(`${url}?pagination=false`)
   }
 }
 
 function Departments(url='departments'){
   return {
-    getAll: ()=>axios.get(`${url}`)
+    getAll: ()=>axios.get(`${url}?pagination=false`)
   }
 }
 

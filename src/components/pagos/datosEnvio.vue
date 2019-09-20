@@ -12,7 +12,7 @@
             Direccion
           </div>
           <div class="col-12 ml-3">
-            <span class="text-dark font-weight-bold h4 text-capitalize">{{me.addresses[0].address}}</span>
+            <span v-if="me.addresses.length > 0" class="text-dark font-weight-bold h4 text-capitalize">{{me.addresses[0].address}}</span>
           </div>
           <div class="col-12">
             <div class="form-group form-check">
@@ -132,6 +132,7 @@
 </template>
 <script>
 import api from '../../plugins/api'
+
 export default {
   name: 'datosEnvio',
   data () {
@@ -167,11 +168,11 @@ export default {
       this.$validator.validateAll().then((result) => {
         //cambiar por result al finalizar pruebas
         if (result) {
-         if(this.otherAddress){
-           api.Addresses().update(this.me.addresses[0].id,this.address).then(response => {
-             this.$store.state.me.addresses[0] = response.data.data
-           })
-         }
+          if (this.otherAddress) {
+            api.Addresses().update(this.me.addresses[0].id, this.address).then(response => {
+              this.$store.state.me.addresses[0] = response.data.data
+            })
+          }
           $('#metodo-pago-tab').removeClass('disabled').tab('show')
         }
       })
