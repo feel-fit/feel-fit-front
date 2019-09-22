@@ -1,9 +1,9 @@
 <template>
     <div>
-        <section class="mt-4 position-relative"> 
+        <section class="mt-4 position-relative">
             <!-- TODO:Ejemplo Item -->
             <div class="container d-flex justify-content-center">
-                
+
                 <div class="row d-none d-md-block line-background bg-primary"></div>
                 <div class="row">
                     <div class="col-auto col-md-4 col-lg-auto d-md-block d-none">
@@ -12,20 +12,20 @@
                             <div class="align-items-center bg-white d-flex h-100 position-relative">
                                 <img :src="refrigerados" class="refri card-img-top img-fluid">
                                 <span class="letra_catalogo position-absolute font-italic font-weight-bold">Refigerados</br><p class="small font-weight-bold" style="color: #CCCCCD;">& Canaelados</p></span>
-                            </div>   
-                        </div>                      
+                            </div>
+                        </div>
                     </div>
                     <div class="col">
                         <div class="row d-flex">
-                             
+
                             <!-- Producto refigerio pequeño - Aparece y desaparece -->
-                            
+
                             <div class="col-sm-6 d-md-none">
                                 <div class="mb-3 mt-md-0 respon_mas position-relative">
                                     <div class="fondo_catalogo position-absolute bg-info"></div>
                                     <div class="position-relative pb-3 bg-white catalogo_border shadow">
                                         <img :src="refrigerados" class="img-fluid w-50">
-                                        <span class="letra_catalogo position-absolute font-italic font-weight-bold">Refigerados</br><p class="small font-weight-bold " style="color: #CCCCCD;">& Canaelados</p></span>  
+                                        <span class="letra_catalogo position-absolute font-italic font-weight-bold">Refigerados</br><p class="small font-weight-bold " style="color: #CCCCCD;">& Canaelados</p></span>
                                     </div>
                                 </div>
                             </div>
@@ -44,11 +44,11 @@
                                     <div class="fondo_catalogo position-absolute bg-info"></div>
                                     <div class="bg-white catalogo_border mb-3 mb-sm-0 pb-3 position-relative shadow">
                                         <img :src="panaderia" class="img-fluid w-50">
-                                        <span class="letra_catalogo position-absolute font-italic font-weight-bold">Panaderia</br><p class="small font-weight-bold " style="color: #CCCCCD;">& Pastas</p></span>   
+                                        <span class="letra_catalogo position-absolute font-italic font-weight-bold">Panaderia</br><p class="small font-weight-bold " style="color: #CCCCCD;">& Pastas</p></span>
                                     </div>
                                 </div>
                             </div>
-        
+
                             <div class="col-sm-6">
                                 <div class="mb-3 position-relative respon_menos">
                                     <div class="fondo_catalogo position-absolute bg-info"></div>
@@ -69,18 +69,18 @@
                             </div>
                         </div>
                     </div>
-                </div>  
+                </div>
             </div>
         </section>
-            
+
             <!-- TODO:Ejemplo Item dos -->
-            
-        <section class="position-relative"> 
+
+        <section class="position-relative">
             <!-- TODO:Ejemplo Item dos-->
             <div class="container d-flex justify-content-center">
-                
+
                 <div class="row line-background line-background2"></div>
-                <div class="row">                   
+                <div class="row">
                     <div class="col">
                         <div class="row d-flex mt-md-4">
                             <div class="col-sm-6">
@@ -101,7 +101,7 @@
                                     </div>
                                 </div>
                             </div>
-        
+
                             <div class="col-sm-6">
                                 <div class="mb-3 position-relative res_menos" >
                                     <div class="fondo_catalogo position-absolute bg-info"></div>
@@ -137,51 +137,50 @@
                             <div class="align-items-center bg-white d-flex h-100 position-relative">
                                 <img :src="snacks" class="refri card-img-top img-fluid">
                                 <span class="letra_catalogo position-absolute font-italic font-weight-bold">Snacks</br><p class="small font-weight-bold " style="color: #CCCCCD;">& Postres</p></span>
-                            </div>   
-                        </div>                      
+                            </div>
+                        </div>
                     </div>
-                </div>  
+                </div>
             </div>
         </section>
     </div>
 </template>
 
 <script>
-    import pasta from './../../assets/images/product/pasta.png'
-    import refrigerados from './../../assets/images/catalogo/refrigerados.png'
-    import aceites from './../../assets/images/catalogo/aceites.png'
-    import chocolates from './../../assets/images/catalogo/chocolates.png'
-    import granolas from './../../assets/images/catalogo/granolas.png'
-    import mercado from './../../assets/images/catalogo/mercado.png'
-    import ninos from './../../assets/images/catalogo/ninos.png'
-    import panaderia from './../../assets/images/catalogo/panaderia.png'
-    import snacks from './../../assets/images/catalogo/snacks.png'
-    import suplementos from './../../assets/images/catalogo/suplementos.png'
-    import vinagres from './../../assets/images/catalogo/vinagres.png'
-    
+import pasta from './../../assets/images/product/pasta.png'
+import refrigerados from './../../assets/images/catalogo/refrigerados.png'
+import aceites from './../../assets/images/catalogo/aceites.png'
+import chocolates from './../../assets/images/catalogo/chocolates.png'
+import granolas from './../../assets/images/catalogo/granolas.png'
+import mercado from './../../assets/images/catalogo/mercado.png'
+import ninos from './../../assets/images/catalogo/ninos.png'
+import panaderia from './../../assets/images/catalogo/panaderia.png'
+import snacks from './../../assets/images/catalogo/snacks.png'
+import suplementos from './../../assets/images/catalogo/suplementos.png'
+import vinagres from './../../assets/images/catalogo/vinagres.png'
 
-    export default {
-        name: "producto",
-        data() {
-            return {
-                pasta:pasta,
-                refrigerados:refrigerados,
-                aceites:aceites,
-                chocolates:chocolates,
-                granolas:granolas,
-                mercado:mercado,
-                ninos:ninos,
-                panaderia:panaderia,
-                snacks:snacks,
-                suplementos:suplementos,
-                vinagres:vinagres
+export default {
+  name: 'producto',
+  data () {
+    return {
+      pasta: pasta,
+      refrigerados: refrigerados,
+      aceites: aceites,
+      chocolates: chocolates,
+      granolas: granolas,
+      mercado: mercado,
+      ninos: ninos,
+      panaderia: panaderia,
+      snacks: snacks,
+      suplementos: suplementos,
+      vinagres: vinagres
 
-            }
-        },
-        components: {
-            
-        }
     }
+  },
+  components: {
+
+  }
+}
 </script>
 
 <style scoped>
@@ -265,5 +264,4 @@
     }
 }
 
-    
 </style>

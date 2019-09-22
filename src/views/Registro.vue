@@ -2,26 +2,22 @@
   <div>
     <section id="registro">
       <div class="container-fluid">
-        <div class="row contenido">
-          <div class="col-lg-6 img-fluid d-none d-lg-block">
-            <img src="./../assets/images/Registrate/image.svg">
+        <div class="row  contenido">
+          <div class="col-md-6 p-0 order-1 order-md-0 d-flex">
+            <img class="img-fluid align-self-end" src="./../assets/images/Registrate/image.svg">
           </div>
-          <div class="col-lg-6 px-5">
-
+          <div class="col-md-6 order-0 order-md-1 px-5">
             <div class="row">
               <h2 class="text-primary font-italic font-weight-bolder my-5">Registrate</h2>
             </div>
-
             <div class="row justify-content-center pb-5 mb-2 px-5">
               <div class="col">
                 <form>
-
                   <div class="form-group">
                     <label for="name" class="font-weight-bold">Nombre completo</label>
-                    <input v-validate="'required'" :class="{'is-invalid':errors.first('nombre')}" name="nombre" type="text" id="name"  class="form-control btn-lg" size="20" v-model="name">
+                    <input v-validate="'required'" :class="{'is-invalid':errors.first('nombre')}" name="nombre" type="text" id="name" class="form-control btn-lg" size="20" v-model="form.name">
                     <div class="invalid-feedback">Se requiere de un nombre valido</div>
                   </div>
-
                   <div class="form-group">
                     <label for="email" class="font-weight-bold">Correo electr&oacute;nico</label>
                     <div class="input-group mb-3">
@@ -30,11 +26,11 @@
                             <img src="./../assets/images/Registrate/Suche.svg">
                           </span>
                       </div>
-                      <input type="email" v-validate="'required|email'" :class="{'is-invalid':errors.first('email')}" name="email" id="email" class="form-control btn-lg border-left-0" size="20" v-model="email">
-                      <div class="invalid-feedback">Se requiere de un email valido</div>
+                      <input type="email" v-validate="'required|email'" :class="{'is-invalid':errors.first('email') || error.email}" name="email" id="email" class="form-control btn-lg border-left-0" size="20" v-model="form.email">
+                      <div v-if="error.email" class="invalid-feedback">Este email ya es utilizado</div>
+                      <div v-else class="invalid-feedback">Se requiere de un email valido</div>
                     </div>
                   </div>
-
                   <div class="form-group">
                     <label for="password" class="font-weight-bold">Contraseña</label>
                     <div class="input-group mb-3">
@@ -43,11 +39,10 @@
                             <img src="./../assets/images/Registrate/SucheCopy.svg">
                           </span>
                       </div>
-                      <input type="password" v-validate="'required'" :class="{'is-invalid':errors.first('password')}" name="password" id="password" class="form-control btn-lg border-left-0" size="20" v-model="password">
+                      <input type="password" v-validate="'required'" :class="{'is-invalid':errors.first('password')}" name="password" id="password" class="form-control btn-lg border-left-0" size="20" v-model="form.password">
                       <div class="invalid-feedback">Se requiere de una contraseña</div>
                     </div>
                   </div>
-
                   <div class="form-group">
                     <label for="password_confirmation" class="font-weight-bold">Confirmar Contraseña</label>
                     <div class="input-group mb-3">
@@ -58,62 +53,72 @@
                       </div>
                       <input type="password" v-validate="'required'" :class="{'is-invalid':errors.first('password_confirmation')}" name="password_confirmation"
                              id="password_confirmation" class="form-control btn-lg border-left-0 "
-                             size="20" v-model="password_confirmation">
+                             size="20" v-model="form.password_confirmation">
                       <div class="invalid-feedback">validar la contraseña</div>
                     </div>
                   </div>
-
                   <div class="form-group d-flex justify-content-between flex-fill">
-                    <input type="button" name="wp-submit"
-                           class="btn btn-lg font-weight-bold" value="Cancelar">
-                    <input type="button" name="wp-submit"
-                           class="btn font-weight-bold btn-primary text-white btn-lg" value="Registrarse"
-                           @click="registro">
+                    <input @click="$router.push('/login')" type="button" name="wp-submit"
+                           class="btn btn-lg font-weight-bold" value="Cancelar"> <input type="button" name="wp-submit"
+                                                                                        class="btn font-weight-bold btn-primary text-white btn-lg" value="Registrarse"
+                                                                                        @click="registro">
                   </div>
                 </form>
               </div>
             </div>
-
           </div>
         </div>
       </div>
     </section>
   </div>
 </template>
-
 <script>
-    import app from './../plugins/api';
-    export default {
-        name: "Registro",
-        data(){
-            return {
-              name:'',
-              email:'',
-              password:'',
-              password_confirmation:''
-            };
-        },
-        methods:{
-            registro(){
-                this.$validator.validateAll().then(
-                    (result)=>{
-                        console.log(result);
-                    }
-                )
-                //app.Users().register(this.$data);
-            }
-        }
-    }
-</script>
+import api from './../plugins/api'
 
+export default {
+  name: 'Registro',
+  data () {
+    return {
+      form: {
+        name: '',
+        email: '',
+        password: '',
+        password_confirmation: ''
+      },
+      error:{
+        email:false
+      }
+    }
+  },
+  methods: {
+    registro () {
+      this.$validator.validateAll().then(
+        (result) => {
+          api.Users().create(this.form).then(response => {
+            this.$store.commit('set_me', response.data.data)
+            this.$router.push('/')
+          }).catch(error => {
+            this.error.email = true
+            
+          })
+        }
+      )
+      //
+    }
+  }
+}
+</script>
 <style scoped>
-  .caja {
+  .caja{
     border: solid red;
   }
-
-  .contenido {
+  
+  .contenido{
     margin-top: 4.5rem;
   }
-
-
+  
+  .input-group > .form-control{
+    border-top-right-radius:    1.3rem;
+    border-bottom-right-radius: 1.3rem;
+  }
 </style>

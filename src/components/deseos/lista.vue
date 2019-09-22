@@ -9,7 +9,7 @@
                         <!-- <hr> -->
                     </div>
                 </div>
-                
+
                 <div class="row mb-4 p-1 d-none d-md-flex">
                     <div class="col-1 text-center">
                         <div class="form-check">
@@ -170,8 +170,7 @@
                         </div>
                     </div>
                 </div>
-                
-                
+
                 <div class="row mt-5">
                     <div class="col-12 text-center text-md-right">
                         <span class="btn btn-lg btn-primary text-white font-italic h6">Agregar al carrito</span>
@@ -183,7 +182,7 @@
 </template>
 <script>
 export default {
-    
+
 }
 </script>
 <style scoped lang="scss">
@@ -196,7 +195,7 @@ export default {
     box-shadow: 0 0 3px rgb(30, 214, 217);
 }
 .box:hover {
-  box-shadow: 0 0 11px rgb(30, 214, 217); 
+  box-shadow: 0 0 11px rgb(30, 214, 217);
 }
 
 </style>

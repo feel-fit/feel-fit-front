@@ -1,37 +1,33 @@
 <template>
     <div>
         <volver></volver>
-        <buscar></buscar>   
+        <buscar></buscar>
     </div>
 </template>
 
 <script>
 
-    
-    import volver from '../components/products/volver.vue'
-    import buscar from '../components/buscar/buscar.vue'
-    import buscar1 from '../components/buscar/buscar.vue'
-    import buscador from '../components/home/buscador'
-    
-    
+import volver from '../components/products/volver.vue'
+import buscar from '../components/buscar/buscar.vue'
+import buscar1 from '../components/buscar/buscar.vue'
+import buscador from '../components/home/buscador'
 
-    export default {
-        name: 'product',
-        data() {
-            return {}
-        },
-        components: {
-            volver,buscar,buscador
-           
-        },
-        mounted() {
-           
-        }
-    }
+export default {
+  name: 'product',
+  data () {
+    return {}
+  },
+  components: {
+    volver, buscar, buscador
+
+  },
+  mounted () {
+
+  }
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-
 
 </style>

@@ -26,15 +26,14 @@
 import Slick from 'vue-slick'
 import slickProduct from './slickProduct'
 
-
 export default {
   name: 'productsNew',
   components: {
     slickProduct, Slick
   },
   watch: {
-    products() {
-      this.reInitSlick(this.$refs.slick);
+    products () {
+      this.reInitSlick(this.$refs.slick)
     }
   },
   props: {
@@ -49,7 +48,7 @@ export default {
         slidesToShow: 4,
         infinite: true,
         arrows: false,
-        //centerMode: true,
+        // centerMode: true,
         responsive: [
           {
             breakpoint: 992,
@@ -66,33 +65,32 @@ export default {
           {
             breakpoint: 576,
             settings: {
-              
+
               slidesToShow: 1
             }
           }
         ]
         // Any other options that can be got from plugin documentation
-      },
+      }
     }
   },
   methods: {
     next () {
-     
       this.$refs.slick.next()
     },
-    
+
     prev () {
       this.$refs.slick.prev()
     },
-    reInitSlick(slick) {
+    reInitSlick (slick) {
       let currentIndex = slick.currentSlide()
-    
+
       slick.destroy()
       this.$nextTick(() => {
         slick.create()
         slick.goTo(currentIndex, true)
       })
-    },
+    }
   }
 }
 </script>

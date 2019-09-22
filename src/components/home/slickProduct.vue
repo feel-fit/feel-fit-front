@@ -19,8 +19,8 @@ export default {
   props: {
     product: {
       required: true,
-      type: Object,
-      
+      type: Object
+
     },
     tag: {
       default: 'Nuevo'
@@ -33,10 +33,9 @@ export default {
   },
   methods: {
     link () {
-     
       this.$router.push({ name: 'producto', params: { id: this.product.id, slug: this.product.slug } })
-    },
-    
+    }
+
   }
 }
 </script>

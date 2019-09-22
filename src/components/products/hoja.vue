@@ -9,20 +9,20 @@
 <script>
 import hoja from '../../assets/images/product/hoja.png'
 
-    export default {
-        name: "hoja",
-        data() {
-            return {
-                hoja:hoja
-                
-            }
-        },
+export default {
+  name: 'hoja',
+  data () {
+    return {
+      hoja: hoja
+
     }
+  }
+}
 </script>
 
 <style scoped>
 .hoja_product{
     left: 93%;
 }
-  
+
 </style>

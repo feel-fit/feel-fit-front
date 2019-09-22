@@ -10,15 +10,15 @@
 <script>
 import fresa_producto from './../../assets/images/product/fresa.png'
 
-    export default {
-        name: "hoja",
-        data() {
-            return {
-                fresa_producto:fresa_producto
-                
-            }
-        },
+export default {
+  name: 'hoja',
+  data () {
+    return {
+      fresa_producto: fresa_producto
+
     }
+  }
+}
 </script>
 
 <style scoped>
@@ -36,5 +36,5 @@ import fresa_producto from './../../assets/images/product/fresa.png'
         left: -1rem;
     }
 }
-  
+
 </style>

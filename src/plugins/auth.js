@@ -69,8 +69,7 @@ export function clearGuestToken () {
 export function setAxiosHeader (token) {
   axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest'
   axios.defaults.withCredentials = true
-  
-  
+
   if (process.env.NODE_ENV === 'development') {
     axios.defaults.baseURL = process.env.API_URL_DEV
   } else {
@@ -78,4 +77,3 @@ export function setAxiosHeader (token) {
   }
   axios.defaults.headers.common['Authorization'] = 'Bearer ' + token
 }
-

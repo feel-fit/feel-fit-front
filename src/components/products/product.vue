@@ -38,16 +38,16 @@ export default {
       default: {
         images: [{ url: imageDefault }]
       }
-    },
+    }
   },
   data () {
     return {
-      imageDefault,
+      imageDefault
     }
   },
-  
+
   mounted () {
-  
+
   },
   methods: {
     link () {

@@ -110,7 +110,7 @@ export default {
       metodoPago: 1,
       factura: false,
       condiciones: false,
-      items:[],
+      items: []
     }
   },
   computed: {
@@ -124,10 +124,10 @@ export default {
         address_id: this.me.addresses[0].id,
         items: this.cart.items,
         total: this.total + this.costo_envio - this.descuento,
-        //crear descuento
+        // crear descuento
         discount_id: null,
-        payment_id: this.metodoPago,
-        
+        payment_id: this.metodoPago
+
       }
     },
     cart () {
@@ -155,16 +155,15 @@ export default {
             item.value = item.price
             return item
           })
-         
+
           api.DetailShopping().create(this.cart).then(response => {
-              //TODO mandar a thankyou page o a pagina de pagos
+            // TODO mandar a thankyou page o a pagina de pagos
             console.log('pago exitoso')
-            }
+          }
           )
         }).catch(error => {
           console.log(error)
         })
-        
       }
     },
     back () {
@@ -177,47 +176,47 @@ export default {
   .caja{
     border: solid red;
   }
-  
+
   label{
     font-size: 0.7em;
   }
-  
+
   .titulo{
     margin-top:    5rem;
     margin-bottom: 2.5rem;
   }
-  
+
   .my-li-own{
     background-color: white;
     border-radius:    1rem;
     border-radius:    1rem;
     box-shadow:       0 0 10px rgba(0, 0, 0, .1);
   }
-  
+
   .my-li-own div{
     color: #20D6D9;
   }
-  
+
   .div-va{
     display:         flex;
     justify-content: center;
     align-items:     center;
   }
-  
+
   .br-left{
     border-top-left-radius:    1.5rem !important;
     border-bottom-left-radius: 1.5rem !important;
   }
-  
+
   .br-right{
     border-top-right-radius:    20rem !important;
     border-bottom-right-radius: 20rem !important;
   }
-  
+
   .price{
     color: black;
   }
-  
+
   .list-car{
     height:     30rem;
     overflow-y: scroll;

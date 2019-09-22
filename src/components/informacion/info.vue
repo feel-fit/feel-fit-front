@@ -1,24 +1,22 @@
 <template>
     <div>
-    
+
     </div>
 </template>
 <script>
 export default {
-    name:'info',
-    data(){
-        return {
+  name: 'info',
+  data () {
+    return {
 
-        }
-    },
-    mounted() {
-    
     }
-    
+  },
+  mounted () {
+
+  }
+
 }
 </script>
 <style scoped>
 
-
 </style>
-

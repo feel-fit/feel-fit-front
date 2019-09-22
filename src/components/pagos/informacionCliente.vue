@@ -82,14 +82,14 @@ export default {
         email: null,
         phone: null,
         department: null,
-        gender:'masculino'
+        gender: 'masculino'
       },
       address: {
         user_id: null,
         name: 'casa',
         address: null,
-        city_id: null,
-      },
+        city_id: null
+      }
     }
   },
   computed: {
@@ -131,8 +131,8 @@ export default {
       })
     },
     next () {
-      //cambiar por result al finalizar pruebas
-      
+      // cambiar por result al finalizar pruebas
+
       this.$validator.validateAll().then((result) => {
         if (result) {
           if (!this.nextViewSend) {
@@ -166,26 +166,25 @@ export default {
       this.changeCiudades()
     },
     back () {
-    
+
     },
     gotonext () {
-      
       this.$store.commit('set_address', this.address)
       $('#envios-tab').removeClass('disabled').tab('show')
     }
-  },
-  
+  }
+
 }
 </script>
 <style scoped>
   .caja{
     border: solid red;
   }
-  
+
   label{
     font-size: 0.7em;
   }
-  
+
   .titulo{
     margin-top:    5rem;
     margin-bottom: 2.5rem;

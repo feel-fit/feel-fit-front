@@ -27,11 +27,11 @@
 
 <script>
 export default {
-  name: "portada",
-  data() {
-    return {};
+  name: 'portada',
+  data () {
+    return {}
   }
-};
+}
 </script>
 
 <style scoped>

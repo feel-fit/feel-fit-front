@@ -37,14 +37,14 @@ export default {
     id: {
       type: Number
     },
-    category: { default: 'productos' },
-    
+    category: { default: 'productos' }
+
   },
   components: {
     mercado, volver, products, hoja, fresa
-    
+
   },
-  
+
   mounted () {
     if (this.id) {
       api.Categories().products(this.id).getPaginate().then(response => {

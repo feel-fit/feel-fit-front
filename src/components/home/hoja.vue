@@ -8,15 +8,15 @@
 <script>
 import hoja from './../../assets/images/hoja2.png'
 
-    export default {
-        name: "hoja",
-        data() {
-            return {
-                hoja:hoja
-                
-            }
-        },
+export default {
+  name: 'hoja',
+  data () {
+    return {
+      hoja: hoja
+
     }
+  }
+}
 </script>
 
 <style scoped>
@@ -26,4 +26,3 @@ import hoja from './../../assets/images/hoja2.png'
     width: 7%;
 }
 </style>
-

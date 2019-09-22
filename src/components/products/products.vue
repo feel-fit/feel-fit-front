@@ -21,8 +21,8 @@ export default {
   },
   props: {
     products: {
-      type: Array,
-      
+      type: Array
+
     },
     tag: {
       default: 'Nuevo'

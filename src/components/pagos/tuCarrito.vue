@@ -96,7 +96,7 @@ export default {
   data: function () {
     return {
       listaCarrito: [],
-      imageDefault,
+      imageDefault
     }
   },
   computed: {

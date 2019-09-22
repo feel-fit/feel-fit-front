@@ -52,7 +52,6 @@ import volver from '../components/products/volver.vue'
 import DatosEnvio from '../components/pagos/datosEnvio'
 import SeleccionarPago from '../components/pagos/seleccionarPago'
 
-
 export default {
   name: 'pago',
   components: { SeleccionarPago, DatosEnvio, TuCarrito, InformacionCliente, volver },
@@ -74,8 +73,7 @@ export default {
   #pagos{
     background-color: #F6F6F6;
   }
-  
-  
+
   .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active{
     color:            #20D6D9 !important;
     line-height:      3;
@@ -86,20 +84,20 @@ export default {
     border-right:     none;
     border-bottom:    2px solid #20D6D9;
   }
-  
+
   .nav-link{
     display:     block;
     line-height: 3;
     padding:     .5rem 1rem;
     color:       silver !important;
   }
-  
+
   .nav-link:focus, .nav-link:hover{
     text-decoration: none;
     outline:         none;
     border:          none;
   }
-  
+
   .caja{
     border: solid red;
   }

@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row">
         <div class="col">
-          <div @click="open_menu"  href="#">
+          <div @click="open_menu" href="#">
             <font-awesome-icon icon="bars" size="2x" class="icon"></font-awesome-icon>
           </div>
         </div>
@@ -15,9 +15,18 @@
             <img src="../assets/images/cart.svg" alt="logo" class="w-100 icon">
             <span v-if="quantityCart > 0" class="badg badge-icon badge-pill badge-danger">{{quantityCart}}</span>
           </div>
-          <a class="navbar-brand justify-content-end d-flex-inline float-right d-none d-md-flex" href="#!">
-            <img src="../assets/images/perfil.svg" alt="logo" class="w-100 icon"> <span class="ml-2 text-body small">Perfil</span>
-          </a>
+          <div v-if="me" class="dropdown  navbar-brand justify-content-end d-flex-inline float-right d-none d-md-flex">
+            <img data-toggle="dropdown" src="../assets/images/perfil.svg" alt="logo" class="w-100 icon">
+            <span data-toggle="dropdown" class="ml-2 text-body small">Perfil</span>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <router-link tag="a" to="/usuario" class="dropdown-item">Perfil</router-link>
+              <div class="dropdown-divider"></div>
+              <a @click="logout" class="dropdown-item" href="#">Cerrar sesion</a>
+            </div>
+          </div>
+          <router-link v-else tag="a" to="/login" class="navbar-brand justify-content-end d-flex-inline float-right d-none d-md-flex">
+            <img src="../assets/images/perfil.svg" alt="logo" class="w-100 icon"> <span class="ml-2 text-body small">Login</span>
+          </router-link>
           <div class="navbar-brand justify-content-end d-flex-inline float-right d-none d-md-flex">
             <img src="../assets/images/fav.svg" alt="logo" class="w-100 icon">
             <span class="badg badge-icon badge-pill badge-danger">1</span>
@@ -29,6 +38,7 @@
 </template>
 <script>
 import logo from './../assets/images/logo_menu.svg'
+import { logout } from '../plugins/auth'
 import sumBy from 'lodash/sumBy'
 
 export default {
@@ -37,7 +47,6 @@ export default {
     return {}
   },
   mounted () {
-  
     window.addEventListener('scroll', this.onScroll)
     
     $(window).scroll(function () {
@@ -48,21 +57,22 @@ export default {
         $('.sticky-top').removeClass('bg-white')
       }
     })
-    
   },
   
   computed: {
     open () {
       return this.$store.state.open_cart
     },
-    open_menu_data(){
+    me () {
+      return this.$store.state.me
+    },
+    open_menu_data () {
       return this.$store.state.open_menu
     },
-    quantityCart(){
-      return sumBy(this.$store.state.cart.items,item=>{
+    quantityCart () {
+      return sumBy(this.$store.state.cart.items, item => {
         return item.quantity
       })
-     
     }
   },
   methods: {
@@ -72,7 +82,12 @@ export default {
     open_cart () {
       this.$store.commit('open_cart', !this.open)
     },
-   
+    logout () {
+      logout()
+      this.$store.commit('set_me', null)
+      this.$router.push('/')
+    }
+    
   }
 }
 </script>

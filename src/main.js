@@ -9,23 +9,27 @@ import store from './store'
 import './registerServiceWorker'
 import './assets/styles/sass/app.scss'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faArrowRight,faArrowLeft, faAngleLeft, faAngleRight , faBars, faTimes, faSearch} from '@fortawesome/free-solid-svg-icons'
+import { faArrowRight, faArrowLeft, faAngleLeft, faAngleRight, faBars, faTimes, faSearch } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-window.$ = window.jQuery = require('jquery')
-import { VLazyImagePlugin } from "v-lazy-image";
-import VueBreadcrumbs from 'vue-2-breadcrumbs';
+import { VLazyImagePlugin } from 'v-lazy-image'
+import VueBreadcrumbs from 'vue-2-breadcrumbs'
 import VeeValidate from 'vee-validate'
+import VueAWN from "vue-awesome-notifications"
 
-import VueScrollTo from 'vue-scrollto';
+// Your custom options
+let options = { position: 'top-rigth' }
+
+Vue.use(VueAWN, options)
+
+import VueScrollTo from 'vue-scrollto'
+window.$ = window.jQuery = require('jquery')
 
 Vue.use(VueScrollTo)
-Vue.use(VueBreadcrumbs);
-Vue.use(VLazyImagePlugin);
-Vue.use(VeeValidate);
+Vue.use(VueBreadcrumbs)
+Vue.use(VLazyImagePlugin)
+Vue.use(VeeValidate)
 
-
-
-library.add(faArrowRight,faArrowLeft,faAngleLeft,faAngleRight,faBars,faTimes, faSearch)
+library.add(faArrowRight, faArrowLeft, faAngleLeft, faAngleRight, faBars, faTimes, faSearch)
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 

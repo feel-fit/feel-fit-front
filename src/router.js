@@ -42,7 +42,7 @@ export default new Router({
         breadcrumb: [
           { name: 'Inicio', link: 'home' },
           { name: 'Categoria', link: 'catalogo' },
-          { name: 'Categoria' },
+          { name: 'Categoria' }
         ]
       },
 
@@ -59,7 +59,7 @@ export default new Router({
         breadcrumb: [
           { name: 'Inicio', link: 'home' },
           { name: 'Categoria', link: 'catalogo' },
-          { name: 'Categoria' },
+          { name: 'Categoria' }
         ]
       },
       // route level code-splitting
@@ -80,7 +80,7 @@ export default new Router({
       name: 'pagos',
       meta: {
         breadcrumb: [
-          { name: 'Inicio', link: 'home' },
+          { name: 'Inicio', link: 'home' }
         ]
       },
       // route level code-splitting
@@ -95,8 +95,7 @@ export default new Router({
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import(/* webpackChunkName: "about" */ './views/Buscar.vue')
-    }
-    ,
+    },
     {
       path: '/informacion',
       name: 'informacion',
@@ -104,8 +103,7 @@ export default new Router({
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import(/* webpackChunkName: "about" */ './views/Informacion.vue')
-    }
-    ,
+    },
     {
       path: '/deseos',
       name: 'deseos',
@@ -129,6 +127,6 @@ export default new Router({
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import(/* webpackChunkName: "about" */ './views/Login.vue')
-    },
+    }
   ]
 })

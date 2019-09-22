@@ -44,13 +44,13 @@ export default {
   },
   data () {
     return {
-      imageDefault,
+      imageDefault
     }
   },
   methods: {
     link () {
       this.$router.push({ name: 'producto', params: { id: this.product.id, slug: this.product.slug } })
-    },
+    }
   }
 }
 </script>

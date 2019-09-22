@@ -8,9 +8,9 @@
 import volver from '../components/products/volver.vue'
 import lista from '../components/deseos/lista.vue'
 export default {
-    components:{
-        volver,lista
-    }
+  components: {
+    volver, lista
+  }
 }
 </script>
 <style scoped>

@@ -3,12 +3,12 @@
 </template>
 
 <script>
-  // import background from './../assets/images/img_bienvenido.png'
+// import background from './../assets/images/img_bienvenido.png'
 
-  export default {
-    name: 'contain'
+export default {
+  name: 'contain'
 
-  }
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

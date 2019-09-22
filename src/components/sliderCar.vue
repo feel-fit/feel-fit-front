@@ -131,13 +131,13 @@ export default {
   data () {
     return {
       images: {
-        logo: logo,
+        logo: logo
       },
-      imageDefault,
+      imageDefault
     }
   },
   mounted () {
-  
+
   },
   computed: {
     open () {
@@ -169,15 +169,15 @@ export default {
     open_menu () {
       this.$store.commit('open_cart', !this.open)
     },
-    remove_product_cart(item){
-      this.$store.commit('removeProductCart',item)
+    remove_product_cart (item) {
+      this.$store.commit('removeProductCart', item)
     },
-    
-    pagar(){
+
+    pagar () {
       this.$router.push('/pagos')
       this.open_menu()
     }
-    
+
   }
 }
 </script>

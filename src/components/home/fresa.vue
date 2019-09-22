@@ -7,15 +7,15 @@
 <script>
 import fresa from './../../assets/images/fresa_home.png'
 
-    export default {
-        name: "fresa",
-        data() {
-            return {
-                fresa:fresa
+export default {
+  name: 'fresa',
+  data () {
+    return {
+      fresa: fresa
 
-            }
-        },
     }
+  }
+}
 </script>
 
 <style scoped>

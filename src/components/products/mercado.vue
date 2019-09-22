@@ -58,11 +58,11 @@ export default {
     font-family: "Varela Round", serif;
     font-size:   22px;
   }
-  
+
   .hr_mercado{
     width: 1.5rem;
   }
-  
+
   .fondo{
     height:        78%;
     width:         4rem;
@@ -70,21 +70,21 @@ export default {
     border-radius: .7rem;
     right:         -16px;
   }
-  
+
   .oval_mercado{
     left: 89%;
     top:  -15%;
   }
-  
+
   .oval2_mercado{
     left:   -24%;
     bottom: 21%;
   }
-  
+
   .mercado{
     margin-top: 2rem;
   }
-  
+
   @media (min-width: 768px){
     .mercado_letra{
       font-size: 32px;

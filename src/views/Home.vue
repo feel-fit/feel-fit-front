@@ -28,15 +28,14 @@ import papas from './../assets/images/producto1.png'
 import yogurt from './../assets/images/destacados.png'
 import imageDefault from './../assets/images/producto.png'
 
-
 export default {
   name: 'home',
   data () {
     return {
       images: {
         sorpresa, papas, yogurt, imageDefault
-      },
-     
+      }
+
     }
   },
   components: {
@@ -50,10 +49,8 @@ export default {
       this.$store.dispatch('checkToken')
     }
     if (getUserToken() && !this.me) this.$store.dispatch('getMe')
-  
+
     this.$store.commit('open_menu', false)
-    
-    
   },
   computed: {
     me () {
@@ -73,7 +70,7 @@ export default {
     sorpresas () {
       return this.$store.state.nuevos
     }
-  },
+  }
 }
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->

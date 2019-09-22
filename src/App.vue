@@ -40,7 +40,7 @@ export default {
     },
     open_cart () {
       return this.$store.state.open_cart
-    },
+    }
   }
 }
 </script>
@@ -49,11 +49,3 @@ export default {
     margin-left: -20rem;
   }
 </style>
-
-
-
-
-
-
-
-

@@ -145,12 +145,11 @@ export default {
       },
       domicile: 'armenia',
       department: null,
-      cities: [],
+      cities: []
     }
   },
   created () {
     this.selectDomicile()
-    
   },
   computed: {
     departments () {
@@ -166,7 +165,7 @@ export default {
     },
     next () {
       this.$validator.validateAll().then((result) => {
-        //cambiar por result al finalizar pruebas
+        // cambiar por result al finalizar pruebas
         if (result) {
           if (this.otherAddress) {
             api.Addresses().update(this.me.addresses[0].id, this.address).then(response => {
@@ -194,31 +193,31 @@ export default {
       }
       this.$store.state.tool_paying.costSend = valor
     }
-  },
-  
+  }
+
 }
 </script>
 <style scoped>
   .caja{
     border: solid red;
   }
-  
+
   label{
     font-size: 0.7em;
   }
-  
+
   .titulo{
     margin-top:    5rem;
     margin-bottom: 2.5rem;
   }
-  
+
   .my-li-own{
     background-color: white;
     border-radius:    1rem;
     border-radius:    1rem;
     box-shadow:       0 0 10px rgba(0, 0, 0, .1);
   }
-  
+
   .my-li-own div{
     color: #20D6D9;
   }

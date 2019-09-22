@@ -12,19 +12,20 @@
 </template>
 
 <script>
-    import logo from './../../assets/images/conocenos/logo_conocenos.svg'
-    import scroll from './../../assets/images/scroll.svg'
-    import background from './../../assets/images/img_bienvenido.png'
+import logo from './../../assets/images/conocenos/logo_conocenos.svg'
+import scroll from './../../assets/images/scroll.svg'
+import background from './../../assets/images/img_bienvenido.png'
 
-    export default {
-        name: "portada",
-        data() {
-            return {
-                background: background,
-                logo: logo, scroll: scroll
-            }
-        },
+export default {
+  name: 'portada',
+  data () {
+    return {
+      background: background,
+      logo: logo,
+      scroll: scroll
     }
+  }
+}
 </script>
 
 <style scoped>

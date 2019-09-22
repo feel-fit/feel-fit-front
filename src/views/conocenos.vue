@@ -6,7 +6,6 @@
 
           <img src="../assets/images/conocenos/logo_conocenos.svg" alt="Feel Fit" class="mx-auto w-50 mt-4">
 
-
           <img class="fresa position-absolute" src="../assets/images/conocenos/fresa_copy.svg" alt="Fresa">
 
         </div>
@@ -48,7 +47,6 @@
   .conocenos {
     background-size: cover !important;
     background: url("../assets/images/conocenos/image.png");
-
 
   }
 </style>

@@ -80,7 +80,7 @@ export default {
   .caja_buscar{
     border-radius: 1rem;
   }
-  
+
   .inputBuscar:focus{
     border-color: white;
   }

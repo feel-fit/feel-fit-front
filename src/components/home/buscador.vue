@@ -17,7 +17,7 @@
           </div>
         </div>
       </div>
-      
+
     </div>
   </section>
 </template>
@@ -36,7 +36,7 @@ export default {
       search: '',
       products: [],
       timeout: null
-      
+
     }
   },
   components: {
@@ -65,17 +65,17 @@ export default {
   .buscador{
     border-radius: 2rem;
   }
-  
+
   .fresa_buscador{
     left:  90%;
     top:   -10%;
     width: 14%;
   }
-  
+
   .img_search{
     position: absolute;
     right:    1.5rem;
     top:      40%;
-    
+
   }
 </style>

@@ -70,7 +70,7 @@ export default {
     }
   },
   mounted () {
-  
+
   },
   computed: {
     open_menu_data () {
@@ -80,7 +80,7 @@ export default {
   methods: {
     open_menu () {
       this.$store.commit('open_menu', !this.open_menu_data)
-    },
+    }
   }
 }
 </script>
