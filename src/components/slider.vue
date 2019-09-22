@@ -31,7 +31,8 @@
             <div class="col-12 font-weight-bold font-italic text-center mt-3">
               <router-link  class="text-dark" to="/conocenos">Conocenos</router-link>
             </div>
-            <div class="col-12 font-weight-bold font-italic text-center mt-3"><a href="#"><span class="text-dark">Contactos</span></a>
+            <div class="col-12 font-weight-bold font-italic text-center mt-3">
+              <router-link  class="text-dark" to="/contactanos">Contactanos</router-link>
             </div>
             <div class="col-12 font-weight-bold font-italic text-center mt-3"><a href=""><span class="text-dark">Politicas de envio</span></a>
             </div>

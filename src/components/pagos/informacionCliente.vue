@@ -82,6 +82,7 @@ export default {
         email: null,
         phone: null,
         department: null,
+        gender:'masculino'
       },
       address: {
         user_id: null,
@@ -115,7 +116,7 @@ export default {
   },
   methods: {
     checkDocumento () {
-      if (!this.me) api.Users().checkDocumento(this.cliente.identification).then(response => {
+      api.Users().checkDocumento(this.cliente.identification).then(response => {
         if (response.data.data.length > 0) {
           this.$store.commit('set_me', response.data.data[0])
           if (this.me.addresses.length > 0) {
@@ -123,6 +124,9 @@ export default {
             console.log('hola')
             this.changeDepartment()
           }
+        } else {
+          this.$store.commit('set_me', {})
+          this.cliente.id = null
         }
       })
     },

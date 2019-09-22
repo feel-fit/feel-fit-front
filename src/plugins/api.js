@@ -57,6 +57,18 @@ function Products(url = 'products') {
   }
 }
 
+function Messages(url = 'messages') {
+  return {
+    getOne: (id) => axios.get(`${url}/${id}`),
+    getBySlug:(slug)=> axios.get(`${url}?slug=${slug}`),
+    getAll: () => axios.get(`${url}?pagination=false`),
+    getPaginate: () => axios.get(url),
+    update: (id, toUpdate) => axios.put(`${url}/${id}`, toUpdate),
+    create: (toCreate) => axios.post(url, toCreate),
+    delete: (id) => axios.delete(`${url}/${id}`),
+  }
+}
+
 function Any(url) {
   return {
     getAll: () => axios.get(`${url}?pagination=false`),
@@ -143,6 +155,7 @@ export default {
   Categories,
   ErrorResponse,
   Products,
+  Messages,
   Departments,
   Cities,
   Any,

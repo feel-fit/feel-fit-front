@@ -12,7 +12,7 @@
             Direccion de envio
           </div>
           <div class="col-12 ml-3">
-            <span v-if="me.addresses.length>0" class="text-dark font-weight-bold h4 text-capitalize">{{me.addresses[0].address}}</span>
+            <span v-if="me.addresses && me.addresses.length > 0" class="text-dark font-weight-bold h4 text-capitalize">{{me.addresses[0].address}}</span>
           </div>
         </div>
         <div class="row pt-4">
