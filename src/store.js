@@ -19,16 +19,17 @@ export default new Vuex.Store({
     destacados: [],
     sorpresas: [],
     products_in_cart: [],
+    wishlist: [],
     open_cart: false,
     open_menu: false,
-
+    
     cart: {
       items: []
     },
     data_paying: {
       cliente: {},
       address: {}
-
+      
     },
     tool_paying: {
       costSend: 0,
@@ -43,17 +44,17 @@ export default new Vuex.Store({
     // login
     getMe ({ state, commit }) {
       api.Users().getOne('me').then(response => {
-        commit('set_me', response.data.data)
-      }
+          commit('set_me', response.data.data)
+        }
       ).catch(() => {
         clearUserToken()
       })
     },
     getLoginFacebook ({ state, commit, dispatch }, data) {
       api.Users().facebook(data).then(response => {
-        login(response.data.data.access_token)
-        dispatch('getMe')
-      }
+          login(response.data.data.access_token)
+          dispatch('getMe')
+        }
       )
     },
     getLogin ({ state, commit, dispatch }, token) {
@@ -107,7 +108,7 @@ export default new Vuex.Store({
         commit('set_categories', response.data.data)
       })
     }
-
+    
   },
   mutations: {
     open_cart (state, data) {
@@ -150,10 +151,21 @@ export default new Vuex.Store({
           product.quantity = data.quantity
         }
       } else {
-        Vue.set(data, 'quantity', (data.quantity || 1))
+        Vue.set(data, 'quantity', ( data.quantity || 1 ))
         state.cart.items.push(data)
       }
       state.open_cart = true
+    },
+    addToWishlist (state, data) {
+      
+      let product = state.wishlist.find(item => {
+        if (item.id === data.id) return item
+      })
+      
+      if (!product) {
+        state.wishlist.push(data)
+      }
+      
     },
     removeProductCart (state, data) {
       state.cart.items = state.cart.items.filter(item => {

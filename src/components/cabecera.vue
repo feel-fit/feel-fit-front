@@ -29,7 +29,7 @@
           </router-link>
           <div class="navbar-brand justify-content-end d-flex-inline float-right d-none d-md-flex">
             <img src="../assets/images/fav.svg" alt="logo" class="w-100 icon">
-            <span class="badg badge-icon badge-pill badge-danger">1</span>
+            <span v-if="quantityHearts > 0" class="badg badge-icon badge-pill badge-danger">{{quantityHearts}}</span>
           </div>
         </div>
       </div>
@@ -39,7 +39,7 @@
 <script>
 import logo from './../assets/images/logo_menu.svg'
 import { logout } from '../plugins/auth'
-import sumBy from 'lodash/sumBy'
+import { sumBy, sum } from 'lodash'
 
 export default {
   name: 'cabecera',
@@ -73,6 +73,9 @@ export default {
       return sumBy(this.$store.state.cart.items, item => {
         return item.quantity
       })
+    },
+    quantityHearts () {
+      return this.$store.state.wishlist.length
     }
   },
   methods: {

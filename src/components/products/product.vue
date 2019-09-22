@@ -13,7 +13,7 @@
             <img src="../../assets/images/product/botonCar.svg" alt="Car" style="width: 25px;">
           </div>
         </div>
-        <div class="col-auto">
+        <div @click="addToWishlist" class="col-auto">
           <div class=" corazon bg-white p-2 rounded-circle shadow">
             <img src="../../assets/images/fav.svg" alt="Corazon" class="img-fluid">
           </div>
@@ -56,6 +56,9 @@ export default {
     },
     addToCart () {
       this.$store.commit('addToCart', this.product)
+    },
+    addToWishlist () {
+      this.$store.commit('addToWishlist', this.product)
     }
   }
 }

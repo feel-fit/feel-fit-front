@@ -16,7 +16,7 @@
                     <img src="../assets/images/product/botonCar.svg" alt="Car" style="width: 25px;">
                   </div>
                 </a>
-                <div class="corazon bg-white p-3 position-absolute shadow d-none d-md-block">
+                <div @click="addToWishlist"  class="corazon bg-white p-3 position-absolute shadow d-none d-md-block">
                   <img src="../assets/images/fav.svg" alt="Corazon" class="img-fluid">
                 </div>
               </div>
@@ -33,7 +33,7 @@
                     <img src="../assets/images/informacion/cartBlanco.svg" style="width: 25px;">&nbsp;&nbsp;Agregar</span>
                 </div>
                 <div class="col-6 text-center">
-                  <span class="btn bg-white border shadow py-2 px-4 px-sm-5 color_texto1" style="border-radius:1rem;">
+                  <span @click="addToWishlist" class="btn bg-white border shadow py-2 px-4 px-sm-5 color_texto1" style="border-radius:1rem;">
                     <img src="../assets/images/fav.svg">&nbsp;&nbsp;Agregar</span>
                 </div>
               </div>
@@ -130,6 +130,9 @@ export default {
   methods: {
     addToCart () {
       this.$store.commit('addToCart', this.product)
+    },
+    addToWishlist () {
+      this.$store.commit('addToWishlist', this.product)
     }
   }
 
