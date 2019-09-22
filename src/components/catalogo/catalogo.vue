@@ -2,21 +2,20 @@
   <section>
     <div class="container-fluid">
       <div class="row">
-        <div
-          class="col-12 ml-n3 pl-4 contenido shadow">
-          <div class="row p-3 p-md-5">
-            <div class="col-md-12 col-sm-6 d-flex align-items-center">
+        <div class="col-12 ml-n3 pl-4 contenido shadow border-blue">
+          <div class="row py-4 pl-2 pr-0">
+            <div class="col-md-12 col-sm-6" align="center">
               <span class="h3 font-italic titulo font-weight-bold">Catálogo</span>
             </div>
-            <div class="col-md-12 col-sm-6">
-              <hr class="border-warning hr_catalogo ml-4 mt-1 mb-2 d-none d-sm-block ml-sm-0" />
+            <div class="col-md-12 col-sm-6" align="center">
               <p class="h5 ml-4 font-italic text-primary">
                 <small>
+                  <div class="inner">&nbsp;</div>
                   Categorias
                   <br />de productos
+                  <div class="inner">&nbsp;</div>
                 </small>
               </p>
-              <hr class="border-warning hr_catalogo ml-4 mt-1 ml-sm-0" />
             </div>
           </div>
         </div>

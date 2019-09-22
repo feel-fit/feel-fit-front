@@ -1,12 +1,13 @@
 <template>
     <section>
         <volver></volver>
-        <div class="container-fluid">
+        <div class="container-fluid pb-5">
             <div class="row">
-                <div class="col-md-2 p-0">
+                <img class="image-own" src="../assets/images/catalogo/bg.png"/>
+                <div class="col-md-3 p-0">
                     <catalogo></catalogo>
                 </div>
-                <div class="col-md-9">
+                <div class="col-md-8">
                     <producto></producto>
                 </div>
                 <div class="d-none d-md-block col-md-1">
@@ -46,6 +47,17 @@ export default {
 
 .caja{
     border:2px solid blue;
+}
+
+.image-own {
+    //background-image: url('../assets/images/catalogo/bg.png');
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100vw;
+    top: 5%;
+    height: 100vh;
 }
 
 </style>
