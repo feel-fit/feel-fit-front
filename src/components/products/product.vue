@@ -1,6 +1,6 @@
 <template>
   <div class="card bg-white d-flex position-relative border-0 link">
-    <div @click="link">
+    <div  @click="link">
       <v-lazy-image class="card-img-top shadow" style="border-radius: 1rem;"
                     :src="product.images.length > 0 ? product.images[0].url : imageDefault"
                     :src-placeholder="imageDefault"
@@ -42,7 +42,8 @@ export default {
   },
   data () {
     return {
-      imageDefault
+      imageDefault,
+     
     }
   },
 
