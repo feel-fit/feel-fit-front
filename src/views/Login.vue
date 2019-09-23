@@ -21,7 +21,7 @@
                     :class="{'is-invalid':errors.first('email')}"
                     name="email"
                     id="email"
-                    class="form-control btn-lg"
+                    class="form-control btn-lg border-left-0" 
                     size="20"
                     v-model="form.email"
                     placeholder="Ingresa tu usuario"
@@ -137,4 +137,15 @@ export default {
     border-top-right-radius:    1.3rem;
     border-bottom-right-radius: 1.3rem;
   }
+
+
+  .form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #ced4da;
+    outline: 0;
+    -webkit-box-shadow: 0 0 0 0.2rem transparent !important;
+    box-shadow: 0 0 0 0.2rem transparent !important;
+}
+
 </style>

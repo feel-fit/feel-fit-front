@@ -121,4 +121,14 @@ export default {
     border-top-right-radius:    1.3rem;
     border-bottom-right-radius: 1.3rem;
   }
+
+  .form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #ced4da;
+    outline: 0;
+    -webkit-box-shadow: 0 0 0 0.2rem transparent !important;
+    box-shadow: 0 0 0 0.2rem transparent !important;
+}
+
 </style>
