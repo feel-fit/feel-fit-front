@@ -97,14 +97,21 @@
         </div>
       </div>
     </div>
+
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalDescuento">
+  Launch demo modal
+</button>
+    <descuento></descuento>
+
   </div>
 </template>
 <script>
 import { sumBy } from 'lodash'
 import api from '../../plugins/api'
-
+import descuento from './modalDescuento'
 export default {
   name: 'seleccionarPago',
+  components:{descuento},
   data () {
     return {
       metodoPago: 1,
