@@ -26,11 +26,11 @@
                 </div>
                 <div class="col-12 text-center mt-5 mt-md-0 text-md-right col-md-2 mb-3">
                     <ul style="list-style:none;" class="pl-0">
-                        <a href="#"><li class="text-dark">Conócenos</li></a>
-                        <a href="#"><li class="text-dark">Contacto</li></a>
-                        <a href="#"><li class="text-dark">Términos y condiciones</li></a>
-                        <a href="#"><li class="text-dark">Políticas de envio</li></a>
-                        <a href="#"><li class="text-dark">Políticas de calidad</li></a>
+                        <router-link  class="text-dark" to="/conocenos"><li class="text-dark">Conócenos</li></router-link>
+                        <router-link  class="text-dark" to="/contactanos"><li class="text-dark">Contacto</li></router-link>
+                        <a href="#" data-toggle="modal" data-target="#terminosModal" ><li class="text-dark">Términos y condiciones</li></a>
+                        <a href="#" ><li class="text-dark">Políticas de envio</li></a>
+                        <a href="#" data-toggle="modal" data-target="#politicasEnvioModal"><li class="text-dark">Políticas de calidad</li></a>
                     </ul>
                 </div>
             </div>

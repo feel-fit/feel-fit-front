@@ -5,6 +5,8 @@
       <cabecera/>
       <router-view/>
       <foot/>
+      <terminos/>
+      <politicas-envio/>
     </div>
     <sliderCar/>
   </div>
@@ -25,11 +27,13 @@ import whatsapp from '@/components/home/whatsapp.vue'
 import buscador from '@/components/home/buscador.vue'
 import fresa from '@/components/home/fresa.vue'
 import foot from '@/components/foot.vue'
+import terminos from '@/components/politicas/terminos.vue'
+import politicasEnvio from '@/components/politicas/politicasEnvio.vue'
 
 export default {
   name: 'app',
   components: {
-    cabecera, foot, slider, producto, whatsapp, buscador, fresa, sliderCar
+    cabecera, foot, slider, producto, whatsapp, buscador, fresa, sliderCar,terminos,politicasEnvio
   },
   mounted () {
     if (this.$store.state.nuevos.length == 0) this.$store.dispatch('getNuevos')
