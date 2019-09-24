@@ -17,14 +17,13 @@
             </button>
           </div>
           <div class="modal-body text-center">
-              <img src="./../../assets/images/pagos/descuento.png" class="img-fluid">
+            <img src="./../../assets/images/pagos/descuentos/des.png" class="img-fluid" />
+            <h1 class="descuento">{{porcentaje}}%</h1>
           </div>
           <div class="modal-footer d-flex flex-column border-0">
-              <span class="text-muted font-italic small">Ha sido activado</span>
-              <h3 class="text-primary font-weight-bold font-italic">Tu Descuento</h3>
-              <p class="text-muted small">
-                Has sido seleccionado para disfrutar de nuestro descuento
-              </p>
+            <span class="text-muted font-italic small">Ha sido activado</span>
+            <h3 class="text-primary font-weight-bold font-italic">Tu Descuento</h3>
+            <p class="text-muted small">Has sido seleccionado para disfrutar de nuestro descuento</p>
           </div>
         </div>
       </div>
@@ -34,11 +33,43 @@
 
 <script>
 export default {
-  name:'descuento'
+  name: "descuento",
+  data(){
+    return {
+      porcentaje:7
+    };
+  }
 };
 </script>
 <style scoped>
-  .caja{
-    border: 2px red solid;
+.caja {
+  border: 2px red solid;
+}
+.descuento {
+  position: absolute;
+  bottom: 21%;
+  right:44%;
+  font-size: 400%;
+  transform: rotate(-3deg);
+  color: white;
+}
+
+@media screen and (max-width: 992px) {
+  .descuento {
+    bottom: 22%;
+    right: 43%;
+    font-size: 45px;
+    transform: rotate(-3deg);
   }
+}
+
+@media screen and (max-width: 576px) {
+  .descuento {
+    bottom: 22%;
+    right: 42%;
+    font-size: 9vw;
+    transform: rotate(-3deg);
+  }
+}
+
 </style>

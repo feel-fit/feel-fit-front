@@ -4,7 +4,7 @@
     <section id="pagos">
       <div class="container-fluid">
         <div class="row pt-3">
-          <div class="col-sm bg-white">
+          <div class="col-12 col-sm bg-white">
             <div class="row">
               <div class="col-sm-12">
                 <div class="container mt-5 mb-2 ">

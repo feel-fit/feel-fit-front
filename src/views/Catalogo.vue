@@ -1,9 +1,9 @@
 <template>
     <section>
         <volver></volver>
-        <div class="container-fluid pb-5">
+        <div class="container-fluid pb-5 contenido">
             <div class="row">
-                <img class="image-own" src="../assets/images/catalogo/bg.png"/>
+                <img class="image-own d-none d-sm-block" src="../assets/images/catalogo/bgcat.png"/>
                 <div class="col-md-3 p-0">
                     <catalogo></catalogo>
                 </div>
@@ -50,14 +50,18 @@ export default {
 }
 
 .image-own {
-    //background-image: url('../assets/images/catalogo/bg.png');
     position: absolute;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    width: 100vw;
+    width: 100%;
     top: 5%;
-    height: 100vh;
+    height: 100%;
+    z-index:-1;
+}
+
+.contenido{
+    position: relative;
 }
 
 </style>

@@ -2,7 +2,7 @@
   <section>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-12 ml-n3 pl-4 contenido shadow border-blue">
+        <div class="col-12 ml-n3 pl-4 contenido shadow bg-white border-blue">
           <div class="row py-4 pl-2 pr-0">
             <div class="col-md-12 col-sm-6" align="center">
               <span class="h3 font-italic titulo font-weight-bold">Catálogo</span>
@@ -12,7 +12,7 @@
                 <small>
                   <div class="inner">&nbsp;</div>
                   Categorias
-                  <br />de productos
+                  <br/>de productos
                   <div class="inner">&nbsp;</div>
                 </small>
               </p>

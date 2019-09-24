@@ -6,12 +6,12 @@
                 
                 <!--<div class="row d-none d-md-block line-background bg-primary"></div>-->
                 <div class="row">
-                    <div class="col-5 d-md-block d-none">
-                        <div class="bg-white card h-100 position-relative shadow catalogo_border">
-                            <div class="fondo_catalogo position-absolute bg-info"></div>
+                    <div class="col-5 d-md-block d-none cursor" @click="viewCategories('cajas-sorpresa')">
+                        <div class="bg-white card h-100 position-relative shadow catalogo_border ">
+                            <div class="fondo_catalogo position-absolute bg-info "></div>
                             <div class="align-items-center bg-white d-flex h-100 position-relative catalogo_border">
                                 <img :src="refrigerados" class="refri card-img-top img-fluid">
-                                <span class="letra_catalogo position-absolute font-italic font-weight-bold">Refigerados</br><p class="small font-weight-bold" style="color: #CCCCCD;">& Canaelados</p></span>
+                                <span class="letra_catalogo categoria-grande position-absolute font-italic font-weight-bold">Refigerados<br><p class="small font-weight-bold" style="color: #CCCCCD;">& Canaelados</p></span>
                             </div>   
                         </div>                      
                     </div>
@@ -20,50 +20,50 @@
                              
                             <!-- Producto refigerio pequeño - Aparece y desaparece -->
                             
-                            <div class="col-sm-6 d-md-none">
+                            <div class="col-sm-6 d-md-none cursor" @click="viewCategories('cajas-sorpresa')">
                                 <div class="mb-3 mt-md-0 respon_mas position-relative">
                                     <div class="fondo_catalogo position-absolute bg-info"></div>
                                     <div class="position-relative pb-3 bg-white catalogo_border shadow">
                                         <img :src="refrigerados" class="img-fluid w-50">
-                                        <span class="letra_catalogo position-absolute font-italic font-weight-bold">Refigerados</br><p class="small font-weight-bold " style="color: #CCCCCD;">& Canaelados</p></span>  
+                                        <span class="letra_catalogo position-absolute font-italic font-weight-bold">Refigerados<br><p class="small font-weight-bold " style="color: #CCCCCD;">& Canaelados</p></span>  
                                     </div>
                                 </div>
                             </div>
                             <!-- -------------- -->
-                            <div class="col-sm-6">
-                                <div class="mb-3 mt-md-0 position-relative">
+                            <div class="col-sm-6 ">
+                                <div class="mb-3 mt-md-0 position-relative cursor" @click="viewCategories('cajas-sorpresa')">
                                     <div class="fondo_catalogo position-absolute bg-info"></div>
                                     <div class="position-relative pb-3 bg-white catalogo_border shadow">
                                         <img :src="aceites" class="img-fluid w-50">
-                                        <span class="letra_catalogo position-absolute font-italic font-weight-bold">Aceites</br><p class="small font-weight-bold " style="color: #CCCCCD;">& Mantequillas</p></span>
+                                        <span class="letra_catalogo position-absolute font-italic font-weight-bold">Aceites<br><p class="small font-weight-bold " style="color: #CCCCCD;">& Mantequillas</p></span>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-sm-6">
-                               <div class="position-relative">
+                               <div class="position-relative cursor" @click="viewCategories('cajas-sorpresa')">
                                     <div class="fondo_catalogo position-absolute bg-info"></div>
                                     <div class="bg-white catalogo_border mb-3 mb-sm-0 pb-3 position-relative shadow">
                                         <img :src="panaderia" class="img-fluid w-50">
-                                        <span class="letra_catalogo position-absolute font-italic font-weight-bold">Panaderia</br><p class="small font-weight-bold " style="color: #CCCCCD;">& Pastas</p></span>   
+                                        <span class="letra_catalogo position-absolute font-italic font-weight-bold">Panaderia<br><p class="small font-weight-bold " style="color: #CCCCCD;">& Pastas</p></span>   
                                     </div>
                                 </div>
                             </div>
         
                             <div class="col-sm-6">
-                                <div class="mb-3 position-relative respon_menos">
+                                <div class="mb-3 position-relative respon_menos cursor" @click="viewCategories('productos-nuevos')">
                                     <div class="fondo_catalogo position-absolute bg-info"></div>
                                     <div class="position-relative  pb-3 bg-white catalogo_border shadow">
                                     	<img :src="chocolates" class="img-fluid w-50">
-                                        <span class="letra_catalogo position-absolute font-italic font-weight-bold">Chocolates</br><p class="small font-weight-bold " style="color: #CCCCCD;">& Cacao</p></span>
+                                        <span class="letra_catalogo position-absolute font-italic font-weight-bold">Chocolates<br><p class="small font-weight-bold " style="color: #CCCCCD;">& Cacao</p></span>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-sm-6 offset-md-0 offset-sm-6">
-                                <div class="mb-3 mt-md-0 position-relative res_mas">
+                                <div class="mb-3 mt-md-0 position-relative res_mas cursor" @click="viewCategories('cajas-sorpresa')">
                                     <div class="fondo_catalogo position-absolute bg-info"></div>
                                     <div class="position-relative  pb-3 bg-white catalogo_border shadow">
                                     	<img :src="granolas" class="img-fluid w-50">
-                                        <span class="letra_catalogo position-absolute font-italic font-weight-bold">Granolas</br><p class="small font-weight-bold " style="color: #CCCCCD;">& Cereales</p></span>
+                                        <span class="letra_catalogo position-absolute font-italic font-weight-bold">Granolas<br><p class="small font-weight-bold " style="color: #CCCCCD;">& Cereales</p></span>
                                     </div>
                                 </div>
                             </div>
@@ -75,7 +75,7 @@
             
             <!-- TODO:Ejemplo Item dos -->
             
-        <section class="position-relative"> 
+        <section class="position-relative mt-sm-5"> 
             <!-- TODO:Ejemplo Item dos-->
             <div class="container d-flex justify-content-center">
                 
@@ -84,16 +84,16 @@
                     <div class="col">
                         <div class="row d-flex mt-md-4">
                             <div class="col-sm-6">
-                                <div class="mb-3 position-relative res_menos" >
+                                <div class="mb-3 position-relative res_menos cursor" @click="viewCategories('cajas-sorpresa')">
                                     <div class="fondo_catalogo position-absolute bg-info"></div>
                                     <div class="position-relative pb-3 bg-white catalogo_border shadow">
                                     	<img :src="mercado" class="img-fluid w-50">
-                                        <span class="letra_catalogo position-absolute font-italic font-weight-bold">Mercado</br><p class="small font-weight-bold " style="color: #CCCCCD;">Sano</p></span>
+                                        <span class="letra_catalogo position-absolute font-italic font-weight-bold">Mercado<br><p class="small font-weight-bold " style="color: #CCCCCD;">Sano</p></span>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-sm-6">
-                               <div class="mb-3 position-relative">
+                               <div class="mb-3 position-relative cursor" @click="viewCategories('cajas-sorpresa')">
                                     <div class="fondo_catalogo position-absolute bg-info"></div>
                                     <div class="position-relative pb-3  bg-white catalogo_border shadow">
                                     	<img :src="ninos" class="img-fluid w-50">
@@ -103,40 +103,40 @@
                             </div>
         
                             <div class="col-sm-6">
-                                <div class="mb-3 position-relative res_menos" >
+                                <div class="mb-3 position-relative res_menos cursor" @click="viewCategories('cajas-sorpresa')">
                                     <div class="fondo_catalogo position-absolute bg-info"></div>
                                     <div class="position-relative  pb-3 bg-white catalogo_border shadow">
                                     	<img :src="suplementos" class="img-fluid w-50">
-                                        <span class="letra_catalogo position-absolute font-italic font-weight-bold">Suplementos</br> <p class="small font-weight-bold " style="color: #CCCCCD;">& Proteinas</p></span>
+                                        <span class="letra_catalogo position-absolute font-italic font-weight-bold">Suplementos<br> <p class="small font-weight-bold " style="color: #CCCCCD;">& Proteinas</p></span>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-sm-6">
-                                <div class="mb-3 position-relative">
+                                <div class="mb-3 position-relative cursor" @click="viewCategories('cajas-sorpresa')">
                                     <div class="fondo_catalogo position-absolute bg-info"></div>
                                     <div class="position-relative  pb-3 bg-white catalogo_border shadow">
                                     	<img :src="vinagres" class="img-fluid w-50">
-                                        <span class="letra_catalogo position-absolute font-italic font-weight-bold">Vinagres</br><p class="small font-weight-bold " style="color: #CCCCCD;">& Aderezos</p></span>
+                                        <span class="letra_catalogo position-absolute font-italic font-weight-bold">Vinagres<br><p class="small font-weight-bold " style="color: #CCCCCD;">& Aderezos</p></span>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-sm-6 d-md-none">
-                                <div class="mb-3 mt-md-0 position-relative res_menos">
+                                <div class="mb-3 mt-md-0 position-relative res_menos cursor" @click="viewCategories('cajas-sorpresa')">
                                     <div class="fondo_catalogo position-absolute bg-info"></div>
                                     <div class="position-relative pb-3 bg-white catalogo_border shadow">
                                     	<img :src="snacks" class="img-fluid w-50">
-                                        <span class="letra_catalogo position-absolute font-italic font-weight-bold">Snacks</br><p class="small font-weight-bold " style="color: #CCCCCD;">& Postres</p></span>
+                                        <span class="letra_catalogo position-absolute font-italic font-weight-bold">Snacks<br><p class="small font-weight-bold " style="color: #CCCCCD;">& Postres</p></span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-5 d-md-block d-none">
-                        <div class="bg-white h-100 position-relative shadow catalogo_border">
+                        <div class="bg-white h-100 position-relative shadow catalogo_border cursor" @click="viewCategories('cajas-sorpresa')">
                             <div class="fondo_catalogo position-absolute bg-info"></div>
                             <div class="align-items-center bg-white d-flex h-100 position-relative catalogo_border">
                                 <img :src="snacks" class="refri card-img-top img-fluid">
-                                <span class="letra_catalogo position-absolute font-italic font-weight-bold">Snacks</br><p class="small font-weight-bold " style="color: #CCCCCD;">& Postres</p></span>
+                                <span class="letra_catalogo categoria-grande position-absolute font-italic font-weight-bold">Snacks<br><p class="small font-weight-bold " style="color: #CCCCCD;">& Postres</p></span>
                             </div>   
                         </div>                      
                     </div>
@@ -179,6 +179,11 @@ export default {
   },
   components: {
 
+  },
+  methods:{
+      viewCategories(category){
+          this.$router.push(`/categorias/${category}`);
+      }
   }
 }
 </script>
@@ -190,6 +195,12 @@ export default {
     background-size: contain;
     background-repeat: no-repeat;
 } */
+.caja{
+    border:red 2px solid;
+}
+.cursor{
+    cursor: pointer;
+}
 .letra_catalogo{
     top: 47%;
     left: 47%;
@@ -250,9 +261,16 @@ export default {
         font-size: 32px;
     }
         .letra_catalogo{
-        top: 45%;
-        left: 42%;
-        font-size:16px;
+        top: 40%;
+        left: 31%;
+        font-size:12px;
+    }
+
+    .categoria-grande{
+        top: 40%;
+        left: 54%;
+        font-size:12px;
+        font-weight: bold;
     }
 }
 @media(min-width: 992px) {
@@ -260,7 +278,7 @@ export default {
         width: 75%;
     }
     .letra_catalogo{
-        font-size:20px;
+        font-size:16px;
     }
 }
 
