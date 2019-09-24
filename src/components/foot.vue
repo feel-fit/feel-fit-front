@@ -1,6 +1,6 @@
 <template>
     <!--footer-->
-    <section class="footer my-5 h-auto">
+    <section class="footer  h-auto">
         <div class="container-fluid position-relative">
             <img src="../assets/images/conocenos/logo2.svg" class="d-block mb-n4 mx-auto" alt="logo" >
             <div class="row justify-content-around pt-md-4" style="background-color: #F6F6F6">

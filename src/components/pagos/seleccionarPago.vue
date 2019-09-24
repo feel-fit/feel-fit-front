@@ -166,6 +166,7 @@ export default {
           api.DetailShopping().create(this.cart).then(response => {
             // TODO mandar a thankyou page o a pagina de pagos
             console.log('pago exitoso')
+            this.$router.push('thankyou')
           }
           )
         }).catch(error => {

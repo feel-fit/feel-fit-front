@@ -102,7 +102,7 @@
                 </div>
               </div>
               <div class="col-sm-6">
-                <h4 class="text-primary">Domicilio en Armenia</h4>
+                <h4 class="text-primary">Domicilio fuera del Quindío</h4>
                 <p class="text-muted">
                   Debe ser pagado contraentrega en efectivo al domicilio. Revise las politicas de envio.
                 </p>
