@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="11px" viewBox="0 0 20 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.4 (67378) - http://www.bohemiancoding.com/sketch -->
+    <title>Icons / Arrow (Down)</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M14,17.5857864 L5.70710678,9.29289322 C5.31658249,8.90236893 4.68341751,8.90236893 4.29289322,9.29289322 C3.90236893,9.68341751 3.90236893,10.3165825 4.29289322,10.7071068 L13.2928932,19.7071068 C13.6834175,20.0976311 14.3165825,20.0976311 14.7071068,19.7071068 L23.7071068,10.7071068 C24.0976311,10.3165825 24.0976311,9.68341751 23.7071068,9.29289322 C23.3165825,8.90236893 22.6834175,8.90236893 22.2928932,9.29289322 L14,17.5857864 Z" id="path-1"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Usuario" transform="translate(-1805.000000, -672.000000)">
+            <g id="Group" transform="translate(987.000000, 572.000000)">
+                <g id="Icons-/-Arrow-(Down)" transform="translate(814.000000, 91.000000)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <use id="Icon" fill="#979797" fill-rule="nonzero" xlink:href="#path-1"></use>
+                    <g id="Colors-/-Black" mask="url(#mask-2)" fill="#000000" fill-rule="evenodd">
+                        <rect id="Color" x="0" y="0" width="28" height="28"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
