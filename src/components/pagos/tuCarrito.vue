@@ -133,11 +133,6 @@ export default {
     max-width: 80px;
   }
 
-  .caja{
-    background-color: #FFC215;
-    border:           red solid;
-  }
-
   .my-li-own{
     background-color: white;
     border-radius:    1rem;

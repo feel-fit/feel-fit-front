@@ -56,15 +56,19 @@
                       <h5
                         class="text-primary font-italic font-weight-bold"
                       >Correo electr&oacute;nico</h5>
-                      <span class="d-inline-block pl-2 text-capitalize">{{$store.state.me.email}}</span>
+                      <span class="d-inline-block pl-2">{{$store.state.me.email}}</span>
                     </div>
                     <div class="mb-4">
                       <h5 class="text-primary font-italic font-weight-bold">Departamento/ciudad</h5>
-                      <span class="d-inline-block pl-2 text-capitalize"></span>
+                      <span
+                        class="d-inline-block pl-2 text-capitalize"
+                      >{{$store.state.me.addresses| department_city }}</span>
                     </div>
                     <div class="mb-4">
                       <h5 class="text-primary font-italic font-weight-bold">Direcci&oacute;n</h5>
-                      <span class="d-inline-block pl-2 text-capitalize"></span>
+                      <span
+                        class="d-inline-block pl-2 text-capitalize"
+                      >{{$store.state.me.addresses>0?$store.state.me.addresses[0].name:''}}</span>
                     </div>
                     <div class="mb-4 d-flex justify-content-end">
                       <button class="btn btn-primary btn-lg text-white">Editar</button>
@@ -141,7 +145,7 @@
                 <div class="col-md-4 d-flex justify-content-center justify-content-md-end">
                   <img
                     src="./../assets/images/Usuario/metodosdepago/pse.svg"
-                    class="img-fluid shadow imagen-pago"
+                    class="img-fluid shadow imagen-pago mb-4 m-md-0"
                   />
                 </div>
                 <div class="col-md-8 d-flex align-items-center">
@@ -158,15 +162,15 @@
                 <div class="col-md-4 d-flex justify-content-center justify-content-md-end">
                   <img
                     src="./../assets/images/Usuario/metodosdepago/contraentrega.svg"
-                    class="img-fluid shadow imagen-pago"
+                    class="img-fluid shadow imagen-pago mb-4 m-md-0"
                   />
                 </div>
                 <div class="col-md-8 d-flex align-items-center">
                   <div>
                     <h5 class="text-primary font-italic font-weight-bold">Domicilio en Armenia</h5>
-                    <p class="mr-md-5 pr-md-5">
-                      Debe ser pagado contraentrega en efectivo al domiciliario, revisar la politica de env&iacute;os.
-                    </p>
+                    <p
+                      class="mr-md-5 pr-md-5"
+                    >Debe ser pagado contraentrega en efectivo al domiciliario, revisar la politica de env&iacute;os.</p>
                   </div>
                 </div>
               </div>
@@ -174,15 +178,15 @@
                 <div class="col-md-4 d-flex justify-content-center justify-content-md-end">
                   <img
                     src="./../assets/images/Usuario/metodosdepago/credit.svg"
-                    class="img-fluid shadow imagen-pago"
+                    class="img-fluid shadow imagen-pago mb-4 m-md-0"
                   />
                 </div>
                 <div class="col-md-8 d-flex align-items-center">
                   <div>
-                    <h5 class="text-primary font-italic font-weight-bold">Paga con tu tarjeta de cr&eacute;dito</h5>
-                    <p class="mr-md-5 pr-md-5">
-                      Desde el portal de Davivienda
-                    </p>
+                    <h5
+                      class="text-primary font-italic font-weight-bold"
+                    >Paga con tu tarjeta de cr&eacute;dito</h5>
+                    <p class="mr-md-5 pr-md-5">Desde el portal de Davivienda</p>
                   </div>
                 </div>
               </div>
@@ -198,6 +202,7 @@
 import volver from "../components/products/volver.vue";
 
 export default {
+  name:'usuario',
   components: {
     volver
   },
@@ -213,7 +218,9 @@ export default {
 }
 
 .imagen-pago {
-  padding: 2rem;
+  width: 120px;
+  height: 120px;
+  padding: 1rem;
   border-radius: 20px;
 }
 .menu {

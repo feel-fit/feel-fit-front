@@ -2,7 +2,7 @@
   <div>
     <section id="registro">
       <div class="container-fluid">
-        <div class="row contenido justify-content-center fondo">
+        <div class="row contenido-login justify-content-center fondo">
           <div class="my-5 my-md-0">
             <form class="formulario">
               <h2
@@ -116,7 +116,7 @@ export default {
     border: solid red;
   }
   
-  .contenido{
+  .contenido-login{
     margin-top: 4.5rem;
   }
   

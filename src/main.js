@@ -37,6 +37,13 @@ Vue.config.productionTip = false
 Vue.filter('phone', phone => phone.replace(/[^0-9]/g, '').replace(/(\d{3})(\d{3})(\d{4})/, '($1) $2-$3'))
 Vue.filter('money', money => '$ ' + money.toString().replace(/(\d)(?=(\d{3})+(,|$))/g, '$1.'))
 Vue.filter('uppercase', text => text.toUpperCase())
+Vue.filter('department_city', (addresses) => {
+  if(addresses!=undefined&&addresses.length>0){
+    let address = addresses[0];
+    return address.city.department.name+'/'+address.city.name;
+  }
+  return '';
+})
 
 new Vue({
   router,

@@ -42,9 +42,7 @@ export default {
 };
 </script>
 <style scoped>
-.caja {
-  border: 2px red solid;
-}
+
 .descuento {
   position: absolute;
   bottom: 21%;

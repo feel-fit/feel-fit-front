@@ -177,9 +177,6 @@ export default {
 }
 </script>
 <style scoped>
-  .caja{
-    border: solid red;
-  }
 
   label{
     font-size: 0.7em;

@@ -1,7 +1,7 @@
 <template>
     <section>
         <volver></volver>
-        <div class="container-fluid pb-5 contenido">
+        <div class="container-fluid pb-5 contenido-catalogo">
             <div class="row">
                 <img class="image-own d-none d-sm-block" src="../assets/images/catalogo/bgcat.png"/>
                 <div class="col-md-3 p-0">
@@ -60,7 +60,7 @@ export default {
     z-index:-1;
 }
 
-.contenido{
+.contenido-catalogo{
     position: relative;
 }
 

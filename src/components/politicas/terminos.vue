@@ -54,10 +54,8 @@ export default {
 };
 </script>
 
-<style>
-.caja {
-  border: 2px red solid;
-}
+<style scoped>
+
 .contenido-text {
   height: 400px;
   margin-top: 1rem;
