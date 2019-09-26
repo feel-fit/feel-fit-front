@@ -4,7 +4,7 @@
     <div class="container p-0">
       <div id="accordion" class="accordion">
         <div class="menu">
-          <div class="option collapsed shadow caja" data-toggle="collapse" href="#usuario">
+          <div class="option collapsed shadow" data-toggle="collapse" href="#usuario">
             <div class="row m-0 p-0">
               <div class="col-6 p-0">
                 <img src="./../assets/images/Usuario/infodeusuario.svg" class="img-fluid imagen" />
@@ -200,22 +200,23 @@
 
 <script>
 import volver from "../components/products/volver.vue";
-
+import app from './../plugins/api'
 export default {
   name:'usuario',
   components: {
     volver
   },
   mounted() {
-    console.log(this.$store.state.me);
+    //console.log(this.$store.state.me);
+    app.Users().getMe().then((result)=>{
+      console.log(result);
+    });
+    
   }
 };
 </script>
 
 <style scoped lang="scss">
-.caja {
-  border: red solid 2px;
-}
 
 .imagen-pago {
   width: 120px;

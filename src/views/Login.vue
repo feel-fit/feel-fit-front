@@ -100,6 +100,7 @@ export default {
           .Users()
           .login(this.form)
           .then(response => {
+            console.log(response.data.data);
             this.$store.commit('set_me', response.data.data)
             this.$router.back()
           })
@@ -112,9 +113,6 @@ export default {
 }
 </script>
 <style scoped>
-  .caja{
-    border: solid red;
-  }
   
   .contenido-login{
     margin-top: 4.5rem;

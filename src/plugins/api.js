@@ -95,7 +95,8 @@ function Users (url = 'users') {
     checkDocumento: (toCheck) => axios.get(`${url}?identification=${toCheck}`),
     login: (toLogin) => axios.post('oauth/login', toLogin),
     register: (toRegister) => axios.post('oauth/register', toRegister),
-    facebook: (toLogin) => axios.post('oauth/facebook', toLogin)
+    facebook: (toLogin) => axios.post('oauth/facebook', toLogin),
+    getMe:()=>axios.get(`${url}/me`),
   }
 }
 
