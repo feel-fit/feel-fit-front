@@ -100,8 +100,8 @@ export default {
           .Users()
           .login(this.form)
           .then(response => {
-            console.log(response.data.data);
-            this.$store.commit('set_me', response.data.data)
+            this.$store.dispatch('getLogin', response.data.data.access_token);
+            //this.$store.commit('set_me', response.data.data)
             this.$router.back()
           })
       })

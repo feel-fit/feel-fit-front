@@ -12,7 +12,7 @@
     <div class="m-5">
       <div class="container contenido-sorpresa">
         <div class="producto bg-primary row justify-content-between mx-auto shadow p-3">
-          <div class="col-md-5 col-lg-4 d-flex align-content-center align-items-center ">
+          <div class="mb-5 m-sm-0 col-md-5 col-lg-4 d-flex align-content-center align-items-center ">
             <img :src="imageDefault"  class="w-100 mx-auto d-block" />
           </div>
           <div class="col-md-5 text_productos ">
