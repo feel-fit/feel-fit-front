@@ -24,7 +24,7 @@
               <router-link class="text-dark"  to="/catalogo">Cátalogo</router-link>
             </div>
             <div class="col-12 font-weight-bold font-italic text-center mt-3">
-              <router-link class="text-dark" to="/categorias/cajas-sorpresa">Caja sorpresa</router-link>
+              <router-link class="text-dark" to="/caja-sorpresa">Caja sorpresa</router-link>
             </div>
           </div>
           <div class="row espaciado text-center">
