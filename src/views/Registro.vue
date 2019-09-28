@@ -96,7 +96,10 @@ export default {
         (result) => {
           api.Users().create(this.form).then(response => {
             this.$store.commit('set_me', response.data.data)
-            this.$router.push('/')
+            api.Users().login(this.form).then(response=>{
+              this.$router.push('/')
+            })
+           
           }).catch(error => {
             this.error.email = true
             

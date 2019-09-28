@@ -124,7 +124,7 @@ export default {
             console.log('hola')
             this.changeDepartment()
           }
-        } else {
+        } else if (!this.me.id) {
           this.$store.commit('set_me', {})
           this.cliente.id = null
         }
@@ -132,7 +132,7 @@ export default {
     },
     next () {
       // cambiar por result al finalizar pruebas
-
+      
       this.$validator.validateAll().then((result) => {
         if (result) {
           if (!this.nextViewSend) {
@@ -166,22 +166,21 @@ export default {
       this.changeCiudades()
     },
     back () {
-
+    
     },
     gotonext () {
       this.$store.commit('set_address', this.address)
       $('#envios-tab').removeClass('disabled').tab('show')
     }
   }
-
+  
 }
 </script>
 <style scoped>
-
   label{
     font-size: 0.7em;
   }
-
+  
   .titulo{
     margin-top:    5rem;
     margin-bottom: 2.5rem;
