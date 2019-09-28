@@ -7,7 +7,7 @@
           <div class="option collapsed shadow" data-toggle="collapse" href="#usuario">
             <div class="row m-0 p-0">
               <div class="col-6 p-0">
-                <img src="./../assets/images/Usuario/infodeusuario.svg" class="img-fluid imagen" />
+                <img src="./../assets/images/Usuario/infodeusuario.svg" class="img-fluid imagen"/>
               </div>
               <div class="col-4">
                 <h5 class="text-muted m-0 pt-5 font-italic">Informaci&oacute;n de</h5>
@@ -16,13 +16,12 @@
               <div class="col-2">
                 <div class="row justify-content-center align-items-center h-100">
                   <div class="icono">
-                    <img src="./../assets/images/Usuario/Icons/Arrow.svg" class="img-fluid" />
+                    <img src="./../assets/images/Usuario/Icons/Arrow.svg" class="img-fluid"/>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-
           <div id="usuario" class="card-body collapse" data-parent="#accordion">
             <div class="container-fluid mt-5">
               <div class="row">
@@ -30,7 +29,7 @@
                   <div class="container px-md-5 mx-md-5">
                     <div class="mb-4">
                       <h5 class="text-primary font-italic font-weight-bold">Nombre Completo</h5>
-                      <span class="d-inline-block pl-2 text-capitalize">{{$store.state.me.name}}</span>
+                      <span class="d-inline-block pl-2 text-capitalize">{{me.name}}</span>
                     </div>
                     <div class="mb-4">
                       <h5
@@ -38,15 +37,15 @@
                       >C&eacute;dula de Ciudadania</h5>
                       <span
                         class="d-inline-block pl-2 text-capitalize"
-                      >{{$store.state.me.identification}}</span>
+                      >{{me.identification}}</span>
                     </div>
                     <div class="mb-4">
                       <h5 class="text-primary font-italic font-weight-bold">G&eacute;nero</h5>
-                      <span class="d-inline-block pl-2 text-capitalize">{{$store.state.me.gender}}</span>
+                      <span class="d-inline-block pl-2 text-capitalize">{{me.gender}}</span>
                     </div>
                     <div class="mb-4">
                       <h5 class="text-primary font-italic font-weight-bold">Fecha de nacimiento</h5>
-                      <span class="d-inline-block pl-2 text-capitalize">{{$store.state.me.birth}}</span>
+                      <span class="d-inline-block pl-2 text-capitalize">{{me.birth}}</span>
                     </div>
                   </div>
                 </div>
@@ -56,19 +55,19 @@
                       <h5
                         class="text-primary font-italic font-weight-bold"
                       >Correo electr&oacute;nico</h5>
-                      <span class="d-inline-block pl-2">{{$store.state.me.email}}</span>
+                      <span class="d-inline-block pl-2">{{me.email}}</span>
                     </div>
                     <div class="mb-4">
                       <h5 class="text-primary font-italic font-weight-bold">Departamento/ciudad</h5>
                       <span
                         class="d-inline-block pl-2 text-capitalize"
-                      >{{$store.state.me.addresses| department_city }}</span>
+                      >{{me.addresses| department_city }}</span>
                     </div>
                     <div class="mb-4">
                       <h5 class="text-primary font-italic font-weight-bold">Direcci&oacute;n</h5>
                       <span
                         class="d-inline-block pl-2 text-capitalize"
-                      >{{$store.state.me.addresses>0?$store.state.me.addresses[0].name:''}}</span>
+                      >{{me.addresses>0?me.addresses[0].name:''}}</span>
                     </div>
                     <div class="mb-4 d-flex justify-content-end">
                       <button class="btn btn-primary btn-lg text-white">Editar</button>
@@ -79,12 +78,11 @@
             </div>
           </div>
         </div>
-
         <div class="menu">
           <div class="option collapsed shadow" data-toggle="collapse" href="#descuento">
             <div class="row m-0 p-0">
               <div class="col-6 p-0">
-                <img src="./../assets/images/Usuario/descuentos.svg" class="img-fluid imagen" />
+                <img src="./../assets/images/Usuario/descuentos.svg" class="img-fluid imagen"/>
               </div>
               <div class="col-4">
                 <h5 class="text-muted m-0 pt-5 font-italic"></h5>
@@ -93,7 +91,7 @@
               <div class="col-2">
                 <div class="row justify-content-center align-items-center h-100">
                   <div class="icono">
-                    <img src="./../assets/images/Usuario/Icons/Arrow.svg" class="img-fluid" />
+                    <img src="./../assets/images/Usuario/Icons/Arrow.svg" class="img-fluid"/>
                   </div>
                 </div>
               </div>
@@ -119,12 +117,11 @@
             </div>
           </div>
         </div>
-
         <div class="menu">
           <div class="option collapsed shadow" data-toggle="collapse" href="#pago">
             <div class="row m-0 p-0">
               <div class="col-6 p-0">
-                <img src="./../assets/images/Usuario/metododepago.svg" class="img-fluid imagen" />
+                <img src="./../assets/images/Usuario/metododepago.svg" class="img-fluid imagen"/>
               </div>
               <div class="col-4">
                 <h5 class="text-muted m-0 pt-5 font-italic">M&eacute;todos de</h5>
@@ -133,7 +130,7 @@
               <div class="col-2">
                 <div class="row justify-content-center align-items-center h-100">
                   <div class="icono">
-                    <img src="./../assets/images/Usuario/Icons/Arrow.svg" class="img-fluid" />
+                    <img src="./../assets/images/Usuario/Icons/Arrow.svg" class="img-fluid"/>
                   </div>
                 </div>
               </div>
@@ -170,7 +167,8 @@
                     <h5 class="text-primary font-italic font-weight-bold">Domicilio en Armenia</h5>
                     <p
                       class="mr-md-5 pr-md-5"
-                    >Debe ser pagado contraentrega en efectivo al domiciliario, revisar la politica de env&iacute;os.</p>
+                    >Debe ser pagado contraentrega en efectivo al domiciliario, revisar la politica de
+                      env&iacute;os.</p>
                   </div>
                 </div>
               </div>
@@ -197,52 +195,48 @@
     </div>
   </section>
 </template>
-
 <script>
-import volver from "../components/products/volver.vue";
-import app from './../plugins/api'
+import volver from '../components/products/volver.vue'
+
+
 export default {
-  name:'usuario',
+  name: 'usuario',
   components: {
     volver
   },
-  mounted() {
-    //console.log(this.$store.state.me);
-    app.Users().getMe().then((result)=>{
-      console.log(result);
-    });
-    
+  mounted () {
+  
+  
+  },
+  computed: {
+    me () {
+      return this.$store.state.me
+    }
   }
-};
+}
 </script>
-
 <style scoped lang="scss">
-
-.imagen-pago {
-  width: 120px;
-  height: 120px;
-  padding: 1rem;
-  border-radius: 20px;
-}
-.menu {
-  margin-bottom: 2rem;
-}
-
-.option {
-  background-color: white;
-  border-radius: 20px;
-}
-
-.imagen {
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
-}
-
-.accordion .option .icono {
-  transform: scaleY(-1);
-}
-
-.accordion .option.collapsed .icono {
-  transform: scaleY(1);
-}
+  .imagen-pago {
+    width: 120px;
+    height: 120px;
+    padding: 1rem;
+    border-radius: 20px;
+  }
+  .menu {
+    margin-bottom: 2rem;
+  }
+  .option {
+    background-color: white;
+    border-radius: 20px;
+  }
+  .imagen {
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+  }
+  .accordion .option .icono {
+    transform: scaleY(-1);
+  }
+  .accordion .option.collapsed .icono {
+    transform: scaleY(1);
+  }
 </style>
