@@ -66,7 +66,6 @@ export default {
       }, 200)
     },
     searching () {
-      console.log('hola')
       api.Products().search(this.search).then(result => {
         this.products = result.data.data
       }).catch(error => {

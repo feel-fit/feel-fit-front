@@ -151,7 +151,7 @@ export default {
                 }
               );
 
-              //this.gotonext()
+              this.gotonext()
             } else {
               api.Users().create(this.cliente).then(response => {
                 this.$store.commit('set_me', response.data.data)
