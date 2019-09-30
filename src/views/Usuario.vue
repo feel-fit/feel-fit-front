@@ -63,8 +63,8 @@
                       <span class="d-inline-block pl-2 text-capitalize">{{me.gender}}</span>
                     </div>
                     <div class="mb-4">
-                      <h5 class="text-primary font-italic font-weight-bold">Fecha de nacimiento</h5>
-                      <span class="d-inline-block pl-2 text-capitalize">{{me.birth}}</span>
+                      <h5 class="text-primary font-italic font-weight-bold">Telefono</h5>
+                      <span class="d-inline-block pl-2 text-capitalize">{{me.phone}}</span>
                     </div>
                   </div>
                 </div>
@@ -89,7 +89,7 @@
                       >{{me.addresses.length>0?me.addresses[0].address:''}}</span>
                     </div>
                     <div class="mb-4 d-flex justify-content-end">
-                      <button class="btn btn-primary btn-lg text-white">Editar</button>
+                      <button class="btn btn-primary btn-lg text-white" data-toggle="modal" data-target="#modalEditar">Editar</button>
                     </div>
                   </div>
                 </div>
@@ -212,15 +212,20 @@
         </div>
       </div>
     </div>
+
+    <editar-user></editar-user>
+
   </section>
 </template>
 <script>
 import volver from "../components/products/volver.vue";
+import editarUser from "../components/usuario/editarUser";
 
 export default {
   name: "usuario",
   components: {
-    volver
+    volver,
+    editarUser
   },
   mounted() {},
   computed: {
