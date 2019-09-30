@@ -53,7 +53,7 @@
 <script>
 import volver from "../components/products/volver.vue";
 import homeCategory from "../components/home/homeCategory";
-import imageDefault from '../assets/images/producto.png';
+import imageDefault from '../assets/images/caja_sorpresa/Group.svg';
 import sorpresa from "../assets/images/sorpresa.png";
 export default {
   components: { volver, homeCategory },

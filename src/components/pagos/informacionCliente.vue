@@ -143,7 +143,15 @@ export default {
                   this.gotonext()
                 })
               }
-              this.gotonext()
+              // actualizar datos usuario.
+
+              api.Users().update(this.me.id,this.cliente).then(
+                response=>{
+                    console.log(response);
+                }
+              );
+
+              //this.gotonext()
             } else {
               api.Users().create(this.cliente).then(response => {
                 this.$store.commit('set_me', response.data.data)

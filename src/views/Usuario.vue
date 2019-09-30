@@ -67,7 +67,7 @@
                       <h5 class="text-primary font-italic font-weight-bold">Direcci&oacute;n</h5>
                       <span
                         class="d-inline-block pl-2 text-capitalize"
-                      >{{me.addresses>0?me.addresses[0].name:''}}</span>
+                      >{{me.addresses.length>0?me.addresses[0].address:''}}</span>
                     </div>
                     <div class="mb-4 d-flex justify-content-end">
                       <button class="btn btn-primary btn-lg text-white">Editar</button>
