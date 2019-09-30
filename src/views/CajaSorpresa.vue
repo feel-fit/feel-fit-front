@@ -69,6 +69,12 @@ export default {
     },
     addToWishlist () {
       this.$store.commit('addToWishlist', this.product)
+    },
+    setData (data, id) {
+      this.productos = data
+      api.Categories().getOne(id).then(response => {
+        this.name = response.data.data.name
+      })
     }
   }
 };
