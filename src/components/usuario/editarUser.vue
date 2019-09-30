@@ -115,12 +115,12 @@
                       <div class="invalid-feedback">Se requiere de un tel&eacute;fono</div>
                     </div>
                     <div class="form-group col-md-12">
-                      <div class="row justify-content-end ">
+                      <div class="row justify-content-end">
                         <button
-                            @click="next"
-                            type="button"
-                            class="btn btn-primary text-white btn-lg w-md-100 font-italic font-weight-bold"
-                          >Guardar</button>
+                          @click="next"
+                          type="button"
+                          class="btn btn-primary text-white btn-lg w-md-100 font-italic font-weight-bold"
+                        >Guardar</button>
                       </div>
                     </div>
                   </div>
@@ -135,11 +135,10 @@
 </template>
 
 <script>
-
-import api from '../../plugins/api'
+import api from "../../plugins/api";
 export default {
   name: "editar-user",
-  data () {
+  data() {
     return {
       cities: [],
       cliente: {
@@ -148,124 +147,105 @@ export default {
         email: null,
         phone: null,
         department: null,
-        gender: 'masculino'
+        gender: "masculino"
       },
       address: {
         user_id: null,
-        name: 'casa',
+        name: "casa",
         address: null,
         city_id: null
       }
-    }
+    };
   },
-  mounted () {
+  mounted() {
     if (this.me.id) {
-      this.cliente = this.me
+      this.cliente = this.me;
       if (this.me.addresses.length > 0) {
-        this.address = this.me.addresses[0]
-        this.changeDepartment()
+        let address = this.me.addresses[0];
+        this.address.city_id = address.city.id;
+        this.address.address = address.address;
+        this.address.user_id = address.user.id;
+        this.changeDepartment();
       } else {
-        this.address.user_id = this.me.id
+        this.address.user_id = this.me.id;
       }
     }
   },
-  created () {
-    this.$store.dispatch('getDepartments')
-    this.$store.dispatch('getCities')
+  created() {
+    this.$store.dispatch("getDepartments");
+    this.$store.dispatch("getCities");
   },
   computed: {
-    departments () {
-      return this.$store.state.departments
+    departments() {
+      return this.$store.state.departments;
     },
-    citiesall () {
-      return this.$store.state.cities
+    citiesall() {
+      return this.$store.state.cities;
     },
-    me () {
-      return this.$store.state.me
+    me() {
+      return this.$store.state.me;
     }
   },
   methods: {
-    checkDocumento () {
-      api.Users().checkDocumento(this.cliente.identification).then(response => {
-        if (response.data.data.length > 0) {
-          this.$store.commit('set_me', response.data.data[0])
-          if (this.me.addresses.length > 0) {
-            this.address = this.me.addresses[0]
-            console.log('hola')
-            this.changeDepartment()
-          }
-        } else if (!this.me.id) {
-          this.$store.commit('set_me', {})
-          this.cliente.id = null
-        }
-      })
-    },
-    next () {
-      // cambiar por result al finalizar pruebas
-      
-      this.$validator.validateAll().then((result) => {
-        if (result) {
-          if (!this.nextViewSend) {
-            if (this.me.id) {
-              if (!this.address.id) {
-                api.Addresses().create(this.address).then(response => {
-                  this.address = response.data.data
-                  this.gotonext()
-                })
-              }
-              // actualizar datos usuario.
-
-              api.Users().update(this.me.id,this.cliente).then(
-                response=>{
-                    console.log(response);
-                }
-              );
-
-              this.gotonext()
-            } else {
-              api.Users().create(this.cliente).then(response => {
-                this.$store.commit('set_me', response.data.data)
-                this.address.user_id = response.data.data.id
-                api.Addresses().create(this.address).then(response => {
-                  this.address = response.data.data
-                  this.gotonext()
-                })
-              })
+    checkDocumento() {
+      api
+        .Users()
+        .checkDocumento(this.cliente.identification)
+        .then(response => {
+          if (response.data.data.length > 0) {
+            this.$store.commit("set_me", response.data.data[0]);
+            if (this.me.addresses.length > 0) {
+              this.address = this.me.addresses[0];
+              this.changeDepartment();
             }
+          } else if (!this.me.id) {
+            this.$store.commit("set_me", {});
+            this.cliente.id = null;
           }
-        }
-      })
+        });
     },
-    changeCiudades () {
-      this.cities = this.departments.filter(item => item.id == this.cliente.department)[0].cities
+    next() {
+      // cambiar direccion
+
+      //
+      
+      api
+        .Users()
+        .update(this.me.id, this.cliente)
+        .then(response => {
+          $('#modalEditar').modal('hide');
+        });
     },
-    changeDepartment () {
-      this.cliente.department = this.departments.filter(item => item.id == this.citiesall.filter(node => node.id == this.address.city_id)[0].department_id)[0].id
-      this.changeCiudades()
+    changeCiudades() {
+      this.cities = this.departments.filter(
+        item => item.id == this.cliente.department
+      )[0].cities;
     },
-    back () {
-    
-    },
-    gotonext () {
-      this.$store.commit('set_address', this.address)
-      $('#envios-tab').removeClass('disabled').tab('show')
+    changeDepartment() {
+      this.cliente.department = this.departments.filter(
+        item =>
+          item.id ==
+          this.citiesall.filter(node => node.id == this.address.city_id)[0]
+            .department_id
+      )[0].id;
+      this.changeCiudades();
     }
   }
 };
 </script>
 
 <style scoped>
-  .caja{
-    border:2px red solid;
-  }
+.caja {
+  border: 2px red solid;
+}
 
-  label{
-    font-size: 0.7em;
-  }
-  
-  .titulo{
-    margin-bottom: 2.5rem;
-  }
+label {
+  font-size: 0.7em;
+}
+
+.titulo {
+  margin-bottom: 2.5rem;
+}
 </style> 
 
 </style>
