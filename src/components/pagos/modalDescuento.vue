@@ -37,9 +37,6 @@ export default {
   props:{
     discount:{require:true}
   },
-  data(){
-  
-  }
 };
 </script>
 <style scoped>

@@ -97,9 +97,6 @@
         </div>
       </div>
     </div>
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalDescuento">
-      Launch demo modal
-    </button>
     <descuento v-if="me.discounts[0]" :discount="me.discounts[0]"></descuento>
   </div>
 </template>
@@ -120,6 +117,7 @@ export default {
     }
   },
   mounted () {
+  
   
   },
   computed: {
@@ -157,6 +155,7 @@ export default {
   methods: {
     next () {
       if (this.condiciones) {
+       
         api.Shopping().create(this.shopping).then(result => {
           this.cart.items = this.shopping.items.map(item => {
             item.shopping_id = result.data.data.id

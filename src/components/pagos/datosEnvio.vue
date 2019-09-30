@@ -132,7 +132,7 @@
 </template>
 <script>
 import api from '../../plugins/api'
-
+import { sumBy } from 'lodash'
 export default {
   name: 'datosEnvio',
   data () {
@@ -157,6 +157,17 @@ export default {
     },
     me () {
       return this.$store.state.me
+    },
+    cart () {
+      return this.$store.state.cart
+    },
+    total () {
+      return sumBy(this.cart.items, item => {
+        return item.quantity * item.price
+      })
+    },
+    descuento () {
+      return (this.me.discounts[0].value/100) * this.total
     }
   },
   methods: {
@@ -173,6 +184,10 @@ export default {
             })
           }
           $('#metodo-pago-tab').removeClass('disabled').tab('show')
+          if (this.descuento > 0){
+            $('#modalDescuento').modal('show')
+          }
+          
         }
       })
     },
