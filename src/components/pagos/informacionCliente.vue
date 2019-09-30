@@ -132,11 +132,10 @@ export default {
     },
     next () {
       // cambiar por result al finalizar pruebas
-      
       this.$validator.validateAll().then((result) => {
         if (result) {
           if (!this.nextViewSend) {
-            if (this.me.id) {
+            if (this.me!=null) {
               if (!this.address.id) {
                 api.Addresses().create(this.address).then(response => {
                   this.address = response.data.data
