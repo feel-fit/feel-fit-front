@@ -1,13 +1,11 @@
 <template>
   <div class="container h-100 d-flex  flex-column " style="width: 310px">
-
     <div class="row">
       <div class="col-sm-12 bg-white py-5 px-4 ">
         <h3 class="h2 font-italic font-weight-bold text-left text-primary">Tu carrito</h3>
         <span class="texto-resumen text-dark font-weight-bold">Resumen del pedido</span>
       </div>
     </div>
-
     <div class="row  my-3 flex-fill">
       <div class="col-sm-12 mt-3">
         <div class="row flex-nowrap my-li-own mb-3" v-for="item in cart.items" :key="item.id">
@@ -52,7 +50,6 @@
         </div>
       </div>
     </div>
-
     <div class="row bg-white mt-3 mt-auto p-2 ">
       <div class="col-sm-12 p-4">
         <div class="row  px-5 d-flex justify-content-between lh-condensed">
@@ -61,28 +58,24 @@
           </div>
           <span class="text-muted font-weight-bold">{{total | money}}</span>
         </div>
-
         <div class="row  pb-1 px-5 d-flex justify-content-between lh-condensed">
           <div>
             <h6 class="my-0 font-weight-bold">Costo envio</h6>
           </div>
           <span class="text-muted font-weight-bold">{{$store.state.tool_paying.costSend | money}}</span>
         </div>
-
         <div class="row  pb-1 px-5 d-flex justify-content-between lh-condensed">
           <div>
             <h6 class="my-0 font-weight-bold">Descuento</h6>
           </div>
-          <span class="text-muted font-weight-bold">{{ 0 | money}}</span>
+          <span class="text-muted font-weight-bold">{{ descuento | money}}</span>
         </div>
-
         <div class="row pt-3 pb-1 px-5 d-flex justify-content-between lh-condensed">
           <div>
             <h6 class="my-0 font-weight-bold">Precio Total</h6>
           </div>
-          <span class="font-weight-bold font-italic text-dark h5">{{total+$store.state.tool_paying.costSend | money}}</span>
+          <span class="font-weight-bold font-italic text-dark h5">{{(total+$store.state.tool_paying.costSend - descuento) | money}}</span>
         </div>
-
       </div>
     </div>
   </div>
@@ -106,10 +99,16 @@ export default {
     cart () {
       return this.$store.state.cart
     },
+    me(){
+      return this.$store.state.me
+    },
     total () {
       return sumBy(this.cart.items, item => {
         return item.quantity * item.price
       })
+    },
+    descuento () {
+      return parseInt((this.me.discounts[0].value/100) * this.total)
     },
     quantityCart () {
       return sumBy(this.$store.state.cart.items, item => {
@@ -124,7 +123,7 @@ export default {
     remove_product_cart (item) {
       this.$store.commit('removeProductCart', item)
     }
-
+    
   }
 }
 </script>
@@ -132,36 +131,35 @@ export default {
   .image-product{
     max-width: 80px;
   }
-
+  
   .my-li-own{
     background-color: white;
     border-radius:    1rem;
     border-radius:    1rem;
     box-shadow:       0 0 10px rgba(0, 0, 0, .1);
   }
-
+  
   .my-li-own div{
     color: #20D6D9;
   }
-
+  
   .div-va{
     display:         flex;
     justify-content: center;
     align-items:     center;
   }
-
+  
   .br-left{
     border-top-left-radius:    1.5rem !important;
     border-bottom-left-radius: 1.5rem !important;
   }
-
+  
   .br-right{
     border-top-right-radius:    20rem !important;
     border-bottom-right-radius: 20rem !important;
   }
-
+  
   .price{
     color: black;
   }
-
 </style>

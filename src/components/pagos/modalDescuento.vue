@@ -18,7 +18,7 @@
           </div>
           <div class="modal-body text-center">
             <img src="./../../assets/images/pagos/descuentos/des.png" class="img-fluid" />
-            <h1 class="descuento">{{porcentaje}}%</h1>
+            <h1 class="descuento">{{discount.value}}%</h1>
           </div>
           <div class="modal-footer d-flex flex-column border-0">
             <span class="text-muted font-italic small">Ha sido activado</span>
@@ -34,10 +34,11 @@
 <script>
 export default {
   name: "descuento",
+  props:{
+    discount:{require:true}
+  },
   data(){
-    return {
-      porcentaje:7
-    };
+  
   }
 };
 </script>

@@ -97,21 +97,20 @@
         </div>
       </div>
     </div>
-
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalDescuento">
-  Launch demo modal
-</button>
-    <descuento></descuento>
-
+      Launch demo modal
+    </button>
+    <descuento v-if="me.discounts[0]" :discount="me.discounts[0]"></descuento>
   </div>
 </template>
 <script>
 import { sumBy } from 'lodash'
 import api from '../../plugins/api'
 import descuento from './modalDescuento'
+
 export default {
   name: 'seleccionarPago',
-  components:{descuento},
+  components: { descuento },
   data () {
     return {
       metodoPago: 1,
@@ -119,6 +118,9 @@ export default {
       condiciones: false,
       items: []
     }
+  },
+  mounted () {
+  
   },
   computed: {
     me () {
@@ -134,7 +136,7 @@ export default {
         // crear descuento
         discount_id: null,
         payment_id: this.metodoPago
-
+        
       }
     },
     cart () {
@@ -149,7 +151,7 @@ export default {
       return this.$store.state.tool_paying.costSend
     },
     descuento () {
-      return this.$store.state.tool_paying.discount
+      return (this.me.discounts[0].value/100) * this.total
     }
   },
   methods: {
@@ -162,12 +164,12 @@ export default {
             item.value = item.price
             return item
           })
-
+          
           api.DetailShopping().create(this.cart).then(response => {
-            // TODO mandar a thankyou page o a pagina de pagos
-            console.log('pago exitoso')
-            this.$router.push('thankyou')
-          }
+              // TODO mandar a thankyou page o a pagina de pagos
+              console.log('pago exitoso')
+              this.$router.push('thankyou')
+            }
           )
         }).catch(error => {
           console.log(error)
@@ -181,47 +183,46 @@ export default {
 }
 </script>
 <style scoped>
-
   label{
     font-size: 0.7em;
   }
-
+  
   .titulo{
     margin-top:    5rem;
     margin-bottom: 2.5rem;
   }
-
+  
   .my-li-own{
     background-color: white;
     border-radius:    1rem;
     border-radius:    1rem;
     box-shadow:       0 0 10px rgba(0, 0, 0, .1);
   }
-
+  
   .my-li-own div{
     color: #20D6D9;
   }
-
+  
   .div-va{
     display:         flex;
     justify-content: center;
     align-items:     center;
   }
-
+  
   .br-left{
     border-top-left-radius:    1.5rem !important;
     border-bottom-left-radius: 1.5rem !important;
   }
-
+  
   .br-right{
     border-top-right-radius:    20rem !important;
     border-bottom-right-radius: 20rem !important;
   }
-
+  
   .price{
     color: black;
   }
-
+  
   .list-car{
     height:     30rem;
     overflow-y: scroll;
