@@ -53,7 +53,7 @@ function Products (url = 'products') {
     update: (id, toUpdate) => axios.put(`${url}/${id}`, toUpdate),
     create: (toCreate) => axios.post(url, toCreate),
     delete: (id) => axios.delete(`${url}/${id}`),
-    search: (tosearch) => axios.post(`${url}/search/?search=${tosearch}`)
+    search: (tosearch) => axios.post(`${url}/search?search=${tosearch}`)
   }
 }
 

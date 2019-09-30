@@ -7,7 +7,7 @@
           <div class="option collapsed shadow" data-toggle="collapse" href="#usuario">
             <div class="row m-0 p-0">
               <div class="col-6 p-0">
-                <img src="./../assets/images/Usuario/infodeusuario.svg" class="img-fluid imagen"/>
+                <img src="./../assets/images/Usuario/infodeusuario.svg" class="img-fluid imagen" />
               </div>
               <div class="col-4">
                 <h5 class="text-muted m-0 pt-5 font-italic">Informaci&oacute;n de</h5>
@@ -16,7 +16,7 @@
               <div class="col-2">
                 <div class="row justify-content-center align-items-center h-100">
                   <div class="icono">
-                    <img src="./../assets/images/Usuario/Icons/Arrow.svg" class="img-fluid"/>
+                    <img src="./../assets/images/Usuario/Icons/Arrow.svg" class="img-fluid" />
                   </div>
                 </div>
               </div>
@@ -27,6 +27,27 @@
               <div class="row">
                 <div class="col-md-6">
                   <div class="container px-md-5 mx-md-5">
+
+                    <!-- input nombre 
+                    <div class="mb-4">
+                      <div class="form-group">
+                        <label for="nombre-completo" class="h5 text-primary font-italic font-weight-bold">Nombre Completo</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="nombre-completo"
+                          aria-describedby="emailHelp"
+                          placeholder="Ingrese un nombre"
+                          :value="me.name"
+                        />
+                        <small
+                          id="emailHelp"
+                          class="form-text text-muted"
+                        >We'll never share your email with anyone else.</small>
+                      </div>
+                    </div>
+                    -->
+
                     <div class="mb-4">
                       <h5 class="text-primary font-italic font-weight-bold">Nombre Completo</h5>
                       <span class="d-inline-block pl-2 text-capitalize">{{me.name}}</span>
@@ -35,9 +56,7 @@
                       <h5
                         class="text-primary font-italic font-weight-bold"
                       >C&eacute;dula de Ciudadania</h5>
-                      <span
-                        class="d-inline-block pl-2 text-capitalize"
-                      >{{me.identification}}</span>
+                      <span class="d-inline-block pl-2 text-capitalize">{{me.identification}}</span>
                     </div>
                     <div class="mb-4">
                       <h5 class="text-primary font-italic font-weight-bold">G&eacute;nero</h5>
@@ -67,7 +86,7 @@
                       <h5 class="text-primary font-italic font-weight-bold">Direcci&oacute;n</h5>
                       <span
                         class="d-inline-block pl-2 text-capitalize"
-                      >{{me.addresses>0?me.addresses[0].name:''}}</span>
+                      >{{me.addresses.length>0?me.addresses[0].address:''}}</span>
                     </div>
                     <div class="mb-4 d-flex justify-content-end">
                       <button class="btn btn-primary btn-lg text-white">Editar</button>
@@ -82,7 +101,7 @@
           <div class="option collapsed shadow" data-toggle="collapse" href="#descuento">
             <div class="row m-0 p-0">
               <div class="col-6 p-0">
-                <img src="./../assets/images/Usuario/descuentos.svg" class="img-fluid imagen"/>
+                <img src="./../assets/images/Usuario/descuentos.svg" class="img-fluid imagen" />
               </div>
               <div class="col-4">
                 <h5 class="text-muted m-0 pt-5 font-italic"></h5>
@@ -91,7 +110,7 @@
               <div class="col-2">
                 <div class="row justify-content-center align-items-center h-100">
                   <div class="icono">
-                    <img src="./../assets/images/Usuario/Icons/Arrow.svg" class="img-fluid"/>
+                    <img src="./../assets/images/Usuario/Icons/Arrow.svg" class="img-fluid" />
                   </div>
                 </div>
               </div>
@@ -121,7 +140,7 @@
           <div class="option collapsed shadow" data-toggle="collapse" href="#pago">
             <div class="row m-0 p-0">
               <div class="col-6 p-0">
-                <img src="./../assets/images/Usuario/metododepago.svg" class="img-fluid imagen"/>
+                <img src="./../assets/images/Usuario/metododepago.svg" class="img-fluid imagen" />
               </div>
               <div class="col-4">
                 <h5 class="text-muted m-0 pt-5 font-italic">M&eacute;todos de</h5>
@@ -130,7 +149,7 @@
               <div class="col-2">
                 <div class="row justify-content-center align-items-center h-100">
                   <div class="icono">
-                    <img src="./../assets/images/Usuario/Icons/Arrow.svg" class="img-fluid"/>
+                    <img src="./../assets/images/Usuario/Icons/Arrow.svg" class="img-fluid" />
                   </div>
                 </div>
               </div>
@@ -165,10 +184,10 @@
                 <div class="col-md-8 d-flex align-items-center">
                   <div>
                     <h5 class="text-primary font-italic font-weight-bold">Domicilio en Armenia</h5>
-                    <p
-                      class="mr-md-5 pr-md-5"
-                    >Debe ser pagado contraentrega en efectivo al domiciliario, revisar la politica de
-                      env&iacute;os.</p>
+                    <p class="mr-md-5 pr-md-5">
+                      Debe ser pagado contraentrega en efectivo al domiciliario, revisar la politica de
+                      env&iacute;os.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -196,47 +215,43 @@
   </section>
 </template>
 <script>
-import volver from '../components/products/volver.vue'
-
+import volver from "../components/products/volver.vue";
 
 export default {
-  name: 'usuario',
+  name: "usuario",
   components: {
     volver
   },
-  mounted () {
-  
-  
-  },
+  mounted() {},
   computed: {
-    me () {
-      return this.$store.state.me
+    me() {
+      return this.$store.state.me;
     }
   }
-}
+};
 </script>
 <style scoped lang="scss">
-  .imagen-pago {
-    width: 120px;
-    height: 120px;
-    padding: 1rem;
-    border-radius: 20px;
-  }
-  .menu {
-    margin-bottom: 2rem;
-  }
-  .option {
-    background-color: white;
-    border-radius: 20px;
-  }
-  .imagen {
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-  }
-  .accordion .option .icono {
-    transform: scaleY(-1);
-  }
-  .accordion .option.collapsed .icono {
-    transform: scaleY(1);
-  }
+.imagen-pago {
+  width: 120px;
+  height: 120px;
+  padding: 1rem;
+  border-radius: 20px;
+}
+.menu {
+  margin-bottom: 2rem;
+}
+.option {
+  background-color: white;
+  border-radius: 20px;
+}
+.imagen {
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+.accordion .option .icono {
+  transform: scaleY(-1);
+}
+.accordion .option.collapsed .icono {
+  transform: scaleY(1);
+}
 </style>

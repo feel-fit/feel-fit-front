@@ -8,7 +8,7 @@
                         :src-placeholder="imageDefault"
           />
         </div>
-        <div class="col text-left "><p class="text-capitalize mb-1">{{product.name}}</p>
+        <div class="col text-left" @mouseenter="popovers(product)"><p class="text-capitalize mb-1">{{product.name}}</p>
           <span class="text-capitalize">{{product.brand}}</span></div>
       </div>
     </div>
@@ -50,6 +50,9 @@ export default {
   methods: {
     link () {
       this.$router.push({ name: 'producto', params: { id: this.product.id, slug: this.product.slug } })
+    },
+    popovers(){
+      console.log("si funciona");
     }
   }
 }
