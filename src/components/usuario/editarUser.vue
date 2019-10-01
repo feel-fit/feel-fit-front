@@ -156,7 +156,7 @@ export default {
       this.cliente = this.me
       if (this.me.addresses.length > 0) {
         this.address = this.me.addresses[0]
-        this.changeDepartment()
+        this.changeDepartmentUser()
       } else {
         this.address.user_id = this.me.id
       }
@@ -200,11 +200,12 @@ export default {
       if (!this.address.id) {
         api.Addresses().create(this.address).then(response => {
           this.address = response.data.data
-         
+          this.address.city_id = this.address.city.id;
         })
       }else{
         api.Addresses().update(this.address.id,this.address).then(response => {
           this.address = response.data.data
+          this.address.city_id = this.address.city.id;
         })
       }
       //
@@ -231,6 +232,16 @@ export default {
             .department_id
       )[0].id
       this.changeCiudades()
+    },
+    changeDepartmentUser () {
+      this.cliente.department = this.departments.filter(
+        item =>
+          item.id ==
+          this.citiesall.filter(node => node.id == this.address.city.id)[0]
+            .department_id
+      )[0].id
+      this.changeCiudades();
+      this.address.city_id = this.address.city.id;
     }
   }
 }
