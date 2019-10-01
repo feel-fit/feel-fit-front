@@ -9,17 +9,17 @@
       :image="sorpresa"
     />
 
-    <div class="m-5">
+    <div class="m-5" v-for="(producto, index) in products" :key="index">
       <div class="container contenido-sorpresa">
         <div class="producto bg-primary row justify-content-between mx-auto shadow p-3">
           <div class="mb-5 m-sm-0 col-md-5 col-lg-4 d-flex align-content-center align-items-center ">
-            <img :src="imageDefault"  class="w-100 mx-auto d-block" />
+            <img :src="producto.images.length>0?producto.images[0].url:imageDefault"  class="w-100 mx-auto d-block" />
           </div>
           <div class="col-md-5 text_productos ">
-            <h2 class="font-weight-bold font-italic mt-lg-5 mb-3 text-white">Dia de la madre</h2>
+            <h2 class="font-weight-bold font-italic mt-lg-5 mb-3 text-white">{{producto.name}}</h2>
             <p
               class="font-italic mb-3 texto-producto font overflow-auto "
-            >Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt aspernatur fugit porro illo, praesentium modi</p>
+            >{{producto.description}}</p>
             <p class="text-right text-white font-weight-bold ">$15.000</p>
           </div>
           <div class="col-md-auto ">
@@ -51,6 +51,7 @@
 </template>
 
 <script>
+import api from '../plugins/api'
 import volver from "../components/products/volver.vue";
 import homeCategory from "../components/home/homeCategory";
 import imageDefault from '../assets/images/caja_sorpresa/Group.svg';
@@ -60,8 +61,19 @@ export default {
   data() {
     return {
       sorpresa,
-      imageDefault
+      imageDefault,
+      products:[]
     };
+  },
+
+  mounted(){
+    api.Categories().getBySlug('cajas-sorpresa').then(response => {
+        let id = response.data.data[0].id
+        api.Categories().products(id).getPaginate().then(response => {
+          this.products = response.data.data;
+          console.log(this.products);
+        }).catch()
+      }).catch()
   },
   methods:{
       addToCart () {
