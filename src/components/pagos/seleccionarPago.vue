@@ -149,7 +149,10 @@ export default {
       return this.$store.state.tool_paying.costSend
     },
     descuento () {
-      return (this.me.discounts[0].value/100) * this.total
+      if(this.me!=null&&this.me.discounts.lenght>0){
+          return parseInt((this.me.discounts[0].value/100) * this.total)
+      }
+      return 0;
     }
   },
   methods: {

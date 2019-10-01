@@ -9,7 +9,7 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     // =data
-    me: null,
+    me: {},
     categories: [],
     departments: [],
     cities: [],

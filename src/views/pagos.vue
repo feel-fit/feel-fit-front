@@ -27,10 +27,10 @@
                       <informacion-cliente/>
                     </div>
                     <div class="tab-pane fade" id="envios" role="tabpanel" aria-labelledby="envios-tab">
-                      <datos-envio/>
+                      <datos-envio v-if="me!=null"/>
                     </div>
                     <div class="tab-pane fade" id="metodo-pago" role="tabpanel" aria-labelledby="metodo-pago-tab">
-                      <seleccionar-pago/>
+                      <seleccionar-pago v-if="me!=null"/>
                     </div>
                   </div>
                 </div>
@@ -65,6 +65,9 @@ export default {
     },
     nextViewPay () {
       return this.$store.state.tool_paying.nextViewPay
+    },
+    me () {
+      return this.$store.state.me
     }
   }
 }

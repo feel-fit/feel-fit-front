@@ -104,7 +104,7 @@ export default {
     }
   },
   mounted () {
-    if (this.me.id) {
+    if (this.me!=null) {
       this.cliente = this.me
       if (this.me.addresses.length > 0) {
         this.address = this.me.addresses[0]
