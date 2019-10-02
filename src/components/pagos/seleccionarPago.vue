@@ -118,7 +118,6 @@ export default {
   },
   mounted () {
   
-  
   },
   computed: {
     me () {
@@ -149,16 +148,16 @@ export default {
       return this.$store.state.tool_paying.costSend
     },
     descuento () {
-      if(this.me!=null&&this.me.discounts.lenght>0){
-          return parseInt((this.me.discounts[0].value/100) * this.total)
+      if (this.me != null && this.me.discounts.lenght > 0) {
+        return parseInt(( this.me.discounts[0].value / 100 ) * this.total)
       }
-      return 0;
+      return 0
     }
   },
   methods: {
     next () {
       if (this.condiciones) {
-       
+        
         api.Shopping().create(this.shopping).then(result => {
           this.cart.items = this.shopping.items.map(item => {
             item.shopping_id = result.data.data.id
@@ -171,6 +170,8 @@ export default {
               // TODO mandar a thankyou page o a pagina de pagos
               console.log('pago exitoso')
               this.$router.push('thankyou')
+              window.open('https://www.zonapagos.com/t_feelfit/')
+              
             }
           )
         }).catch(error => {

@@ -1,9 +1,8 @@
 <template>
-  <div class="container-fluid">
+  <div class="whatsapp">
     <div class="row">
         <div class="col order-12">
-
-        <a href="#"><img :src="whatsapp" alt="Whatsapp" class="float-right mb-4"></a>
+        <a target="_blank" href="https://api.whatsapp.com/send?phone=573113745588&text=Hola%20deseo%20saber%20más!"><img :src="whatsapp" alt="Whatsapp" class="float-right mb-4"></a>
         </div>
 
     </div>
@@ -24,3 +23,11 @@ export default {
 }
 
 </script>
+<style scoped>
+  .whatsapp{
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    z-index: 200;
+  }
+</style>
