@@ -18,7 +18,7 @@
           <div class="col-md-5 text_productos ">
             <h2 class="font-weight-bold font-italic mt-lg-5 mb-3 text-white">{{producto.name}}</h2>
             <p
-              class="font-italic mb-3 texto-producto font overflow-auto "
+              class="font-italic mb-3 texto-producto font overflow-auto"
             >{{producto.description}}</p>
             <p class="text-right text-white font-weight-bold ">$15.000</p>
           </div>
@@ -26,13 +26,13 @@
             <!--botones-->
             <div class="row flex-md-column mr-md-2 justify-content-between h-100 ">
               
-              <div @click="addToWishlist" class="">
+              <div @click="addToWishlist(producto)" class="">
                 <div class="corazon bg-white p-2 rounded-circle shadow">
                   <img src="../assets/images/fav.svg" alt="Corazon" class="img-fluid" />
                 </div>
               </div>
 
-              <div @click="addToCart" class="">
+              <div @click="addToCart(producto)" class="">
                 <div class="car bg-white p-2 rounded-circle shadow">
                   <img
                     src="../assets/images/product/botonCar.svg"
@@ -71,16 +71,15 @@ export default {
         let id = response.data.data[0].id
         api.Categories().products(id).getPaginate().then(response => {
           this.products = response.data.data;
-          console.log(this.products);
         }).catch()
       }).catch()
   },
   methods:{
-      addToCart () {
-      this.$store.commit('addToCart', this.product)
+      addToCart (product) {
+      this.$store.commit('addToCart',product)
     },
-    addToWishlist () {
-      this.$store.commit('addToWishlist', this.product)
+    addToWishlist (product) {
+      this.$store.commit('addToWishlist',product)
     },
     setData (data, id) {
       this.productos = data
@@ -102,8 +101,9 @@ export default {
 }
 
 .texto-producto {
-  max-height: 120px;
+  max-height: 125px;
   color: white;
+  padding: 1.5rem;
 }
 
 .contenido-sorpresa {

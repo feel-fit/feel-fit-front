@@ -172,6 +172,11 @@ export default new Vuex.Store({
         return item.id !== data.id
       })
     },
+    removeProductWish (state, data) {
+      state.wishlist = state.wishlist.filter(item => {
+        return item.id !== data.id
+      })
+    },
     set_slides (state, data) {
       state.slides = data
     },
