@@ -163,8 +163,8 @@ export default {
     }
   },
   created () {
-    this.$store.dispatch('getDepartments')
-    this.$store.dispatch('getCities')
+    //this.$store.dispatch('getDepartments')
+    //this.$store.dispatch('getCities')
   },
   computed: {
     departments () {
@@ -225,10 +225,8 @@ export default {
       )[0].cities
     },
     changeDepartment () {
-      this.cliente.department = this.departments.filter(
-        item =>
-          item.id ==
-          this.citiesall.filter(node => node.id == this.address.city_id)[0]
+      console.log(this.address)
+      this.cliente.department = this.departments.filter(item => item.id == this.citiesall.filter(node => node.id == this.address.city_id)[0]
             .department_id
       )[0].id
       this.changeCiudades()
