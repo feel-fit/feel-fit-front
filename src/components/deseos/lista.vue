@@ -7,11 +7,10 @@
             <span
               class="h1 font-italic font-weight-bold text-center pb-1 text-primary"
             >Tu lista de deseos</span>
-            <p class="font-weight-bold text-dark">Tiene 4 productos</p>
-            <hr class="linea" />
+            <p class="font-weight-bold text-dark">Tiene {{quantityHearts}} productos</p>
+            <hr class="linea"/>
           </div>
         </div>
-
         <div class="row mb-4 p-1 d-none d-md-flex">
           <div class="col-1 text-center">
             <div class="form-check">
@@ -40,40 +39,36 @@
         </div>
         <!-- Fila de deseos -->
         <div class="mb-4 shadow box p-1">
-          <div class="row align-items-center">
+          <div v-for="item in wishlist" class="row align-items-center">
             <div class="col-1 text-center">
               <div class="form-check">
                 <div class="custom-control custom-checkbox">
-                  <input type="checkbox" class="custom-control-input" id="customCheck1" />
+                  <input type="checkbox" class="custom-control-input" id="customCheck1"/>
                   <label class="custom-control-label" for="customCheck1"></label>
                 </div>
               </div>
             </div>
             <div class="col-2 col-lg-1 col-xl-1">
               <div class="card border-0">
-                <img
-                  src="../../assets/images/carrito/pancake.png"
-                  class="img-fluid card-img-top rounded-left"
+                <img :src="item.images[0].url"
+                     class="img-fluid card-img-top rounded-left"
                 />
               </div>
             </div>
             <div class="col-3 col-lg-5">
               <span class="h6 font-italic font-weight-bold text-primary">
-                Pancake y Waffle
-                <span class="d-none d-md-block">- Avena Mix</span>
-              </span>
-              <br />
-              <span class="h6 d-none d-md-block">Chocolate 300 Gr - Viva Natur</span>
+                {{item.name}}
+              </span> <br/> <span class="h6 d-none d-md-block">{{item.brand}}</span>
             </div>
             <div class="col-1 col-sm-2 ml-2 ml-sm-0">
               <div class="row">
-                <div class="border col-12 col-md-4 p-0 rounded text-center">
+                <div @click="item.quantity--" class="click border col-12 col-md-4 p-0 rounded text-center">
                   <span></span>-
                 </div>
                 <div class="col-12 col-md-4 border text-center p-0">
-                  <span></span>1
+                  <span></span>{{ item.quantity }}
                 </div>
-                <div class="col-12 col-md-4 border rounded text-center p-0">
+                <div @click="item.quantity++" class="click col-12 col-md-4 border rounded text-center p-0">
                   <span></span>+
                 </div>
               </div>
@@ -84,19 +79,16 @@
               </div>-->
             </div>
             <div class="col-3 col-md-2 text-right text-md-left">
-              <span>$15.000</span>
+              <span>{{item.price | money}}</span>
             </div>
             <div class="col-md-1 d-none d-md-block">
-              <a href="#">
-                <img src="../../assets/images/deseos/heart.svg" alt="Corazon" class="img-fluid" />
-              </a>
+              <a href="#"> <img src="../../assets/images/deseos/heart.svg" alt="Corazon" class="img-fluid"/> </a>
             </div>
           </div>
         </div>
-
         <div class="row mt-5">
           <div class="col-12 text-center text-md-right">
-            <span class="btn btn-lg btn-primary text-white font-italic h6">Agregar al carrito</span>
+            <span @click="agregarCarrito" class="btn btn-lg btn-primary click text-white font-italic h6">Agregar al carrito</span>
           </div>
         </div>
       </div>
@@ -104,28 +96,51 @@
   </div>
 </template>
 <script>
-export default {};
+import {cloneDeep} from 'lodash'
+export default {
+  name: 'lista_deseos',
+  data () {
+    return {}
+  },
+  computed: {
+    quantityHearts () {
+      return this.$store.state.wishlist.length
+    },
+    wishlist () {
+      return this.$store.state.wishlist.map(item => {
+        this.$set(item, 'quantity', ( item.quantity || 1 ))
+        return item
+      })
+    }
+  },
+  methods: {
+    agregarCarrito () {
+      this.wishlist.map(item => this.$store.commit('addToCart', cloneDeep(item)))
+      this.$store.state.wishlist = []
+    }
+  }
+}
 </script>
 <style scoped lang="scss">
-.caja {
-  border: red solid 2px;
-}
-
-.cuerpo_border {
-  border-radius: 1rem;
-}
-
-.box {
-  border-radius: 1rem;
-}
-
-.box:hover {
-  transition: box-shadow 0.3s;
-  box-shadow: 0 0 3px rgb(30, 214, 217) !important;
-}
-.linea {
-  margin-left: 0;
-  border: black 1px solid;
-  width: 30px;
-}
+  .caja {
+    border: red solid 2px;
+  }
+  .cuerpo_border {
+    border-radius: 1rem;
+  }
+  .box {
+    border-radius: 1rem;
+  }
+  .box:hover {
+    transition: box-shadow 0.3s;
+    box-shadow: 0 0 3px rgb(30, 214, 217) !important;
+  }
+  .linea {
+    margin-left: 0;
+    border: black 1px solid;
+    width: 30px;
+  }
+  .click {
+    cursor: pointer;
+  }
 </style>
