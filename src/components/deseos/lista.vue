@@ -51,7 +51,7 @@
             <div class="col-3 col-lg-5">
               <span class="h6 font-italic font-weight-bold text-primary">{{item.name}}</span>
               <br />
-              <span class="h6 d-none d-md-block">{{item.brand}}</span>
+              <span class="h6 d-none d-md-block">{{item.brand.name}}</span>
             </div>
             <div class="col-1 col-sm-2 ml-2 ml-sm-0">
               <div class="row">

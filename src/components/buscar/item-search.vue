@@ -9,7 +9,7 @@
           />
         </div>
         <div class="col text-left" @mouseenter="popovers(product)"><p class="text-capitalize mb-1">{{product.name}}</p>
-          <span class="text-capitalize">{{product.brand}}</span></div>
+          <span class="text-capitalize">{{product.brand.name}}</span></div>
       </div>
     </div>
     <!--

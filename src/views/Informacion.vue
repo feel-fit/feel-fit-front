@@ -47,7 +47,7 @@
             <div class="col-12 align-self-center">
               <div class="position-relative">
                 <h1 class="font-italic text-capitalize font-weight-bold color_texto1">{{product.name}}</h1>
-                <p class="mb-5 d-md-none color_texto2">{{product.brand}}</p>
+                <p class="mb-5 d-md-none color_texto2">{{product.brand.name}}</p>
                 <div class="row">
                   <div class="col-6 d-md-none">
                     <span class="btn btn-warning border shadow px-4 font-italic font-weight-bold color_border">Tabla Nutricional</span>
@@ -148,6 +148,7 @@ export default {
   
 }
 </script>
+
 <style scoped>
   .btn{
     cursor: pointer;
