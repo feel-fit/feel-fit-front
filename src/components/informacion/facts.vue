@@ -2,8 +2,9 @@
   <section class="performance-facts ">
     <header class="performance-facts__header">
       <h1 class="performance-facts__title">Nutrition Facts</h1>
-      <p>Serving Size 1/2 cup (about 82g)
-      <p>Serving Per Container 8</p>
+      <template v-for="item in top">
+        <p>{{item.name}} {{item.quantity}}</p>
+      </template>
     </header>
     <table class="performance-facts__table">
       <thead>
@@ -136,7 +137,7 @@
   </section>
 </template>
 <script>
-import { chunk } from 'lodash'
+import { chunk,orderBy } from 'lodash'
 
 export default {
   name: 'facts',
@@ -153,14 +154,17 @@ export default {
   
   },
   computed: {
+    top () {
+      return orderBy(this.facts.filter(item => item.position_fact === 'top'),'order')
+    },
     superior () {
-      return this.facts.filter(item => item.position_fact === 'superior')
+      return orderBy(this.facts.filter(item => item.position_fact === 'superior'),'order')
     },
     medio () {
-      return this.facts.filter(item => item.position_fact === 'medio')
+      return orderBy(this.facts.filter(item => item.position_fact === 'medio'),'order')
     },
     inferior () {
-      return chunk(this.facts.filter(item => item.position_fact === 'inferior'), 2)
+      return chunk(orderBy(this.facts.filter(item => item.position_fact === 'inferior'),'order'), 2)
     }
   }
   
