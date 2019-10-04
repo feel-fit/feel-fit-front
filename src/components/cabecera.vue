@@ -91,6 +91,10 @@ export default {
     logout () {
       logout()
       this.$store.commit('set_me', null)
+      this.$store.state.wishlist=[];
+      this.$store.state.cart = {
+      items: []
+    };
       this.$router.push('/')
     }
     

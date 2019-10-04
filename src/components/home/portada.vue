@@ -2,11 +2,11 @@
     <section class="bienvenidos d-flex align-items-center flex-column justify-content-center "
              :style="{ backgroundImage: `url('${background}')` }">
         <img :src="logo" alt="logo" class=""><br/>
-        <button class="btn btn-primary text-white  btn-lg my-4 w-md-50"><i>Comprar ahora </i>&nbsp;&nbsp;<font-awesome-icon
+        <a class="btn btn-primary text-white  btn-lg my-4 w-md-50" href="/catalogo"><i>Comprar ahora </i>&nbsp;&nbsp;<font-awesome-icon
                 icon="arrow-right" size="xs"/>
-        </button>
+        </a>
 
-        <a class="mt-1" href="#"><img :src="scroll" alt="Scroll" class="d-none d-md-inline-block"
+        <a class="mt-1" href="#producto-nuevo"><img :src="scroll" alt="Scroll" class="d-none d-md-inline-block"
                                       data-target="#section1"></a>
     </section>
 </template>

@@ -15,7 +15,7 @@
         </div>
         <div @click="addToWishlist" class="col-auto">
           <div class=" corazon bg-white p-2 rounded-circle shadow">
-            <img src="../../assets/images/fav.svg" alt="Corazon" class="img-fluid">
+            <img :src="isProduct?imgDeseoActivo:imgDeseoNoActivo" alt="Corazon" class="img-fluid">
           </div>
         </div>
       </div>
@@ -29,7 +29,8 @@
 </template>
 <script>
 import imageDefault from '../../assets/images/producto.png'
-
+import imgDeseoActivo  from '../../assets/images/deseos/heart.svg'
+import imgDeseoNoActivo  from '../../assets/images/fav.svg'
 export default {
   name: 'product',
   props: {
@@ -43,12 +44,25 @@ export default {
   data () {
     return {
       imageDefault,
-     
+      imgDeseoActivo,
+      imgDeseoNoActivo,
     }
   },
 
   mounted () {
 
+  },
+  computed:{
+    isProduct(){
+      let product = this.$store.state.wishlist.find(item => {
+        if (item.id === this.product.id) return item
+      })
+      if(product){
+        return true;
+      }else{
+        return false;
+      }
+    }
   },
   methods: {
     link () {

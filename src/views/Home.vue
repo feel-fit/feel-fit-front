@@ -1,10 +1,10 @@
 <template>
   <div>
     <portada></portada>
-    <buscador></buscador>
+    <buscador id="producto-nuevo" ></buscador>
     <whatsapp/>
     <home-category url="productos-nuevos" title="Nuestros Productos nuevos" :id="1" :image="images.papas"></home-category>
-    <products-new tag="nuevo" :products="nuevos"></products-new>
+    <products-new tag="nuevo"  :products="nuevos"></products-new>
     <fresa/>
     <home-category url="productos-destacados" title="Nuestros Productos destacados" :id="2" :image="images.yogurt"/>
     <products-new tag="destacado" :products="destacados"></products-new>

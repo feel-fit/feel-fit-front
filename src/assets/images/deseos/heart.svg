@@ -1,37 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="42px" height="39px" viewBox="0 0 42 39" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="26px" height="24px" viewBox="0 0 26 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 52.4 (67378) - http://www.bohemiancoding.com/sketch -->
-    <title>icons / icon_like_mini</title>
+    <title>heart full</title>
     <desc>Created with Sketch.</desc>
-    <defs>
-        <filter x="-1.2%" y="-14.0%" width="102.5%" height="127.9%" filterUnits="objectBoundingBox" id="filter-1">
-            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
-            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
-            <feColorMatrix values="0 0 0 0 0.503594541   0 0 0 0 0.597691893   0 0 0 0 0.834980867  0 0 0 0.271625906 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
-            <feMerge>
-                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
-                <feMergeNode in="SourceGraphic"></feMergeNode>
-            </feMerge>
-        </filter>
-        <filter x="-64.8%" y="-72.9%" width="229.6%" height="245.8%" filterUnits="objectBoundingBox" id="filter-2">
-            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
-            <feGaussianBlur stdDeviation="3.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
-            <feColorMatrix values="0 0 0 0 0.503594541   0 0 0 0 0.597691893   0 0 0 0 0.834980867  0 0 0 0.271625906 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
-            <feMerge>
-                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
-                <feMergeNode in="SourceGraphic"></feMergeNode>
-            </feMerge>
-        </filter>
-    </defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Lista-de-Deseos" transform="translate(-1122.000000, -449.000000)" fill="#27D8DB" fill-rule="nonzero">
-            <g id="Group" transform="translate(236.000000, 236.000000)">
-                <g id="song" filter="url(#filter-1)" transform="translate(4.000000, 185.000000)">
-                    <g id="icons-/-icon_like_mini" filter="url(#filter-2)" transform="translate(890.000000, 32.000000)">
-                        <g id="heart-(12)" transform="translate(0.250000, 0.666667)">
-                            <path d="M23.4770736,2.21587171 C22.1570549,0.786972301 20.3457985,0 18.3765678,0 C16.9046059,0 15.5565719,0.464455409 14.3698197,1.3803568 C13.7709961,1.84267633 13.2283974,2.40829451 12.75,3.06847361 C12.2717972,2.40848867 11.7290039,1.84267633 11.1299858,1.3803568 C9.94342806,0.464455409 8.59539412,0 7.12343217,0 C5.1542015,0 3.34275057,0.786972301 2.02273177,2.21587171 C0.718471515,3.62807245 5.68434189e-14,5.55734876 5.68434189e-14,7.64856315 C5.68434189e-14,9.80094115 0.803684247,11.7711874 2.52914429,13.8491982 C4.07270053,15.7079907 6.29114913,17.5949379 8.86017611,19.7799365 C9.73740007,20.526133 10.7317428,21.371939 11.7642174,22.2728893 C12.0369759,22.5113304 12.3869705,22.6425895 12.75,22.6425895 C13.1128349,22.6425895 13.4630241,22.5113304 13.7353935,22.2732776 C14.767868,21.3721331 15.7627945,20.5259389 16.6404075,19.779354 C19.2090454,17.5947437 21.4274941,15.7079907 22.9710503,13.849004 C24.6965103,11.7711874 25.5,9.80094115 25.5,7.64836899 C25.5,5.55734876 24.7815285,3.62807245 23.4770736,2.21587171 Z" id="Path"></path>
-                        </g>
-                    </g>
+        <g id="Productos-1" transform="translate(-1264.000000, -825.000000)" fill="#27D8DB" fill-rule="nonzero">
+            <g id="heart-full" transform="translate(1264.000000, 825.000000)">
+                <g id="heart-(12)" transform="translate(0.250000, 0.666667)">
+                    <path d="M23.4770736,2.21587171 C22.1570549,0.786972301 20.3457985,0 18.3765678,0 C16.9046059,0 15.5565719,0.464455409 14.3698197,1.3803568 C13.7709961,1.84267633 13.2283974,2.40829451 12.75,3.06847361 C12.2717972,2.40848867 11.7290039,1.84267633 11.1299858,1.3803568 C9.94342806,0.464455409 8.59539412,0 7.12343217,0 C5.1542015,0 3.34275057,0.786972301 2.02273177,2.21587171 C0.718471515,3.62807245 5.68434189e-14,5.55734876 5.68434189e-14,7.64856315 C5.68434189e-14,9.80094115 0.803684247,11.7711874 2.52914429,13.8491982 C4.07270053,15.7079907 6.29114913,17.5949379 8.86017611,19.7799365 C9.73740007,20.526133 10.7317428,21.371939 11.7642174,22.2728893 C12.0369759,22.5113304 12.3869705,22.6425895 12.75,22.6425895 C13.1128349,22.6425895 13.4630241,22.5113304 13.7353935,22.2732776 C14.767868,21.3721331 15.7627945,20.5259389 16.6404075,19.779354 C19.2090454,17.5947437 21.4274941,15.7079907 22.9710503,13.849004 C24.6965103,11.7711874 25.5,9.80094115 25.5,7.64836899 C25.5,5.55734876 24.7815285,3.62807245 23.4770736,2.21587171 Z" id="Path"></path>
                 </g>
             </g>
         </g>
