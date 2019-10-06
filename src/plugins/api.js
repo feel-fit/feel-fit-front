@@ -152,6 +152,18 @@ function Departments (url = 'departments') {
   }
 }
 
+function Sliders (url = 'sliders') {
+  return {
+    getOne: (id) => axios.get(`${ url }/${ id }`),
+    getBySlug: (slug) => axios.get(`${ url }?slug=${ slug }`),
+    getAll: () => axios.get(`${ url }?pagination=false`),
+    getPaginate: () => axios.get(url),
+    update: (id, toUpdate) => axios.put(`${ url }/${ id }`, toUpdate),
+    create: (toCreate) => axios.post(url, toCreate),
+    delete: (id) => axios.delete(`${ url }/${ id }`)
+  }
+}
+
 export default {
   Addresses,
   CheckUpdate,
@@ -163,6 +175,7 @@ export default {
   Cities,
   Any,
   Shopping,
+  Sliders,
   DetailShopping,
   SuccessResponse,
   Token,
