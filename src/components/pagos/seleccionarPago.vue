@@ -110,7 +110,7 @@ export default {
   components: { descuento },
   data () {
     return {
-      metodoPago: 1,
+      metodoPago: '1',
       factura: false,
       condiciones: false,
       items: []
@@ -157,7 +157,7 @@ export default {
   methods: {
     next () {
       if (this.condiciones) {
-        
+        this.$store.state.loading = true
         api.Shopping().create(this.shopping).then(result => {
           this.cart.items = this.shopping.items.map(item => {
             item.shopping_id = result.data.data.id
@@ -168,9 +168,13 @@ export default {
           
           api.DetailShopping().create(this.cart).then(response => {
               // TODO mandar a thankyou page o a pagina de pagos
-              console.log('pago exitoso')
+              this.$store.state.loading = false
               this.$router.push('thankyou')
-              window.open('https://www.zonapagos.com/t_feelfit/')
+              this.$store.state.cart = []
+              if (this.metodoPago != '1') {
+                window.open('https://www.zonapagos.com/t_feelfit/')
+                
+              }
               
             }
           )

@@ -22,6 +22,7 @@ export default new Vuex.Store({
     wishlist: [],
     open_cart: false,
     open_menu: false,
+    loading:false,
     
     cart: {
       items: []

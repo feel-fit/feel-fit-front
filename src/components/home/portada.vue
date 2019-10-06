@@ -9,7 +9,7 @@
                                                        data-target="#section1"></a>
     </section>
     <template>
-      <img class="d-none" v-for="item in slides" :src="item.url" key="secondImage" rel="preload">
+      <img class="d-none" v-for="item in slides" :src="item.url" :key="item.url" rel="preload">
     </template>
   </div>
 </template>
@@ -60,7 +60,7 @@ export default {
     -moz-transition: background-position .5s ease-in-out;
     -o-transition: background-position .5s ease-in-out;
     transition: background-position .5s ease-in-out;
-    animation: animatedBackground 50s linear infinite alternate;
+    animation: animatedBackground 30s linear infinite alternate;
   }
 
   @keyframes animatedBackground {
