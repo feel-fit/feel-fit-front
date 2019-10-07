@@ -70,7 +70,7 @@
 </template>
 <script>
 import api from '../../plugins/api'
-import isEmpty from 'lodash'
+import {isEmpty, map, flatMap} from 'lodash'
 
 export default {
   name: 'informacionCliente',
@@ -173,21 +173,21 @@ export default {
       this.changeCiudades()
     },
     back () {
-    
+
     },
     gotonext () {
       this.$store.commit('set_address', this.address)
       $('#envios-tab').removeClass('disabled').tab('show')
     }
   }
-  
+
 }
 </script>
 <style scoped>
   label{
     font-size: 0.7em;
   }
-  
+
   .titulo{
     margin-top:    5rem;
     margin-bottom: 2.5rem;
