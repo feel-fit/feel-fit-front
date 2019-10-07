@@ -36,7 +36,6 @@ export default {
       search: '',
       products: [],
       timeout: null
-
     }
   },
   components: {
@@ -76,6 +75,5 @@ export default {
     position: absolute;
     right:    1.5rem;
     top:      40%;
-
   }
 </style>
