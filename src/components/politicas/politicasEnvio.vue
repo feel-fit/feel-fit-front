@@ -24,20 +24,21 @@
               </button>
 
               <div class="container p-3 contenido-text overflow-auto">
-                <h4
-                  class="text-primary font-weight-bold font-italic"
-                >Pol&iacute;ticas de calidad y privacidad</h4>
+                <h4 class="text-primary font-weight-bold font-italic">Pol&iacute;ticas de envio</h4>
                 <div class="ml-3 mt-4 font-italic">
-                  <h5 class="font-weight-bold text-uppercase my-4">Politicas de calidad</h5>
+                  <h5 class="font-weight-bold text-uppercase my-4">Politicas de envio</h5>
                   <p>
-                    Para <span class="font-weight-bold text-uppercase">Feel fit market</span> es importante garantizar a nuestros usuarios y clientes
-                    un buen servicio y atenci&oacute;n en todo momento;es de todo nuestro inter&eacute;s que el
-                    servicio prestado sea de su agrado; adem&aacute;s, son garantias para los usaurios y clientes, los siguientes puntos:<br>
-                    Tiempo de entrega:<br>
-                    Nuestros tiempos de entrega corresponden al t&eacute;rmino de la distancia que se puede demorar la entrega de los productos y/o alimentos adquiridos
-                    por medio de nuestro servicio; el tiempo aproximado ser&aacute; dado al momento de realizar el pedido, partiendo desde el sector urbano del Municipio 
-                    de Armenia
-                  </p>
+                    Al momento de comprar tus productos ten en cuenta las siguientes recomendaciones:</p>
+                    <ul>
+                        <li>Compra minima de productos $15.000.</li>
+                        <li>Espera tus productos aproximadamente 1 hora y media después de realizado tu pago.</li>
+                        <li>Puedes realizar tus pedidos entre las 8 am y 8:30 pm. Si haces tu pedido por fuera de estos horarios nos comunicaremos contigo al día siguiente y programaremos la hora de entrega.</li>
+                        <li>Los Domingos y festivos también te llevamos tu domicilio pero nos comunicamos contigo para programar la hora de entrega.</li>
+                        <li>Si vives en la ciudad de Armenia el sistema automáticamente le sumara $1.500 a tu pedido por el domicilio.</li>
+                        <li>Si vives en uno de los siguientes municipios: Calarcá, Circasia, La Tebaida, Montenegro o Quimbaya el domicilio tendrá un costo de $8,000 y nos comunicaremos contigo después de realizado tu pago para programar la hora de entrega.</li>
+                        <li>Puedes realizar tu compra desde cualquier lugar del país, te enviaremos tu pedido a través de empresa de mensajería y el pago del flete lo realizas contra entrega.</li>
+                        <li>Por políticas de calidad no enviamos productos que requieren refrigeración en los pedidos despachados mediante empresas de mensajería.</li>
+                    </ul>
                 </div>
               </div>
             </div>
@@ -55,7 +56,6 @@ export default {
 </script>
 
 <style scoped>
-
 .contenido-text {
   height: 400px;
   margin-top: 1rem;

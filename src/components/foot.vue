@@ -29,8 +29,8 @@
                         <router-link  class="text-dark" to="/conocenos"><li class="text-dark">Conócenos</li></router-link>
                         <router-link  class="text-dark" to="/contactanos"><li class="text-dark">Contacto</li></router-link>
                         <a href="#" data-toggle="modal" data-target="#terminosModal" ><li class="text-dark">Términos y condiciones</li></a>
-                        <a href="#" ><li class="text-dark">Políticas de envio</li></a>
-                        <a href="#" data-toggle="modal" data-target="#politicasEnvioModal"><li class="text-dark">Políticas de calidad</li></a>
+                        <a href="#" data-toggle="modal" data-target="#politicasEnvioModal"><li class="text-dark">Políticas de envio</li></a>
+                        <a href="#" data-toggle="modal" data-target="#politicasCalidadModal"><li class="text-dark">Políticas de calidad</li></a>
                     </ul>
                 </div>
             </div>
