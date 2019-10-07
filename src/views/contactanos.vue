@@ -54,7 +54,7 @@
             </div>
           </div>
           <div class="justify-content-center px-5 d-flex flex-column" v-else>
-            <h2 class="h1 text-primary pb-5"><i>¡Hola <span class="text-capitalize">{{ message.name }}</span> !</i></h2>
+            <h2 class="h1 text-primary pb-5 mt-3"><i>¡Hola <span class="text-capitalize">{{ message.name }}</span> !</i></h2>
             <p class="pb-5">Gracias por contactarnos, nos comunicaremos contigo en el menor tiempo posible para atender tu solicitud.
             </p>
             <p class="pb-2 text-center"> Con cariño</p>

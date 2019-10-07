@@ -17,7 +17,7 @@
                   </div>
                 </a>
                 <div @click="addToWishlist" class="corazon bg-white p-3 position-absolute shadow d-none d-md-block">
-                  <img src="../assets/images/fav.svg" alt="Corazon" class="img-fluid">
+                  <img :src="isProduct?imgDeseoActivo:imgDeseoNoActivo" alt="Corazon" class="img-fluid">
                 </div>
               </div>
             </div>
@@ -40,7 +40,7 @@
                 </div>
                 <div class="col-6 text-center">
                   <span @click="addToWishlist" class="btn bg-white border shadow py-2 px-4 px-sm-5 color_texto1" style="border-radius:1rem;">
-                    <img src="../assets/images/fav.svg">&nbsp;&nbsp;Agregar</span>
+                    <img :src="isProduct?imgDeseoActivo:imgDeseoNoActivo">&nbsp;&nbsp;Agregar</span>
                 </div>
               </div>
             </div>
@@ -97,6 +97,8 @@ import volver from '../components/products/volver.vue'
 import api from '../plugins/api'
 import imageDefault from '../assets/images/producto.png'
 import facts from '../components/informacion/facts'
+import imgDeseoActivo  from '../assets/images/deseos/heart.svg'
+import imgDeseoNoActivo  from '../assets/images/fav.svg'
 
 export default {
   props: {
@@ -115,7 +117,9 @@ export default {
         brand:{}
       },
       facts: false,
-      imageDefault
+      imageDefault,
+      imgDeseoActivo,
+      imgDeseoNoActivo,
     }
   },
   components: {
@@ -137,6 +141,18 @@ export default {
   },
   mounted () {
   
+  },
+  computed:{
+    isProduct(){
+      let product = this.$store.state.wishlist.find(item => {
+        if (item.id === this.product.id) return item
+      })
+      if(product){
+        return true;
+      }else{
+        return false;
+      }
+    }
   },
   methods: {
     addToCart () {
