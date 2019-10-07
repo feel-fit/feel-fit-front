@@ -6,6 +6,7 @@
     <div class="w-100" id="page-content-wrapper" :class="{'open_cart':open_cart}">
       <cabecera/>
       <router-view/>
+       <whatsapp/>
       <foot/>
       <terminos/>
       <politicas-envio/>
@@ -14,7 +15,7 @@
     <sliderCar/>
   </div>
 </template>
-<style lang="scss">
+<style  lang="scss">
   #app {
     font-family: 'Varela Round', sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -33,6 +34,7 @@ import foot from '@/components/foot.vue'
 import terminos from '@/components/politicas/terminos.vue'
 import politicasEnvio from '@/components/politicas/politicasEnvio.vue'
 import politicasCalidad from '@/components/politicas/politicasCalidad.vue'
+import Whatsapp from '@/components/home/whatsapp.vue'
 // Import component
 import Loading from 'vue-loading-overlay'
 // Import stylesheet
@@ -41,7 +43,7 @@ import 'vue-loading-overlay/dist/vue-loading.css'
 export default {
   name: 'app',
   components: {
-    Loading, cabecera, foot, slider, producto, whatsapp, buscador, fresa, sliderCar, terminos, politicasEnvio,politicasCalidad
+    Loading, cabecera, foot, slider, producto, whatsapp, buscador, fresa, sliderCar, terminos, politicasEnvio,politicasCalidad,Whatsapp
   },
   mounted () {
     if (this.$store.state.nuevos.length == 0) this.$store.dispatch('getNuevos')

@@ -29,9 +29,12 @@
           </div>
           <div class="row espaciado text-center">
             <div class="col-12 font-weight-bold font-italic text-center mt-3" v-if="me">
-              <a @click="logout" class="text-dark" href="#">Cerrar sesion</a>
+              <router-link tag="a" to="/usuario" class="text-dark">Perfil</router-link>
             </div>
-            <div class="col-12 font-weight-bold font-italic text-center mt-3" v-else>
+            <div class="col-12 font-weight-bold font-italic text-center mt-3 mb-5" v-if="me">
+              <a @click="logout" class="text-dark " href="#">Cerrar sesion</a>
+            </div>
+            <div class="col-12 font-weight-bold font-italic text-center mt-3 mb-5" v-else>
               <router-link  class="text-dark" to="/login">Login</router-link>
             </div>
             <div class="col-12 font-weight-bold font-italic text-center mt-3">

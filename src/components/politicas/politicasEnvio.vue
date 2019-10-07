@@ -65,7 +65,4 @@ p {
   font-size: 0.9rem;
 }
 
-.contenido {
-  border-radius: 300px;
-}
 </style>

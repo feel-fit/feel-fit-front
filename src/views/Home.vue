@@ -2,7 +2,7 @@
   <div>
     <portada :slides="slides"></portada>
     <buscador id="producto-nuevo" ></buscador>
-    <whatsapp/>
+   
     <home-category url="productos-nuevos" title="Nuestros Productos nuevos" :id="1" :image="images.papas"></home-category>
     <products-new tag="nuevo"  :products="nuevos"></products-new>
     <fresa/>

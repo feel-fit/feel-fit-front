@@ -1,7 +1,7 @@
 <template>
   <section>
     <volver></volver>
-    <div class="container p-0">
+    <div class="container ">
       <div id="accordion" class="accordion">
         <div class="menu">
           <div class="option collapsed shadow" data-toggle="collapse" href="#usuario">
@@ -10,8 +10,8 @@
                 <img src="./../assets/images/Usuario/infodeusuario.svg" class="img-fluid imagen" />
               </div>
               <div class="col-4">
-                <h5 class="text-muted m-0 pt-5 font-italic">Informaci&oacute;n de</h5>
-                <h1 class="text-primary font-italic font-weight-bold">Usuario</h1>
+                <h5 class="text-muted m-0 pt-md-5 font-italic text-title1">Informaci&oacute;n de</h5>
+                <h1 class="text-primary font-italic font-weight-bold text-title2">Usuario</h1>
               </div>
               <div class="col-2">
                 <div class="row justify-content-center align-items-center h-100">
@@ -104,8 +104,8 @@
                 <img src="./../assets/images/Usuario/descuentos.svg" class="img-fluid imagen" />
               </div>
               <div class="col-4">
-                <h5 class="text-muted m-0 pt-5 font-italic"></h5>
-                <h1 class="text-primary font-italic font-weight-bold">Descuentos</h1>
+                <h5 class="text-muted m-0 pt-md-5 font-italic"></h5>
+                <h1 class="text-primary font-italic font-weight-bold text-title3">Descuentos</h1>
               </div>
               <div class="col-2">
                 <div class="row justify-content-center align-items-center h-100">
@@ -143,8 +143,8 @@
                 <img src="./../assets/images/Usuario/metododepago.svg" class="img-fluid imagen" />
               </div>
               <div class="col-4">
-                <h5 class="text-muted m-0 pt-5 font-italic">M&eacute;todos de</h5>
-                <h1 class="text-primary font-italic font-weight-bold">Pago</h1>
+                <h5 class="text-muted m-0 pt-md-5 font-italic text-title1">M&eacute;todos de</h5>
+                <h1 class="text-primary font-italic font-weight-bold text-title2">Pago</h1>
               </div>
               <div class="col-2">
                 <div class="row justify-content-center align-items-center h-100">
@@ -259,4 +259,20 @@ export default {
 .accordion .option.collapsed .icono {
   transform: scaleY(1);
 }
+
+
+@media (max-width:517px){
+  .text-title1{
+    padding-top: 30px;
+    font-size: 1rem;
+  }
+  .text-title3{
+    padding-top: 30px;
+    font-size: 1.4rem;
+  }
+  .text-title2{
+    font-size: 1.3rem;
+  }
+}
+
 </style>
