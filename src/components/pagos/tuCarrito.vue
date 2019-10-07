@@ -1,5 +1,5 @@
 <template>
-  <div class="container h-100 d-flex  flex-column " style="width: 310px">
+  <div class="container h-100 d-flex  flex-column caja" >
     <div class="row">
       <div class="col-sm-12 bg-white py-5 px-4 ">
         <h3 class="h2 font-italic font-weight-bold text-left text-primary">Tu carrito</h3>
@@ -164,5 +164,8 @@ export default {
   
   .price{
     color: black;
+  }
+  .caja{
+    border:2px red solid;
   }
 </style>

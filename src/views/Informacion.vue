@@ -50,7 +50,7 @@
                 <p class="mb-5 d-md-none color_texto2">{{product.brand.name}}</p>
                 <div class="row">
                   <div class="col-6 d-md-none">
-                    <span class="btn btn-warning border shadow px-4 font-italic font-weight-bold color_border">Tabla Nutricional</span>
+                    <span @click="facts = true" class="btn btn-warning border shadow px-4 font-italic font-weight-bold color_border">Tabla Nutricional</span>
                   </div>
                   <div class="col-6">
                     <p class="font-weight-bold text-dark text-right text-md-left mr-5 mr-md-0">{{product.price |
@@ -58,7 +58,7 @@
                   </div>
                 </div>
                 <p class="mt-3 color_texto2">{{product.description}}</p>
-                <div @click="facts = true" class="t btn btn-warning border shadow px-4 font-italic font-weight-bold color_border ">
+                <div @click="facts = true" class="btn btn-warning border shadow px-4 font-italic font-weight-bold color_border d-none d-md-inline-block ">
                   Ver Tabla Nutricional
                 </div>
               </div>
