@@ -70,6 +70,7 @@
 </template>
 <script>
 import api from '../../plugins/api'
+import isEmpty from 'lodash'
 
 export default {
   name: 'informacionCliente',
@@ -106,7 +107,7 @@ export default {
   mounted () {
     if (this.me!=null) {
       this.cliente = this.me
-      if (this.me.addresses.length > 0) {
+      if (!isEmpty(this.me)&&!isEmpty(this.me.discounts) &&this.me.addresses.length > 0) {
         this.address = this.me.addresses[0]
         this.changeDepartment()
       } else {
@@ -121,7 +122,6 @@ export default {
           this.$store.commit('set_me', response.data.data[0])
           if (this.me.addresses.length > 0) {
             this.address = this.me.addresses[0]
-            console.log('hola')
             this.changeDepartment()
           }
         } else if (!this.me.id) {
@@ -135,7 +135,7 @@ export default {
       this.$validator.validateAll().then((result) => {
         if (result) {
           if (!this.nextViewSend) {
-            if (this.me!=null) {
+            if (this.me!=null&&!isEmpty(this.me)) {
               if (!this.address.id) {
                 api.Addresses().create(this.address).then(response => {
                   this.address = response.data.data

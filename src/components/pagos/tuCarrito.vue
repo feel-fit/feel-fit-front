@@ -1,5 +1,5 @@
 <template>
-  <div class="container h-100 d-flex  flex-column caja" >
+  <div class="container h-100 d-flex  flex-column" >
     <div class="row">
       <div class="col-sm-12 bg-white py-5 px-4 ">
         <h3 class="h2 font-italic font-weight-bold text-left text-primary">Tu carrito</h3>
@@ -82,7 +82,7 @@
 </template>
 <script>
 import imageDefault from '../../assets/images/producto.png'
-import sumBy from 'lodash/sumBy'
+import {sumBy,isEmpty} from 'lodash'
 
 export default {
   name: 'tuCarrito',
@@ -108,7 +108,7 @@ export default {
       })
     },
     descuento () {
-      if (this.me && this.me.discounts.length > 0) {
+      if (!isEmpty(this.me) &&!isEmpty(this.me.discounts)  && this.me.discounts.length > 0) {
         return parseInt(( this.me.discounts[0].value / 100 ) * this.total)
       }
       return 0

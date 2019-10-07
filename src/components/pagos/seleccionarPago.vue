@@ -97,11 +97,11 @@
         </div>
       </div>
     </div>
-    <descuento v-if="me.discounts[0]" :discount="me.discounts[0]"></descuento>
+    <descuento v-if="descuento" :discount="me.discounts[0]"></descuento>
   </div>
 </template>
 <script>
-import { sumBy } from 'lodash'
+import { sumBy,isEmpty } from 'lodash'
 import api from '../../plugins/api'
 import descuento from './modalDescuento'
 
@@ -148,13 +148,13 @@ export default {
       return this.$store.state.tool_paying.costSend
     },
     discount () {
-      if (this.me != null && this.me.discounts.length > 0) {
+      if (!isEmpty(this.me) && !isEmpty(this.me.discounts) &&this.me.discounts.length > 0) {
         return this.me.discounts[0]
       }
       return null
     },
     descuento () {
-      if (this.me != null && this.me.discounts.length > 0) {
+      if (!isEmpty(this.me) &&!isEmpty(this.me.discounts) &&this.me.discounts.length > 0) {
         return parseInt(( this.me.discounts[0].value / 100 ) * this.total)
       }
       return 0
