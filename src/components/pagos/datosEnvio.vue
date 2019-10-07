@@ -167,7 +167,7 @@ export default {
       })
     },
     descuento () {
-      if(this.me!=null&&this.me.discounts.lenght>0){
+      if(this.me!=null&&this.me.discounts.length>0){
           return parseInt((this.me.discounts[0].value/100) * this.total)
       }
       return 0;

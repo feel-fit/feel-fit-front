@@ -1,6 +1,6 @@
 <template>
   <div>
-    <portada></portada>
+    <portada :slides="slides"></portada>
     <buscador id="producto-nuevo" ></buscador>
     <whatsapp/>
     <home-category url="productos-nuevos" title="Nuestros Productos nuevos" :id="1" :image="images.papas"></home-category>
@@ -49,6 +49,7 @@ export default {
       this.$store.dispatch('checkToken')
     }
     if (getUserToken() && !this.me) this.$store.dispatch('getMe')
+    this.$store.dispatch('getSlides')
 
     this.$store.commit('open_menu', false)
   },
@@ -60,6 +61,9 @@ export default {
     },
     name () {
       return upperFirst(first(words(this.me.name)))
+    },
+    slides () {
+      return this.$store.state.slides
     },
     nuevos () {
       return this.$store.state.nuevos

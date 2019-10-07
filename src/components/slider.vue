@@ -28,6 +28,12 @@
             </div>
           </div>
           <div class="row espaciado text-center">
+            <div class="col-12 font-weight-bold font-italic text-center mt-3" v-if="me">
+              <a @click="logout" class="text-dark" href="#">Cerrar sesion</a>
+            </div>
+            <div class="col-12 font-weight-bold font-italic text-center mt-3" v-else>
+              <router-link  class="text-dark" to="/login">Login</router-link>
+            </div>
             <div class="col-12 font-weight-bold font-italic text-center mt-3">
               <router-link  class="text-dark" to="/conocenos">Conocenos</router-link>
             </div>
@@ -59,6 +65,7 @@
 </template>
 <script>
 import logo from './../assets/images/logo_menu.svg'
+import { logout } from '../plugins/auth'
 
 export default {
   name: 'slider',
@@ -75,11 +82,23 @@ export default {
   computed: {
     open_menu_data () {
       return this.$store.state.open_menu
-    }
+    },
+    me () {
+      return this.$store.state.me
+    },
   },
   methods: {
     open_menu () {
       this.$store.commit('open_menu', !this.open_menu_data)
+    },
+    logout () {
+      logout()
+      this.$store.commit('set_me', null)
+      this.$store.state.wishlist=[];
+      this.$store.state.cart = {
+      items: []
+    };
+      //this.$router.push('/')
     }
   }
 }
