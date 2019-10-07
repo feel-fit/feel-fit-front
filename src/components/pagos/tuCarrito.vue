@@ -99,7 +99,7 @@ export default {
     cart () {
       return this.$store.state.cart
     },
-    me(){
+    me () {
       return this.$store.state.me
     },
     total () {
@@ -108,10 +108,10 @@ export default {
       })
     },
     descuento () {
-      if(this.me!=null&&this.me.discounts.lenght>0){
-          return parseInt((this.me.discounts[0].value/100) * this.total)
+      if (this.me && this.me.discounts.length > 0) {
+        return parseInt(( this.me.discounts[0].value / 100 ) * this.total)
       }
-      return 0;
+      return 0
     },
     quantityCart () {
       return sumBy(this.$store.state.cart.items, item => {

@@ -111,7 +111,8 @@ export default {
     return {
       product: {
         price: 0,
-        images: [{ url: imageDefault }]
+        images: [{ url: imageDefault }],
+        brand:{}
       },
       facts: false,
       imageDefault

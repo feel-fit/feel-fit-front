@@ -152,6 +152,26 @@ function Departments (url = 'departments') {
   }
 }
 
+function Discounts (url = 'discounts') {
+  return {
+    getOne: (id) => axios.get(`${ url }/${ id }`),
+    getAll: () => axios.get(`${ url }?pagination=false`),
+    getPaginate: () => axios.get(url),
+    update: (id, toUpdate) => axios.put(`${ url }/${ id }`, toUpdate),
+    create: (toCreate) => axios.post(url, toCreate),
+    delete: (id) => axios.delete(`${ url }/${ id }`),
+    Users: (id) => {
+      return {
+        getAll: () => axios.get(`${ url }/${ id }/users?pagination=false`),
+        getPaginate: () => axios.get(`${ url }/${ id }/users`),
+        sync: (toSync) => axios.post(`${ url }/${ id }/users`, toSync),
+        delete: (toSync) => axios.delete(`${ url }/${ id }/users/${toSync}`),
+        
+      }
+    },
+  }
+}
+
 function Sliders (url = 'sliders') {
   return {
     getOne: (id) => axios.get(`${ url }/${ id }`),
@@ -168,6 +188,7 @@ export default {
   Addresses,
   CheckUpdate,
   Categories,
+  Discounts,
   ErrorResponse,
   Products,
   Messages,

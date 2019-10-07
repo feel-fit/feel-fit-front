@@ -147,8 +147,14 @@ export default {
     costo_envio () {
       return this.$store.state.tool_paying.costSend
     },
+    discount () {
+      if (this.me != null && this.me.discounts.length > 0) {
+        return this.me.discounts[0]
+      }
+      return null
+    },
     descuento () {
-      if (this.me != null && this.me.discounts.lenght > 0) {
+      if (this.me != null && this.me.discounts.length > 0) {
         return parseInt(( this.me.discounts[0].value / 100 ) * this.total)
       }
       return 0
@@ -158,6 +164,7 @@ export default {
     next () {
       if (this.condiciones) {
         this.$store.state.loading = true
+        this.shopping.discount_id = this.discount ? this.discount.id : null
         api.Shopping().create(this.shopping).then(result => {
           this.cart.items = this.shopping.items.map(item => {
             item.shopping_id = result.data.data.id
@@ -169,8 +176,13 @@ export default {
           api.DetailShopping().create(this.cart).then(response => {
               // TODO mandar a thankyou page o a pagina de pagos
               this.$store.state.loading = false
+              if (this.me.discounts[0].id) {
+                api.Discounts().Users(this.me.discounts[0].id).delete(this.me.id).then(response => {
+                  this.$store.state.me.discounts = this.me.discounts.filter(item => item.id != this.me.discounts[0].id)
+                })
+              }
               this.$router.push('thankyou')
-              this.$store.state.cart = []
+              this.$store.state.cart.items = []
               if (this.metodoPago != '1') {
                 window.open('https://www.zonapagos.com/t_feelfit/')
                 

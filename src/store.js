@@ -22,8 +22,7 @@ export default new Vuex.Store({
     wishlist: [],
     open_cart: false,
     open_menu: false,
-    loading:false,
-    
+    loading: false,
     cart: {
       items: []
     },
@@ -141,20 +140,28 @@ export default new Vuex.Store({
       state.cart = data
     },
     addToCart (state, data) {
-      let product = state.cart.items.find(item => {
-        if (item.id === data.id) return item
-      })
-      if (product) {
-        // producto existe ya en el carrito
-        if (!data.quantity) {
-          product.quantity++
+      console.log(state.cart.items)
+      if (state.cart.items.length > 0) {
+        let product = state.cart.items.find(item => {
+          if (item.id === data.id) return item
+        })
+        
+        if (product) {
+          // producto existe ya en el carrito
+          if (!data.quantity) {
+            product.quantity++
+          } else {
+            product.quantity = data.quantity
+          }
         } else {
-          product.quantity = data.quantity
+          Vue.set(data, 'quantity', ( data.quantity || 1 ))
+          state.cart.items.push(data)
         }
       } else {
         Vue.set(data, 'quantity', ( data.quantity || 1 ))
         state.cart.items.push(data)
       }
+      
       state.open_cart = true
     },
     addToWishlist (state, data) {
