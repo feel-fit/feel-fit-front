@@ -1,18 +1,21 @@
 <template>
-  <div class="container-fluid p-0 d-flex" :class="{'toggled':!open_menu}" id="app">
+  <div class="container-fluid p-0 d-flex flex-column h-100" :class="{'toggled':!open_menu}" id="app">
     <loading :opacity="0.9" color="#20d6d9" :active.sync="$store.state.loading"
-             :is-full-page="true"></loading>
+             :is-full-page="true">
+             </loading>
     <slider/>
-    <div class="w-100" id="page-content-wrapper" :class="{'open_cart':open_cart}">
-      <cabecera/>
-      <router-view/>
-       <whatsapp/>
-      <foot/>
-      <terminos/>
-      <politicas-envio/>
-      <politicas-calidad/>
+    <div class="d-flex">
+      <div class="w-100" id="page-content-wrapper" :class="{'open_cart':open_cart}">
+        <cabecera/>
+        <router-view/>
+        <whatsapp/>
+        <terminos/>
+        <politicas-envio/>
+        <politicas-calidad/>
+      </div>
+      <sliderCar/>
     </div>
-    <sliderCar/>
+    <foot class="pie"/>
   </div>
 </template>
 <style  lang="scss">
@@ -60,7 +63,19 @@ export default {
 }
 </script>
 <style scoped lang="scss">
+  .caja{
+    border: 2px saddlebrown solid;
+  }
+  .pie{
+    margin-top: auto;
+    width: 100%;
+  }
   .open_cart {
     margin-left: -20rem;
+  }
+
+  .sliderCar{
+    position:relative;
+    right: 0;
   }
 </style>

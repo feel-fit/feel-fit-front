@@ -17,7 +17,6 @@ export default {
   data () {
     return {
       whatsapp: whatsapp
-
     }
   }
 }
@@ -26,7 +25,7 @@ export default {
 <style scoped>
   .whatsapp{
     position: fixed;
-    bottom: 84%;
+    bottom: 10%;
     right: 50px;
     z-index: 200;
   }
