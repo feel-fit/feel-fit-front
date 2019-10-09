@@ -36,7 +36,6 @@ export default {
       ],
       next:'',
       prev:'',
-      category_id:null,
       name: ""
     };
   },

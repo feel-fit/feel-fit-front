@@ -15,7 +15,7 @@
             <img src="../assets/images/cart.svg" alt="logo" class="w-100 icon">
             <span v-if="quantityCart > 0" class="badg badge-icon badge-pill badge-danger">{{quantityCart}}</span>
           </div>
-          <div v-if="me" class="dropdown  navbar-brand justify-content-end d-flex-inline float-right d-none d-md-flex">
+          <div v-if="isLogin" class="dropdown  navbar-brand justify-content-end d-flex-inline float-right d-none d-md-flex">
             <img data-toggle="dropdown" src="../assets/images/perfil.svg" alt="logo" class="w-100 icon">
             <span data-toggle="dropdown" class="ml-2 text-body small">Perfil</span>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
@@ -39,7 +39,7 @@
 <script>
 import logo from './../assets/images/logo_menu.svg'
 import { logout } from '../plugins/auth'
-import { sumBy, sum } from 'lodash'
+import { sumBy, sum, isEmpty } from 'lodash'
 
 export default {
   name: 'cabecera',
@@ -62,6 +62,12 @@ export default {
   computed: {
     open () {
       return this.$store.state.open_cart
+    },
+    isLogin(){
+       if(!isEmpty(this.me)){
+         return true;
+       }
+       return false;
     },
     me () {
       return this.$store.state.me

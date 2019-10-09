@@ -35,7 +35,7 @@
 <script>
 import imgDeseoActivo from "../../assets/images/deseos/heart.svg";
 import imgDeseoNoActivo from "../../assets/images/fav.svg";
-
+import imageDefault from '../../assets/images/caja_sorpresa/Group.svg';
 export default {
   name: "producto-sorpresa",
   props: {
@@ -43,6 +43,7 @@ export default {
   },
   data() {
     return {
+      imageDefault,
       imgDeseoActivo,
       imgDeseoNoActivo
     };

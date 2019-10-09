@@ -12,6 +12,20 @@
     <div class="m-5" v-for="producto in products">
         <producto-sorpresa :producto="producto"/>
     </div>
+
+    <div class="col-12 justify-content-lg-end mb-5 p-2">
+      <div class="d-flex justify-content-center">
+        <font-awesome-icon
+          style="cursor:pointer"
+          @click="to_prev"
+          icon="angle-left"
+          size="lg"
+          class="separador mr-md-5"
+        />
+        <font-awesome-icon style="cursor:pointer" class="ml-md-5" @click="to_next" icon="angle-right" size="lg" />
+      </div>
+    </div>
+
   </section>
 </template>
 
@@ -20,7 +34,6 @@ import api from '../plugins/api'
 import volver from "../components/products/volver.vue";
 import homeCategory from "../components/home/homeCategory";
 import ProductoSorpresa from "../components/sorpresa/ProductoSorpresa";
-import imageDefault from '../assets/images/caja_sorpresa/Group.svg';
 import sorpresa from "../assets/images/sorpresa.png";
 
 export default {
@@ -28,8 +41,9 @@ export default {
   data() {
     return {
       sorpresa,
-      imageDefault,
       products:[],
+      next:'',
+      prev:'',
     };
   },
   
@@ -37,9 +51,34 @@ export default {
     api.Categories().getBySlug('cajas-sorpresa').then(response => {
         let id = response.data.data[0].id
         api.Categories().products(id).getPaginate().then(response => {
-          this.products = response.data.data;
+          this.setProduct(response.data);
         }).catch()
       }).catch()
+  },
+  methods:{
+    setProduct(data){
+      this.products = data.data;
+      this.next = data.links.next;
+      this.prev = data.links.prev;
+    },
+    to_prev(){
+      if(this.prev!=null){
+        api.Categories().getProductsPagination(this.prev).then(
+          response =>{
+            this.setProduct(response.data);
+          }
+        );
+      }
+    },
+    to_next(){
+      if(this.next!=null){
+        api.Categories().getProductsPagination(this.next).then(
+          response =>{
+            this.setProduct(response.data);
+          }
+        );
+      }
+    }
   }
 };
 </script>
