@@ -5,8 +5,8 @@
       <div class="row">
         <div class="col-12 col-md-2 order-3 order-sm-1 align-self-end">
           <div class="d-flex justify-content-center justify-content-lg-end ">
-            <font-awesome-icon style="cursor: pointer" @click="prev" icon="angle-left" size="lg" class="separador mr-md-3"/>
-            <font-awesome-icon style="cursor: pointer" @click="next" icon="angle-right" size="lg"/>
+            <font-awesome-icon style="cursor:pointer" @click="prev" icon="angle-left" size="lg" class="separador mr-md-3"/>
+            <font-awesome-icon style="cursor:pointer" @click="next" icon="angle-right" size="lg"/>
           </div>
         </div>
         <div class="col-12 col-md-8 container order-md-1 m-0">

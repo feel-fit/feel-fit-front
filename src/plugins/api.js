@@ -35,7 +35,8 @@ function Categories (url = 'categories') {
         getAll: () => axios.get(`${url}/${id}/products?pagination=false`),
         getPaginate: () => axios.get(`${url}/${id}/products`)
       }
-    }
+    },
+    getProductsPagination:(url_pagination)=> axios.get(url_pagination)
   }
 }
 
