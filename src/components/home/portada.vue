@@ -1,10 +1,19 @@
 <template>
   <div>
-    <section
-      class="bienvenidos d-flex align-items-center flex-column justify-content-center"
-      :style="{ backgroundImage: `url('${background}')`}"
-    >
-      <img :src="logo" alt="logo" class />
+    <section class="bienvenidos d-flex align-items-center flex-column justify-content-center">
+
+      <div class="fondo-bienvenido">
+        <div id="carouselExampleSlidesOnly" class="carousel slide h-100" data-ride="carousel">
+          <div class="carousel-inner h-100">
+            <div class="carousel-item h-100" :class="{active:index==0}" v-for="(background,index) in backgrounds">
+              <img class="d-block w-100 h-100" :src="background.url" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <img :src="logo" alt="logo" />
+
       <br />
       <a class="btn btn-primary text-white btn-lg my-4 w-md-50" href="/catalogo">
         <i>Comprar ahora</i>&nbsp;&nbsp;
@@ -29,42 +38,21 @@ export default {
   props: ["slides"],
   data() {
     return {
-      background: background,
-      defecto: background,
+      backgrounds: [
+        {
+          url: background
+        }
+      ],
       logo: logo,
       scroll: scroll,
-      contador: 1
+      contador: 0
     };
   },
-  mounted() {
-     this.animacionCambioImagen(); 
+  created() {
+    this.backgrounds = this.slides;
   },
-  methods: {
-    animacionCambioImagen() {
-      $(".bienvenidos")
-        .stop()
-        .animate({ opacity: 0 },{ duration: 2000 },function(){
-          this.animacionCambioImagen2().bind(this);
-        });
-    },
-    animacionCambioImagen2(){
-        let imagen = this.cambiarImagen();
-          $(".bienvenidos")
-            .css({'background-image': "url('"+imagen+"')"})
-            .animate({ opacity: 1 }, { duration: 5000},this.animacionCambioImagen());
-    },
-    cambiarImagen(){
-      if(this.slides.length>0){
-        if(this.contador<this.slides.length){
-          this.contador++;
-        }else{
-          this.contador=0;
-        }
-        console.log(thi);
-        return this.slides[this.contador].url;
-      }
-      return this.defecto;
-    }
+  mounted() {
+    //this.animacionCambioImagen();
   }
 };
 </script>
@@ -72,20 +60,22 @@ export default {
 .bienvenidos {
   background-size: cover;
   height: 100vh;
+  width: 100%;
   overflow: hidden;
-  width: 100vw;
   -webkit-transition: background-position 0.5s ease-in-out;
   -moz-transition: background-position 0.5s ease-in-out;
   -o-transition: background-position 0.5s ease-in-out;
   transition: background-position 0.5s ease-in-out;
 }
 
-@keyframes animatedBackground {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
+.caja{
+  border:red 2px solid;
+}
+
+.fondo-bienvenido {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -100;
 }
 </style>
