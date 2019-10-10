@@ -12,15 +12,16 @@ export default new Router({
       path: '/',
       name: 'home',
       component: Home,
-      meta: {
-        breadcrumb: [
-          { name: 'Inicio' }
-        ]
-      }
     },
     {
       path: '/conocenos',
       name: 'conocenos',
+      meta: {
+        breadcrumb: [
+          { name: 'Inicio', link: '' },
+        ]
+      },
+      
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
@@ -29,6 +30,11 @@ export default new Router({
     {
       path: '/contactanos',
       name: 'contactanos',
+      meta: {
+        breadcrumb: [
+          { name: 'Inicio', link: '' },
+        ]
+      },
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
@@ -40,9 +46,8 @@ export default new Router({
       props: true,
       meta: {
         breadcrumb: [
-          { name: 'Inicio', link: 'home' },
+          { name: 'Inicio', link: '' },
           { name: 'Categoria', link: 'catalogo' },
-          { name: 'Categoria' }
         ]
       },
       // route level code-splitting
@@ -56,9 +61,8 @@ export default new Router({
       name: 'producto',
       meta: {
         breadcrumb: [
-          { name: 'Inicio', link: 'home' },
-          { name: 'Categoria', link: 'catalogo' },
-          { name: 'Categoria' }
+          { name: 'Inicio', link: '' },
+          { name: 'Productos', link: 'catalogo' },
         ]
       },
       // route level code-splitting
@@ -69,6 +73,11 @@ export default new Router({
     {
       path: '/catalogo',
       name: 'catalogo',
+      meta: {
+        breadcrumb: [
+          { name: 'Inicio', link: '' },
+        ]
+      },
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
@@ -79,7 +88,7 @@ export default new Router({
       name: 'pagos',
       meta: {
         breadcrumb: [
-          { name: 'Inicio', link: 'home' }
+          { name: 'Inicio', link: '' }
         ]
       },
       // route level code-splitting
@@ -90,6 +99,11 @@ export default new Router({
     {
       path: '/buscar',
       name: 'buscar',
+      meta: {
+        breadcrumb: [
+          { name: 'Inicio', link: '' }
+        ]
+      },
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
@@ -98,6 +112,11 @@ export default new Router({
     {
       path: '/informacion',
       name: 'informacion',
+      meta: {
+        breadcrumb: [
+          { name: 'Inicio', link: '' }
+        ]
+      },
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
@@ -106,6 +125,11 @@ export default new Router({
     {
       path: '/deseos',
       name: 'deseos',
+      meta: {
+        breadcrumb: [
+          { name: 'Inicio', link: '' }
+        ]
+      },
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
@@ -114,6 +138,11 @@ export default new Router({
     {
       path: '/registro',
       name: 'registro',
+      meta: {
+        breadcrumb: [
+          { name: 'Inicio', link: '' }
+        ]
+      },
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
@@ -122,6 +151,11 @@ export default new Router({
     {
       path: '/login',
       name: 'login',
+      meta: {
+        breadcrumb: [
+          { name: 'Inicio', link: '' }
+        ]
+      },
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
@@ -130,6 +164,11 @@ export default new Router({
     {
       path: '/thankyou',
       name: 'thankyou',
+      meta: {
+        breadcrumb: [
+          { name: 'Inicio', link: '' }
+        ]
+      },
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
@@ -138,6 +177,11 @@ export default new Router({
     {
       path: '/usuario',
       name: 'usuario',
+      meta: {
+        breadcrumb: [
+          { name: 'Inicio', link: '' }
+        ]
+      },
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
@@ -146,13 +190,23 @@ export default new Router({
     {
       path: '/caja-sorpresa',
       name: 'caja-sorpresa',
+      meta: {
+        breadcrumb: [
+          { name: 'Inicio', link: '' }
+        ]
+      },
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import(/* webpackChunkName: "about" */ './views/CajaSorpresa.vue')
-    },{
+    }, {
       path: '/404-product',
       name: 'not-found-product',
+      meta: {
+        breadcrumb: [
+          { name: 'Inicio', link: '' }
+        ]
+      },
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
@@ -161,6 +215,11 @@ export default new Router({
     {
       path: '/404-box',
       name: 'not-found-box',
+      meta: {
+        breadcrumb: [
+          { name: 'Inicio', link: '' }
+        ]
+      },
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
