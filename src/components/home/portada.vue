@@ -52,11 +52,10 @@ export default {
     };
   },
   created() {
-    this.backgrounds = this.slides;
+    if(this.slides.lenght>0){
+        this.backgrounds = this.slides;
+    }
   },
-  mounted() {
-    //this.animacionCambioImagen();
-  }
 };
 </script>
 <style scoped>
@@ -79,6 +78,6 @@ export default {
   position: absolute;
   width: 100%;
   height: 100%;
-  z-index: -100;
+  z-index: -10;
 }
 </style>
