@@ -61,8 +61,7 @@
             <p class=" text-center"> Feel Fit</p>
           </div>
           <img src="../assets/images/conocenos/circulo.svg" class="circulo float-left float-md-right">
-          <img src="../assets/images/conocenos/fresa_mitad.svg" alt="Fresa"
-               class="fresa_mitad_conocenos position-absolute img-fluid d-md-none">
+          
         </div>
       </div>
     </div>

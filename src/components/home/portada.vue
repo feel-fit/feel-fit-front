@@ -3,7 +3,10 @@
     <section class="bienvenidos d-flex align-items-center flex-column justify-content-center">
 
       <div class="fondo-bienvenido">
-        <div id="carouselExampleSlidesOnly" class="carousel slide h-100" data-ride="carousel">
+        <div id="carouselSlider" class="carousel slide h-100" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselSlider" :data-slide-to="index" :class="{active:index==0}" v-for="(background,index) in backgrounds"></li>
+          </ol>
           <div class="carousel-inner h-100">
             <div class="carousel-item h-100" :class="{active:index==0}" v-for="(background,index) in backgrounds">
               <img class="d-block w-100 h-100" :src="background.url" />

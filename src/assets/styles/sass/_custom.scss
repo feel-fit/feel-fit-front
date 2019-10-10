@@ -222,7 +222,9 @@ Buscador
   width: 2rem;
 }
 
-
+.link{
+  cursor: pointer;
+}
 
 /* Las medias queries  */
 
@@ -230,6 +232,7 @@ Buscador
   html {
     font-size: 16px;
   }
+
   .bienvenidos {
     background-size: cover;
     height: auto;
@@ -257,10 +260,5 @@ Buscador
     left: 91%;
     top: -6%;
     width: 10%;
-
   }
-
-}
-.link{
-  cursor: pointer;
 }

@@ -2,7 +2,7 @@
   <!-- Inicio seccion de productos-->
   <section class="py-5 position-relative" id="section1">
     <img :src="hoja" class="hoja_home position-absolute d-none d-md-inline-block">
-    <img :src="fresa" class="fresa_buscador position-absolute d-md-none">
+    <img :src="fresa" class="fresa_buscador position-absolute d-none d-md-inline-block">
     <div class="container">
       <form class="form-inline active-pink-4 justify-content-center position-relative  border-0">
         <input @keyup="searchTimeOut" v-model="search" class="buscador form-control form-control-sm w-100 shadow p-4 mb-4 bg-white" type="search"
@@ -17,7 +17,6 @@
           </div>
         </div>
       </div>
-
     </div>
   </section>
 </template>

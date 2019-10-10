@@ -24,13 +24,10 @@
             hagan sentir que tu alma y tu corazon se encuentren felices. Es por eso que eres nuestra razon de ser y
             buscamos acompañarte en tu estilo de vida saludable ofreciendote produtos de excelente calidad. </p>
 
-          <img src="../assets/images/conocenos/circulo.svg" class="circulo float-left float-md-right">
-          <img src="../assets/images/conocenos/fresa_mitad.svg" alt="Fresa"
-               class="fresa_mitad_conocenos position-absolute img-fluid d-md-none">
+          <img src="../assets/images/conocenos/circulo.svg" class="circulo float-left float-md-right d-none d-md-block">
 
         </div>
       </div>
-
     </div>
   </section>
 </template>

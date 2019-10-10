@@ -63,9 +63,6 @@ export default {
 }
 </script>
 <style scoped lang="scss">
-  .caja{
-    border: 2px saddlebrown solid;
-  }
   .pie{
     margin-top: auto;
     width: 100%;
