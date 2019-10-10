@@ -5,9 +5,10 @@
         <div class="col-12 mx-auto pl-4">
           <div>
             <ol class="breadcrumb mb-0 bg-white">
-              <li v-for="(breadcrumb,idx) in breadcrumbList" :key="idx" :class="{'active': !!breadcrumb.link}" class="breadcrumb-item">
+              <router-link :to="'/'+breadcrumb.link" tag="li" v-for="(breadcrumb,idx) in breadcrumbList" :key="idx" :class="{'active': !!breadcrumb.link}" class="link breadcrumb-item">
                 {{ breadcrumb.name }}
-              </li>
+              </router-link>
+              <li class="text-primary breadcrumb-item">{{url }}</li>
             </ol>
           </div>
         </div>
@@ -16,8 +17,9 @@
   </section>
 </template>
 <script>
+import {split,last,startCase} from 'lodash'
 export default {
-  name: 'portada',
+  name: 'breadcrumb',
   data () {
     return {
       breadcrumbList: []
@@ -25,6 +27,11 @@ export default {
   },
   mounted () {
     this.updateList()
+  },
+  computed:{
+    url(){
+      return startCase(last(split(this.$route.path,'/')))
+    }
   },
   methods: {
     updateList () {
