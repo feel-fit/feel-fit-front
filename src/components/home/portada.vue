@@ -52,7 +52,7 @@ export default {
     };
   },
   created() {
-    if(this.slides.lenght>0){
+    if(this.slides.length>0){
         this.backgrounds = this.slides;
     }
   },
