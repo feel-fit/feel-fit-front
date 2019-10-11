@@ -1,16 +1,16 @@
 <template>
   <section class="performance-facts ">
     <header class="performance-facts__header">
-      <h1 class="performance-facts__title">Nutrition Facts</h1>
+      <h1 class="performance-facts__title text-uppercase">Informaci&oacute;n Nutricional</h1>
       <template v-for="item in top">
         <p>{{item.name}} {{item.quantity}}</p>
       </template>
     </header>
-    <table class="performance-facts__table">
+    <table class="table performance-facts__table">
       <thead>
       <tr>
-        <th colspan="3" class="small-info">
-          Amount Per Serving
+        <th colspan="3" class="small-info text-uppercase">
+          Cantidad por porci&oacute;n
         </th>
       </tr>
       </thead>
@@ -36,8 +36,8 @@
         </tr>
       </template>
       <tr class="thick-row">
-        <td colspan="3" class="small-info">
-          <b>% Daily Value*</b>
+        <td colspan="3" class="small-info text-uppercase">
+          <b>% Valores Diarios</b>
         </td>
       </tr>
       <template v-for="(item,key) in medio">
@@ -62,7 +62,7 @@
       </template>
       </tbody>
     </table>
-    <table class="performance-facts__table--grid">
+    <table class="table performance-facts__table--grid">
       <tbody>
       <tr :class="{'thin-end':inferior.length -1 == key}" v-for="(item,key) in inferior">
         <td colspan="2">
@@ -76,7 +76,7 @@
     </table>
     <p class="small-info">* Percent Daily Values are based on a 2,000 calorie diet. Your daily values may be higher or
       lower depending on your calorie needs:</p>
-    <table class="performance-facts__table--small small-info">
+    <table class="table performance-facts__table--small small-info">
       <thead>
       <tr>
         <td colspan="2"></td>
