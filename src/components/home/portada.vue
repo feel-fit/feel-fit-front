@@ -32,14 +32,14 @@
   </div>
 </template>
 <script>
-import logo from "./../../assets/images/conocenos/logo_conocenos.svg";
-import scroll from "./../../assets/images/scroll.svg";
-import background from "./../../assets/images/img_bienvenido.png";
+import logo from './../../assets/images/conocenos/logo_conocenos.svg'
+import scroll from './../../assets/images/scroll.svg'
+import background from './../../assets/images/img_bienvenido.png'
 
 export default {
-  name: "portada",
-  props: ["slides"],
-  data() {
+  name: 'portada',
+  props: ['slides'],
+  data () {
     return {
       backgrounds: [
         {
@@ -56,7 +56,12 @@ export default {
         this.backgrounds = this.slides;
     }
   },
-};
+  created () {
+    if (this.slides.lenght > 0) {
+      this.backgrounds = this.slides
+    }
+  }
+}
 </script>
 <style scoped>
 .bienvenidos {
