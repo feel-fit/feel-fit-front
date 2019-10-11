@@ -64,10 +64,16 @@ export default {
     border-radius: 2rem;
   }
 
+  .caja{
+    border: 2px green solid;
+  }
+
   .fresa_buscador{
-    left:  90%;
+    right:0;
     top:   -10%;
     width: 14%;
+    margin: 0;
+    padding: 0;
   }
 
   .img_search{

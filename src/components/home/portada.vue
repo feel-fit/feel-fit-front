@@ -1,14 +1,22 @@
 <template>
   <div>
     <section class="bienvenidos d-flex align-items-center flex-column justify-content-center">
-
       <div class="fondo-bienvenido">
         <div id="carouselSlider" class="carousel slide h-100" data-ride="carousel">
-          <ol class="carousel-indicators">
-            <li data-target="#carouselSlider" :data-slide-to="index" :class="{active:index==0}" v-for="(background,index) in backgrounds"></li>
+          <ol class="carousel-indicators control-img">
+            <li
+              data-target="#carouselSlider"
+              :data-slide-to="index"
+              :class="{active:index==0}"
+              v-for="(background,index) in backgrounds"
+            ></li>
           </ol>
           <div class="carousel-inner h-100">
-            <div class="carousel-item h-100" :class="{active:index==0}" v-for="(background,index) in backgrounds">
+            <div
+              class="carousel-item h-100"
+              :class="{active:index==0}"
+              v-for="(background,index) in backgrounds"
+            >
               <img class="d-block w-100 h-100" :src="background.url" />
             </div>
           </div>
@@ -43,6 +51,7 @@ export default {
     return {
       backgrounds: [
         {
+          name: "default",
           url: background
         }
       ],
@@ -52,8 +61,8 @@ export default {
     };
   },
   created() {
-    if(this.slides.length>0){
-        this.backgrounds = this.slides;
+    if (this.slides.length > 0) {
+      this.backgrounds = this.slides;
     }
   },
   created () {
@@ -75,14 +84,15 @@ export default {
   transition: background-position 0.5s ease-in-out;
 }
 
-.caja{
-  border:red 2px solid;
-}
-
 .fondo-bienvenido {
   position: absolute;
   width: 100%;
   height: 100%;
-  z-index: -10;
+  z-index: -5;
+}
+
+.control-img{
+  position: absolute;
+  z-index: 100;
 }
 </style>
