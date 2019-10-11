@@ -16,7 +16,7 @@
       </thead>
       <tbody>
       <template v-for="item in superior">
-        <tr :key="id">
+        <tr :key="item.id">
           <th colspan="2">
             <b v-text="item.name">Calories</b> {{item.quantity}}
           </th>
