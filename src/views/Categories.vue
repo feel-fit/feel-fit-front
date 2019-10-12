@@ -28,7 +28,19 @@ import hoja from "../components/products/hoja.vue";
 import fresa from "../components/products/fresa_producto.vue";
 
 export default {
-  name: "product",
+  name: "categorias",
+  metaInfo() {
+   return {
+     title: this.name + ' | Feelfit',
+     meta: [
+       { name: 'description', content: 'encuentra todo nuestro catálogo fitness en armenia' },
+       { name: 'keywords', content: 'catalogo fitness, feelfit, venta de productos fitness' }
+     ],
+     link: [
+       { rel: 'canonical', href: 'https://feelfitmarket.com' + this.$route.fullPath },
+     ]
+   }
+  },
   data() {
     return {
       productos: [

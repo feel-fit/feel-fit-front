@@ -31,6 +31,24 @@
     </div>
   </section>
 </template>
+<script>
+export default {
+  name: "conocenos",
+  metaInfo() {
+    return {
+      title: 'Conocenos | Feelfit',
+      meta: [
+        { name: 'description', content: 'toda la información acerca de nosotros' },
+        { name: 'keywords', content: 'catalogo fitness, feelfit, venta de productos fitness' }
+      ],
+      link: [
+        { rel: 'canonical', href: 'https://feelfitmarket.com' + this.$route.fullPath },
+      ]
+    }
+  },
+}
+
+</script>
 <style scoped lang="scss">
   .top-header {
     margin-top: 67px;

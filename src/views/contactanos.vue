@@ -73,6 +73,18 @@ import api from './../plugins/api'
 
 export default {
   name: 'contactanos',
+  metaInfo() {
+    return {
+      title: 'Contactanos | Feelfit',
+      meta: [
+        { name: 'description', content: 'Escribenos y pronto te daremos una respuesta de feelfit' },
+        { name: 'keywords', content: 'contactanos, feelfit, venta de productos fitness' }
+      ],
+      link: [
+        { rel: 'canonical', href: 'https://feelfitmarket.com' + this.$route.fullPath },
+      ]
+    }
+  },
   data () {
     return {
       images: {

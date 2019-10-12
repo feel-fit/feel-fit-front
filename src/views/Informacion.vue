@@ -99,6 +99,7 @@ import imageDefault from '../assets/images/producto.png'
 import facts from '../components/informacion/facts'
 import imgDeseoActivo  from '../assets/images/deseos/heart.svg'
 import imgDeseoNoActivo  from '../assets/images/fav.svg'
+import { flatMap} from 'lodash'
 
 export default {
   props: {
@@ -107,6 +108,18 @@ export default {
     },
     id: {
       type: Number
+    }
+  },
+  metaInfo() {
+    return {
+      title: this.product.name + ' | ' + this.product.brand.name + ' | Feelfit',
+      meta: [
+        { name: 'description', content: this.product.description },
+        { name: 'keywords', content: flatMap(this.product.tags,'name') + ',' + flatMap(this.product.categories,'name') + ', ' + this.product.name + ', ' + this.product.brand.name}
+      ],
+      link: [
+        { rel: 'canonical', href: 'https://feelfitmarket.com' + this.$route.fullPath },
+      ]
     }
   },
   data () {

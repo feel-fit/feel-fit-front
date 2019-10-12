@@ -34,6 +34,18 @@
 import volver from "../components/products/volver.vue";
 export default {
   name: "thankyou",
+  metaInfo() {
+    return {
+      title: 'Gracias por su pago | Feelfit',
+      meta: [
+        { name: 'description', content: 'pagos fitness' },
+        { name: 'keywords', content: 'pagos, feelfit, venta de productos fitness' }
+      ],
+      link: [
+        { rel: 'canonical', href: 'https://feelfitmarket.com' + this.$route.fullPath },
+      ]
+    }
+  },
   components: { volver }
 };
 </script>

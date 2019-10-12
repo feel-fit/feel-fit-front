@@ -14,6 +14,18 @@ import buscador from '../components/home/buscador'
 
 export default {
   name: 'product',
+  metaInfo() {
+   return {
+     title: 'Buscador | Feelfit',
+     meta: [
+       { name: 'description', content: 'Buscar los mejore productos fitness en armenia' },
+       { name: 'keywords', content: 'buscador fitness, feelfit, venta de productos fitness' }
+     ],
+     link: [
+       { rel: 'canonical', href: 'https://feelfitmarket.com' + this.$route.fullPath },
+     ]
+   }
+  },
   data () {
     return {}
   },

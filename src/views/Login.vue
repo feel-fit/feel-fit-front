@@ -21,7 +21,7 @@
                     :class="{'is-invalid':errors.first('email')}"
                     name="email"
                     id="email"
-                    class="form-control btn-lg border-left-0" 
+                    class="form-control btn-lg border-left-0"
                     size="20"
                     v-model="form.email"
                     placeholder="Ingresa tu usuario"
@@ -85,6 +85,18 @@ import app from './../plugins/api'
 
 export default {
   name: 'Login',
+  metaInfo() {
+    return {
+      title: 'login | Feelfit',
+      meta: [
+        { name: 'description', content: 'login' },
+        { name: 'keywords', content: 'login, feelfit, venta de productos fitness' }
+      ],
+      link: [
+        { rel: 'canonical', href: 'https://feelfitmarket.com' + this.$route.fullPath },
+      ]
+    }
+  },
   data () {
     return {
       form: {

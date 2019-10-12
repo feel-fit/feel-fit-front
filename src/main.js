@@ -1,4 +1,3 @@
-
 import Vue from 'vue'
 
 import 'bootstrap'
@@ -9,12 +8,26 @@ import store from './store'
 import './registerServiceWorker'
 import './assets/styles/sass/app.scss'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faArrowRight, faArrowLeft, faAngleLeft, faAngleRight, faBars, faTimes, faSearch } from '@fortawesome/free-solid-svg-icons'
+import {
+  faArrowRight,
+  faArrowLeft,
+  faAngleLeft,
+  faAngleRight,
+  faBars,
+  faTimes,
+  faSearch
+} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { VLazyImagePlugin } from 'v-lazy-image'
 import VueBreadcrumbs from 'vue-2-breadcrumbs'
 import VeeValidate from 'vee-validate'
-import VueAWN from "vue-awesome-notifications"
+import VueAWN from 'vue-awesome-notifications'
+import Meta from 'vue-meta'
+
+Vue.use(Meta, {
+  // optional pluginOptions
+  refreshOnceOnNavigation: true
+})
 
 // Your custom options
 let options = { position: 'top-rigth' }
@@ -22,6 +35,7 @@ let options = { position: 'top-rigth' }
 Vue.use(VueAWN, options)
 
 import VueScrollTo from 'vue-scrollto'
+
 window.$ = window.jQuery = require('jquery')
 
 Vue.use(VueScrollTo)
@@ -38,15 +52,16 @@ Vue.filter('phone', phone => phone.replace(/[^0-9]/g, '').replace(/(\d{3})(\d{3}
 Vue.filter('money', money => '$ ' + money.toString().replace(/(\d)(?=(\d{3})+(,|$))/g, '$1.'))
 Vue.filter('uppercase', text => text.toUpperCase())
 Vue.filter('department_city', (addresses) => {
-  if(addresses!=undefined&&addresses.length>0){
-    let address = addresses[0];
-    return address.city.department.name+'/'+address.city.name;
+  if (addresses != undefined && addresses.length > 0) {
+    let address = addresses[0]
+    return address.city.department.name + '/' + address.city.name
   }
-  return '';
+  return ''
 })
 
 new Vue({
   router,
   store,
-  render: h => h(App)
+  render: h => h(App),
+  mounted: () => document.dispatchEvent(new Event('x-app-rendered')),
 }).$mount('#app')

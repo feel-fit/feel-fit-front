@@ -28,7 +28,7 @@
                 <div class="col-md-6">
                   <div class="container px-md-5 mx-md-5">
 
-                    <!-- input nombre 
+                    <!-- input nombre
                     <div class="mb-4">
                       <div class="form-group">
                         <label for="nombre-completo" class="h5 text-primary font-italic font-weight-bold">Nombre Completo</label>
@@ -223,6 +223,18 @@ import editarUser from "../components/usuario/editarUser";
 
 export default {
   name: "usuario",
+  metaInfo() {
+    return {
+      title: 'Usuario | Feelfit',
+      meta: [
+        { name: 'description', content: 'usuario' },
+        { name: 'keywords', content: 'usuario, feelfit, venta de productos fitness' }
+      ],
+      link: [
+        { rel: 'canonical', href: 'https://feelfitmarket.com' + this.$route.fullPath },
+      ]
+    }
+  },
   components: {
     volver,
     editarUser

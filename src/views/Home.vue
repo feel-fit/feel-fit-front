@@ -1,10 +1,9 @@
 <template>
   <div>
     <portada :slides="slides"></portada>
-    <buscador id="producto-nuevo" ></buscador>
-   
+    <buscador id="producto-nuevo"></buscador>
     <home-category url="productos-nuevos" title="Nuestros Productos nuevos" :id="1" :image="images.papas"></home-category>
-    <products-new tag="nuevo"  :products="nuevos"></products-new>
+    <products-new tag="nuevo" :products="nuevos"></products-new>
     <fresa/>
     <home-category url="productos-destacados" title="Nuestros Productos destacados" :id="2" :image="images.yogurt"/>
     <products-new tag="destacado" :products="destacados"></products-new>
@@ -30,12 +29,24 @@ import imageDefault from './../assets/images/producto.png'
 
 export default {
   name: 'home',
+  metaInfo () {
+    return {
+      title: 'Feelfit | venta de productos fitness',
+      meta: [
+        { name: 'description', content: 'La mejor pagina de venta de productos fitness armenia, mejora tu salud' },
+        { name: 'keywords', content: 'feelfit, venta de productos fitness' }
+      ],
+      link: [
+        { rel: 'canonical', href: 'https://feelfitmarket.com' + this.$route.fullPath },
+      ]
+    }
+  },
   data () {
     return {
       images: {
         sorpresa, papas, yogurt, imageDefault
       }
-
+      
     }
   },
   components: {
@@ -50,7 +61,7 @@ export default {
     }
     if (getUserToken() && !this.me) this.$store.dispatch('getMe')
     this.$store.dispatch('getSlides')
-
+    
     this.$store.commit('open_menu', false)
   },
   computed: {

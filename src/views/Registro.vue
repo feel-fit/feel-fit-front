@@ -77,6 +77,18 @@ import api from './../plugins/api'
 
 export default {
   name: 'Registro',
+  metaInfo() {
+    return {
+      title: 'Registro | Feelfit',
+      meta: [
+        { name: 'description', content: 'registrese y crea una cuenta en la mejor tienda fitness' },
+        { name: 'keywords', content: 'registro, feelfit, venta de productos fitness' }
+      ],
+      link: [
+        { rel: 'canonical', href: 'https://feelfitmarket.com' + this.$route.fullPath },
+      ]
+    }
+  },
   data () {
     return {
       form: {

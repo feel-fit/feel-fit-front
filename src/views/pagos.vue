@@ -54,6 +54,18 @@ import SeleccionarPago from '../components/pagos/seleccionarPago'
 
 export default {
   name: 'pago',
+  metaInfo() {
+    return {
+      title: 'Pagos | Feelfit',
+      meta: [
+        { name: 'description', content: 'pagos' },
+        { name: 'keywords', content: 'pagos, feelfit, venta de productos fitness' }
+      ],
+      link: [
+        { rel: 'canonical', href: 'https://feelfitmarket.com' + this.$route.fullPath },
+      ]
+    }
+  },
   components: { SeleccionarPago, DatosEnvio, TuCarrito, InformacionCliente, volver },
   created () {
     this.$store.dispatch('getDepartments')
