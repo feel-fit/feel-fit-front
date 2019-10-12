@@ -65,10 +65,8 @@ export default {
       this.backgrounds = this.slides;
     }
   },
-  created () {
-    if (this.slides.lenght > 0) {
-      this.backgrounds = this.slides
-    }
+  mounted(){
+    $('.carousel').carousel();
   }
 }
 </script>
