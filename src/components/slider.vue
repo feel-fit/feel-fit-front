@@ -28,10 +28,10 @@
             </div>
           </div>
           <div class="row espaciado text-center">
-            <div class="col-12 font-weight-bold font-italic text-center mt-3" v-if="me">
+            <div class="col-12 font-weight-bold font-italic text-center mt-3" v-if="isLogin">
               <router-link tag="a" to="/usuario" class="text-dark">Perfil</router-link>
             </div>
-            <div class="col-12 font-weight-bold font-italic text-center mt-3 mb-5" v-if="me">
+            <div class="col-12 font-weight-bold font-italic text-center mt-3 mb-5" v-if="isLogin">
               <a @click="logout" class="text-dark " href="#">Cerrar sesion</a>
             </div>
             <div class="col-12 font-weight-bold font-italic text-center mt-3 mb-5" v-else>
@@ -69,6 +69,7 @@
 <script>
 import logo from './../assets/images/logo_menu.svg'
 import { logout } from '../plugins/auth'
+import { isEmpty } from 'lodash'
 
 export default {
   name: 'slider',
@@ -88,6 +89,12 @@ export default {
     },
     me () {
       return this.$store.state.me
+    },
+    isLogin () {
+      if (!isEmpty(this.me)) {
+        return true
+      }
+      return false
     }
   },
   methods: {

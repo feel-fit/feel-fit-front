@@ -9,7 +9,7 @@
       aria-labelledby="myExtraLargeModalLabel"
       aria-hidden="true"
     >
-      <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content btn-lg p-0">
           <div class="row">
             <div class="d-none d-lg-block col-lg-6 p-0">
@@ -61,8 +61,12 @@ export default {
   margin-top: 1rem;
 }
 
-p {
+p,li {
   font-size: 0.9rem;
+}
+
+ul{
+  padding: 0;
 }
 
 </style>

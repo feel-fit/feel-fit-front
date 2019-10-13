@@ -3,13 +3,13 @@
     <portada :slides="slides"></portada>
     <buscador id="producto-nuevo"></buscador>
     <home-category url="productos-nuevos" title="Nuestros Productos nuevos" :id="1" :image="images.papas"></home-category>
-    <products-new tag="nuevo" :products="nuevos"></products-new>
+    <products-new tag="nuevo" :products="nuevos" v-if="nuevos.length>0"></products-new>
     <fresa/>
     <home-category url="productos-destacados" title="Nuestros Productos destacados" :id="2" :image="images.yogurt"/>
-    <products-new tag="destacado" :products="destacados"></products-new>
+    <products-new tag="destacado" :products="destacados" v-if="destacados.length>0"></products-new>
     <fresa/>
     <home-category url="cajas-sorpresa" title="Nuestras Cajas Sorpresa" :id="3" :image="images.sorpresa"/>
-    <products-new tag="caja sorpresa" :products="sorpresas"></products-new>
+    <products-new tag="caja sorpresa" :products="sorpresas" v-if="sorpresas.length>0"></products-new>
   </div>
 </template>
 <script>

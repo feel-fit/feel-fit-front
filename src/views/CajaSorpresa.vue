@@ -13,7 +13,7 @@
         <producto-sorpresa :producto="producto"/>
     </div>
 
-    <div class="col-12 justify-content-lg-end mb-5 p-2">
+    <div class="col-12 justify-content-lg-end mb-5 p-2" v-if="products.length>0">
       <div class="d-flex justify-content-center">
         <font-awesome-icon
           style="cursor:pointer"

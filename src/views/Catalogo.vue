@@ -5,7 +5,7 @@
       <div class="row">
         <img class="image-own d-none d-sm-block" src="../assets/images/catalogo/bgcat.png"/>
         <div class="col-md-3 p-0">
-          <catalogo></catalogo>
+          <portada></portada>
         </div>
         <div class="col-md-8">
           <producto></producto>
@@ -18,7 +18,7 @@
   </section>
 </template>
 <script>
-import catalogo from '../components/catalogo/catalogo.vue'
+import portada from '../components/catalogo/catalogo.vue'
 import whatsapp from '../components/home/whatsapp'
 import hoja from '../components/products/hoja.vue'
 import volver from '../components/products/volver.vue'
@@ -43,7 +43,7 @@ export default {
     return {}
   },
   components: {
-    catalogo, hoja, volver, producto, hoja2, whatsapp
+    portada, hoja, volver, producto, hoja2, whatsapp
 
   },
   mounted () {
