@@ -37,7 +37,7 @@ export default {
         { name: 'keywords', content: 'feelfit, venta de productos fitness' }
       ],
       link: [
-        { rel: 'canonical', href: 'https://feelfitmarket.com' + this.$route.fullPath },
+        { rel: 'canonical', href: 'https://feelfitmarket.com' + this.$route.fullPath }
       ]
     }
   },
@@ -46,7 +46,7 @@ export default {
       images: {
         sorpresa, papas, yogurt, imageDefault
       }
-      
+
     }
   },
   components: {
@@ -61,7 +61,7 @@ export default {
     }
     if (getUserToken() && !this.me) this.$store.dispatch('getMe')
     this.$store.dispatch('getSlides')
-    
+
     this.$store.commit('open_menu', false)
   },
   computed: {

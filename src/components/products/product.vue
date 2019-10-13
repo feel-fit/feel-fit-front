@@ -29,8 +29,8 @@
 </template>
 <script>
 import imageDefault from '../../assets/images/producto.png'
-import imgDeseoActivo  from '../../assets/images/deseos/heart.svg'
-import imgDeseoNoActivo  from '../../assets/images/fav.svg'
+import imgDeseoActivo from '../../assets/images/deseos/heart.svg'
+import imgDeseoNoActivo from '../../assets/images/fav.svg'
 export default {
   name: 'product',
   props: {
@@ -45,22 +45,22 @@ export default {
     return {
       imageDefault,
       imgDeseoActivo,
-      imgDeseoNoActivo,
+      imgDeseoNoActivo
     }
   },
 
   mounted () {
 
   },
-  computed:{
-    isProduct(){
+  computed: {
+    isProduct () {
       let product = this.$store.state.wishlist.find(item => {
         if (item.id === this.product.id) return item
       })
-      if(product){
-        return true;
-      }else{
-        return false;
+      if (product) {
+        return true
+      } else {
+        return false
       }
     }
   },

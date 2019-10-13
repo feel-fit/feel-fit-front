@@ -218,12 +218,12 @@
   </section>
 </template>
 <script>
-import volver from "../components/products/volver.vue";
-import editarUser from "../components/usuario/editarUser";
+import volver from '../components/products/volver.vue'
+import editarUser from '../components/usuario/editarUser'
 
 export default {
-  name: "usuario",
-  metaInfo() {
+  name: 'usuario',
+  metaInfo () {
     return {
       title: 'Usuario | Feelfit',
       meta: [
@@ -231,7 +231,7 @@ export default {
         { name: 'keywords', content: 'usuario, feelfit, venta de productos fitness' }
       ],
       link: [
-        { rel: 'canonical', href: 'https://feelfitmarket.com' + this.$route.fullPath },
+        { rel: 'canonical', href: 'https://feelfitmarket.com' + this.$route.fullPath }
       ]
     }
   },
@@ -239,13 +239,13 @@ export default {
     volver,
     editarUser
   },
-  mounted() {},
+  mounted () {},
   computed: {
-    me() {
-      return this.$store.state.me;
+    me () {
+      return this.$store.state.me
     }
   }
-};
+}
 </script>
 <style scoped lang="scss">
 .imagen-pago {
@@ -271,7 +271,6 @@ export default {
 .accordion .option.collapsed .icono {
   transform: scaleY(1);
 }
-
 
 @media (max-width:517px){
   .text-title1{

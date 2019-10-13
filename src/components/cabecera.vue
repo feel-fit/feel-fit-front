@@ -48,7 +48,7 @@ export default {
   },
   mounted () {
     window.addEventListener('scroll', this.onScroll)
-    
+
     $(window).scroll(function () {
       if ($(this).scrollTop() > 50) {
         $('.sticky-top').addClass('bg-white')
@@ -58,16 +58,16 @@ export default {
       }
     })
   },
-  
+
   computed: {
     open () {
       return this.$store.state.open_cart
     },
-    isLogin(){
-       if(!isEmpty(this.me)){
-         return true;
-       }
-       return false;
+    isLogin () {
+      if (!isEmpty(this.me)) {
+        return true
+      }
+      return false
     },
     me () {
       return this.$store.state.me
@@ -97,13 +97,13 @@ export default {
     logout () {
       logout()
       this.$store.commit('set_me', null)
-      this.$store.state.wishlist=[];
+      this.$store.state.wishlist = []
       this.$store.state.cart = {
-      items: []
-    };
+        items: []
+      }
       this.$router.push('/')
     }
-    
+
   }
 }
 </script>

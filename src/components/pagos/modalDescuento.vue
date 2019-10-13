@@ -33,11 +33,11 @@
 
 <script>
 export default {
-  name: "descuento",
-  props:{
-    discount:{require:true}
-  },
-};
+  name: 'descuento',
+  props: {
+    discount: { require: true }
+  }
+}
 </script>
 <style scoped>
 

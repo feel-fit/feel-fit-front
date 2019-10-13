@@ -12,16 +12,16 @@
 </template>
 
 <script>
-    import volver from '../components/products/volver.vue'
-    export default {
-        name: 'Not-found-box',
-        components:{volver},
-        data(){
-            return{
+import volver from '../components/products/volver.vue'
+export default {
+  name: 'Not-found-box',
+  components: { volver },
+  data () {
+    return {
 
-            }
-        }
     }
+  }
+}
 </script>
 
 <style lang="scss">

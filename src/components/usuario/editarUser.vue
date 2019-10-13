@@ -163,8 +163,8 @@ export default {
     }
   },
   created () {
-    //this.$store.dispatch('getDepartments')
-    //this.$store.dispatch('getCities')
+    // this.$store.dispatch('getDepartments')
+    // this.$store.dispatch('getCities')
   },
   computed: {
     departments () {
@@ -200,16 +200,16 @@ export default {
       if (!this.address.id) {
         api.Addresses().create(this.address).then(response => {
           this.address = response.data.data
-          this.address.city_id = this.address.city.id;
+          this.address.city_id = this.address.city.id
         })
-      }else{
-        api.Addresses().update(this.address.id,this.address).then(response => {
+      } else {
+        api.Addresses().update(this.address.id, this.address).then(response => {
           this.address = response.data.data
-          this.address.city_id = this.address.city.id;
+          this.address.city_id = this.address.city.id
         })
       }
       //
-      
+
       api
         .Users()
         .update(this.me.id, this.cliente)
@@ -227,7 +227,7 @@ export default {
     changeDepartment () {
       console.log(this.address)
       this.cliente.department = this.departments.filter(item => item.id == this.citiesall.filter(node => node.id == this.address.city_id)[0]
-            .department_id
+        .department_id
       )[0].id
       this.changeCiudades()
     },
@@ -238,8 +238,8 @@ export default {
           this.citiesall.filter(node => node.id == this.address.city.id)[0]
             .department_id
       )[0].id
-      this.changeCiudades();
-      this.address.city_id = this.address.city.id;
+      this.changeCiudades()
+      this.address.city_id = this.address.city.id
     }
   }
 }
@@ -248,11 +248,11 @@ export default {
   .caja{
     border: 2px red solid;
   }
-  
+
   label{
     font-size: 0.7em;
   }
-  
+
   .titulo{
     margin-bottom: 2.5rem;
   }

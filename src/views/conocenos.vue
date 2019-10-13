@@ -33,8 +33,8 @@
 </template>
 <script>
 export default {
-  name: "conocenos",
-  metaInfo() {
+  name: 'conocenos',
+  metaInfo () {
     return {
       title: 'Conocenos | Feelfit',
       meta: [
@@ -42,10 +42,10 @@ export default {
         { name: 'keywords', content: 'catalogo fitness, feelfit, venta de productos fitness' }
       ],
       link: [
-        { rel: 'canonical', href: 'https://feelfitmarket.com' + this.$route.fullPath },
+        { rel: 'canonical', href: 'https://feelfitmarket.com' + this.$route.fullPath }
       ]
     }
-  },
+  }
 }
 
 </script>

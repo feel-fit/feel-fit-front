@@ -49,11 +49,11 @@ export default {
       logo: logo,
       scroll: scroll,
       contador: 0
-    };
+    }
   },
-  created() {
-    if(this.slides.length>0){
-        this.backgrounds = this.slides;
+  created () {
+    if (this.slides.length > 0) {
+      this.backgrounds = this.slides
     }
   },
   created () {

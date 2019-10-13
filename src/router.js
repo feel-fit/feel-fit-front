@@ -11,17 +11,17 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      component: Home,
+      component: Home
     },
     {
       path: '/conocenos',
       name: 'conocenos',
       meta: {
         breadcrumb: [
-          { name: 'Inicio', link: '' },
+          { name: 'Inicio', link: '' }
         ]
       },
-      
+
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
@@ -32,7 +32,7 @@ export default new Router({
       name: 'contactanos',
       meta: {
         breadcrumb: [
-          { name: 'Inicio', link: '' },
+          { name: 'Inicio', link: '' }
         ]
       },
       // route level code-splitting
@@ -47,7 +47,7 @@ export default new Router({
       meta: {
         breadcrumb: [
           { name: 'Inicio', link: '' },
-          { name: 'Categoria', link: 'catalogo' },
+          { name: 'Categoria', link: 'catalogo' }
         ]
       },
       // route level code-splitting
@@ -62,7 +62,7 @@ export default new Router({
       meta: {
         breadcrumb: [
           { name: 'Inicio', link: '' },
-          { name: 'Productos', link: 'catalogo' },
+          { name: 'Productos', link: 'catalogo' }
         ]
       },
       // route level code-splitting
@@ -75,7 +75,7 @@ export default new Router({
       name: 'catalogo',
       meta: {
         breadcrumb: [
-          { name: 'Inicio', link: '' },
+          { name: 'Inicio', link: '' }
         ]
       },
       // route level code-splitting

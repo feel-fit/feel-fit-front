@@ -33,27 +33,27 @@
 </template>
 
 <script>
-import imgDeseoActivo from "../../assets/images/deseos/heart.svg";
-import imgDeseoNoActivo from "../../assets/images/fav.svg";
-import imageDefault from '../../assets/images/caja_sorpresa/Group.svg';
+import imgDeseoActivo from '../../assets/images/deseos/heart.svg'
+import imgDeseoNoActivo from '../../assets/images/fav.svg'
+import imageDefault from '../../assets/images/caja_sorpresa/Group.svg'
 export default {
-  name: "producto-sorpresa",
+  name: 'producto-sorpresa',
   props: {
     producto: {}
   },
-  data() {
+  data () {
     return {
       imageDefault,
       imgDeseoActivo,
       imgDeseoNoActivo
-    };
+    }
   },
-  methods:{
+  methods: {
     addToCart () {
-      this.$store.commit('addToCart',this.producto)
+      this.$store.commit('addToCart', this.producto)
     },
     addToWishlist () {
-      this.$store.commit('addToWishlist',this.producto)
+      this.$store.commit('addToWishlist', this.producto)
     },
     setData (data, id) {
       this.productos = data
@@ -62,20 +62,20 @@ export default {
       })
     }
   },
-  computed:{
-    isProduct(){
+  computed: {
+    isProduct () {
       let product = this.$store.state.wishlist.find(item => {
         if (item.id === this.producto.id) return item
       })
-      if(product){
-        return true;
-      }else{
-        return false;
+      if (product) {
+        return true
+      } else {
+        return false
       }
     }
   }
 
-};
+}
 </script>
 
 <style>

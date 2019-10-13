@@ -8,7 +8,7 @@
 import volver from '../components/products/volver.vue'
 import lista from '../components/deseos/lista.vue'
 export default {
-  metaInfo() {
+  metaInfo () {
     return {
       title: 'Lista de deseos | Feelfit',
       meta: [
@@ -16,7 +16,7 @@ export default {
         { name: 'keywords', content: 'lista de deseos, feelfit, venta de productos fitness' }
       ],
       link: [
-        { rel: 'canonical', href: 'https://feelfitmarket.com' + this.$route.fullPath },
+        { rel: 'canonical', href: 'https://feelfitmarket.com' + this.$route.fullPath }
       ]
     }
   },

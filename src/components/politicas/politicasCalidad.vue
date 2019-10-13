@@ -35,7 +35,7 @@
                     servicio prestado sea de su agrado; adem&aacute;s, son garantias para los usaurios y clientes, los siguientes puntos:<br>
                     Tiempo de entrega:<br>
                     Nuestros tiempos de entrega corresponden al t&eacute;rmino de la distancia que se puede demorar la entrega de los productos y/o alimentos adquiridos
-                    por medio de nuestro servicio; el tiempo aproximado ser&aacute; dado al momento de realizar el pedido, partiendo desde el sector urbano del Municipio 
+                    por medio de nuestro servicio; el tiempo aproximado ser&aacute; dado al momento de realizar el pedido, partiendo desde el sector urbano del Municipio
                     de Armenia
                   </p>
                 </div>
@@ -50,8 +50,8 @@
 
 <script>
 export default {
-  name: "politicas-envio"
-};
+  name: 'politicas-envio'
+}
 </script>
 
 <style scoped>

@@ -167,10 +167,10 @@ export default {
       })
     },
     descuento () {
-      if(this.me!=null&&this.me.discounts.length>0){
-          return parseInt((this.me.discounts[0].value/100) * this.total)
+      if (this.me != null && this.me.discounts.length > 0) {
+        return parseInt((this.me.discounts[0].value / 100) * this.total)
       }
-      return 0;
+      return 0
     }
   },
   methods: {
@@ -187,10 +187,9 @@ export default {
             })
           }
           $('#metodo-pago-tab').removeClass('disabled').tab('show')
-          if (this.descuento > 0){
+          if (this.descuento > 0) {
             $('#modalDescuento').modal('show')
           }
-          
         }
       })
     },

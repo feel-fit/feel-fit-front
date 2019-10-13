@@ -20,45 +20,45 @@
   </div>
 </template>
 <script>
-import api from "../plugins/api";
-import volver from "../components/products/volver.vue";
-import mercado from "../components/products/mercado.vue";
-import products from "../components/products/products.vue";
-import hoja from "../components/products/hoja.vue";
-import fresa from "../components/products/fresa_producto.vue";
+import api from '../plugins/api'
+import volver from '../components/products/volver.vue'
+import mercado from '../components/products/mercado.vue'
+import products from '../components/products/products.vue'
+import hoja from '../components/products/hoja.vue'
+import fresa from '../components/products/fresa_producto.vue'
 
 export default {
-  name: "categorias",
-  metaInfo() {
-   return {
-     title: this.name + ' | Feelfit',
-     meta: [
-       { name: 'description', content: 'encuentra todo nuestro catálogo fitness en armenia' },
-       { name: 'keywords', content: 'catalogo fitness, feelfit, venta de productos fitness' }
-     ],
-     link: [
-       { rel: 'canonical', href: 'https://feelfitmarket.com' + this.$route.fullPath },
-     ]
-   }
+  name: 'categorias',
+  metaInfo () {
+    return {
+      title: this.name + ' | Feelfit',
+      meta: [
+        { name: 'description', content: 'encuentra todo nuestro catálogo fitness en armenia' },
+        { name: 'keywords', content: 'catalogo fitness, feelfit, venta de productos fitness' }
+      ],
+      link: [
+        { rel: 'canonical', href: 'https://feelfitmarket.com' + this.$route.fullPath }
+      ]
+    }
   },
-  data() {
+  data () {
     return {
       productos: [
-        { images: [], price: 0 },
+        { images: [], price: 0 }
       ],
-      next:'',
-      prev:'',
-      name: ""
-    };
+      next: '',
+      prev: '',
+      name: ''
+    }
   },
   props: {
     url: {
-      default: "products"
+      default: 'products'
     },
     id: {
       type: Number
     },
-    category: { default: "productos" }
+    category: { default: 'productos' }
   },
   components: {
     mercado,
@@ -68,69 +68,69 @@ export default {
     fresa
   },
 
-  mounted() {
+  mounted () {
     if (this.id) {
       api
         .Categories()
         .products(this.id)
         .getPaginate()
         .then(response => {
-          this.setData(response.data, this.id);
+          this.setData(response.data, this.id)
         })
-        .catch();
+        .catch()
     } else {
       api
         .Categories()
         .getBySlug(this.category)
         .then(response => {
-          let id = response.data.data[0].id;
+          let id = response.data.data[0].id
           api
             .Categories()
             .products(id)
             .getPaginate()
             .then(response => {
-              this.setData(response.data, id);
+              this.setData(response.data, id)
             })
-            .catch();
+            .catch()
         })
-        .catch();
+        .catch()
     }
   },
   methods: {
-    setData(data, id) {
+    setData (data, id) {
       this.setProduct(data)
       api
         .Categories()
         .getOne(id)
         .then(response => {
-          this.name = response.data.data.name;
-        });
+          this.name = response.data.data.name
+        })
     },
-    setProduct(data){
-      this.productos = data.data;
-      this.next = data.links.next;
-      this.prev = data.links.prev;
+    setProduct (data) {
+      this.productos = data.data
+      this.next = data.links.next
+      this.prev = data.links.prev
     },
-    to_prev(){
-      if(this.prev!=null){
+    to_prev () {
+      if (this.prev != null) {
         api.Categories().getProductsPagination(this.prev).then(
-          response =>{
-            this.setProduct(response.data);
+          response => {
+            this.setProduct(response.data)
           }
-        );
+        )
       }
     },
-    to_next(){
-      if(this.next!=null){
+    to_next () {
+      if (this.next != null) {
         api.Categories().getProductsPagination(this.next).then(
-          response =>{
-            this.setProduct(response.data);
+          response => {
+            this.setProduct(response.data)
           }
-        );
+        )
       }
     }
   }
-};
+}
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">

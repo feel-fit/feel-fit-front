@@ -24,6 +24,8 @@ import VeeValidate from 'vee-validate'
 import VueAWN from 'vue-awesome-notifications'
 import Meta from 'vue-meta'
 
+import VueScrollTo from 'vue-scrollto'
+
 Vue.use(Meta, {
   // optional pluginOptions
   refreshOnceOnNavigation: true
@@ -33,8 +35,6 @@ Vue.use(Meta, {
 let options = { position: 'top-rigth' }
 
 Vue.use(VueAWN, options)
-
-import VueScrollTo from 'vue-scrollto'
 
 window.$ = window.jQuery = require('jquery')
 
@@ -63,5 +63,5 @@ new Vue({
   router,
   store,
   render: h => h(App),
-  mounted: () => document.dispatchEvent(new Event('x-app-rendered')),
+  mounted: () => document.dispatchEvent(new Event('x-app-rendered'))
 }).$mount('#app')

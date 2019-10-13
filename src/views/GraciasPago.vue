@@ -31,10 +31,10 @@
 </template>
 
 <script>
-import volver from "../components/products/volver.vue";
+import volver from '../components/products/volver.vue'
 export default {
-  name: "thankyou",
-  metaInfo() {
+  name: 'thankyou',
+  metaInfo () {
     return {
       title: 'Gracias por su pago | Feelfit',
       meta: [
@@ -42,12 +42,12 @@ export default {
         { name: 'keywords', content: 'pagos, feelfit, venta de productos fitness' }
       ],
       link: [
-        { rel: 'canonical', href: 'https://feelfitmarket.com' + this.$route.fullPath },
+        { rel: 'canonical', href: 'https://feelfitmarket.com' + this.$route.fullPath }
       ]
     }
   },
   components: { volver }
-};
+}
 </script>
 
 <style scoped>

@@ -61,7 +61,7 @@
             <p class=" text-center"> Feel Fit</p>
           </div>
           <img src="../assets/images/conocenos/circulo.svg" class="circulo float-left float-md-right">
-          
+
         </div>
       </div>
     </div>
@@ -73,7 +73,7 @@ import api from './../plugins/api'
 
 export default {
   name: 'contactanos',
-  metaInfo() {
+  metaInfo () {
     return {
       title: 'Contactanos | Feelfit',
       meta: [
@@ -81,7 +81,7 @@ export default {
         { name: 'keywords', content: 'contactanos, feelfit, venta de productos fitness' }
       ],
       link: [
-        { rel: 'canonical', href: 'https://feelfitmarket.com' + this.$route.fullPath },
+        { rel: 'canonical', href: 'https://feelfitmarket.com' + this.$route.fullPath }
       ]
     }
   },

@@ -85,7 +85,7 @@ import app from './../plugins/api'
 
 export default {
   name: 'Login',
-  metaInfo() {
+  metaInfo () {
     return {
       title: 'login | Feelfit',
       meta: [
@@ -93,7 +93,7 @@ export default {
         { name: 'keywords', content: 'login, feelfit, venta de productos fitness' }
       ],
       link: [
-        { rel: 'canonical', href: 'https://feelfitmarket.com' + this.$route.fullPath },
+        { rel: 'canonical', href: 'https://feelfitmarket.com' + this.$route.fullPath }
       ]
     }
   },
@@ -112,8 +112,8 @@ export default {
           .Users()
           .login(this.form)
           .then(response => {
-            this.$store.dispatch('getLogin', response.data.data.access_token);
-            //this.$store.commit('set_me', response.data.data)
+            this.$store.dispatch('getLogin', response.data.data.access_token)
+            // this.$store.commit('set_me', response.data.data)
             this.$router.back()
           })
       })
@@ -125,29 +125,28 @@ export default {
 }
 </script>
 <style scoped>
-  
+
   .contenido-login{
     margin-top: 4.5rem;
   }
-  
+
   .formulario{
     width:         30rem;
     margin-top:    10rem;
     margin-bottom: 15rem;
   }
-  
+
   .fondo{
     background-image:    url("./../assets/images/fresa3_home.png"),
                          url("./../assets/images/hoja3.png");
     background-repeat:   no-repeat, no-repeat;
     background-position: top left, bottom right;
   }
-  
+
   .input-group > .form-control{
     border-top-right-radius:    1.3rem;
     border-bottom-right-radius: 1.3rem;
   }
-
 
   .form-control:focus {
     color: #495057;

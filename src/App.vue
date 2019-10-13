@@ -46,7 +46,7 @@ import 'vue-loading-overlay/dist/vue-loading.css'
 export default {
   name: 'app',
   components: {
-    Loading, cabecera, foot, slider, producto, whatsapp, buscador, fresa, sliderCar, terminos, politicasEnvio,politicasCalidad,Whatsapp
+    Loading, cabecera, foot, slider, producto, whatsapp, buscador, fresa, sliderCar, terminos, politicasEnvio, politicasCalidad, Whatsapp
   },
   mounted () {
     if (this.$store.state.nuevos.length == 0) this.$store.dispatch('getNuevos')

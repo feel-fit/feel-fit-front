@@ -51,18 +51,18 @@ export default {
     return {
       backgrounds: [
         {
-          name: "default",
+          name: 'default',
           url: background
         }
       ],
       logo: logo,
       scroll: scroll,
       contador: 0
-    };
+    }
   },
-  created() {
+  created () {
     if (this.slides.length > 0) {
-      this.backgrounds = this.slides;
+      this.backgrounds = this.slides
     }
   },
   created () {

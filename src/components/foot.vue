@@ -5,7 +5,6 @@
             <img src="../assets/images/conocenos/logo2.svg" class="d-block mb-n4 mx-auto" alt="logo" >
             <div class="row justify-content-around pt-md-4" style="background-color: #F6F6F6">
 
-
                 <div class="d-none d-md-block col-md-2 text-dark">
 
                     <h6 class="footer_h6 mb-0 text-dark"><strong>TELÉFONO:</strong></h6>
@@ -14,14 +13,12 @@
                     <h6 class="footer_h6 mb-0 text-dark"><strong>DIRECCIÓN:</strong></h6>
                     <p>Direccion de ejemplo</p>
 
-
                 </div>
                 <div class="d-none d-md-block col-md-3 text-md-center my-auto">
 
                     <a href="#"><img src="../assets/images/facebook.svg" alt="Facebook" class="footer_facebook mr-3"></a>
                     <a href="#"><img src="../assets/images/instagram.svg" alt="Instagram" class="footer_instagram ml-3 mx-4"></a>
                     <a href="#"><img src="../assets/images/mail.svg" alt="Email" class="footer_mail ml-3"></a>
-
 
                 </div>
                 <div class="col-12 text-center mt-5 mt-md-0 text-md-right col-md-2 mb-3">

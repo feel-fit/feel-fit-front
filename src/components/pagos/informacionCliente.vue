@@ -70,7 +70,7 @@
 </template>
 <script>
 import api from '../../plugins/api'
-import {isEmpty, map, flatMap} from 'lodash'
+import { isEmpty, map, flatMap } from 'lodash'
 
 export default {
   name: 'informacionCliente',
@@ -105,9 +105,9 @@ export default {
     }
   },
   mounted () {
-    if (this.me!=null) {
+    if (this.me != null) {
       this.cliente = this.me
-      if (!isEmpty(this.me)&&!isEmpty(this.me.discounts) &&this.me.addresses.length > 0) {
+      if (!isEmpty(this.me) && !isEmpty(this.me.discounts) && this.me.addresses.length > 0) {
         this.address = this.me.addresses[0]
         this.changeDepartment()
       } else {
@@ -135,7 +135,7 @@ export default {
       this.$validator.validateAll().then((result) => {
         if (result) {
           if (!this.nextViewSend) {
-            if (this.me!=null&&!isEmpty(this.me)) {
+            if (this.me != null && !isEmpty(this.me)) {
               if (!this.address.id) {
                 api.Addresses().create(this.address).then(response => {
                   this.address = response.data.data
@@ -144,11 +144,11 @@ export default {
               }
               // actualizar datos usuario.
 
-              api.Users().update(this.me.id,this.cliente).then(
-                response=>{
-                    console.log(response);
+              api.Users().update(this.me.id, this.cliente).then(
+                response => {
+                  console.log(response)
                 }
-              );
+              )
 
               this.gotonext()
             } else {

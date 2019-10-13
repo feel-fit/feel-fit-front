@@ -31,68 +31,68 @@
 
 <script>
 import api from '../plugins/api'
-import volver from "../components/products/volver.vue";
-import homeCategory from "../components/home/homeCategory";
-import ProductoSorpresa from "../components/sorpresa/ProductoSorpresa";
-import sorpresa from "../assets/images/sorpresa.png";
+import volver from '../components/products/volver.vue'
+import homeCategory from '../components/home/homeCategory'
+import ProductoSorpresa from '../components/sorpresa/ProductoSorpresa'
+import sorpresa from '../assets/images/sorpresa.png'
 
 export default {
-  components: { volver, homeCategory , ProductoSorpresa },
-  metaInfo() {
-   return {
-     title: 'Caja sorpresa | Feelfit',
-     meta: [
-       { name: 'description', content: 'caja sorpresa fitness, regalos y demas productos fitness en armenia' },
-       { name: 'keywords', content: 'caja sorpresa, feelfit, venta de productos fitness' }
-     ],
-     link: [
-       { rel: 'canonical', href: 'https://feelfitmarket.com' + this.$route.fullPath },
-     ]
-   }
+  components: { volver, homeCategory, ProductoSorpresa },
+  metaInfo () {
+    return {
+      title: 'Caja sorpresa | Feelfit',
+      meta: [
+        { name: 'description', content: 'caja sorpresa fitness, regalos y demas productos fitness en armenia' },
+        { name: 'keywords', content: 'caja sorpresa, feelfit, venta de productos fitness' }
+      ],
+      link: [
+        { rel: 'canonical', href: 'https://feelfitmarket.com' + this.$route.fullPath }
+      ]
+    }
   },
-  data() {
+  data () {
     return {
       sorpresa,
-      products:[],
-      next:'',
-      prev:'',
-    };
+      products: [],
+      next: '',
+      prev: ''
+    }
   },
-  
-  mounted(){
+
+  mounted () {
     api.Categories().getBySlug('cajas-sorpresa').then(response => {
-        let id = response.data.data[0].id
-        api.Categories().products(id).getPaginate().then(response => {
-          this.setProduct(response.data);
-        }).catch()
+      let id = response.data.data[0].id
+      api.Categories().products(id).getPaginate().then(response => {
+        this.setProduct(response.data)
       }).catch()
+    }).catch()
   },
-  methods:{
-    setProduct(data){
-      this.products = data.data;
-      this.next = data.links.next;
-      this.prev = data.links.prev;
+  methods: {
+    setProduct (data) {
+      this.products = data.data
+      this.next = data.links.next
+      this.prev = data.links.prev
     },
-    to_prev(){
-      if(this.prev!=null){
+    to_prev () {
+      if (this.prev != null) {
         api.Categories().getProductsPagination(this.prev).then(
-          response =>{
-            this.setProduct(response.data);
+          response => {
+            this.setProduct(response.data)
           }
-        );
+        )
       }
     },
-    to_next(){
-      if(this.next!=null){
+    to_next () {
+      if (this.next != null) {
         api.Categories().getProductsPagination(this.next).then(
-          response =>{
-            this.setProduct(response.data);
+          response => {
+            this.setProduct(response.data)
           }
-        );
+        )
       }
     }
   }
-};
+}
 </script>
 
 <style scoped lang="scss">

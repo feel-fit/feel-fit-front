@@ -1,9 +1,9 @@
 <template>
     <div>
-        <section class="mt-4 position-relative"> 
+        <section class="mt-4 position-relative">
             <!-- TODO:Ejemplo Item -->
             <div class="container d-flex justify-content-center">
-                
+
                 <!--<div class="row d-none d-md-block line-background bg-primary"></div>-->
                 <div class="row">
                     <div class="col-5 d-md-block d-none cursor" @click="viewCategories('cajas-sorpresa')">
@@ -12,20 +12,20 @@
                             <div class="align-items-center bg-white d-flex h-100 position-relative catalogo_border">
                                 <img :src="refrigerados" class="refri card-img-top img-fluid">
                                 <span class="letra_catalogo categoria-grande position-absolute font-italic font-weight-bold">Refigerados<br><p class="small font-weight-bold" style="color: #CCCCCD;">& Canaelados</p></span>
-                            </div>   
-                        </div>                      
+                            </div>
+                        </div>
                     </div>
                     <div class="col">
                         <div class="row d-flex">
-                             
+
                             <!-- Producto refigerio pequeño - Aparece y desaparece -->
-                            
+
                             <div class="col-sm-6 d-md-none cursor" @click="viewCategories('cajas-sorpresa')">
                                 <div class="mb-3 mt-md-0 respon_mas position-relative">
                                     <div class="fondo_catalogo position-absolute bg-info"></div>
                                     <div class="position-relative pb-3 bg-white catalogo_border shadow">
                                         <img :src="refrigerados" class="img-fluid w-50">
-                                        <span class="letra_catalogo position-absolute font-italic font-weight-bold">Refigerados<br><p class="small font-weight-bold " style="color: #CCCCCD;">& Canaelados</p></span>  
+                                        <span class="letra_catalogo position-absolute font-italic font-weight-bold">Refigerados<br><p class="small font-weight-bold " style="color: #CCCCCD;">& Canaelados</p></span>
                                     </div>
                                 </div>
                             </div>
@@ -44,11 +44,11 @@
                                     <div class="fondo_catalogo position-absolute bg-info"></div>
                                     <div class="bg-white catalogo_border mb-3 mb-sm-0 pb-3 position-relative shadow">
                                         <img :src="panaderia" class="img-fluid w-50">
-                                        <span class="letra_catalogo position-absolute font-italic font-weight-bold">Panaderia<br><p class="small font-weight-bold " style="color: #CCCCCD;">& Pastas</p></span>   
+                                        <span class="letra_catalogo position-absolute font-italic font-weight-bold">Panaderia<br><p class="small font-weight-bold " style="color: #CCCCCD;">& Pastas</p></span>
                                     </div>
                                 </div>
                             </div>
-        
+
                             <div class="col-sm-6">
                                 <div class="mb-3 position-relative respon_menos cursor" @click="viewCategories('productos-nuevos')">
                                     <div class="fondo_catalogo position-absolute bg-info"></div>
@@ -69,18 +69,18 @@
                             </div>
                         </div>
                     </div>
-                </div>  
+                </div>
             </div>
         </section>
-            
+
             <!-- TODO:Ejemplo Item dos -->
-            
-        <section class="position-relative mt-sm-5"> 
+
+        <section class="position-relative mt-sm-5">
             <!-- TODO:Ejemplo Item dos-->
             <div class="container d-flex justify-content-center">
-                
+
                 <!--<div class="row line-background line-background2"></div>-->
-                <div class="row">                   
+                <div class="row">
                     <div class="col">
                         <div class="row d-flex mt-md-4">
                             <div class="col-sm-6">
@@ -101,7 +101,7 @@
                                     </div>
                                 </div>
                             </div>
-        
+
                             <div class="col-sm-6">
                                 <div class="mb-3 position-relative res_menos cursor" @click="viewCategories('cajas-sorpresa')">
                                     <div class="fondo_catalogo position-absolute bg-info"></div>
@@ -137,10 +137,10 @@
                             <div class="align-items-center bg-white d-flex h-100 position-relative catalogo_border">
                                 <img :src="snacks" class="refri card-img-top img-fluid">
                                 <span class="letra_catalogo categoria-grande position-absolute font-italic font-weight-bold">Snacks<br><p class="small font-weight-bold " style="color: #CCCCCD;">& Postres</p></span>
-                            </div>   
-                        </div>                      
+                            </div>
+                        </div>
                     </div>
-                </div>  
+                </div>
             </div>
         </section>
     </div>
@@ -180,10 +180,10 @@ export default {
   components: {
 
   },
-  methods:{
-      viewCategories(category){
-          this.$router.push(`/categorias/${category}`);
-      }
+  methods: {
+    viewCategories (category) {
+      this.$router.push(`/categorias/${category}`)
+    }
   }
 }
 </script>

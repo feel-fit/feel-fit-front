@@ -17,7 +17,7 @@
   </section>
 </template>
 <script>
-import {split,last,startCase} from 'lodash'
+import { split, last, startCase } from 'lodash'
 export default {
   name: 'breadcrumb',
   data () {
@@ -28,9 +28,9 @@ export default {
   mounted () {
     this.updateList()
   },
-  computed:{
-    url(){
-      return startCase(last(split(this.$route.path,'/')))
+  computed: {
+    url () {
+      return startCase(last(split(this.$route.path, '/')))
     }
   },
   methods: {

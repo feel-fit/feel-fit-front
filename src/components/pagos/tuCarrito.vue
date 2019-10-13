@@ -82,7 +82,7 @@
 </template>
 <script>
 import imageDefault from '../../assets/images/producto.png'
-import {sumBy,isEmpty} from 'lodash'
+import { sumBy, isEmpty } from 'lodash'
 
 export default {
   name: 'tuCarrito',
@@ -108,8 +108,8 @@ export default {
       })
     },
     descuento () {
-      if (!isEmpty(this.me) &&!isEmpty(this.me.discounts)  && this.me.discounts.length > 0) {
-        return parseInt(( this.me.discounts[0].value / 100 ) * this.total)
+      if (!isEmpty(this.me) && !isEmpty(this.me.discounts) && this.me.discounts.length > 0) {
+        return parseInt((this.me.discounts[0].value / 100) * this.total)
       }
       return 0
     },
@@ -126,7 +126,7 @@ export default {
     remove_product_cart (item) {
       this.$store.commit('removeProductCart', item)
     }
-    
+
   }
 }
 </script>
@@ -134,34 +134,34 @@ export default {
   .image-product{
     max-width: 80px;
   }
-  
+
   .my-li-own{
     background-color: white;
     border-radius:    1rem;
     border-radius:    1rem;
     box-shadow:       0 0 10px rgba(0, 0, 0, .1);
   }
-  
+
   .my-li-own div{
     color: #20D6D9;
   }
-  
+
   .div-va{
     display:         flex;
     justify-content: center;
     align-items:     center;
   }
-  
+
   .br-left{
     border-top-left-radius:    1.5rem !important;
     border-bottom-left-radius: 1.5rem !important;
   }
-  
+
   .br-right{
     border-top-right-radius:    20rem !important;
     border-bottom-right-radius: 20rem !important;
   }
-  
+
   .price{
     color: black;
   }

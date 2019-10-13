@@ -104,38 +104,38 @@
   </div>
 </template>
 <script>
-import { cloneDeep } from "lodash";
+import { cloneDeep } from 'lodash'
 export default {
-  name: "lista_deseos",
-  data() {
-    return {};
+  name: 'lista_deseos',
+  data () {
+    return {}
   },
   computed: {
-    quantityHearts() {
-      return this.$store.state.wishlist.length;
+    quantityHearts () {
+      return this.$store.state.wishlist.length
     },
-    wishlist() {
+    wishlist () {
       return this.$store.state.wishlist.map(item => {
-        this.$set(item, "quantity", item.quantity || 1);
-        return item;
-      });
+        this.$set(item, 'quantity', item.quantity || 1)
+        return item
+      })
     }
   },
   methods: {
-    agregarCarrito() {
+    agregarCarrito () {
       this.wishlist.map(item =>
-        this.$store.commit("addToCart", cloneDeep(item))
-      );
-      this.$store.state.wishlist = [];
+        this.$store.commit('addToCart', cloneDeep(item))
+      )
+      this.$store.state.wishlist = []
     },
-    remove_product_cart(item) {
-      this.$store.commit("removeProductWish", item);
+    remove_product_cart (item) {
+      this.$store.commit('removeProductWish', item)
     },
-    eliminar() {
-      this.$store.state.wishlist = [];
+    eliminar () {
+      this.$store.state.wishlist = []
     }
   }
-};
+}
 </script>
 <style scoped lang="scss">
 .caja {

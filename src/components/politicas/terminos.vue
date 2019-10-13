@@ -50,8 +50,8 @@
 
 <script>
 export default {
-  name: "terminos"
-};
+  name: 'terminos'
+}
 </script>
 
 <style scoped>

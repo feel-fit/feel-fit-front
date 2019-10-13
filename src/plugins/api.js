@@ -1,10 +1,7 @@
 import axios from 'axios'
 import { setAxiosHeader } from './auth'
 
-
 import map from 'lodash/map'
-
-
 
 setAxiosHeader()
 
@@ -36,7 +33,7 @@ function Categories (url = 'categories') {
         getPaginate: () => axios.get(`${url}/${id}/products`)
       }
     },
-    getProductsPagination:(url_pagination)=> axios.get(url_pagination)
+    getProductsPagination: (url_pagination) => axios.get(url_pagination)
   }
 }
 
@@ -97,7 +94,7 @@ function Users (url = 'users') {
     login: (toLogin) => axios.post('oauth/login', toLogin),
     register: (toRegister) => axios.post('oauth/register', toRegister),
     facebook: (toLogin) => axios.post('oauth/facebook', toLogin),
-    getMe:()=>axios.get(`${url}/me`),
+    getMe: () => axios.get(`${url}/me`)
   }
 }
 
@@ -130,13 +127,11 @@ function SuccessResponse (response) {
 }
 
 function ErrorResponse (response) {
-  
   if (typeof response.response.data.error === 'string') {
-    return response.response.data.error;
+    return response.response.data.error
   } else {
-    
     return map(response.response.data.error, (item, index) => {
-      return item;
+      return item
     })
   }
 }
@@ -155,33 +150,33 @@ function Departments (url = 'departments') {
 
 function Discounts (url = 'discounts') {
   return {
-    getOne: (id) => axios.get(`${ url }/${ id }`),
-    getAll: () => axios.get(`${ url }?pagination=false`),
+    getOne: (id) => axios.get(`${url}/${id}`),
+    getAll: () => axios.get(`${url}?pagination=false`),
     getPaginate: () => axios.get(url),
-    update: (id, toUpdate) => axios.put(`${ url }/${ id }`, toUpdate),
+    update: (id, toUpdate) => axios.put(`${url}/${id}`, toUpdate),
     create: (toCreate) => axios.post(url, toCreate),
-    delete: (id) => axios.delete(`${ url }/${ id }`),
+    delete: (id) => axios.delete(`${url}/${id}`),
     Users: (id) => {
       return {
-        getAll: () => axios.get(`${ url }/${ id }/users?pagination=false`),
-        getPaginate: () => axios.get(`${ url }/${ id }/users`),
-        sync: (toSync) => axios.post(`${ url }/${ id }/users`, toSync),
-        delete: (toSync) => axios.delete(`${ url }/${ id }/users/${toSync}`),
-        
+        getAll: () => axios.get(`${url}/${id}/users?pagination=false`),
+        getPaginate: () => axios.get(`${url}/${id}/users`),
+        sync: (toSync) => axios.post(`${url}/${id}/users`, toSync),
+        delete: (toSync) => axios.delete(`${url}/${id}/users/${toSync}`)
+
       }
-    },
+    }
   }
 }
 
 function Sliders (url = 'sliders') {
   return {
-    getOne: (id) => axios.get(`${ url }/${ id }`),
-    getBySlug: (slug) => axios.get(`${ url }?slug=${ slug }`),
-    getAll: () => axios.get(`${ url }?pagination=false`),
+    getOne: (id) => axios.get(`${url}/${id}`),
+    getBySlug: (slug) => axios.get(`${url}?slug=${slug}`),
+    getAll: () => axios.get(`${url}?pagination=false`),
     getPaginate: () => axios.get(url),
-    update: (id, toUpdate) => axios.put(`${ url }/${ id }`, toUpdate),
+    update: (id, toUpdate) => axios.put(`${url}/${id}`, toUpdate),
     create: (toCreate) => axios.post(url, toCreate),
-    delete: (id) => axios.delete(`${ url }/${ id }`)
+    delete: (id) => axios.delete(`${url}/${id}`)
   }
 }
 

@@ -51,8 +51,8 @@
 
 <script>
 export default {
-  name: "politicas-envio"
-};
+  name: 'politicas-envio'
+}
 </script>
 
 <style scoped>

@@ -97,9 +97,9 @@ import volver from '../components/products/volver.vue'
 import api from '../plugins/api'
 import imageDefault from '../assets/images/producto.png'
 import facts from '../components/informacion/facts'
-import imgDeseoActivo  from '../assets/images/deseos/heart.svg'
-import imgDeseoNoActivo  from '../assets/images/fav.svg'
-import { flatMap} from 'lodash'
+import imgDeseoActivo from '../assets/images/deseos/heart.svg'
+import imgDeseoNoActivo from '../assets/images/fav.svg'
+import { flatMap } from 'lodash'
 
 export default {
   props: {
@@ -110,15 +110,15 @@ export default {
       type: Number
     }
   },
-  metaInfo() {
+  metaInfo () {
     return {
       title: this.product.name + ' | ' + this.product.brand.name + ' | Feelfit',
       meta: [
         { name: 'description', content: this.product.description },
-        { name: 'keywords', content: flatMap(this.product.tags,'name') + ',' + flatMap(this.product.categories,'name') + ', ' + this.product.name + ', ' + this.product.brand.name}
+        { name: 'keywords', content: flatMap(this.product.tags, 'name') + ',' + flatMap(this.product.categories, 'name') + ', ' + this.product.name + ', ' + this.product.brand.name }
       ],
       link: [
-        { rel: 'canonical', href: 'https://feelfitmarket.com' + this.$route.fullPath },
+        { rel: 'canonical', href: 'https://feelfitmarket.com' + this.$route.fullPath }
       ]
     }
   },
@@ -127,12 +127,12 @@ export default {
       product: {
         price: 0,
         images: [{ url: imageDefault }],
-        brand:{}
+        brand: {}
       },
       facts: false,
       imageDefault,
       imgDeseoActivo,
-      imgDeseoNoActivo,
+      imgDeseoNoActivo
     }
   },
   components: {
@@ -141,11 +141,11 @@ export default {
   beforeRouteEnter (to, from, next) {
     if (to.params.id) {
       api.Products().getOne(to.params.id).then(response => {
-        next(vm => ( vm.product = response.data.data ))
+        next(vm => (vm.product = response.data.data))
       })
     } else {
       api.Products().getBySlug(to.params.slug).then(response => {
-        next(vm => ( vm.product = response.data.data[0] ))
+        next(vm => (vm.product = response.data.data[0]))
       })
     }
     // called before the route that renders this component is confirmed.
@@ -153,17 +153,17 @@ export default {
     // because it has not been created yet when this guard is called!
   },
   mounted () {
-  
+
   },
-  computed:{
-    isProduct(){
+  computed: {
+    isProduct () {
       let product = this.$store.state.wishlist.find(item => {
         if (item.id === this.product.id) return item
       })
-      if(product){
-        return true;
-      }else{
-        return false;
+      if (product) {
+        return true
+      } else {
+        return false
       }
     }
   },
@@ -175,7 +175,7 @@ export default {
       this.$store.commit('addToWishlist', this.product)
     }
   }
-  
+
 }
 </script>
 
@@ -183,54 +183,54 @@ export default {
   .btn{
     cursor: pointer;
   }
-  
+
   .color_texto1{
     color: #00D0D2;
   }
-  
+
   .color_texto2{
     color: #CCCCCD;
   }
-  
+
   .color_border{
     border-radius: 1rem;
     color:         rgb(255, 255, 255);
   }
-  
+
   .car{
     left:          10%;
     bottom:        6%;
     border-radius: 2rem;
   }
-  
+
   .corazon{
     left:          77%;
     bottom:        6%;
     border-radius: 2rem;
   }
-  
+
   @media (min-width: 576px){
     .car{
       bottom: 9%;
     }
-    
+
     .corazon{
       left:          77%;
       bottom:        9%;
       border-radius: 50%;
     }
   }
-  
+
   @media (min-width: 768px){
     .car, .corazon{
       bottom: 7%;
     }
   }
-  
+
   @media (min-width: 992px){
     .car, .corazon{
       bottom: 7%;
     }
-    
+
   }
 </style>

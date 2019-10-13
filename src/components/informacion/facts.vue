@@ -137,7 +137,7 @@
   </section>
 </template>
 <script>
-import { chunk,orderBy } from 'lodash'
+import { chunk, orderBy } from 'lodash'
 
 export default {
   name: 'facts',
@@ -151,23 +151,23 @@ export default {
     return {}
   },
   mounted () {
-  
+
   },
   computed: {
     top () {
-      return orderBy(this.facts.filter(item => item.position_fact === 'top'),'order')
+      return orderBy(this.facts.filter(item => item.position_fact === 'top'), 'order')
     },
     superior () {
-      return orderBy(this.facts.filter(item => item.position_fact === 'superior'),'order')
+      return orderBy(this.facts.filter(item => item.position_fact === 'superior'), 'order')
     },
     medio () {
-      return orderBy(this.facts.filter(item => item.position_fact === 'medio'),'order')
+      return orderBy(this.facts.filter(item => item.position_fact === 'medio'), 'order')
     },
     inferior () {
-      return chunk(orderBy(this.facts.filter(item => item.position_fact === 'inferior'),'order'), 2)
+      return chunk(orderBy(this.facts.filter(item => item.position_fact === 'inferior'), 'order'), 2)
     }
   }
-  
+
 }
 </script>
 <style lang="scss" scoped>

@@ -77,7 +77,7 @@ import api from './../plugins/api'
 
 export default {
   name: 'Registro',
-  metaInfo() {
+  metaInfo () {
     return {
       title: 'Registro | Feelfit',
       meta: [
@@ -85,7 +85,7 @@ export default {
         { name: 'keywords', content: 'registro, feelfit, venta de productos fitness' }
       ],
       link: [
-        { rel: 'canonical', href: 'https://feelfitmarket.com' + this.$route.fullPath },
+        { rel: 'canonical', href: 'https://feelfitmarket.com' + this.$route.fullPath }
       ]
     }
   },
@@ -97,8 +97,8 @@ export default {
         password: '',
         password_confirmation: ''
       },
-      error:{
-        email:false
+      error: {
+        email: false
       }
     }
   },
@@ -108,13 +108,11 @@ export default {
         (result) => {
           api.Users().create(this.form).then(response => {
             this.$store.commit('set_me', response.data.data)
-            api.Users().login(this.form).then(response=>{
+            api.Users().login(this.form).then(response => {
               this.$router.push('/')
             })
-           
           }).catch(error => {
             this.error.email = true
-            
           })
         }
       )
@@ -127,11 +125,11 @@ export default {
   .caja{
     border: solid red;
   }
-  
+
   .contenido{
     margin-top: 4.5rem;
   }
-  
+
   .input-group > .form-control{
     border-top-right-radius:    1.3rem;
     border-bottom-right-radius: 1.3rem;
