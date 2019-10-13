@@ -67,7 +67,12 @@ export function clearGuestToken () {
 }
 
 export function setAxiosHeader (token) {
+  axios.defaults.headers = {
+    'Access-Control-Allow-Origin': '*',
+    'Content-Type': 'application/json'
+  }
   axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest'
+
   axios.defaults.withCredentials = true
 
   if (process.env.NODE_ENV === 'development') {

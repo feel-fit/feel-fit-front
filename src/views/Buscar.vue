@@ -9,7 +9,6 @@
 
 import volver from '../components/products/volver.vue'
 import buscar from '../components/buscar/buscar.vue'
-import buscar1 from '../components/buscar/buscar.vue'
 import buscador from '../components/home/buscador'
 
 export default {
