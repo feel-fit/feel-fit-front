@@ -6,7 +6,19 @@ const SitemapWebpackPlugin = require('sitemap-webpack-plugin').default
   '/pagos', '/buscar', '/informacion', '/deseos', '/registro',
   '/login', '/thankyou', '/usuario', '/caja-sorpresa', '/404-product', '/404-box'
 
-],*/
+],
+
+ pluginOptions: {
+    prerenderSpa: {
+      registry: undefined,
+      renderRoutes: [
+        '/'  ],
+      useRenderEvent: true,
+      headless: true,
+      onlyProduction: true,
+    }
+  }
+*/
 
 const paths = ['/', 'buscar', 'conocenos', '404-product', '404-box',
   'contactanos', 'deseos', 'usuario', 'caja-sorpresa',
@@ -28,14 +40,5 @@ module.exports = {
     ]
   },
 
-  pluginOptions: {
-    prerenderSpa: {
-      registry: undefined,
-      renderRoutes: [
-        '/'  ],
-      useRenderEvent: true,
-      headless: true,
-      onlyProduction: true,
-    }
-  }
+ 
 }
