@@ -117,7 +117,7 @@ export default {
     }
   },
   mounted () {
-
+  
   },
   computed: {
     me () {
@@ -133,7 +133,7 @@ export default {
         // crear descuento
         discount_id: null,
         payment_id: this.metodoPago
-
+        
       }
     },
     cart () {
@@ -155,7 +155,7 @@ export default {
     },
     descuento () {
       if (!isEmpty(this.me) && !isEmpty(this.me.discounts) && this.me.discounts.length > 0) {
-        return parseInt((this.me.discounts[0].value / 100) * this.total)
+        return parseInt(( this.me.discounts[0].value / 100 ) * this.total)
       }
       return 0
     }
@@ -172,21 +172,22 @@ export default {
             item.value = item.price
             return item
           })
-
+          
           api.DetailShopping().create(this.cart).then(response => {
-            // TODO mandar a thankyou page o a pagina de pagos
-            this.$store.state.loading = false
-            if (this.me.discounts[0].id) {
-              api.Discounts().Users(this.me.discounts[0].id).delete(this.me.id).then(response => {
-                this.$store.state.me.discounts = this.me.discounts.filter(item => item.id != this.me.discounts[0].id)
-              })
+              // TODO mandar a thankyou page o a pagina de pagos
+              this.$store.state.loading = false
+              if (this.me.discounts.length > 0 && this.me.discounts[0].id) {
+                api.Discounts().Users(this.me.discounts[0].id).delete(this.me.id).then(response => {
+                  this.$store.state.me.discounts = this.me.discounts.filter(item => item.id != this.me.discounts[0].id)
+                })
+              }
+              
+              this.$store.state.cart.items = []
+              this.$router.push('thankyou')
+              if (this.metodoPago != '1') {
+                window.open('https://www.zonapagos.com/t_feelfit/')
+              }
             }
-            this.$router.push('thankyou')
-            this.$store.state.cart.items = []
-            if (this.metodoPago != '1') {
-              window.open('https://www.zonapagos.com/t_feelfit/')
-            }
-          }
           )
         }).catch(error => {
           console.log(error)
@@ -203,43 +204,43 @@ export default {
   label{
     font-size: 0.7em;
   }
-
+  
   .titulo{
     margin-top:    5rem;
     margin-bottom: 2.5rem;
   }
-
+  
   .my-li-own{
     background-color: white;
     border-radius:    1rem;
     border-radius:    1rem;
     box-shadow:       0 0 10px rgba(0, 0, 0, .1);
   }
-
+  
   .my-li-own div{
     color: #20D6D9;
   }
-
+  
   .div-va{
     display:         flex;
     justify-content: center;
     align-items:     center;
   }
-
+  
   .br-left{
     border-top-left-radius:    1.5rem !important;
     border-bottom-left-radius: 1.5rem !important;
   }
-
+  
   .br-right{
     border-top-right-radius:    20rem !important;
     border-bottom-right-radius: 20rem !important;
   }
-
+  
   .price{
     color: black;
   }
-
+  
   .list-car{
     height:     30rem;
     overflow-y: scroll;
