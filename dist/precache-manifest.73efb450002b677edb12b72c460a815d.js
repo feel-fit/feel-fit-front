@@ -1,27 +1,27 @@
 self.__precacheManifest = [
   {
-    "revision": "e9b4938f7af93b9fad57",
+    "revision": "21300f65288dae3fe5a5",
     "url": "/css/about.e4b21223.css"
   },
   {
-    "revision": "e9b4938f7af93b9fad57",
-    "url": "/js/about.80d7fde8.js"
+    "revision": "21300f65288dae3fe5a5",
+    "url": "/js/about.690ec4db.js"
   },
   {
-    "revision": "afce60c6d5f81cf21e00",
+    "revision": "15bad45a05a19b91f417",
     "url": "/css/app.d9784069.css"
   },
   {
-    "revision": "afce60c6d5f81cf21e00",
-    "url": "/js/app.a15a1b7f.js"
+    "revision": "15bad45a05a19b91f417",
+    "url": "/js/app.17996f7e.js"
   },
   {
-    "revision": "2ea956aab84bd8aff928",
+    "revision": "5618e10186047063e358",
     "url": "/css/checkout.ac0af1e8.css"
   },
   {
-    "revision": "2ea956aab84bd8aff928",
-    "url": "/js/checkout.d529936e.js"
+    "revision": "5618e10186047063e358",
+    "url": "/js/checkout.8e442612.js"
   },
   {
     "revision": "a28d9d46fc475b29e10f",
@@ -288,7 +288,11 @@ self.__precacheManifest = [
     "url": "/img/contraentrega.dfc656a7.svg"
   },
   {
-    "revision": "9aa02eab4f45a6c9d448507f5857f3ff",
+    "revision": "5bc19bb6be1765d9d1ace6d39886e4c0",
+    "url": "/app.html"
+  },
+  {
+    "revision": "4dc7cd5949c62ffc65403201a7b99599",
     "url": "/index.html"
   },
   {

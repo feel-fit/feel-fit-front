@@ -6,19 +6,7 @@ const SitemapWebpackPlugin = require('sitemap-webpack-plugin').default
   '/pagos', '/buscar', '/informacion', '/deseos', '/registro',
   '/login', '/thankyou', '/usuario', '/caja-sorpresa', '/404-product', '/404-box'
 
-],
-
- pluginOptions: {
-    prerenderSpa: {
-      registry: undefined,
-      renderRoutes: [
-        '/'  ],
-      useRenderEvent: true,
-      headless: true,
-      onlyProduction: true,
-    }
-  }
-*/
+],*/
 
 const paths = ['/', 'buscar', 'conocenos', '404-product', '404-box',
   'contactanos', 'deseos', 'usuario', 'caja-sorpresa',
@@ -40,5 +28,25 @@ module.exports = {
     ]
   },
 
- 
+  pluginOptions: {
+    prerenderSpa: {
+      registry: undefined,
+      renderRoutes: [
+        '/', '/conocenos', '/contactanos', '/catalogo',
+        '/pagos', '/buscar', '/informacion', '/deseos', '/registro',
+        '/login', '/thankyou', '/usuario', '/caja-sorpresa', '/404-product', '/404-box'
+
+      ],
+      useRenderEvent: true,
+      headless: true,
+      onlyProduction: true,
+      postProcess: route => {
+        // Defer scripts and tell Vue it's been server rendered to trigger hydration
+        route.html = route.html
+          .replace(/<script (.*?)>/g, '<script $1 defer>')
+          .replace('id="app"', 'id="app" data-server-rendered="true"')
+        return route
+      }
+    }
+  }
 }
