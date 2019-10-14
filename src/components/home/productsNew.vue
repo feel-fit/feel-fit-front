@@ -45,7 +45,7 @@ export default {
   data () {
     return {
       slickOptions: {
-        slidesToShow: 4,
+        slidesToShow: this.products.length>4?4:this.products.length,
         infinite: true,
         arrows: false,
         // centerMode: true,
@@ -53,13 +53,13 @@ export default {
           {
             breakpoint: 992,
             settings: {
-              slidesToShow: 3
+              slidesToShow: this.products.length>3?3:this.products.length
             }
           },
           {
             breakpoint: 768,
             settings: {
-              slidesToShow: 2
+              slidesToShow: this.products.length>2?2:this.products.length
             }
           },
           {

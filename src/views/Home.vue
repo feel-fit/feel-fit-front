@@ -80,10 +80,10 @@ export default {
       return this.$store.state.nuevos
     },
     destacados () {
-      return this.$store.state.nuevos
+      return this.$store.state.destacados
     },
     sorpresas () {
-      return this.$store.state.nuevos
+      return this.$store.state.sorpresas
     }
   }
 }
