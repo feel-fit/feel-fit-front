@@ -11,7 +11,6 @@
                             <div class="fondo_catalogo position-absolute bg-info "></div>
                             <div class="align-items-center bg-white d-flex h-100 position-relative catalogo_border">
                                 <img :src="refrigerados" class="refri card-img-top img-fluid">
-
                                 <span class="letra_catalogo categoria-grande position-absolute font-italic font-weight-bold">Refrigerados<br><p class="small font-weight-bold" style="color: #CCCCCD;">& Canaelados</p></span>
                             </div>
                         </div>
@@ -21,19 +20,18 @@
 
                             <!-- Producto refigerio pequeño - Aparece y desaparece -->
 
-                            <div class="col-sm-6 d-md-none cursor" @click="viewCategories('cajas-sorpresa')">
+                            <div class="col-sm-6 d-md-none cursor" @click="viewCategories('refrigerados-y-congelados')">
                                 <div class="mb-3 mt-md-0 respon_mas position-relative">
                                     <div class="fondo_catalogo position-absolute bg-info"></div>
                                     <div class="position-relative pb-3 bg-white catalogo_border shadow">
                                         <img :src="refrigerados" class="img-fluid w-50">
-                                        <span class="letra_catalogo position-absolute font-italic font-weight-bold">Refigerados<br><p class="small font-weight-bold " style="color: #CCCCCD;">& Congelados</p></span>
-
+                                        <span class="letra_catalogo position-absolute font-italic font-weight-bold">Refrigerados<br><p class="small font-weight-bold " style="color: #CCCCCD;">& Canaelados</p></span>
                                     </div>
                                 </div>
                             </div>
                             <!-- -------------- -->
                             <div class="col-sm-6 ">
-                                <div class="mb-3 mt-md-0 position-relative cursor" @click="viewCategories('cajas-sorpresa')">
+                                <div class="mb-3 mt-md-0 position-relative cursor" @click="viewCategories('aceites')">
                                     <div class="fondo_catalogo position-absolute bg-info"></div>
                                     <div class="position-relative pb-3 bg-white catalogo_border shadow">
                                         <img :src="aceites" class="img-fluid w-50">
@@ -42,7 +40,7 @@
                                 </div>
                             </div>
                             <div class="col-sm-6">
-                               <div class="position-relative cursor" @click="viewCategories('cajas-sorpresa')">
+                               <div class="position-relative cursor" @click="viewCategories('panaderia')">
                                     <div class="fondo_catalogo position-absolute bg-info"></div>
                                     <div class="bg-white catalogo_border mb-3 mb-sm-0 pb-3 position-relative shadow">
                                         <img :src="panaderia" class="img-fluid w-50">
@@ -52,7 +50,7 @@
                             </div>
 
                             <div class="col-sm-6">
-                                <div class="mb-3 position-relative respon_menos cursor" @click="viewCategories('productos-nuevos')">
+                                <div class="mb-3 position-relative respon_menos cursor" @click="viewCategories('chocolates')">
                                     <div class="fondo_catalogo position-absolute bg-info"></div>
                                     <div class="position-relative  pb-3 bg-white catalogo_border shadow">
                                     	<img :src="chocolates" class="img-fluid w-50">
@@ -61,7 +59,7 @@
                                 </div>
                             </div>
                             <div class="col-sm-6 offset-md-0 offset-sm-6">
-                                <div class="mb-3 mt-md-0 position-relative res_mas cursor" @click="viewCategories('cajas-sorpresa')">
+                                <div class="mb-3 mt-md-0 position-relative res_mas cursor" @click="viewCategories('granolas')">
                                     <div class="fondo_catalogo position-absolute bg-info"></div>
                                     <div class="position-relative  pb-3 bg-white catalogo_border shadow">
                                     	<img :src="granolas" class="img-fluid w-50">
@@ -86,7 +84,7 @@
                     <div class="col">
                         <div class="row d-flex mt-md-4">
                             <div class="col-sm-6">
-                                <div class="mb-3 position-relative res_menos cursor" @click="viewCategories('cajas-sorpresa')">
+                                <div class="mb-3 position-relative res_menos cursor" @click="viewCategories('mercado')">
                                     <div class="fondo_catalogo position-absolute bg-info"></div>
                                     <div class="position-relative pb-3 bg-white catalogo_border shadow">
                                     	<img :src="mercado" class="img-fluid w-50">
@@ -95,7 +93,7 @@
                                 </div>
                             </div>
                             <div class="col-sm-6">
-                               <div class="mb-3 position-relative cursor" @click="viewCategories('cajas-sorpresa')">
+                               <div class="mb-3 position-relative cursor" @click="viewCategories('niños')">
                                     <div class="fondo_catalogo position-absolute bg-info"></div>
                                     <div class="position-relative pb-3  bg-white catalogo_border shadow">
                                     	<img :src="ninos" class="img-fluid w-50">
@@ -105,7 +103,7 @@
                             </div>
 
                             <div class="col-sm-6">
-                                <div class="mb-3 position-relative res_menos cursor" @click="viewCategories('cajas-sorpresa')">
+                                <div class="mb-3 position-relative res_menos cursor" @click="viewCategories('suplementos')">
                                     <div class="fondo_catalogo position-absolute bg-info"></div>
                                     <div class="position-relative  pb-3 bg-white catalogo_border shadow">
                                     	<img :src="suplementos" class="img-fluid w-50">
@@ -114,7 +112,7 @@
                                 </div>
                             </div>
                             <div class="col-sm-6">
-                                <div class="mb-3 position-relative cursor" @click="viewCategories('cajas-sorpresa')">
+                                <div class="mb-3 position-relative cursor" @click="viewCategories('vinagres')">
                                     <div class="fondo_catalogo position-absolute bg-info"></div>
                                     <div class="position-relative  pb-3 bg-white catalogo_border shadow">
                                     	<img :src="vinagres" class="img-fluid w-50">
@@ -123,7 +121,7 @@
                                 </div>
                             </div>
                             <div class="col-sm-6 d-md-none">
-                                <div class="mb-3 mt-md-0 position-relative res_menos cursor" @click="viewCategories('cajas-sorpresa')">
+                                <div class="mb-3 mt-md-0 position-relative res_menos cursor" @click="viewCategories('snacks')">
                                     <div class="fondo_catalogo position-absolute bg-info"></div>
                                     <div class="position-relative pb-3 bg-white catalogo_border shadow">
                                     	<img :src="snacks" class="img-fluid w-50">
@@ -134,7 +132,7 @@
                         </div>
                     </div>
                     <div class="col-md-5 d-md-block d-none">
-                        <div class="bg-white h-100 position-relative shadow catalogo_border cursor" @click="viewCategories('cajas-sorpresa')">
+                        <div class="bg-white h-100 position-relative shadow catalogo_border cursor" @click="viewCategories('snacks')">
                             <div class="fondo_catalogo position-absolute bg-info"></div>
                             <div class="align-items-center bg-white d-flex h-100 position-relative catalogo_border">
                                 <img :src="snacks" class="refri card-img-top img-fluid">
