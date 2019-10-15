@@ -39,7 +39,7 @@
                         </div>
                         <div class="col-8">
                           <div class="row align-items-center">
-                            <div class="col mt-n2">
+                            <div class="col mt-n2 product-name">
                               <span class="h6 text-capitalize font-weight-bold font-italic text-primary">{{item.name}}</span>
                             </div>
                             <div class=" mt-n4">
@@ -219,6 +219,13 @@ export default {
       display: block
     }
   }
+  .product-name{
+    
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
   @media (min-width: 768px) {
     #sidebarCar-wrapper {
       margin-right: -20rem;
