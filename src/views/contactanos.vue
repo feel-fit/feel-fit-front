@@ -35,7 +35,7 @@
                 </div>
                 <div class="form-row">
                   <div class="form-group col-lg-8 mx-auto">
-                    <label>Mensaje</label>
+                    <label>Mensaje y teléfono</label>
                     <textarea v-validate="'required'" rows="4" :class="{'is-invalid':errors.first('description')}" name="description" class="form-control" v-model="message.description">
                   </textarea>
                     <div class="invalid-feedback">
