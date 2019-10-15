@@ -6,12 +6,12 @@
 
                 <!--<div class="row d-none d-md-block line-background bg-primary"></div>-->
                 <div class="row">
-                    <div class="col-5 d-md-block d-none cursor" @click="viewCategories('cajas-sorpresa')">
+                    <div class="col-5 d-md-block d-none cursor" @click="viewCategories('refrigerados-y-congelados')">
                         <div class="bg-white card h-100 position-relative shadow catalogo_border ">
                             <div class="fondo_catalogo position-absolute bg-info "></div>
                             <div class="align-items-center bg-white d-flex h-100 position-relative catalogo_border">
                                 <img :src="refrigerados" class="refri card-img-top img-fluid">
-                                <span class="letra_catalogo categoria-grande position-absolute font-italic font-weight-bold">Refigerados<br><p class="small font-weight-bold" style="color: #CCCCCD;">& Canaelados</p></span>
+                                <span class="letra_catalogo categoria-grande position-absolute font-italic font-weight-bold">Refrigerados<br><p class="small font-weight-bold" style="color: #CCCCCD;">& Congelados</p></span>
                             </div>
                         </div>
                     </div>
@@ -25,7 +25,7 @@
                                     <div class="fondo_catalogo position-absolute bg-info"></div>
                                     <div class="position-relative pb-3 bg-white catalogo_border shadow">
                                         <img :src="refrigerados" class="img-fluid w-50">
-                                        <span class="letra_catalogo position-absolute font-italic font-weight-bold">Refigerados<br><p class="small font-weight-bold " style="color: #CCCCCD;">& Canaelados</p></span>
+                                        <span class="letra_catalogo position-absolute font-italic font-weight-bold">Refigerados<br><p class="small font-weight-bold " style="color: #CCCCCD;">& Congelados</p></span>
                                     </div>
                                 </div>
                             </div>

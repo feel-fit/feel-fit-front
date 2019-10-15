@@ -20,10 +20,9 @@
 <script>
 import portada from '../components/catalogo/catalogo.vue'
 import whatsapp from '../components/home/whatsapp'
-import hoja from '../components/products/hoja.vue'
 import volver from '../components/products/volver.vue'
 import producto from '../components/catalogo/producto.vue'
-import hoja2 from '../components/home/hoja'
+
 
 export default {
   name: 'catalogo',
@@ -43,7 +42,7 @@ export default {
     return {}
   },
   components: {
-    portada, hoja, volver, producto, hoja2, whatsapp
+    portada,  volver, producto, whatsapp
 
   },
   mounted () {

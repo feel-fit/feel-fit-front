@@ -31,7 +31,7 @@
         </div>
         <div class="col-12 col-md-6 position-relative">
           <!-- <div class="tabla position-absolute btn-warning btn-lg d-none d-md-block"><small> Tabla Nutricional</small></div> -->
-          <div class="row px-3 h-100 d-flex align-items-center">
+          <div class="row px-3 h-100 d-flex align-items-center justify-content-center">
             <div class="col-12">
               <div class="row d-md-none mt-4 mb-5 d-flex justify-content-between">
                 <div class="col-6 text-center">
@@ -47,7 +47,7 @@
             <div class="col-12 align-self-center">
               <div class="position-relative">
                 <h1 class="font-italic text-capitalize font-weight-bold color_texto1">{{product.name}}</h1>
-                <p class="mb-5 d-md-none color_texto2">{{product.brand.name}}</p>
+                <p class="mb-5 d-md-none color_texto2">{{product.brand ? product.brand.name : ''}}</p>
                 <div class="row">
                   <div class="col-6 d-md-none">
                     <span @click="facts = true" class="btn btn-warning border shadow px-4 font-italic font-weight-bold color_border">Tabla Nutricional</span>
@@ -112,10 +112,10 @@ export default {
   },
   metaInfo () {
     return {
-      title: this.product.name + ' | ' + this.product.brand.name + ' | Feelfit',
+      title: this.product.name + ' | ' + (this.product.brand ? this.product.brand.name : '') + ' | Feelfit',
       meta: [
         { name: 'description', content: this.product.description },
-        { name: 'keywords', content: flatMap(this.product.tags, 'name') + ',' + flatMap(this.product.categories, 'name') + ', ' + this.product.name + ', ' + this.product.brand.name }
+        { name: 'keywords', content: flatMap(this.product.tags, 'name') + ',' + flatMap(this.product.categories, 'name') + ', ' + this.product.name + ', ' + (this.product.brand ? this.product.brand.name : '') }
       ],
       link: [
         { rel: 'canonical', href: 'https://feelfitmarket.com' + this.$route.fullPath }
