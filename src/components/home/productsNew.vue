@@ -66,7 +66,7 @@ export default {
             breakpoint: 576,
             settings: {
 
-              slidesToShow: 1
+              slidesToShow: this.products.length>1?1:this.products.length
             }
           }
         ]

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section class="bienvenidos d-flex align-items-center flex-column justify-content-center">
+    <section class="bienvenidos d-flex flex-column align-items-center justify-content-center">
       <div class="fondo-bienvenido">
         <div id="carouselSlider" class="carousel slide h-100" data-ride="carousel">
           <ol class="carousel-indicators control-img">
@@ -23,54 +23,53 @@
         </div>
       </div>
 
-      <img :src="logo" alt="logo" />
-
-      <br />
-      <a class="btn btn-primary text-white btn-lg my-4 w-md-50" href="/catalogo">
-        <i>Comprar ahora</i>&nbsp;&nbsp;
-        <font-awesome-icon icon="arrow-right" size="xs" />
-      </a>
-      <a class="mt-1" href="#producto-nuevo">
-        <img :src="scroll" alt="Scroll" class="d-none d-md-inline-block" data-target="#section1" />
-      </a>
+      <div class="d-flex flex-column align-items-center justify-content-center ">
+        <img :src="logo" alt="logo" class="img-fluid"/>
+        <br/>
+        <a class="btn btn-primary text-white btn-lg my-4 w-md-50" href="/catalogo">
+          <i>Comprar ahora</i>&nbsp;&nbsp;
+          <font-awesome-icon icon="arrow-right" size="xs"/>
+        </a>
+        <a class="mt-1" href="#producto-nuevo">
+          <img :src="scroll" alt="Scroll" class="d-none d-md-inline-block img-fluid" data-target="#section1" />
+        </a>
+      </div>
     </section>
-    <template>
-      <img class="d-none" v-for="item in slides" :src="item.url" :key="item.url" rel="preload" />
-    </template>
   </div>
 </template>
 <script>
-import logo from './../../assets/images/conocenos/logo_conocenos.svg'
-import scroll from './../../assets/images/scroll.svg'
-import background from './../../assets/images/img_bienvenido.png'
+import logo from "./../../assets/images/conocenos/logo_conocenos.svg";
+import scroll from "./../../assets/images/scroll.svg";
+import background from "./../../assets/images/img_bienvenido.png";
 
 export default {
-  name: 'portada',
-  props: ['slides'],
-  data () {
+  name: "portada",
+  props: ["slides"],
+  data() {
     return {
       backgrounds: [
         {
-          name: 'default',
+          name: "default",
           url: background
         }
       ],
       logo: logo,
       scroll: scroll,
       contador: 0
-    }
+    };
   },
-  created () {
+  created() {
     if (this.slides.length > 0) {
-      this.backgrounds = this.slides
+      this.backgrounds = this.slides;
     }
   },
-  mounted () {
-    $('.carousel').carousel()
+  mounted() {
+    $(".carousel").carousel();
   }
-}
+};
 </script>
 <style scoped>
+
 .bienvenidos {
   background-size: cover;
   height: 100vh;
@@ -89,8 +88,12 @@ export default {
   z-index: -5;
 }
 
-.control-img{
+.control-img {
   position: absolute;
   z-index: 100;
+}
+
+.caja{
+  border:2px red solid;
 }
 </style>
