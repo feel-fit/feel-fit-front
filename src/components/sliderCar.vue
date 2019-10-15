@@ -174,7 +174,9 @@ export default {
     },
 
     pagar () {
-      this.$router.push('/pagos')
+      if(this.$store.state.cart.items.length>0){
+        this.$router.push('/pagos')
+      } 
       this.open_menu()
     }
 

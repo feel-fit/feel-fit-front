@@ -60,12 +60,12 @@
               <div class="col-sm-6">
                 <h4 class="text-primary">Domicilio en Armenia</h4>
                 <p class="text-muted">
-                  Debe ser pagado contraentrega en efectivo al domicilio. Revise las politicas de envio.
+                 
                 </p>
               </div>
               <div class="col-sm-3 d-flex flex-column justify-content-center align-items-center">
                 <small class="text-muted font-italic">Valor Env&iacute;o</small>
-                <h5 class="text-dark font-weight-bold font-italic">$3.000</h5>
+                <h5 class="text-dark font-weight-bold font-italic">$1.500</h5>
               </div>
             </div>
           </div>
@@ -82,7 +82,7 @@
               <div class="col-sm-6">
                 <h4 class="text-primary">Domicilio en Quindio</h4>
                 <p class="text-muted">
-                  Debe ser pagado contraentrega en efectivo al domicilio. Revise las politicas de envio.
+                  
                 </p>
               </div>
               <div class="col-sm-3 d-flex flex-column justify-content-center align-items-center">
@@ -104,7 +104,7 @@
               <div class="col-sm-6">
                 <h4 class="text-primary">Domicilio fuera del Quindío</h4>
                 <p class="text-muted">
-                  Debe ser pagado contraentrega en efectivo al domicilio. Revise las politicas de envio.
+                  Debe ser pagado en efectivo a la empresade mensajeria. Revise las politicas de envio.
                 </p>
               </div>
               <div class="col-sm-3 d-flex flex-column justify-content-center align-items-center">
@@ -200,7 +200,7 @@ export default {
       let valor = 0
       switch (this.domicile) {
         case 'armenia':
-          valor = 3000
+          valor = 1500
           break
         case 'quindio':
           valor = 8000
