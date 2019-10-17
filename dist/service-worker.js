@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.9e600689fdad1fbf3f988315f4947487.js"
+  "/precache-manifest.ecfa5017b0c1a7c63eff5a44bf414fbb.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "feel-fit-front"});

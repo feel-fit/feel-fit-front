@@ -172,8 +172,15 @@ export default {
       this.$store.commit('addToCart', this.product)
     },
     addToWishlist () {
-      this.$store.commit('addToWishlist', this.product)
-    }
+      if(!this.isProduct){
+        this.$store.commit('addToWishlist', this.product)
+      }else{
+        this.remove_product_cart(this.product);
+      }
+    },
+    remove_product_cart (item) {
+      this.$store.commit('removeProductWish', item)
+    },
   }
 
 }
