@@ -1,3 +1,0 @@
-Sitemap: https://feelfitmarket.com/map.xml
-User-agent: *
-Disallow:
