@@ -176,7 +176,7 @@ export default {
     pagar () {
       if(this.$store.state.cart.items.length>0){
         this.$router.push('/pagos')
-      } 
+      }
       this.open_menu()
     }
 
@@ -216,11 +216,13 @@ export default {
     margin-right: -20rem;
     &.open {
       margin-right: 0;
-      display: block
+      display: block;
+      right: 0;
+      top: 0;
     }
   }
   .product-name{
-    
+
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -231,12 +233,15 @@ export default {
       margin-right: -20rem;
       &.open {
         margin-right: 0;
+        right: 0;
+        top: 0;
       }
     }
   }
   .position-fixed {
     width: 320px;
     bottom: 0;
+    right: 0;
   }
   .politicas {
     margin-bottom: 100px;
