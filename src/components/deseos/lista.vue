@@ -45,7 +45,7 @@
             </div>
             <div class="col-2 col-lg-1 col-xl-1">
               <div class="card border-0">
-                <img :src="item.images[0].url" class="img-fluid card-img-top rounded-left" />
+                <img :src="item.images[0]?item.images[0].url:imageDefault" class="img-fluid card-img-top rounded-left" />
               </div>
             </div>
             <div class="col-3 col-lg-5">
@@ -105,10 +105,13 @@
 </template>
 <script>
 import { cloneDeep } from 'lodash'
+import imageDefault from './../../assets/images/producto.png'
 export default {
   name: 'lista_deseos',
   data () {
-    return {}
+    return {
+      imageDefault
+    }
   },
   computed: {
     quantityHearts () {
