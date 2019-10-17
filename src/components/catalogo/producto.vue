@@ -6,7 +6,7 @@
 
                 <!--<div class="row d-none d-md-block line-background bg-primary"></div>-->
                 <div class="row">
-                    <div class="col-5 d-md-block d-none cursor" @click="viewCategories('refrigerados-y-congelados')">
+                    <div class="col-5 d-md-block d-none cursor" @click="viewCategories('refrigerados-congelados')">
                         <div class="bg-white card h-100 position-relative shadow catalogo_border ">
                             <div class="fondo_catalogo position-absolute bg-info "></div>
                             <div class="align-items-center bg-white d-flex h-100 position-relative catalogo_border">
@@ -20,7 +20,7 @@
 
                             <!-- Producto refigerio pequeño - Aparece y desaparece -->
 
-                            <div class="col-sm-6 d-md-none cursor" @click="viewCategories('refrigerados-y-congelados')">
+                            <div class="col-sm-6 d-md-none cursor" @click="viewCategories('refrigerados-congelados')">
                                 <div class="mb-3 mt-md-0 respon_mas position-relative">
                                     <div class="fondo_catalogo position-absolute bg-info"></div>
                                     <div class="position-relative pb-3 bg-white catalogo_border shadow">
@@ -93,7 +93,7 @@
                                 </div>
                             </div>
                             <div class="col-sm-6">
-                               <div class="mb-3 position-relative cursor" @click="viewCategories('niños')">
+                               <div class="mb-3 position-relative cursor" @click="viewCategories('ninos')">
                                     <div class="fondo_catalogo position-absolute bg-info"></div>
                                     <div class="position-relative pb-3  bg-white catalogo_border shadow">
                                     	<img :src="ninos" class="img-fluid w-50">

@@ -4,7 +4,7 @@
              :is-full-page="true">
              </loading>
     <slider/>
-    <div class="d-flex">
+    <div >
       <div class="w-100" id="page-content-wrapper" :class="{'open_cart':open_cart}">
         <cabecera/>
         <router-view/>
