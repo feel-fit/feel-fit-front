@@ -92,10 +92,10 @@ export default {
   data () {
     return {
       form: {
-        name: '',
-        email: '',
-        password: '',
-        password_confirmation: ''
+        name: 'Juan Carlos',
+        email: 'jcperdomoq@uqvirtual.edu.co',
+        password: 'secret',
+        password_confirmation: 'secret'
       },
       error: {
         email: false

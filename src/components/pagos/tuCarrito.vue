@@ -18,7 +18,7 @@
           </div>
           <div class="col-sm div-va">
             <div class="row py-1">
-              <div class="col-sm-12 mb-1 text-left">
+              <div class="col-sm-12 mb-1 text-left product-name">
                 <p class="m-0 font-weight-bold text-capitalize">
                   {{item.name}}
                 </p>
@@ -167,5 +167,16 @@ export default {
   }
   .caja{
     border:2px red solid;
+    
+  }
+
+  .product-name{
+    max-width: 200px;
+  }
+  
+  .product-name p{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
   }
 </style>
