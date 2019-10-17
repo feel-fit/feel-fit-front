@@ -48,9 +48,9 @@
           </div>
           <div class="row espaciado">
             <div class="col-12 text-md-center my-auto">
-              <a href="#"><img src="../assets/images/facebook.svg" alt="Facebook" class="mr-3"></a>
-              <a href="#"><img src="../assets/images/instagram.svg" alt="Instagram"></a>
-              <a href="#"><img src="../assets/images/mail.svg" alt="Email" class="ml-3"></a>
+              <a target="_blank" href="https://facebook.com/feelfitmarket"><img src="../assets/images/facebook.svg" alt="Facebook" class="mr-3"></a>
+              <a target="_blank" href="https://instagram.com/feelfitmarket"><img src="../assets/images/instagram.svg" alt="Instagram"></a>
+              <a href="mailto:feelfitmarket@gmail.com"><img src="../assets/images/mail.svg" alt="Email" class="ml-3"></a>
             </div>
           </div>
           <div class="row">

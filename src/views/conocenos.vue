@@ -2,14 +2,14 @@
   <section>
     <div class="container-fluid top-header">
       <div class="row">
-        <div class="col col-md-5 conocenos d-flex flex-fill justify-content-around position-relative">
+        <div class="col-12 col-xl-5 conocenos d-flex flex-fill justify-content-around position-relative">
 
           <img src="../assets/images/conocenos/logo_conocenos.svg" alt="Feel Fit" class="mx-auto w-50 mt-4">
 
           <img class="fresa position-absolute" src="../assets/images/conocenos/fresa_copy.svg" alt="Fresa">
 
         </div>
-        <div class="col col-sm-12 col-md-7 flex-fill conocenos_col bg-white text-center position-relative">
+        <div class="col-12 col-xl-7 flex-fill conocenos_col bg-white text-center position-relative">
           <img src="../assets/images/conocenos/fresa2.png"
                class="fresa2_conocenos d-none d-md-inline-block position-absolute">
 
