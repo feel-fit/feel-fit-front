@@ -4,7 +4,7 @@
     <div class="container-fluid">
       <div class="row">
         <div v-if="!facts" class="col-12 px-0 col-md-6">
-          <div class="h-100 w-100 d-flex align-items-center">
+          <div class="h-100 w-100 d-flex align-items-center justify-content-center">
             <div class="card bg-white d-flex position-relative border-0">
               <v-lazy-image class="img-fluid"
                             :src="product.images.length > 0 ? product.images[0].url : imageDefault"
