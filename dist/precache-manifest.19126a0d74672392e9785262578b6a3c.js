@@ -1,27 +1,27 @@
 self.__precacheManifest = [
   {
-    "revision": "6b6dc0f934e23998fe55",
-    "url": "/css/about.e4b21223.css"
+    "revision": "32a63f9fd940abd15c69",
+    "url": "/css/about.86e7a5d5.css"
   },
   {
-    "revision": "6b6dc0f934e23998fe55",
-    "url": "/js/about.d3d90cbe.js"
+    "revision": "32a63f9fd940abd15c69",
+    "url": "/js/about.e9f8093f.js"
   },
   {
-    "revision": "182df203be232df80b2a",
-    "url": "/css/app.d9784069.css"
+    "revision": "8642bcfc7505700b0356",
+    "url": "/css/app.923119ab.css"
   },
   {
-    "revision": "182df203be232df80b2a",
-    "url": "/js/app.952a6ca0.js"
+    "revision": "8642bcfc7505700b0356",
+    "url": "/js/app.f592e9e5.js"
   },
   {
-    "revision": "4552d2553bd80afaf2bb",
-    "url": "/css/checkout.48051639.css"
+    "revision": "1dee7e0a0f98bb34ab68",
+    "url": "/css/checkout.c624e660.css"
   },
   {
-    "revision": "4552d2553bd80afaf2bb",
-    "url": "/js/checkout.215dd92b.js"
+    "revision": "1dee7e0a0f98bb34ab68",
+    "url": "/js/checkout.d1bba686.js"
   },
   {
     "revision": "a28d9d46fc475b29e10f",
@@ -96,14 +96,6 @@ self.__precacheManifest = [
     "url": "/img/heart.749253b1.svg"
   },
   {
-    "revision": "abf7bba5b57567b4e99af1dd51c2a3cc",
-    "url": "/img/fresa3_home.abf7bba5.png"
-  },
-  {
-    "revision": "e917f31f06bb2f7d1e906e22a1df8471",
-    "url": "/img/hoja3.e917f31f.png"
-  },
-  {
     "revision": "2e7629d8d492563915213e030237c4a0",
     "url": "/img/productos-404.2e7629d8.png"
   },
@@ -154,6 +146,14 @@ self.__precacheManifest = [
   {
     "revision": "bd185a171373da986b92e31ee90125a9",
     "url": "/img/ninos.bd185a17.png"
+  },
+  {
+    "revision": "abf7bba5b57567b4e99af1dd51c2a3cc",
+    "url": "/img/fresa3_home.abf7bba5.png"
+  },
+  {
+    "revision": "e917f31f06bb2f7d1e906e22a1df8471",
+    "url": "/img/hoja3.e917f31f.png"
   },
   {
     "revision": "68ee0c437372a6bb546c3f0fa1b9ec98",
@@ -216,8 +216,8 @@ self.__precacheManifest = [
     "url": "/img/bgcat.c2f7ba50.png"
   },
   {
-    "revision": "7640acec346171480aa564ab160f7f71",
-    "url": "/img/producto.7640acec.png"
+    "revision": "570dbe862dd62051d1259cd25b342710",
+    "url": "/img/producto.570dbe86.png"
   },
   {
     "revision": "b7cd86e919d26e407202ea50417e85b2",
@@ -228,8 +228,8 @@ self.__precacheManifest = [
     "url": "/img/img_bienvenido.cda534f0.png"
   },
   {
-    "revision": "5609c1961f2a565f35d156250eeeef82",
-    "url": "/img/image.5609c196.svg"
+    "revision": "720508abd74101dd17822e342cca6086",
+    "url": "/img/image.720508ab.svg"
   },
   {
     "revision": "4dadf81596f1fa2df43f946e7dd294d3",
@@ -280,15 +280,11 @@ self.__precacheManifest = [
     "url": "/img/productos_fondo.eac76ab0.png"
   },
   {
-    "revision": "c488706148ff8da34d60dee787b263e6",
-    "url": "/img/hoja2.c4887061.png"
-  },
-  {
     "revision": "dfc656a74d3b07f86afc30d0cff72154",
     "url": "/img/contraentrega.dfc656a7.svg"
   },
   {
-    "revision": "448cd274570b0d9876b8dcfbc4a48530",
+    "revision": "aefbb0257ee9aba9c1fb6373f4a5006e",
     "url": "/app.html"
   },
   {
