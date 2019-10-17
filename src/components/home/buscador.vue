@@ -71,7 +71,7 @@ export default {
   .fresa_buscador{
     right:0;
     top:   -10%;
-    width: 14%;
+    width: 9%;
     margin: 0;
     padding: 0;
   }

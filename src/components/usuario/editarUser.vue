@@ -107,6 +107,20 @@
                     />
                       <div class="invalid-feedback">Se requiere de un tel&eacute;fono</div>
                     </div>
+                    <div class="form-group col-md-6">
+                      <label>G&eacute;nero</label> <select
+                      v-validate="'required'"
+                      :class="{'is-invalid':errors.first('gender')}"
+                      name="gender"
+                      class="form-control"
+                      v-model="cliente.gender"
+                    >
+                      <option value="masculino">Masculino</option>
+                      <option value="femenino">Femenino</option>
+                      <option value="otro">Otro</option>
+                    </select>
+                      <div class="invalid-feedback">Se requiere de una ciudad</div>
+                    </div>
                     <div class="form-group col-md-12">
                       <div class="row justify-content-end">
                         <button
