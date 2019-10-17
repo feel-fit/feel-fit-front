@@ -17,7 +17,7 @@
               :class="{active:index==0}"
               v-for="(background,index) in backgrounds"
             >
-              <img class="d-block w-100 h-100" :src="background.url" />
+              <img class="d-block w-100 h-100 cover" :src="background.url" />
             </div>
           </div>
         </div>
@@ -79,6 +79,10 @@ export default {
   -moz-transition: background-position 0.5s ease-in-out;
   -o-transition: background-position 0.5s ease-in-out;
   transition: background-position 0.5s ease-in-out;
+}
+
+.cover{
+  object-fit: cover;
 }
 
 .fondo-bienvenido {
