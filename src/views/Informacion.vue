@@ -75,7 +75,7 @@
                 <div class="col-12 mb-3 col-lg-4 border-right">
                   <h4 class="text-lg-center text-primary font-italic">Ingredientes</h4>
                   <div>
-                    <small v-for="item in product.tags" class="color_texto2 text-capitalize"> {{item.name}},</small>
+                    <small v-for="item in ingredientes" class="color_texto2 text-capitalize"> {{item.name}},</small>
                   </div>
                 </div>
                 <div class="col-12 mb-3 col-lg-4">
@@ -99,7 +99,7 @@ import imageDefault from '../assets/images/producto.png'
 import facts from '../components/informacion/facts'
 import imgDeseoActivo from '../assets/images/deseos/heart.svg'
 import imgDeseoNoActivo from '../assets/images/fav.svg'
-import { flatMap } from 'lodash'
+import { flatMap, orderBy } from 'lodash'
 
 export default {
   props: {
@@ -165,6 +165,9 @@ export default {
       } else {
         return false
       }
+    },
+    ingredientes () {
+      return orderBy(this.product.facts.filter(item => item.position_fact === 'medio' || item.position_fact === 'inferior'), 'order')
     }
   },
   methods: {
