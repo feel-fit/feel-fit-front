@@ -60,6 +60,7 @@ export default {
   },
 
   mounted () {
+    this.$store.commit('open_menu', false)
     api.Categories().getBySlug('cajas-sorpresa').then(response => {
       let id = response.data.data[0].id
       api.Categories().products(id).getPaginate().then(response => {

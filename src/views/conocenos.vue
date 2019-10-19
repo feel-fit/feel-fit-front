@@ -45,7 +45,10 @@ export default {
         { rel: 'canonical', href: 'https://feelfitmarket.com' + this.$route.fullPath }
       ]
     }
-  }
+  },
+  mounted () {
+    this.$store.commit('open_menu', false)
+  },
 }
 
 </script>

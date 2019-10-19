@@ -43,7 +43,7 @@
             <div class="col-12 font-weight-bold font-italic text-center mt-3">
               <router-link  class="text-dark" to="/contactanos">Contactanos</router-link>
             </div>
-            <div class="col-12 font-weight-bold font-italic text-center mt-3"><a href="#"data-toggle="modal" data-target="#politicasEnvioModal"><span class="text-dark">Pol&iacute;ticas de envi&oacute; </span></a>
+            <div class="col-12 font-weight-bold font-italic text-center mt-3"><a href="#"data-toggle="modal" data-target="#politicasEnvioModal" @click="open_menu"><span class="text-dark">Pol&iacute;ticas de envi&oacute; </span></a>
             </div>
           </div>
           <div class="row espaciado">

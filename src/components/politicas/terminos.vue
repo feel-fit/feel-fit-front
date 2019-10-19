@@ -10,7 +10,7 @@
       aria-hidden="true"
     >
       <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content btn-lg p-0">
+        <div class="modal-content btn-lg p-3">
           <div class="row">
             <div class="d-none d-lg-block col-lg-6 p-0">
               <img

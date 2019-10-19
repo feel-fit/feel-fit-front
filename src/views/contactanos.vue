@@ -3,7 +3,7 @@
     <div class="container-fluid top-header">
       <div class="row">
         <div class="col col-md-6  d-flex flex-fill p-0 justify-content-around position-relative">
-          <img :src="images.contactanos" alt="Feel Fit" class="w-100 img-fluid  ">
+          <img :src="images.contactanos" alt="Feel Fit" class="w-100 img-fluid ">
         </div>
         <div class="col col-sm-12 col-md-6 flex-fill d-flex bg-white  position-relative">
           <img src="../assets/images/conocenos/fresa2.png"
@@ -60,7 +60,7 @@
             <p class="pb-2 text-center"> Con cariño</p>
             <p class=" text-center"> Feel Fit</p>
           </div>
-          <img src="../assets/images/conocenos/circulo.svg" class="circulo float-left float-md-right">
+          
 
         </div>
       </div>
@@ -109,7 +109,10 @@ export default {
         }
       })
     }
-  }
+  },
+  mounted () {
+    this.$store.commit('open_menu', false)
+  },
 }
 </script>
 <style scoped lang="scss">

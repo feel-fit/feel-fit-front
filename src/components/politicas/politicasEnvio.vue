@@ -10,11 +10,11 @@
       aria-hidden="true"
     >
       <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content btn-lg p-0">
+        <div class="modal-content btn-lg p-4">
           <div class="row">
             <div class="d-none d-lg-block col-lg-6 p-0">
               <img
-                src="./../../assets/images/politicas/berries-blackberries-card-698857.png"
+                src="./../../assets/images/politicas/envio.png"
                 class="w-100 h-100"
               />
             </div>
@@ -26,7 +26,6 @@
               <div class="container p-3 contenido-text overflow-auto">
                 <h4 class="text-primary font-weight-bold font-italic">Pol&iacute;ticas de envio</h4>
                 <div class="ml-3 mt-4 font-italic">
-                  <h5 class="font-weight-bold text-uppercase my-4">Politicas de envio</h5>
                   <p>
                     Al momento de comprar tus productos ten en cuenta las siguientes recomendaciones:</p>
                     <ul>

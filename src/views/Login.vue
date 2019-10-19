@@ -120,7 +120,10 @@
             registro() {
                 this.$router.push('/registro')
             }
-        }
+        },
+        mounted () {
+                this.$store.commit('open_menu', false)
+            }
     }
 </script>
 <style scoped>
