@@ -48,7 +48,7 @@
                                             v-model="form.password"
                                             placeholder="Ingresa tu contraseña"
                                     />
-                                    <div class="invalid-feedback">Se requiere de una contraseña valido</div>
+                                    <div class="invalid-feedback">Se requiere de una contraseña valida</div>
                                 </div>
                             </div>
                             <div class="form-group d-flex justify-content-between flex-fill flex-wrap mt-5">
@@ -62,7 +62,7 @@
                                     type="button"
                                     name="wp-submit"
                                     class="btn font-weight-bold btn-primary text-white btn-lg"
-                                    value="Iniciar sesion"
+                                    value="Iniciar sesión"
                                     @click="login"
                             />
                             </div>

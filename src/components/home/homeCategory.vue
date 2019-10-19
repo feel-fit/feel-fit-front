@@ -9,7 +9,7 @@
         <div class="text_productos col-6 col-md-5 ">
           <h2 class="font-weight-bold font-italic text-info mt-lg-5 mt-3">{{title}}</h2>
           <hr class="hr_producto mt-lg-3 text-black-50">
-          <p class="font-italic mb-2">Entra y sorprendente</p>
+          <p class="font-italic mb-2">Entra y sorpr&eacute;ndente</p>
           <hr class="hr_producto">
         </div>
         <div class="align-self-center col-md-2 d-md-block d-none">

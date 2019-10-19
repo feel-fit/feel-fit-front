@@ -21,8 +21,8 @@
 
           <p class="text-center parrafo font-italic text-justify py-xl-5">En feel flit queremos que te olvides de las dietas y
             empieces adaptar un estilo de vida saludable donde consumas alimentos que realmente nutran tu cuerpo y te
-            hagan sentir que tu alma y tu corazon se encuentren felices. Es por eso que eres nuestra razon de ser y
-            buscamos acompañarte en tu estilo de vida saludable ofreciendote produtos de excelente calidad. </p>
+            hagan sentir que tu alma y tu coraz&oacute;n se encuentren felices. Es por eso que eres nuestra raz&oacute;n de ser y
+            buscamos acompañarte en tu estilo de vida saludable ofreciendote productos de excelente calidad. </p>
 
           <img src="../assets/images/conocenos/circulo.svg" class="circulo float-left float-md-right d-none d-md-block">
 
