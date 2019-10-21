@@ -29,7 +29,7 @@
                   <p>
                     <span class="font-weight-bold text-uppercase">Feel fit market</span> desempeña una actividad de medios debido a su papel de
                     intermediario en la adquisici&oacute;n de los productos y/o alimentos para la promoci&oacute;n
-                    de un estilo de vida sana, un f&acute;cil acceso a estos productos y/o alimentos para con posterioridad
+                    de un estilo de vida sana, un f&aacute;cil acceso a estos productos y/o alimentos para con posterioridad
                     ser entregados en la ubicaci&oacute;n brindada por nuestros usuarios y/o clientes, para su posterior preparaci&oacute;n
                     y/o consumo.container
                   </p>

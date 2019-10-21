@@ -71,7 +71,7 @@
                                     <input type="checkbox" class="custom-control-input" id="recordarme"/>
                                     <label class="custom-control-label" for="recordarme">Recordarme</label>
                                 </div>
-                                <a href="#">¿Olvidaste la constraseña?</a>
+                                <a href="#">¿Olvidaste la contraseña?</a>
                             </div>
                         </form>
                     </div>
@@ -108,12 +108,16 @@
         methods: {
             login() {
                 this.$validator.validateAll().then(result => {
+                    this.$store.state.loading = true
                     app
                         .Users()
                         .login(this.form)
                         .then(response => {
+                            this.$store.state.loading = false;
                             this.$store.dispatch('getLogin', response.data.data.access_token)
                             setTimeout(this.$router.back(), 9000)
+                        }).catch(error=>{
+                            this.$store.state.loading = false;
                         })
                 })
             },

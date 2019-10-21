@@ -106,12 +106,15 @@ export default {
     registro () {
       this.$validator.validateAll().then(
         (result) => {
+          this.$store.state.loading = true;
           api.Users().create(this.form).then(response => {
             this.$store.commit('set_me', response.data.data)
             api.Users().login(this.form).then(response => {
               this.$router.push('/')
             })
+            this.$store.state.loading = false;
           }).catch(error => {
+            this.$store.state.loading = false;
             this.error.email = true
           })
         }
