@@ -5,7 +5,6 @@ import map from 'lodash/map'
 
 setAxiosHeader()
 
-console.log(axios.defaults.baseURL)
 
 function Addresses (url = 'addresses') {
   return {

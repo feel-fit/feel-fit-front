@@ -103,6 +103,7 @@ export default {
         .Categories()
         .getOne(id)
         .then(response => {
+          console.log(response.data.data.name);
           this.name = response.data.data.name
         })
     },

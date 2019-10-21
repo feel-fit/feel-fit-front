@@ -131,6 +131,7 @@ export default {
       })
     },
     next () {
+      this.$store.state.loading = true
       // cambiar por result al finalizar pruebas
       this.$validator.validateAll().then((result) => {
         if (result) {
@@ -146,10 +147,10 @@ export default {
 
               api.Users().update(this.me.id, this.cliente).then(
                 response => {
+                  this.$store.state.loading = false
                   console.log(response)
                 }
               )
-
               this.gotonext()
             } else {
               api.Users().create(this.cliente).then(response => {
@@ -159,10 +160,16 @@ export default {
                   this.address = response.data.data
                   this.gotonext()
                 })
+                this.$store.state.loading = false
+              }).catch(error=>{
+                this.$store.state.loading = false
+                console.log(error);
               })
             }
           }
         }
+      }).catch(error=>{
+        this.$store.state.loading = false
       })
     },
     changeCiudades () {

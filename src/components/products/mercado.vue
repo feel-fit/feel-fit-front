@@ -43,9 +43,10 @@ export default {
   },
   watch: {
     title (value) {
-      let names = words(value)
+      let names = value.split(" y ");
+      console.log(names);
       if (names.length > 1) {
-        this.second = names[1]
+        this.second = '& '+names[1]
       }
       this.first = names[0]
       return value

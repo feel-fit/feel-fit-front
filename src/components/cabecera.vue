@@ -8,7 +8,9 @@
           </div>
         </div>
         <div class="col text-center">
-          <img src="../assets/images/logo.svg" alt="logo">
+          <router-link to="/">
+            <img src="../assets/images/logo.svg" alt="logo">
+          </router-link>
         </div>
         <div class="col">
           <div @click="open_cart" class="navbar-brand d-flex justify-content-end d-flex-inline float-right">

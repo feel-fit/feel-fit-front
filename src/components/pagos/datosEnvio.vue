@@ -178,6 +178,7 @@ export default {
       this.cities = this.departments.filter(item => item.id == this.department)[0].cities
     },
     next () {
+      this.$store.state.loading = true
       this.$validator.validateAll().then((result) => {
         // cambiar por result al finalizar pruebas
         if (result) {
@@ -191,6 +192,7 @@ export default {
             $('#modalDescuento').modal('show')
           }
         }
+        this.$store.state.loading = false
       })
     },
     back () {
