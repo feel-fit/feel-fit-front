@@ -63,7 +63,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-12 mb-5 align-self-end">
+            <div class="col-12 my-4 align-self-end">
               <div class="row">
                 <div class="col-12 mb-3 col-lg-4 border-right">
                   <h4 class="text-lg-center text-primary font-italic">Categoría</h4>

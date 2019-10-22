@@ -123,6 +123,7 @@ export default {
     margin: 20px;
     float: left;
     padding: 0.5rem;
+    width: 85%;
     table {
       border-collapse: collapse;
     }

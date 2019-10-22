@@ -139,6 +139,7 @@ export default {
             if (this.me != null && !isEmpty(this.me)) {
               if (!this.address.id) {
                 api.Addresses().create(this.address).then(response => {
+                  this.$store.state.loading = false
                   this.address = response.data.data
                   this.gotonext()
                 })
@@ -148,9 +149,10 @@ export default {
               api.Users().update(this.me.id, this.cliente).then(
                 response => {
                   this.$store.state.loading = false
-                  console.log(response)
                 }
-              )
+              ).catch(error=>{
+                 this.$store.state.loading = false 
+              });
               this.gotonext()
             } else {
               api.Users().create(this.cliente).then(response => {
@@ -158,12 +160,12 @@ export default {
                 this.address.user_id = response.data.data.id
                 api.Addresses().create(this.address).then(response => {
                   this.address = response.data.data
+                  this.$store.state.loading = false
                   this.gotonext()
                 })
                 this.$store.state.loading = false
               }).catch(error=>{
                 this.$store.state.loading = false
-                console.log(error);
               })
             }
           }
