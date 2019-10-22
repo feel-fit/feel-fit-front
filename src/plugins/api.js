@@ -17,6 +17,12 @@ function Addresses (url = 'addresses') {
   }
 }
 
+function ResetPassword(url='password/email'){
+  return {
+    getReset: (email) => axios.post(url,email)
+  }
+}
+
 function Categories (url = 'categories') {
   return {
     getOne: (id) => axios.get(`${url}/${id}`),
@@ -195,5 +201,6 @@ export default {
   DetailShopping,
   SuccessResponse,
   Token,
-  Users
+  Users,
+  ResetPassword
 }

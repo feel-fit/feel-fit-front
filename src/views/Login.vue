@@ -71,8 +71,9 @@
                                     <input type="checkbox" class="custom-control-input" id="recordarme"/>
                                     <label class="custom-control-label" for="recordarme">Recordarme</label>
                                 </div>
-                                <a href="#">¿Olvidaste la contraseña?</a>
+                                <a href="#" data-toggle="modal" data-target="#modal-olvide" >¿Olvidaste la contraseña?</a>
                             </div>
+                            <recuperar-contrasena/>
                         </form>
                     </div>
                 </div>
@@ -82,9 +83,11 @@
 </template>
 <script>
     import app from './../plugins/api'
-
+    import recuperarContrasena from '../components/usuario/recuperarContrasena'
+    
     export default {
         name: 'Login',
+        components:{recuperarContrasena},
         metaInfo() {
             return {
                 title: 'login | Feelfit',
