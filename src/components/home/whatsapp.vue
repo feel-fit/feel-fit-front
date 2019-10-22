@@ -25,8 +25,16 @@ export default {
 <style scoped>
   .whatsapp{
     position: fixed;
-    bottom: 10%;
+    bottom: 6%;
     right: 50px;
     z-index: 200;
   }
+
+  @media (max-width: 720px){
+    .whatsapp{
+      position: absolute;
+      bottom: 5%;
+    }
+  }
+
 </style>

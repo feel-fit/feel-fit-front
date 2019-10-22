@@ -25,7 +25,7 @@
                                     <div class="fondo_catalogo position-absolute bg-info"></div>
                                     <div class="position-relative pb-3 bg-white catalogo_border shadow">
                                         <img :src="refrigerados" class="img-fluid w-50">
-                                        <span class="letra_catalogo position-absolute font-italic font-weight-bold">Refrigerados<br><p class="small font-weight-bold " style="color: #CCCCCD;">& Canelados</p></span>
+                                        <span class="letra_catalogo position-absolute font-italic font-weight-bold">Refrigerados<br><p class="small font-weight-bold " style="color: #CCCCCD;">& Congelados</p></span>
                                     </div>
                                 </div>
                             </div>
