@@ -151,7 +151,8 @@ export default {
                   this.$store.state.loading = false
                 }
               ).catch(error=>{
-                 this.$store.state.loading = false 
+                 this.$store.state.loading = false
+               
               });
               this.gotonext()
             } else {
@@ -166,6 +167,11 @@ export default {
                 this.$store.state.loading = false
               }).catch(error=>{
                 this.$store.state.loading = false
+                this.$validator.errors.add({
+                  field: 'email',
+                  msg: 'email ya se encuentra en uso',
+                  rule: "email"
+                })
               })
             }
           }
