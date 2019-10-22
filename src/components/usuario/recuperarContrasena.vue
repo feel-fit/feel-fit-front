@@ -17,7 +17,7 @@
               name="email"
               type="email"
               class="form-control"
-              v-model="email"
+              v-model="client.email"
             />
             <div class="invalid-feedback">Se requiere de un correo válido</div>
           </div>
@@ -38,18 +38,26 @@ export default {
   name: "recuperar-contrasena",
   data() {
     return {
-      email: ""
+      client:{
+        email:''
+      }
     };
   },
   methods: {
     enviarEmail() {
       this.$validator.validateAll().then(result => {
-        api.ResetPassword().getReset({
-            email:this.email
-        }).then(result=>{
+        this.$store.state.loading = true
+        api.ResetPassword().getReset(this.client).then(result=>{
             $('#modal-olvide').modal('hide')
+            this.$store.state.loading = false
+        }).catch(error=>{
+            this.$validator.errors.add({
+                  field: 'email',
+                  msg: 'email no se encuentra registrado.',
+                  rule: "email"
+                })
+            this.$store.state.loading = false
         });
-        $('#modal-olvide').modal('hide')
       });
     }
   }

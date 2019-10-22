@@ -169,7 +169,7 @@ export default {
                 this.$store.state.loading = false
                 this.$validator.errors.add({
                   field: 'email',
-                  msg: 'email ya se encuentra en uso',
+                  msg: 'email ya se encuentra en uso, inicia sesión para continuar.',
                   rule: "email"
                 })
               })

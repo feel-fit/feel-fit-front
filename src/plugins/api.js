@@ -17,7 +17,7 @@ function Addresses (url = 'addresses') {
   }
 }
 
-function ResetPassword(url='password/email'){
+function ResetPassword(url = 'password/email'){
   return {
     getReset: (email) => axios.post(url,email)
   }
