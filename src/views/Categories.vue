@@ -43,9 +43,7 @@ export default {
   },
   data () {
     return {
-      productos: [
-        { images: [], price: 0 }
-      ],
+      productos: [],
       next: '',
       prev: '',
       name: ''
