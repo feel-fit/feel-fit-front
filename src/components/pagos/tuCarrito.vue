@@ -1,5 +1,5 @@
 <template>
-  <div class="container h-100 d-flex  flex-column" >
+  <div class="container h-100 d-flex  flex-column">
     <div class="row">
       <div class="col-sm-12 bg-white py-5 px-4 ">
         <h3 class="h2 font-italic font-weight-bold text-left text-primary">Tu carrito</h3>
@@ -26,7 +26,7 @@
               <div class="col-auto div-va ">
                 <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
                   <button type="button" class="btn btn-outline-secondary rounded-0 br-left"
-                          @click="item.quantity--">-
+                          @click="addItem(item)">
                   </button>
                   <button class="btn btn-outline-secondary">{{item.quantity}}</button>
                   <button type="button" class="btn btn-outline-secondary rounded-0 br-right"
@@ -109,7 +109,7 @@ export default {
     },
     descuento () {
       if (!isEmpty(this.me) && !isEmpty(this.me.discounts) && this.me.discounts.length > 0) {
-        return parseInt((this.me.discounts[0].value / 100) * this.total)
+        return parseInt(( this.me.discounts[0].value / 100 ) * this.total)
       }
       return 0
     },
@@ -120,13 +120,23 @@ export default {
     }
   },
   methods: {
+    addItem(item){
+  
+      this.$store.state.cart.items = this.cart.items.map(x=>{
+        if (x.id == item.id && item.quantity > 1){
+          x.quantity--
+        }
+        return x
+      })
+      
+    },
     open_menu () {
       this.$store.commit('open_cart', !this.open)
     },
     remove_product_cart (item) {
       this.$store.commit('removeProductCart', item)
     }
-
+    
   }
 }
 </script>
@@ -134,49 +144,50 @@ export default {
   .image-product{
     max-width: 80px;
   }
-
+  
   .my-li-own{
     background-color: white;
     border-radius:    1rem;
     border-radius:    1rem;
     box-shadow:       0 0 10px rgba(0, 0, 0, .1);
   }
-
+  
   .my-li-own div{
     color: #20D6D9;
   }
-
+  
   .div-va{
     display:         flex;
     justify-content: center;
     align-items:     center;
   }
-
+  
   .br-left{
     border-top-left-radius:    1.5rem !important;
     border-bottom-left-radius: 1.5rem !important;
   }
-
+  
   .br-right{
     border-top-right-radius:    20rem !important;
     border-bottom-right-radius: 20rem !important;
   }
-
+  
   .price{
     color: black;
   }
+  
   .caja{
-    border:2px red solid;
+    border: 2px red solid;
     
   }
-
+  
   .product-name{
     max-width: 200px;
   }
   
   .product-name p{
-    white-space: nowrap;
+    white-space:   nowrap;
     text-overflow: ellipsis;
-    overflow: hidden;
+    overflow:      hidden;
   }
 </style>
