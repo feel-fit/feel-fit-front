@@ -19,7 +19,10 @@ function Addresses (url = 'addresses') {
 
 function ResetPassword(url = 'password/email'){
   return {
-    getReset: (email) => axios.post(url,email)
+    getReset: (email) => axios.post(url,email,{
+      headers: {
+        'Content-Type': 'application/json',
+      }})
   }
 }
 
