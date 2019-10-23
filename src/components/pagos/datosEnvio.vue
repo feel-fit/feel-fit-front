@@ -47,7 +47,7 @@
           </div>
         </div>
         <div class="row pt-4">
-          <div class="col-sm-12">
+          <div v-if="department==24&&address.city_id == 875" class="col-sm-12">
             <div class="row my-li-own mb-3 p-4">
               <div class="col-sm-3 px-0 align-self-center">
                 <div class="custom-control custom-radio  text-center">
@@ -60,7 +60,6 @@
               <div class="col-sm-6">
                 <h4 class="text-primary">Domicilio en Armenia</h4>
                 <p class="text-muted">
-                 
                 </p>
               </div>
               <div class="col-sm-3 d-flex flex-column justify-content-center align-items-center">
@@ -69,7 +68,7 @@
               </div>
             </div>
           </div>
-          <div class="col-sm-12">
+          <div v-if="department==24&&address.city_id != 875" class="col-sm-12">
             <div class="row my-li-own mb-3 p-4">
               <div class="col-sm-3 px-0 align-self-center">
                 <div class="custom-control custom-radio  text-center">
@@ -82,7 +81,6 @@
               <div class="col-sm-6">
                 <h4 class="text-primary">Domicilio en Quindio</h4>
                 <p class="text-muted">
-                  
                 </p>
               </div>
               <div class="col-sm-3 d-flex flex-column justify-content-center align-items-center">
@@ -91,7 +89,7 @@
               </div>
             </div>
           </div>
-          <div class="col-sm-12">
+          <div v-if="department!=24" class="col-sm-12">
             <div class="row my-li-own mb-3 p-4">
               <div class="col-sm-3 px-0 align-self-center">
                 <div class="custom-control custom-radio  text-center">
@@ -133,6 +131,7 @@
 <script>
 import api from '../../plugins/api'
 import { sumBy } from 'lodash'
+
 export default {
   name: 'datosEnvio',
   data () {
@@ -156,6 +155,8 @@ export default {
       return this.$store.state.departments
     },
     me () {
+      this.department = this.$store.state.me.department
+      this.address.city_id = this.$store.state.me.addresses[0].city_id
       return this.$store.state.me
     },
     cart () {
@@ -168,7 +169,7 @@ export default {
     },
     descuento () {
       if (this.me != null && this.me.discounts.length > 0) {
-        return parseInt((this.me.discounts[0].value / 100) * this.total)
+        return parseInt(( this.me.discounts[0].value / 100 ) * this.total)
       }
       return 0
     }
@@ -213,27 +214,26 @@ export default {
       this.$store.state.tool_paying.costSend = valor
     }
   }
-
+  
 }
 </script>
 <style scoped>
-
   label{
     font-size: 0.7em;
   }
-
+  
   .titulo{
     margin-top:    5rem;
     margin-bottom: 2.5rem;
   }
-
+  
   .my-li-own{
     background-color: white;
     border-radius:    1rem;
     border-radius:    1rem;
     box-shadow:       0 0 10px rgba(0, 0, 0, .1);
   }
-
+  
   .my-li-own div{
     color: #20D6D9;
   }

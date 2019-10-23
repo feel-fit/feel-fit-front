@@ -131,10 +131,11 @@ export default {
       })
     },
     next () {
-      this.$store.state.loading = true
+     
       // cambiar por result al finalizar pruebas
       this.$validator.validateAll().then((result) => {
         if (result) {
+          this.$store.state.loading = true
           if (!this.nextViewSend) {
             if (this.me != null && !isEmpty(this.me)) {
               if (!this.address.id) {
