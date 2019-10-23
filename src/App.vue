@@ -1,7 +1,7 @@
 <template>
   <div class="container-fluid p-0 d-flex flex-column h-100" :class="{'toggled':!open_menu}" id="app">
     <loading :opacity="0.9" color="#20d6d9" :active.sync="$store.state.loading"
-             :is-full-page="true">
+             :is-full-page="true" :z-index="1000000">
              </loading>
     <slider/>
     <div >
