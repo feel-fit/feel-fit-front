@@ -107,7 +107,7 @@ export default {
   mounted () {
     if (this.me != null) {
       this.cliente = this.me
-      if (!isEmpty(this.me) && !isEmpty(this.me.discounts) && this.me.addresses.length > 0) {
+      if (!isEmpty(this.me) && this.me.addresses.length > 0) {
         this.address = this.me.addresses[0]
         this.changeDepartment()
       } else {
