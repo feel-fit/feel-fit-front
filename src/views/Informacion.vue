@@ -75,7 +75,7 @@
                 <div class="col-12 mb-3 col-lg-4 border-right">
                   <h4 class="text-lg-center text-primary font-italic">Ingredientes</h4>
                   <div>
-                    <small v-for="item in ingredientes" class="color_texto2 text-capitalize"> {{item.name}},</small>
+                    <small  class="color_texto2 text-capitalize"> {{product.ingredientes}}</small>
                   </div>
                 </div>
                 <div class="col-12 mb-3 col-lg-4">
@@ -167,7 +167,7 @@ export default {
       }
     },
     ingredientes () {
-      return orderBy(this.product.facts.filter(item => item.position_fact === 'medio' || item.position_fact === 'inferior'), 'order')
+      return this.product.ingredientes
     }
   },
   methods: {
