@@ -39,6 +39,7 @@ import refrigerados from './../../assets/images/catalogo/refrigerados.png'
 import snacks from './../../assets/images/catalogo/snacks.png'
 import suplementos from './../../assets/images/catalogo/suplementos.png'
 import vinagres from './../../assets/images/catalogo/vinagres.png'
+import caja_sorpresa from './../../assets/images/catalogo/cajasorpresa.png'
 
 import words from 'lodash/words'
 
@@ -57,7 +58,7 @@ export default {
       snacks,
       suplementos,
       vinagres,
-      imgDefault:aceites,
+      imgDefault:caja_sorpresa,
       first: '',
       second: ''
     }
@@ -66,35 +67,34 @@ export default {
        getImagen(){
          switch(this.first){
            case 'aceites':
-            return this.imgDefault = this.aceites;
-           break
+            return  this.aceites;
            case 'chocolates':
-           return this.imgDefault = this.chocolates;
-           break
+           return  this.chocolates;
            case 'granolas':
-           return this.imgDefault = this.granolas;
-           break
+           return  this.granolas;
+           
            case 'mercado':
-           return this.imgDefault = this.mercado;
-           break
+           return  this.mercado;
+           
            case 'niños':
-           return this.imgDefault = this.ninos;
-           break
+           return this.ninos;
+           
            case 'panadería':
-           return this.imgDefault = this.panaderia;
-           break
+           return this.panaderia;
+           
            case 'refrigerados':
-           return this.imgDefault = this.refrigerados;
-           break
+           return  this.refrigerados;
+           
            case 'snacks':
-           return this.imgDefault = this.snacks;
-           break
+           return this.snacks;
+           
            case 'suplementos':
-           return this.imgDefault = this.suplementos;
-           break
+           return this.suplementos;
+           
            case 'vinagres':
-           return this.imgDefault = this.vinagres;
-           break
+           return this.vinagres;
+           
+           
            default:
            return this.imgDefault
          }
