@@ -7,7 +7,7 @@
           <div class="row d-flex justify-conted-around position-relative bg-white shadow" style="border-radius:1rem;">
             <div></div>
             <div class="col-8 col-md-6">
-              <img :src="pasta" alt="food" class="img-fluid">
+              <img :src="getImagen" alt="food" class="img-fluid">
             </div>
             <div class="col-4 col-md-6 mt-5">
               <div class="oval_mercado position-absolute d-none d-md-block">
@@ -28,7 +28,18 @@
   </section>
 </template>
 <script>
-import pasta from './../../assets/images/product/pasta.png'
+
+import aceites from './../../assets/images/catalogo/aceites.png'
+import chocolates from './../../assets/images/catalogo/chocolates.png'
+import granolas from './../../assets/images/catalogo/granolas.png'
+import mercado from './../../assets/images/catalogo/mercado.png'
+import ninos from './../../assets/images/catalogo/ninos.png'
+import panaderia from './../../assets/images/catalogo/panaderia.png'
+import refrigerados from './../../assets/images/catalogo/refrigerados.png'
+import snacks from './../../assets/images/catalogo/snacks.png'
+import suplementos from './../../assets/images/catalogo/suplementos.png'
+import vinagres from './../../assets/images/catalogo/vinagres.png'
+
 import words from 'lodash/words'
 
 export default {
@@ -36,22 +47,69 @@ export default {
   props: ['title'],
   data () {
     return {
-      pasta: pasta,
+      aceites,
+      chocolates,
+      granolas,
+      mercado,
+      ninos,
+      panaderia,
+      refrigerados,
+      snacks,
+      suplementos,
+      vinagres,
+      imgDefault:aceites,
       first: '',
       second: ''
     }
   },
+    computed: {
+       getImagen(){
+         switch(this.first){
+           case 'aceites':
+            return this.imgDefault = this.aceites;
+           break
+           case 'chocolates':
+           return this.imgDefault = this.chocolates;
+           break
+           case 'granolas':
+           return this.imgDefault = this.granolas;
+           break
+           case 'mercado':
+           return this.imgDefault = this.mercado;
+           break
+           case 'niños':
+           return this.imgDefault = this.ninos;
+           break
+           case 'panadería':
+           return this.imgDefault = this.panaderia;
+           break
+           case 'refrigerados':
+           return this.imgDefault = this.refrigerados;
+           break
+           case 'snacks':
+           return this.imgDefault = this.snacks;
+           break
+           case 'suplementos':
+           return this.imgDefault = this.suplementos;
+           break
+           case 'vinagres':
+           return this.imgDefault = this.vinagres;
+           break
+           default:
+           return this.imgDefault
+         }
+       }
+    },
   watch: {
     title (value) {
       let names = value.split(" y ");
-      console.log(names);
       if (names.length > 1) {
         this.second = '& '+names[1]
       }
       this.first = names[0]
       return value
-    }
-  }
+    },
+  },
 }
 </script>
 <style scoped>
