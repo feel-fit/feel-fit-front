@@ -185,7 +185,7 @@ export default {
               this.$store.state.cart.items = []
               this.$router.push('thankyou')
               if (this.metodoPago != '1') {
-                window.open('https://www.zonapagos.com/t_feelfit/')
+                window.open('https://www.zonapagos.com/t_feelfit/', '_system')
               }
             }
           )
