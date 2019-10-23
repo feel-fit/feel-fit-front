@@ -130,7 +130,7 @@
 </template>
 <script>
 import api from '../../plugins/api'
-import { sumBy } from 'lodash'
+import { sumBy, isEmpty } from 'lodash'
 
 export default {
   name: 'datosEnvio',
@@ -156,7 +156,10 @@ export default {
     },
     me () {
       this.department = this.$store.state.me.department
-      this.address.city_id = this.$store.state.me.addresses[0].city_id
+      if (this.$store.state.me.addresses) {
+        this.address.city_id = this.$store.state.me.addresses[0].city_id
+      }
+      
       return this.$store.state.me
     },
     cart () {

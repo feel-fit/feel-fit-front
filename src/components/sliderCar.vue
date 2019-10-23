@@ -51,7 +51,7 @@
                           <div class="row align-items-center">
                             <div class="col">
                               <div class="input-group input-group-sm mr-2" role="group" aria-label="Second group">
-                                <div @click="item.quantity--" class="input-group-prepend">
+                                <div @click="addItem(item)" class="input-group-prepend">
                                   <button type="button" class="btn btn-outline-secondary">-</button>
                                 </div>
                                 <input type="text" v-model="item.quantity" class="form-control btn btn-outline-secondary">
@@ -111,7 +111,7 @@
                   <span class=" font-weight-bold font-italic text-dark d-block h4">{{total | money}}</span>
                 </div>
                 <div class="col">
-                  <span @click="pagar" class="btn btn-primary p-3 text-white font-italic font-weight-bold" style="border-radius:30px;">Ir a Pagar</span>
+                  <span :class="{'disabled':total<15000}" @click="pagar" class="btn btn-primary p-3 text-white font-italic font-weight-bold" style="border-radius:30px;">Ir a Pagar</span>
                 </div>
               </div>
             </div>
@@ -166,6 +166,16 @@ export default {
     }
   },
   methods: {
+    addItem(item){
+    
+      this.$store.state.cart.items = this.cart.items.map(x=>{
+        if (x.id == item.id && item.quantity > 1){
+          x.quantity--
+        }
+        return x
+      })
+    
+    },
     open_menu () {
       this.$store.commit('open_cart', !this.open)
     },
@@ -174,8 +184,12 @@ export default {
     },
 
     pagar () {
-      if(this.$store.state.cart.items.length>0){
+      if(this.$store.state.cart.items.length>0 && this.total>=15000){
         this.$router.push('/pagos')
+      }else{
+        if (this.total<15000){
+          return
+        }
       }
       this.open_menu()
     }

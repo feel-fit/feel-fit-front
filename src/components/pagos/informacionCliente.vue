@@ -119,7 +119,11 @@ export default {
     checkDocumento () {
       api.Users().checkDocumento(this.cliente.identification).then(response => {
         if (response.data.data.length > 0) {
-          this.$store.commit('set_me', response.data.data[0])
+          let data = response.data.data[0]
+          this.$store.commit('set_me',data )
+          this.cliente.name= data.name
+          this.cliente.email= data.email
+          this.cliente.phone= data.phone
           if (this.me.addresses.length > 0) {
             this.address = this.me.addresses[0]
             this.changeDepartment()
