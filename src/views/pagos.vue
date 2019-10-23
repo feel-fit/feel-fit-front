@@ -4,7 +4,7 @@
     <section id="pagos">
       <div class="container-fluid">
         <div class="row pt-3">
-          <div class="col-12 col-md order-1 order-md-0 bg-white">
+          <div class="col-12 col-md-6 col-lg   bg-white">
             <div class="row">
               <div class="col-sm-12">
                 <div class="container mt-5 mb-2 ">
@@ -37,7 +37,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-auto order-0 order-md-1">
+          <div class="col-lg-auto col-md-6 ">
             <tu-carrito/>
           </div>
         </div>
