@@ -8,7 +8,7 @@
     <home-category url="productos-destacados" title="Nuestros Productos destacados" :id="2" :image="images.yogurt"/>
     <products-new tag="destacado" :products="destacados" v-if="destacados.length>0"></products-new>
     <fresa/>
-    <home-category url="cajas-sorpresa" title="Nuestras Cajas Sorpresa" :class="[sorpresas.length>0?'':'m-5']" :id="3" :image="images.sorpresa"/>
+    <home-category url="cajas-sorpresa" title="Nuestras Cajas Sorpresa" :class="[sorpresas.length>0?'':'mb-5']" :id="3" :image="images.sorpresa"/>
     <products-new tag="caja sorpresa" :products="sorpresas" v-if="sorpresas.length>0"></products-new>
   </div>
 </template>

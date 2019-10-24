@@ -6,10 +6,10 @@
           <div class="fondo position-absolute bg-info d-none d-md-block shadow"></div>
           <div class="row d-flex justify-conted-around position-relative bg-white shadow" style="border-radius:1rem;">
             <div></div>
-            <div class="col-8 col-md-6">
-              <img :src="getImagen" alt="food" class="img-fluid">
+            <div class="col-6 col-md-6 ">
+              <img :src="getImagen" alt="food" class="w-100 h-100">
             </div>
-            <div class="col-4 col-md-6 mt-5">
+            <div class="col-6 col-md-6 mt-1 mt-md-5 ">
               <div class="oval_mercado position-absolute d-none d-md-block">
                 <img src="./../../assets/images/conocenos/oval.svg" class="w-50">
               </div>
@@ -144,9 +144,15 @@ export default {
     margin-top: 2rem;
   }
 
-  @media (min-width: 768px){
+  @media (min-width: 767px){
     .mercado_letra{
       font-size: 32px;
+    }
+  }
+
+  @media (max-width: 767px){
+    .mercado_letra{
+      font-size: 18px;
     }
   }
 </style>

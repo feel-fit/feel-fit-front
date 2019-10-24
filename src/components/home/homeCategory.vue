@@ -83,4 +83,15 @@ export default {
       }
     }
   }
+
+  @media (max-width: 360px){
+    .text_productos{
+      p{
+        font-size: 10px;
+      }
+      h2{
+        font-size: 10px;
+      }
+    }
+  }
 </style>

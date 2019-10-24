@@ -30,9 +30,9 @@ export default {
 }
 @media(min-width: 768px) {
     .fresa_product {
-        bottom: 3rem;
+        bottom: 2.5rem;
         z-index: 10;
-        width: 10rem;
+        width: 9.5rem;
         left: -1rem;
     }
 }
