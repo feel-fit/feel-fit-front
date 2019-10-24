@@ -17,12 +17,12 @@
           </div>
           <div class="form-group col-md-6">
             <label>CEDULA</label>
-            <input v-validate="'required'" @change="checkDocumento" :class="{'is-invalid':errors.first('cedula')}" name="cedula" type="text" class="form-control" v-model="cliente.identification">
+            <input v-validate="'required|min:7'" @change="checkDocumento" :class="{'is-invalid':errors.first('cedula')}" name="cedula" type="text" class="form-control" v-model="cliente.identification">
             <div class="invalid-feedback">Se requiere de una cedula</div>
           </div>
           <div class="form-group col-md-12">
             <label>DIRECCI&Oacute;N</label>
-            <input v-validate="'required'" :class="{'is-invalid':errors.first('direccion')}" name="direccion" type="text" class="form-control" v-model="address.address">
+            <input v-validate="'required|min:7'" :class="{'is-invalid':errors.first('direccion')}" name="direccion" type="text" class="form-control" v-model="address.address">
             <div class="invalid-feedback">Se requiere de una direcci&oacute;n</div>
           </div>
           <div class="form-group col-md-6">
@@ -46,7 +46,7 @@
           </div>
           <div class="form-group col-md-6">
             <label>TELEFONO</label>
-            <input v-validate="'required'" :class="{'is-invalid':errors.first('telefono')}" name="telefono" type="tel" class="form-control" v-model="cliente.phone">
+            <input v-validate="'required|min:6'" :class="{'is-invalid':errors.first('telefono')}" name="telefono" type="tel" class="form-control" v-model="cliente.phone">
             <div class="invalid-feedback">Se requiere de un tel&eacute;fono</div>
           </div>
           <div class="form-group col-md-12">
