@@ -156,7 +156,7 @@ export default {
     },
     me () {
       this.department = this.$store.state.me.department
-      if (this.$store.state.me.addresses) {
+      if (!isEmpty(this.$store.state.me.addresses)) {
         this.address.city_id = this.$store.state.me.addresses[0].city_id
       }
       
