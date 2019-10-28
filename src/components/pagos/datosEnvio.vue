@@ -20,6 +20,7 @@
                 class="form-check-input"
                 id="otra-direccion"
                 v-model="otherAddress"
+                @change="getNewAddress()"
               />
               <label class="form-check-label" for="otra-direccion">utilizar otra dirección</label>
             </div>
@@ -180,13 +181,10 @@ export default {
         city_id: null,
         name: "segunda casa"
       },
-      domicile: "armenia",
+      domicile: "otro",
       department: null,
       cities: []
     };
-  },
-  created() {
-    this.domicile = "quindio";
   },
   computed: {
     departments() {
@@ -215,6 +213,7 @@ export default {
       return 0;
     },
     isArmenia() {
+      console.log(this.department);
       if (this.department == 24 && this.address.city_id == 875) {
         this.domicile = "armenia";
         this.$store.state.tool_paying.costSend = 1500;
@@ -240,6 +239,19 @@ export default {
     }
   },
   methods: {
+    getNewAddress(){
+      if(this.otherAddress){
+        this.$store.state.oldDepartment = this.department
+        this.$store.state.oldCity = this.address.city_id
+      }else{
+        if(isEmpty(this.$store.state.oldDepartment)){
+          this.department = this.$store.state.oldDepartment;
+        }
+        if(isEmpty(this.$store.state.oldCity)){
+          this.address.city_id = this.$store.state.oldCity;
+        }
+      }
+    },
     changeCiudades() {
       this.cities = this.departments.filter(
         item => item.id == this.department
@@ -271,20 +283,6 @@ export default {
     back() {
       $("#informacion-tab").tab("show");
     },
-    selectDomicile() {
-      let valor = 0;
-      switch (this.domicile) {
-        case "armenia":
-          valor = 1500;
-          break;
-        case "quindio":
-          valor = 8000;
-          break;
-        default:
-          valor = 0;
-      }
-      this.$store.state.tool_paying.costSend = valor;
-    }
   }
 };
 </script>
