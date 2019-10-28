@@ -1,22 +1,26 @@
 <template>
   <div class="container" id="informacion-cliente">
     <div class="row">
-                <span class="h3 font-italic text-primary font-weight-bold titulo">
-                    Datos de env&iacute;o
-                </span>
+      <span class="h3 font-italic text-primary font-weight-bold titulo">Datos de env&iacute;o</span>
     </div>
     <div class="row mb-2">
       <div class="container">
         <div class="row">
-          <div class="col-12">
-            Direccion
-          </div>
+          <div class="col-12">Direccion</div>
           <div class="col-12 ml-3">
-            <span v-if="me.addresses && me.addresses.length > 0" class="text-dark font-weight-bold h4 text-capitalize">{{me.addresses[0].address }}</span>
+            <span
+              v-if="me.addresses && me.addresses.length > 0"
+              class="text-dark font-weight-bold h4 text-capitalize"
+            >{{me.addresses[0].address }}</span>
           </div>
           <div class="col-12">
             <div class="form-group form-check">
-              <input type="checkbox" class="form-check-input" id="otra-direccion" v-model="otherAddress">
+              <input
+                type="checkbox"
+                class="form-check-input"
+                id="otra-direccion"
+                v-model="otherAddress"
+              />
               <label class="form-check-label" for="otra-direccion">utilizar otra dirección</label>
             </div>
           </div>
@@ -25,42 +29,65 @@
           <div class="col-12">
             <div class="form-group">
               <label for="inputAddressAux">Direcci&oacute;n</label>
-              <input v-validate="'required'" name="direccion" type="text" class="form-control" id="inputAddressAux"
-                     :class="{ 'is-invalid': errors.first('direccion') }"
-                     v-model="address.address">
+              <input
+                v-validate="'required'"
+                name="direccion"
+                type="text"
+                class="form-control"
+                id="inputAddressAux"
+                :class="{ 'is-invalid': errors.first('direccion') }"
+                v-model="address.address"
+              />
               <div class="invalid-feedback">Se requiere de una direcci&oacute;n</div>
             </div>
           </div>
           <div class="form-group col-md-6">
             <label>DEPARTAMENTO</label>
-            <select @change="changeCiudades" v-validate="'required'" :class="{'is-invalid':errors.first('departamento')}" name="departamento" class="form-control" v-model="department">
+            <select
+              @change="changeCiudades"
+              v-validate="'required'"
+              :class="{'is-invalid':errors.first('departamento')}"
+              name="departamento"
+              class="form-control"
+              v-model="department"
+            >
               <option v-for="item in departments" :value="item.id">{{item.name}}</option>
             </select>
             <div class="invalid-feedback">Se requiere de un departamento</div>
           </div>
           <div class="form-group col-md-6">
             <label>CIUDAD</label>
-            <select v-validate="'required'" :class="{'is-invalid':errors.first('ciudad')}" name="ciudad" class="form-control" v-model="address.city_id">
+            <select
+              v-validate="'required'"
+              :class="{'is-invalid':errors.first('ciudad')}"
+              name="ciudad"
+              class="form-control"
+              v-model="address.city_id"
+            >
               <option v-for="item in cities" :value="item.id">{{item.name}}</option>
             </select>
             <div class="invalid-feedback">Se requiere de una ciudad</div>
           </div>
         </div>
         <div class="row pt-4">
-          <div v-if="department==24&&address.city_id == 875" class="col-sm-12">
+          <div v-if="isArmenia" class="col-sm-12">
             <div class="row my-li-own mb-3 p-4">
               <div class="col-sm-3 px-0 align-self-center">
-                <div class="custom-control custom-radio  text-center">
-                  <input type="radio" id="armenia" name="domicilio" class="custom-control-input"
-                         v-model="domicile"
-                         value="armenia"
-                         @change="selectDomicile"> <label class="custom-control-label" for="armenia"></label>
+                <div class="custom-control custom-radio text-center">
+                  <input
+                    type="radio"
+                    id="armenia"
+                    name="domicilio"
+                    class="custom-control-input"
+                    v-model="domicile"
+                    value="armenia"
+                  />
+                  <label class="custom-control-label" for="armenia"></label>
                 </div>
               </div>
               <div class="col-sm-6">
                 <h4 class="text-primary">Domicilio en Armenia</h4>
-                <p class="text-muted">
-                </p>
+                <p class="text-muted"></p>
               </div>
               <div class="col-sm-3 d-flex flex-column justify-content-center align-items-center">
                 <small class="text-muted font-italic">Valor Env&iacute;o</small>
@@ -68,20 +95,24 @@
               </div>
             </div>
           </div>
-          <div v-if="department==24&&address.city_id != 875" class="col-sm-12">
+          <div v-if="isQuindio" class="col-sm-12">
             <div class="row my-li-own mb-3 p-4">
               <div class="col-sm-3 px-0 align-self-center">
-                <div class="custom-control custom-radio  text-center">
-                  <input type="radio" id="quindio" name="domicilio" class="custom-control-input"
-                         v-model="domicile"
-                         value="quindio"
-                         @change="selectDomicile"> <label class="custom-control-label" for="quindio"></label>
+                <div class="custom-control custom-radio text-center">
+                  <input
+                    type="radio"
+                    id="quindio"
+                    name="domicilio"
+                    class="custom-control-input"
+                    v-model="domicile"
+                    value="quindio"
+                  />
+                  <label class="custom-control-label" for="quindio"></label>
                 </div>
               </div>
               <div class="col-sm-6">
                 <h4 class="text-primary">Domicilio en Quindio</h4>
-                <p class="text-muted">
-                </p>
+                <p class="text-muted"></p>
               </div>
               <div class="col-sm-3 d-flex flex-column justify-content-center align-items-center">
                 <small class="text-muted font-italic">Valor Env&iacute;o</small>
@@ -89,21 +120,26 @@
               </div>
             </div>
           </div>
-          <div v-if="department!=24" class="col-sm-12">
+          <div v-if="isOther" class="col-sm-12">
             <div class="row my-li-own mb-3 p-4">
               <div class="col-sm-3 px-0 align-self-center">
-                <div class="custom-control custom-radio  text-center">
-                  <input type="radio" id="otro" name="domicilio" class="custom-control-input"
-                         v-model="domicile"
-                         value="otro"
-                         @change="selectDomicile"> <label class="custom-control-label" for="otro"></label>
+                <div class="custom-control custom-radio text-center">
+                  <input
+                    type="radio"
+                    id="otro"
+                    name="domicilio"
+                    class="custom-control-input"
+                    v-model="domicile"
+                    value="otro"
+                  />
+                  <label class="custom-control-label" for="otro"></label>
                 </div>
               </div>
               <div class="col-sm-6">
                 <h4 class="text-primary">Domicilio fuera del Quindío</h4>
-                <p class="text-muted">
-                  Debe ser pagado en efectivo a la empresade mensajeria. Revise las politicas de envio.
-                </p>
+                <p
+                  class="text-muted"
+                >Debe ser pagado en efectivo a la empresade mensajeria. Revise las politicas de envio.</p>
               </div>
               <div class="col-sm-3 d-flex flex-column justify-content-center align-items-center">
                 <small class="text-muted font-italic">Pago</small>
@@ -113,15 +149,17 @@
           </div>
         </div>
         <div class="row p-5">
-          <div class="col-sm-6  align-self-center">
+          <div class="col-sm-6 align-self-center">
             <a href="#" @click="back" class="text-dark text-decoration-none">
-              <font-awesome-icon icon="arrow-left" size="xs"/>
-              Informaci&oacute;n del cliente</a>
+              <font-awesome-icon icon="arrow-left" size="xs" />Informaci&oacute;n del cliente
+            </a>
           </div>
-          <div class="col-sm-6  text-right">
-            <button @click="next" type="submit"
-                    class="btn btn-primary text-white  btn-lg w-md-100  font-italic font-weight-bold">CONTINUA A PAGO
-            </button>
+          <div class="col-sm-6 text-right">
+            <button
+              @click="next"
+              type="submit"
+              class="btn btn-primary text-white btn-lg w-md-100 font-italic font-weight-bold"
+            >CONTINUA A PAGO</button>
           </div>
         </div>
       </div>
@@ -129,115 +167,145 @@
   </div>
 </template>
 <script>
-import api from '../../plugins/api'
-import { sumBy, isEmpty } from 'lodash'
+import api from "../../plugins/api";
+import { sumBy, isEmpty } from "lodash";
 
 export default {
-  name: 'datosEnvio',
-  data () {
+  name: "datosEnvio",
+  data() {
     return {
       otherAddress: false,
       address: {
         address: null,
         city_id: null,
-        name: 'segunda casa'
+        name: "segunda casa"
       },
-      domicile: 'armenia',
+      domicile: "armenia",
       department: null,
       cities: []
-    }
+    };
   },
-  created () {
-    this.selectDomicile()
+  created() {
+    this.domicile = "quindio";
   },
   computed: {
-    departments () {
-      return this.$store.state.departments
+    departments() {
+      return this.$store.state.departments;
     },
-    me () {
-      this.department = this.$store.state.me.department
+    me() {
+      this.department = this.$store.state.me.department;
       if (!isEmpty(this.$store.state.me.addresses)) {
-        this.address.city_id = this.$store.state.me.addresses[0].city_id
+        this.address.city_id = this.$store.state.me.addresses[0].city_id;
       }
-      
-      return this.$store.state.me
+
+      return this.$store.state.me;
     },
-    cart () {
-      return this.$store.state.cart
+    cart() {
+      return this.$store.state.cart;
     },
-    total () {
+    total() {
       return sumBy(this.cart.items, item => {
-        return item.quantity * item.price
-      })
+        return item.quantity * item.price;
+      });
     },
-    descuento () {
+    descuento() {
       if (this.me != null && this.me.discounts.length > 0) {
-        return parseInt(( this.me.discounts[0].value / 100 ) * this.total)
+        return parseInt((this.me.discounts[0].value / 100) * this.total);
       }
-      return 0
+      return 0;
+    },
+    isArmenia() {
+      if (this.department == 24 && this.address.city_id == 875) {
+        this.domicile = "armenia";
+        this.$store.state.tool_paying.costSend = 1500;
+        return true;
+      }
+      return false;
+    },
+    isQuindio() {
+      if (this.department == 24 && this.address.city_id != 875) {
+        this.domicile = "quindio";
+        this.$store.state.tool_paying.costSend = 8000;
+        return true;
+      }
+      return false;
+    },
+    isOther() {
+      if (this.department != 24) {
+        this.domicile = "otro";
+        this.$store.state.tool_paying.costSend = 0;
+        return true;
+      }
+      return false;
     }
   },
   methods: {
-    changeCiudades () {
-      this.cities = this.departments.filter(item => item.id == this.department)[0].cities
+    changeCiudades() {
+      this.cities = this.departments.filter(
+        item => item.id == this.department
+      )[0].cities;
     },
-    next () {
-      this.$store.state.loading = true
-      this.$validator.validateAll().then((result) => {
+    next() {
+      this.$store.state.loading = true;
+      this.$validator.validateAll().then(result => {
         // cambiar por result al finalizar pruebas
         if (result) {
           if (this.otherAddress) {
-            api.Addresses().update(this.me.addresses[0].id, this.address).then(response => {
-              this.$store.state.me.addresses[0] = response.data.data
-            })
+            api
+              .Addresses()
+              .update(this.me.addresses[0].id, this.address)
+              .then(response => {
+                this.$store.state.me.addresses[0] = response.data.data;
+              });
           }
-          $('#metodo-pago-tab').removeClass('disabled').tab('show')
+          $("#metodo-pago-tab")
+            .removeClass("disabled")
+            .tab("show");
           if (this.descuento > 0) {
-            $('#modalDescuento').modal('show')
+            $("#modalDescuento").modal("show");
           }
         }
-        this.$store.state.loading = false
-      })
+        this.$store.state.loading = false;
+      });
     },
-    back () {
-      $('#informacion-tab').tab('show')
+    back() {
+      $("#informacion-tab").tab("show");
     },
-    selectDomicile () {
-      let valor = 0
+    selectDomicile() {
+      let valor = 0;
       switch (this.domicile) {
-        case 'armenia':
-          valor = 1500
-          break
-        case 'quindio':
-          valor = 8000
-          break
+        case "armenia":
+          valor = 1500;
+          break;
+        case "quindio":
+          valor = 8000;
+          break;
         default:
-          valor = 0
+          valor = 0;
       }
-      this.$store.state.tool_paying.costSend = valor
+      this.$store.state.tool_paying.costSend = valor;
     }
   }
-  
-}
+};
 </script>
 <style scoped>
-  label{
-    font-size: 0.7em;
-  }
-  
-  .titulo{
-    margin-top:    5rem;
-    margin-bottom: 2.5rem;
-  }
-  
-  .my-li-own{
-    background-color: white;
-    border-radius:    1rem;
-    border-radius:    1rem;
-    box-shadow:       0 0 10px rgba(0, 0, 0, .1);
-  }
-  
-  .my-li-own div{
-    color: #20D6D9;
-  }
+label {
+  font-size: 0.7em;
+}
+
+.titulo {
+  margin-top: 5rem;
+  margin-bottom: 2.5rem;
+}
+
+.my-li-own {
+  background-color: white;
+  border-radius: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.my-li-own div {
+  color: #20d6d9;
+}
 </style>
