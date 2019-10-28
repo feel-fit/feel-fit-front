@@ -44,7 +44,7 @@ export default {
   name: 'thankyou',
   metaInfo () {
     return {
-      title: 'Gracias por su pago | Feelfit',
+      title: 'FEEL FIT | Gracias por su pago',
       meta: [
         { name: 'description', content: 'pagos fitness' },
         { name: 'keywords', content: 'pagos, feelfit, venta de productos fitness' }

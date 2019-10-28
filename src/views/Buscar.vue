@@ -15,7 +15,7 @@ export default {
   name: 'product',
   metaInfo () {
     return {
-      title: 'Buscador | Feelfit',
+      title: 'FEEL FIT | Buscador',
       meta: [
         { name: 'description', content: 'Buscar los mejore productos fitness en armenia' },
         { name: 'keywords', content: 'buscador fitness, feelfit, venta de productos fitness' }

@@ -28,7 +28,7 @@ export default {
   name: 'catalogo',
   metaInfo () {
     return {
-      title: 'Catálogo | Feelfit',
+      title: 'FEEL FIT  | Catálogo',
       meta: [
         { name: 'description', content: 'encuentra todo nuestro catálogo fitness en armenia' },
         { name: 'keywords', content: 'catalogo fitness, feelfit, venta de productos fitness' }

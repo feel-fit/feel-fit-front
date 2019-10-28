@@ -225,7 +225,7 @@ export default {
   name: 'usuario',
   metaInfo () {
     return {
-      title: 'Usuario | Feelfit',
+      title: 'FEEL FIT | Usuario',
       meta: [
         { name: 'description', content: 'usuario' },
         { name: 'keywords', content: 'usuario, feelfit, venta de productos fitness' }

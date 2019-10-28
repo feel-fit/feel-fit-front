@@ -56,7 +56,7 @@ export default {
   name: 'pago',
   metaInfo () {
     return {
-      title: 'Pagos | Feelfit',
+      title: 'FEEL FIT | Pagos',
       meta: [
         { name: 'description', content: 'pagos' },
         { name: 'keywords', content: 'pagos, feelfit, venta de productos fitness' }

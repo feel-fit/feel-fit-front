@@ -31,7 +31,7 @@ export default {
   name: 'home',
   metaInfo () {
     return {
-      title: 'Feelfit | venta de productos fitness',
+      title: 'FEEL FIT | tienda saludable',
       meta: [
         { name: 'description', content: 'La mejor pagina de venta de productos fitness armenia, mejora tu salud' },
         { name: 'keywords', content: 'feelfit, venta de productos fitness' }

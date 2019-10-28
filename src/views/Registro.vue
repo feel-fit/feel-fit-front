@@ -79,7 +79,7 @@ export default {
   name: 'Registro',
   metaInfo () {
     return {
-      title: 'Registro | Feelfit',
+      title: 'FEEL FIT | Registro',
       meta: [
         { name: 'description', content: 'registrese y crea una cuenta en la mejor tienda fitness' },
         { name: 'keywords', content: 'registro, feelfit, venta de productos fitness' }

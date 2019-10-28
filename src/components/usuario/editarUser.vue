@@ -39,7 +39,7 @@
                     </div>
                     <div class="form-group col-md-6">
                       <label>CEDULA</label> <input
-                      v-validate="'required'"
+                      v-validate="'required|min:7'"
                       @change="checkDocumento"
                       :class="{'is-invalid':errors.first('cedula')}"
                       name="cedula"
@@ -51,7 +51,7 @@
                     </div>
                     <div class="form-group col-md-12">
                       <label>DIRECCI&Oacute;N</label> <input
-                      v-validate="'required'"
+                      v-validate="'required|min:7'"
                       :class="{'is-invalid':errors.first('direccion')}"
                       name="direccion"
                       type="text"
@@ -98,7 +98,7 @@
                     </div>
                     <div class="form-group col-md-6">
                       <label>TELEFONO</label> <input
-                      v-validate="'required'"
+                      v-validate="'required|min:6'"
                       :class="{'is-invalid':errors.first('telefono')}"
                       name="telefono"
                       type="tel"

@@ -112,7 +112,7 @@ export default {
   },
   metaInfo () {
     return {
-      title: this.product.name + ' | ' + (this.product.brand ? this.product.brand.name : '') + ' | Feelfit',
+      title: 'FEEL FIT | '+this.product.name + ' | ' + (this.product.brand ? this.product.brand.name : ''),
       meta: [
         { name: 'description', content: this.product.description },
         { name: 'keywords', content: flatMap(this.product.tags, 'name') + ',' + flatMap(this.product.categories, 'name') + ', ' + this.product.name + ', ' + (this.product.brand ? this.product.brand.name : '') }

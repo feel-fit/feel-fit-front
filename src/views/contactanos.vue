@@ -75,7 +75,7 @@ export default {
   name: 'contactanos',
   metaInfo () {
     return {
-      title: 'Contactanos | Feelfit',
+      title: 'FEEL FIT | Contactanos',
       meta: [
         { name: 'description', content: 'Escribenos y pronto te daremos una respuesta de feelfit' },
         { name: 'keywords', content: 'contactanos, feelfit, venta de productos fitness' }

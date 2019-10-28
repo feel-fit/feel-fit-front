@@ -90,7 +90,7 @@
         components:{recuperarContrasena},
         metaInfo() {
             return {
-                title: 'login | Feelfit',
+                title: 'FEEL FIT | login',
                 meta: [
                     {name: 'description', content: 'login'},
                     {name: 'keywords', content: 'login, feelfit, venta de productos fitness'}

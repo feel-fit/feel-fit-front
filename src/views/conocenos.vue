@@ -36,7 +36,7 @@ export default {
   name: 'conocenos',
   metaInfo () {
     return {
-      title: 'Conocenos | Feelfit',
+      title: 'FEEL FIT | Conocenos',
       meta: [
         { name: 'description', content: 'toda la información acerca de nosotros' },
         { name: 'keywords', content: 'catalogo fitness, feelfit, venta de productos fitness' }

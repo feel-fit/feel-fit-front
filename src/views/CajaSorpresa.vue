@@ -40,7 +40,7 @@ export default {
   components: { volver, homeCategory, ProductoSorpresa },
   metaInfo () {
     return {
-      title: 'Caja sorpresa | Feelfit',
+      title: 'FEEL FIT | Caja sorpresa',
       meta: [
         { name: 'description', content: 'caja sorpresa fitness, regalos y demas productos fitness en armenia' },
         { name: 'keywords', content: 'caja sorpresa, feelfit, venta de productos fitness' }
