@@ -42,7 +42,7 @@ export default {
     return {
       title: 'FEEL FIT | Caja sorpresa',
       meta: [
-        { name: 'description', content: 'caja sorpresa fitness, regalos y demas productos fitness en armenia' },
+        { name: 'description', content: 'caja sorpresa saludable, regalos y demas productos saludables en armenia' },
         { name: 'keywords', content: 'caja sorpresa, feelfit, venta de productos fitness' }
       ],
       link: [

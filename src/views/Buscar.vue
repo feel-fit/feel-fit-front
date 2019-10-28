@@ -17,8 +17,8 @@ export default {
     return {
       title: 'FEEL FIT | Buscador',
       meta: [
-        { name: 'description', content: 'Buscar los mejore productos fitness en armenia' },
-        { name: 'keywords', content: 'buscador fitness, feelfit, venta de productos fitness' }
+        { name: 'description', content: 'Buscar los mejore productos saludable en armenia' },
+        { name: 'keywords', content: 'buscador saludable, feelfit, venta de productos saludable' }
       ],
       link: [
         { rel: 'canonical', href: 'https://feelfitmarket.com' + this.$route.fullPath }

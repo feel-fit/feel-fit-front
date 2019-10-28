@@ -3,7 +3,6 @@
     <section class="bienvenidos d-flex flex-column align-items-center justify-content-center">
       <div class="fondo-bienvenido">
         <div id="carouselSlider" class="carousel slide h-100" data-ride="carousel">
-          
           <div class="carousel-inner h-100">
             <div
               class="carousel-item h-100"
@@ -67,6 +66,7 @@ export default {
   background-size: cover;
   height: 100vh;
   width: 100%;
+  
   overflow: hidden;
   -webkit-transition: background-position 0.5s ease-in-out;
   -moz-transition: background-position 0.5s ease-in-out;
@@ -83,6 +83,10 @@ export default {
   width: 100%;
   height: 100%;
   z-index: -5;
+}
+
+.carousel{
+  margin-top: -20px;
 }
 
 .control-img {

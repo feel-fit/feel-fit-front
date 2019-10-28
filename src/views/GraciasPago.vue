@@ -46,8 +46,8 @@ export default {
     return {
       title: 'FEEL FIT | Gracias por su pago',
       meta: [
-        { name: 'description', content: 'pagos fitness' },
-        { name: 'keywords', content: 'pagos, feelfit, venta de productos fitness' }
+        { name: 'description', content: 'pagos saludable' },
+        { name: 'keywords', content: 'pagos, feelfit, venta de productos saludable' }
       ],
       link: [
         { rel: 'canonical', href: 'https://feelfitmarket.com' + this.$route.fullPath }
