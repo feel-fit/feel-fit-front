@@ -86,7 +86,7 @@ export default {
 }
 
 .carousel{
-  margin-top: -20px;
+  margin-top: -30px;
 }
 
 .control-img {
