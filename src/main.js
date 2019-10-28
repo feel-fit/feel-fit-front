@@ -15,7 +15,8 @@ import {
   faAngleRight,
   faBars,
   faTimes,
-  faSearch
+  faSearch,
+  faAngleDoubleRight
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { VLazyImagePlugin } from 'v-lazy-image'
@@ -43,7 +44,7 @@ Vue.use(VueBreadcrumbs)
 Vue.use(VLazyImagePlugin)
 Vue.use(VeeValidate)
 
-library.add(faArrowRight, faArrowLeft, faAngleLeft, faAngleRight, faBars, faTimes, faSearch)
+library.add(faArrowRight, faArrowLeft, faAngleLeft, faAngleRight, faBars, faTimes, faSearch, faAngleDoubleRight)
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 

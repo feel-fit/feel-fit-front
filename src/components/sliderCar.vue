@@ -15,7 +15,7 @@
                 </div>
                 <div class="col-auto">
                   <a @click="open_menu" href="#" class="toggle text-body">
-                    <font-awesome-icon class="m-4 icon" icon="times"></font-awesome-icon>
+                    <font-awesome-icon class="m-4 icon fa-lg" icon="angle-double-right"></font-awesome-icon>
                   </a>
                 </div>
               </div>
