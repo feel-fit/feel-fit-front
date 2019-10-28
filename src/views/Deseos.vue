@@ -12,8 +12,8 @@ export default {
     return {
       title: 'FEEL FIT | Lista de deseos',
       meta: [
-        { name: 'description', content: 'lista de deseos fitness' },
-        { name: 'keywords', content: 'lista de deseos, feelfit, venta de productos fitness' }
+        { name: 'description', content: 'lista de deseos saludable' },
+        { name: 'keywords', content: 'lista de deseos, feelfit, venta de productos saludable' }
       ],
       link: [
         { rel: 'canonical', href: 'https://feelfitmarket.com' + this.$route.fullPath }

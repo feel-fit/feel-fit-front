@@ -81,7 +81,7 @@ export default {
     return {
       title: 'FEEL FIT | Registro',
       meta: [
-        { name: 'description', content: 'registrese y crea una cuenta en la mejor tienda fitness' },
+        { name: 'description', content: 'registrese y crea una cuenta en la mejor tienda saludable' },
         { name: 'keywords', content: 'registro, feelfit, venta de productos fitness' }
       ],
       link: [

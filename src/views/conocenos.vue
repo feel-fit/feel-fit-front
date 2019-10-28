@@ -39,7 +39,7 @@ export default {
       title: 'FEEL FIT | Conocenos',
       meta: [
         { name: 'description', content: 'toda la información acerca de nosotros' },
-        { name: 'keywords', content: 'catalogo fitness, feelfit, venta de productos fitness' }
+        { name: 'keywords', content: 'catalogo saludable, feelfit, venta de productos saludable' }
       ],
       link: [
         { rel: 'canonical', href: 'https://feelfitmarket.com' + this.$route.fullPath }

@@ -59,7 +59,7 @@ export default {
       title: 'FEEL FIT | Pagos',
       meta: [
         { name: 'description', content: 'pagos' },
-        { name: 'keywords', content: 'pagos, feelfit, venta de productos fitness' }
+        { name: 'keywords', content: 'pagos, venta de productos saludable' }
       ],
       link: [
         { rel: 'canonical', href: 'https://feelfitmarket.com' + this.$route.fullPath }
