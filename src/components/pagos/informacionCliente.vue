@@ -83,7 +83,7 @@ export default {
         email: null,
         phone: null,
         department: null,
-        gender: 'masculino'
+        gender: 'otro'
       },
       address: {
         user_id: null,
