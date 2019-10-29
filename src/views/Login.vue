@@ -1,8 +1,7 @@
 <template>
-  <div>
     <section id="registro">
       <div class="container-fluid fondo">
-        <div class="row contenido-login justify-content-center ">
+        <div class="row">
           <div class="m-auto col-auto">
             <form class="formulario">
               <h2
@@ -92,7 +91,6 @@
         </div>
       </div>
     </section>
-  </div>
 </template>
 <script>
 import app from "./../plugins/api";
@@ -154,13 +152,10 @@ export default {
 };
 </script>
 <style scoped>
-.contenido-login {
-  margin-top: 4.5rem;
-}
 
 .formulario {
-  margin-top: 10rem;
-  margin-bottom: 15rem;
+  margin-top: 17rem;
+  margin-bottom: 16rem;
 }
 
 .fondo {
@@ -173,6 +168,7 @@ export default {
 .input-group > .form-control {
   border-top-right-radius: 1.3rem;
   border-bottom-right-radius: 1.3rem;
+  font-size: 1rem;
 }
 
 .form-control:focus {
@@ -182,13 +178,15 @@ export default {
   outline: 0;
   -webkit-box-shadow: 0 0 0 0.2rem transparent !important;
   box-shadow: 0 0 0 0.2rem transparent !important;
+  font-size: 1rem;
 }
 
 @media (max-width: 480px){
     .formulario {
-        margin-top: 0.6rem;
-        margin-bottom: 2.5rem;
+        margin-top: 10rem;
+        margin-bottom: 15rem;
         font-size: 0.9rem;
+        height: 100%;
     }
 
     .input-group > .form-control {
@@ -197,6 +195,21 @@ export default {
 
     .input-group-prepend{
         display: none;
+    }
+
+    .fondo{
+        padding-top: 3rem;
+    }
+    
+}
+
+@media (max-height:480px){
+    .formulario {
+        margin-top: 2rem;
+        margin-bottom: 2.5rem;
+    }
+    .fondo{
+        background-image:none;
     }
 }
 
