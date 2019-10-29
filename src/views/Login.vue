@@ -76,7 +76,7 @@
               </div>
               <div class="d-flex justify-content-between mt-5">
                 <div class="custom-control custom-checkbox">
-                  <input type="checkbox" class="custom-control-input" id="recordarme" />
+                  <input type="checkbox" class="custom-control-input" id="recordarme" v-model="recordar" @change="recordarMe"/>
                   <label class="custom-control-label" for="recordarme">Recordarme</label>
                 </div>
                 <a
@@ -122,7 +122,8 @@ export default {
       form: {
         email: "",
         password: ""
-      }
+      },
+      recordar:false
     };
   },
   methods: {
@@ -144,10 +145,25 @@ export default {
     },
     registro() {
       this.$router.push("/registro");
+    },
+    recordarMe(){
+      if (this.recordar) {
+        localStorage.email = this.form.email;
+        localStorage.password = this.form.password;
+      } else {
+        localStorage.email = null;
+        localStorage.password = null;
+      }
+      localStorage.check = this.recordar;
     }
   },
   mounted() {
     this.$store.commit("open_menu", false);
+    this.recordar = localStorage.check == "true";
+    if (this.recordar) {
+      this.form.email = localStorage.email;
+      this.form.password = localStorage.password;
+    }
   }
 };
 </script>
