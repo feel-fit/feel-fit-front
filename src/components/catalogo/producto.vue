@@ -252,7 +252,7 @@ export default {
         margin-top: -98px;
     }
     .letra_catalogo{
-        top: 35%;
+        top: 35%; 
         font-size:15px;
     }
 }
@@ -262,13 +262,13 @@ export default {
     }
         .letra_catalogo{
         top: 40%;
-        left: 31%;
-        font-size:12px;
+        left: 30%;
+        font-size:10px;
     }
 
     .categoria-grande{
         top: 40%;
-        left: 54%;
+        left: 48%;
         font-size:12px;
         font-weight: bold;
     }
