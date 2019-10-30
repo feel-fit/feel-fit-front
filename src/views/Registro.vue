@@ -3,15 +3,16 @@
     <section id="registro">
       <div class="container-fluid">
         <div class="row contenido justify-content-center">
-          <div class="col-md-4 col-lg-6 p-0  d-md-none d-lg-block">
-            <img class="img-fluid align-self-end" src="./../assets/images/Registrate/image.svg" />
+          <div class="col-lg-6 p-0">
+            <img class="img-fluid align-self-end d-md-none d-lg-block" src="./../assets/images/Registrate/image.svg" />
+            <img class="img-fluid align-self-end d-none d-md-block d-lg-none" src="./../assets/images/Registrate/registrar.png" />
           </div>
-          <div class="col-md-8 col-lg-6  px-5">
+          <div class="col-lg-6  px-5">
             <div class="row justify-content-md-center justify-content-lg-start">
               <h2 class="text-primary font-italic font-weight-bolder my-5">Registrate</h2>
             </div>
             <div class="row justify-content-center pb-5 mb-2 px-lg-5">
-              <div class="col">
+              <div class="col-md-8 col-lg-10">
                 <form>
                   <div class="form-group">
                     <label for="name" class="font-weight-bold">Nombre completo</label>
