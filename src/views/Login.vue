@@ -137,6 +137,7 @@ export default {
             this.$store.state.loading = false;
             this.$store.dispatch("getLogin", response.data.data.access_token);
             setTimeout(this.$router.back(), 9000);
+            this.recordarMe();
           })
           .catch(error => {
             this.$store.state.loading = false;
