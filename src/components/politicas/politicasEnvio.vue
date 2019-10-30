@@ -37,6 +37,7 @@
                         <li>Si vives en uno de los siguientes municipios: Calarcá, Circasia, La Tebaida, Montenegro o Quimbaya el domicilio tendrá un costo de $8,000 y nos comunicaremos contigo después de realizado tu pago para programar la hora de entrega.</li>
                         <li>Puedes realizar tu compra desde cualquier lugar del país, te enviaremos tu pedido a través de empresa de mensajería y el pago del flete lo realizas contra entrega.</li>
                         <li>Por políticas de calidad no enviamos productos que requieren refrigeración en los pedidos despachados mediante empresas de mensajería.</li>
+                        <li>Cuando el pago sea realizado por tarjeta de crédito o por PSE, enviar comprobante de pago al WhatsApp y número de teléfono.</li>
                     </ul>
                 </div>
               </div>
