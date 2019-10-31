@@ -27,10 +27,10 @@
                       <informacion-cliente/>
                     </div>
                     <div class="tab-pane fade" id="envios" role="tabpanel" aria-labelledby="envios-tab">
-                      <datos-envio v-if="me!=null"/>
+                      <datos-envio v-if="me!=isMe"/>
                     </div>
                     <div class="tab-pane fade" id="metodo-pago" role="tabpanel" aria-labelledby="metodo-pago-tab">
-                      <seleccionar-pago v-if="me!=null"/>
+                      <seleccionar-pago v-if="isMe"/>
                     </div>
                   </div>
                 </div>
@@ -51,6 +51,7 @@ import TuCarrito from '../components/pagos/tuCarrito'
 import volver from '../components/products/volver.vue'
 import DatosEnvio from '../components/pagos/datosEnvio'
 import SeleccionarPago from '../components/pagos/seleccionarPago'
+import { isEmpty } from 'lodash'
 
 export default {
   name: 'pago',
@@ -80,6 +81,12 @@ export default {
     },
     me () {
       return this.$store.state.me
+    },
+    isMe(){
+      if(!isEmpty(this.me)){
+        return true;
+      }
+      return false;
     }
   }
 }

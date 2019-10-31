@@ -2,12 +2,10 @@
   <section>
     <div class="container-fluid top-header">
       <div class="row">
-        <div class="col col-md-6  d-flex flex-fill p-0 justify-content-around position-relative">
-          <img :src="images.contactanos" alt="Feel Fit" class="w-100 img-fluid ">
+        <div class="col-lg-6 p-0 justify-content-around position-relative">
+          <img :src="images.contactanos" alt="Feel Fit" class="img-fluid">
         </div>
-        <div class="col col-sm-12 col-md-6 flex-fill d-flex bg-white  position-relative">
-          <img src="../assets/images/conocenos/fresa2.png"
-               class="fresa2_conocenos d-none d-md-inline-block position-absolute">
+        <div class="col-lg-6 flex-fill d-flex bg-white  position-relative">
           <div class="col-sm-12" v-if="!result">
             <h4 class="letra text-warning text-center font-italic font-weight-bold" style="margin-top: 7%;">
               Contáctanos</h4>

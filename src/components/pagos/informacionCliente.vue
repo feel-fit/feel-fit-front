@@ -105,15 +105,13 @@ export default {
     }
   },
   mounted () {
-    if (this.me != null) {
-      this.cliente = this.me
-      if (!isEmpty(this.me) && this.me.addresses.length > 0) {
+    if (!isEmpty(this.me) && this.me.addresses.length > 0) {
+        this.cliente = this.me
         this.address = this.me.addresses[0]
         this.changeDepartment()
       } else {
         this.address.user_id = this.me.id
       }
-    }
   },
   methods: {
     checkDocumento () {
@@ -141,7 +139,7 @@ export default {
         if (result) {
           this.$store.state.loading = true
           if (!this.nextViewSend) {
-            if (this.me != null && !isEmpty(this.me)) {
+            if (!isEmpty(this.me)) {
               if (!this.address.id) {
                 api.Addresses().create(this.address).then(response => {
                   this.$store.state.loading = false

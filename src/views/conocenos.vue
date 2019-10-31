@@ -2,14 +2,14 @@
   <section>
     <div class="container-fluid top-header">
       <div class="row">
-        <div class="col-12  col-xl-7 conocenos d-flex flex-fill justify-content-around position-relative">
+        <div class="col-12  col-lg-7 conocenos d-flex flex-fill justify-content-around position-relative">
 
           <img src="../assets/images/conocenos/logo_conocenos.svg" alt="Feel Fit" class="mx-auto img-fluid mt-4">
 
           <img class="fresa position-absolute" src="../assets/images/conocenos/fresa_copy.svg" alt="Fresa">
 
         </div>
-        <div class="col-12  col-xl-5 flex-fill conocenos_col bg-white text-center position-relative">
+        <div class="col-12  col-lg-5 flex-fill conocenos_col bg-white text-center position-relative">
           <img src="../assets/images/conocenos/fresa2.png"
                class="fresa2_conocenos d-none d-md-inline-block position-absolute">
 
@@ -52,7 +52,7 @@ export default {
 </script>
 <style scoped lang="scss">
   .top-header {
-    margin-top: 67px;
+    margin-top: 72px;
   }
 
   .parrafo {
@@ -63,6 +63,5 @@ export default {
   .conocenos {
     background-size: cover !important;
     background: url("../assets/images/conocenos/image.png");
-
   }
 </style>

@@ -226,9 +226,15 @@ Buscador
   cursor: pointer;
 }
 
+.fresa2_conocenos{
+    left: 90%;
+    top: 60%;
+    width: 10%;
+  }
+
 /* Las medias queries  */
 
-@media(min-width: 768px) {
+@media(min-width: 992px) {
   html {
     font-size: 16px;
   }
@@ -257,8 +263,10 @@ Buscador
     z-index: 10;
   }
   .fresa2_conocenos{
-    left: 91%;
+    left: 90%;
     top: -6%;
     width: 10%;
   }
 }
+
+
