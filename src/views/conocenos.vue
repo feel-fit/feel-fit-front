@@ -19,10 +19,8 @@
           <img src="../assets/images/conocenos/circulo.svg" class="circulo float-right float-md-left">
           <!--<img class="fresa position-absolute d-none" src="images/conocenos/fresa2.png" alt="Fresa">-->
 
-          <p class="text-center parrafo font-italic text-justify py-xl-5">En feel flit queremos que te olvides de las dietas y
-            empieces adaptar un estilo de vida saludable donde consumas alimentos que realmente nutran tu cuerpo y te
-            hagan sentir que tu alma y tu coraz&oacute;n se encuentren felices. Es por eso que eres nuestra raz&oacute;n de ser y
-            buscamos acompañarte en tu estilo de vida saludable ofreciendote productos de excelente calidad. </p>
+          <p class="text-center parrafo font-italic text-justify py-xl-5">En feel flit queremos que te olvides de las dietas y empieces a adoptar un estilo de vida saludable donde consumas alimentos que realmente nutran tu cuerpo y te hagan sentir que tu alma y tu corazón se encuentren felices. 
+Es por eso que eres nuestra razón de ser y buscamos acompañarte en tu estilo de vida saludable ofreciéndote productos de excelente calidad. </p>
 
           <img src="../assets/images/conocenos/circulo.svg" class="circulo float-left float-md-right d-none d-md-block">
 

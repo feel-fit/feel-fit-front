@@ -33,7 +33,7 @@ export default {
     return {
       title: 'FEEL FIT | tienda saludable',
       meta: [
-        { name: 'description', content: 'La mejor pagina de venta de productos saludables armenia, mejora tu salud' },
+        { name: 'description', content: 'Tu mercado saludable en la puerta de tu casa' },
         { name: 'keywords', content: 'feelfit, venta de productos saludables' }
       ],
       link: [
