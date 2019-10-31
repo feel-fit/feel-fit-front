@@ -3,7 +3,8 @@
     <div class="container-fluid top-header">
       <div class="row">
         <div class="col-lg-6 p-0 justify-content-around position-relative">
-          <img :src="images.contactanos" alt="Feel Fit" class="img-fluid">
+          <img :src="images.contactanos" alt="Feel Fit" class="img-fluid  d-md-none d-lg-block">
+          <img :src="images.contactanos2" alt="Feel Fit" class="img-fluid d-none d-md-block d-lg-none">
         </div>
         <div class="col-lg-6 flex-fill d-flex bg-white  position-relative">
           <div class="col-sm-12" v-if="!result">
@@ -67,6 +68,7 @@
 </template>
 <script>
 import contactanos from '../assets/images/contactanos/contactenos.png'
+import contactanos2 from '../assets/images/contactanos/contactanos2.png'
 import api from './../plugins/api'
 
 export default {
@@ -86,7 +88,7 @@ export default {
   data () {
     return {
       images: {
-        contactanos
+        contactanos,contactanos2
       },
       message: {
         name: null,

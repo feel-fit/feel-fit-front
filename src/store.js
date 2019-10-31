@@ -140,7 +140,6 @@ export default new Vuex.Store({
       state.cart = data
     },
     addToCart (state, data) {
-      console.log(state.cart.items)
       if (state.cart.items.length > 0) {
         let product = state.cart.items.find(item => {
           if (item.id === data.id) return item

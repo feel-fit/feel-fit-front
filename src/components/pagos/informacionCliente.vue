@@ -105,7 +105,7 @@ export default {
     }
   },
   mounted () {
-    if (!isEmpty(this.me) && this.me.addresses.length > 0) {
+      if (!isEmpty(this.me) && this.me.addresses.length > 0) {
         this.cliente = this.me
         this.address = this.me.addresses[0]
         this.changeDepartment()
@@ -138,7 +138,6 @@ export default {
       this.$validator.validateAll().then((result) => {
         if (result) {
           this.$store.state.loading = true
-          if (!this.nextViewSend) {
             if (!isEmpty(this.me)) {
               if (!this.address.id) {
                 api.Addresses().create(this.address).then(response => {
@@ -160,8 +159,8 @@ export default {
               this.gotonext()
             } else {
               api.Users().create(this.cliente).then(response => {
+                console.log(response.data.data);
                 this.$store.commit('set_me', response.data.data)
-                this.$store.state.me.department = this.cliente.department
                 this.address.user_id = response.data.data.id
                 api.Addresses().create(this.address).then(response => {
                   this.address = response.data.data
@@ -178,7 +177,6 @@ export default {
                 })
               })
             }
-          }
         }
       }).catch(error=>{
         this.$store.state.loading = false
