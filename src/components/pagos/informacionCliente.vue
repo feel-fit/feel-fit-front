@@ -163,7 +163,6 @@ export default {
             } else {
               api.Users().create(this.cliente).then(response => {
                 this.$store.commit('set_me', response.data.data)
-                this.$store.state.me.department = this.cliente.department
                 this.address.user_id = response.data.data.id
                 api.Addresses().create(this.address).then(response => {
                   this.address = response.data.data
@@ -200,10 +199,6 @@ export default {
     },
     gotonext () {
       this.$store.commit('set_address', this.address)
-      if(!isEmpty(this.me)){
-        this.me.department = this.cliente.department
-        this.me.addresses[0].city_id = this.address.city_id
-      }
       $('#envios-tab').removeClass('disabled').tab('show')
     }
   }

@@ -212,7 +212,7 @@ export default {
       return 0;
     },
     isArmenia() {
-      if (this.me.department == 24 && this.address.city_id == 875) {
+      if (this.department == 24 && this.address.city_id == 875) {
         this.domicile = "armenia";
         this.$store.state.tool_paying.costSend = 1500;
         return true;
@@ -220,7 +220,7 @@ export default {
       return false;
     },
     isQuindio() {
-      if (this.me.department == 24 && this.address.city_id != 875) {
+      if (this.department == 24 && this.address.city_id != 875) {
         this.domicile = "quindio";
         this.$store.state.tool_paying.costSend = 8000;
         return true;
@@ -228,7 +228,7 @@ export default {
       return false;
     },
     isOther() {
-      if (this.me.department!= 24) {
+      if (this.department!= 24) {
         this.domicile = "otro";
         this.$store.state.tool_paying.costSend = 0;
         return true;
