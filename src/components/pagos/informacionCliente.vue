@@ -34,7 +34,7 @@
           </div>
           <div class="form-group col-md-6">
             <label>CIUDAD</label>
-            <select v-validate="'required'" :class="{'is-invalid':errors.first('ciudad')}" name="ciudad" class="form-control" v-model="address.city_id">
+            <select v-validate="'required'" :class="{'is-invalid':errors.first('ciudad')}" @change="changeCity" name="ciudad" class="form-control" v-model="address.city_id">
               <option v-for="item in cities" :value="item.id">{{item.name}}</option>
             </select>
             <div class="invalid-feedback">Se requiere de una ciudad</div>
@@ -151,9 +151,6 @@ export default {
 
               api.Users().update(this.me.id, this.cliente).then(
                 response => {
-                  if(!isEmpty(this.me)){
-                      this.me.department = this.cliente.department
-                    }
                   this.$store.state.loading = false
                 }
               ).catch(error=>{
@@ -164,6 +161,7 @@ export default {
               api.Users().create(this.cliente).then(response => {
                 this.$store.commit('set_me', response.data.data)
                 this.address.user_id = response.data.data.id
+                this.me.department = this.cliente.department
                 api.Addresses().create(this.address).then(response => {
                   this.address = response.data.data
                   this.$store.state.loading = false
@@ -184,18 +182,19 @@ export default {
         this.$store.state.loading = false
       })
     },
+    changeCity(){
+      this.$store.state.setCity = this.address.city_id
+    },
     changeCiudades () {
       this.cities = this.departments.filter(item => item.id == this.cliente.department)[0].cities
-      if(!isEmpty(this.me)){
-        this.me.department = this.cliente.department
-      }
+      this.$store.state.setDepartment = this.cliente.department
     },
     changeDepartment () {
       this.cliente.department = this.departments.filter(item => item.id == this.citiesall.filter(node => node.id == this.address.city_id)[0].department_id)[0].id
       this.changeCiudades()
     },
     back () {
-
+        this.$router.push('/catalogo')
     },
     gotonext () {
       this.$store.commit('set_address', this.address)

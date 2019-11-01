@@ -23,6 +23,8 @@ export default new Vuex.Store({
     open_cart: false,
     open_menu: false,
     loading: false,
+    setDepartment:0,
+    setCity:0,
     cart: {
       items: []
     },

@@ -191,7 +191,6 @@ export default {
           )
         }).catch(error => {
           this.$store.state.loading = false
-          console.log(error)
         })
       }
     },

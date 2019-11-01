@@ -191,10 +191,8 @@ export default {
       return this.$store.state.departments;
     },
     me() {
-      this.department = this.$store.state.me.department;
-      if (!isEmpty(this.$store.state.me.addresses)) {
-        this.address.city_id = this.$store.state.me.addresses[0].city_id;
-      }
+      this.department = this.$store.state.setDepartment;
+      this.address.city_id = this.$store.state.setCity;
       return this.$store.state.me;
     },
     cart() {
@@ -254,6 +252,7 @@ export default {
       this.cities = this.departments.filter(
         item => item.id == this.department
       )[0].cities;
+      this.$store.state.setDepartment = this.department
     },
     next() {
       this.$store.state.loading = true;
