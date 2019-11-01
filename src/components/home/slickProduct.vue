@@ -3,7 +3,7 @@
     <img :data-lazy="product.images.length > 0 ? product.images[0].url : imageDefault" :src="imageDefault" :alt="product.name"
          class="card-img-top">
     <div class="card-body">
-      <h6 class="Card-title font-italic text-capitalize h6 d-flex justify-content-between ">
+      <h6 class="Card-title card-title font-italic text-capitalize d-flex justify-content-between">
         <span>{{product.name}}</span></h6><span
         class="badge small badge-secondary ">{{tag}}</span>
       <p class="card-text"><small>{{product.brand.name}}</small></p>
@@ -42,5 +42,11 @@ export default {
 <style scoped lang="scss">
   .card-product{
     max-width: 350px;
+  }
+  .card-title{
+    width:100%;
+    height:80px;
+    overflow:hidden;
+    text-overflow: ellipsis;
   }
 </style>
