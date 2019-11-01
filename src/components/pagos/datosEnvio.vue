@@ -191,8 +191,8 @@ export default {
       return this.$store.state.departments;
     },
     me() {
+      this.department = this.$store.state.me.department;
       if (!isEmpty(this.$store.state.me.addresses)) {
-        this.department = this.$store.state.me.department;
         this.address.city_id = this.$store.state.me.addresses[0].city_id;
       }
       return this.$store.state.me;
@@ -212,7 +212,7 @@ export default {
       return 0;
     },
     isArmenia() {
-      if (!isEmpty(this.me)&&this.department == 24 && this.address.city_id == 875) {
+      if (this.me.department == 24 && this.address.city_id == 875) {
         this.domicile = "armenia";
         this.$store.state.tool_paying.costSend = 1500;
         return true;
@@ -220,7 +220,7 @@ export default {
       return false;
     },
     isQuindio() {
-      if (!isEmpty(this.me)&&this.department == 24 && this.address.city_id != 875) {
+      if (this.me.department == 24 && this.address.city_id != 875) {
         this.domicile = "quindio";
         this.$store.state.tool_paying.costSend = 8000;
         return true;
@@ -228,7 +228,7 @@ export default {
       return false;
     },
     isOther() {
-      if (!isEmpty(this.me)&&this.department != 24) {
+      if (this.me.department!= 24) {
         this.domicile = "otro";
         this.$store.state.tool_paying.costSend = 0;
         return true;

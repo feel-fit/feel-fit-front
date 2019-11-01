@@ -125,6 +125,7 @@ export default {
           if (this.me.addresses.length > 0) {
             this.address = this.me.addresses[0]
             this.changeDepartment()
+            this.me.department = this.cliente.department
           }
         } else if (!this.me.id) {
           this.$store.commit('set_me', {})
@@ -150,17 +151,19 @@ export default {
 
               api.Users().update(this.me.id, this.cliente).then(
                 response => {
+                  if(!isEmpty(this.me)){
+                      this.me.department = this.cliente.department
+                    }
                   this.$store.state.loading = false
                 }
               ).catch(error=>{
                  this.$store.state.loading = false
-               
               });
               this.gotonext()
             } else {
               api.Users().create(this.cliente).then(response => {
-                console.log(response.data.data);
                 this.$store.commit('set_me', response.data.data)
+                this.$store.state.me.department = this.cliente.department
                 this.address.user_id = response.data.data.id
                 api.Addresses().create(this.address).then(response => {
                   this.address = response.data.data
@@ -184,6 +187,9 @@ export default {
     },
     changeCiudades () {
       this.cities = this.departments.filter(item => item.id == this.cliente.department)[0].cities
+      if(!isEmpty(this.me)){
+        this.me.department = this.cliente.department
+      }
     },
     changeDepartment () {
       this.cliente.department = this.departments.filter(item => item.id == this.citiesall.filter(node => node.id == this.address.city_id)[0].department_id)[0].id
@@ -194,6 +200,10 @@ export default {
     },
     gotonext () {
       this.$store.commit('set_address', this.address)
+      if(!isEmpty(this.me)){
+        this.me.department = this.cliente.department
+        this.me.addresses[0].city_id = this.address.city_id
+      }
       $('#envios-tab').removeClass('disabled').tab('show')
     }
   }
