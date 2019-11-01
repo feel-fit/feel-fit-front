@@ -2,7 +2,7 @@
   <section class="position-fixed w-100 shadow py-3 sticky-top">
     <div class="container">
       <div class="row">
-        <div class="col">
+        <div class="col-auto">
           <div @click="open_menu" href="#">
             <font-awesome-icon icon="bars" size="2x" class="icon"></font-awesome-icon>
           </div>
@@ -103,6 +103,8 @@ export default {
       this.$store.state.cart = {
         items: []
       }
+      this.$store.state.setDepartment=0
+      this.$store.state.setCity=0
       this.$router.push('/')
     }
 

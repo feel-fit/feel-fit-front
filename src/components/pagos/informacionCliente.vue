@@ -109,8 +109,6 @@ export default {
         this.cliente = this.me
         this.address = this.me.addresses[0]
         this.changeDepartment()
-      } else {
-        this.address.user_id = this.me.id
       }
   },
   methods: {

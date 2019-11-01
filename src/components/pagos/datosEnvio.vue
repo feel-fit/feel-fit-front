@@ -9,7 +9,7 @@
           <div class="col-12">Direccion</div>
           <div class="col-12 ml-3">
             <span
-              v-if="me.addresses && me.addresses.length > 0"
+              v-if="me!=null&&me.addresses && me.addresses.length > 0"
               class="text-dark font-weight-bold h4 text-capitalize"
             >{{me.addresses[0].address }}</span>
           </div>
@@ -239,6 +239,7 @@ export default {
       if(this.otherAddress){
         this.$store.state.oldDepartment = this.department
         this.$store.state.oldCity = this.address.city_id
+        this.changeCiudades()
       }else{
         if(isEmpty(this.$store.state.oldDepartment)){
           this.department = this.$store.state.oldDepartment;
