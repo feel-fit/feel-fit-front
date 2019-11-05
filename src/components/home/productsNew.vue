@@ -14,7 +14,7 @@
                  ref="slick"
                  :options="slickOptions">
             <div v-for="item in products" :key="item.id" class="col-auto">
-              <slick-product :product="item" class="product"></slick-product>
+              <slick-product :product="item" class="product" id="productos"></slick-product>
             </div>
           </slick>
         </div>
@@ -81,6 +81,7 @@ export default {
 
     prev () {
       this.$refs.slick.prev()
+      this.$router.push('/product'),this.$refs.slick.prev()
     },
     reInitSlick (slick) {
       let currentIndex = slick.currentSlide()

@@ -74,6 +74,66 @@
       </tr>
       </tbody>
     </table>
+    <p class="small-info">* Los porcentajes de valores diarios se basan en una dieta de 2,000 calorías. Sus valores diarios pueden ser más altos o
+      más bajo según sus necesidades calóricas:</p>
+    <table class="performance-facts__table--small small-info">
+      <thead>
+      <tr>
+        <td colspan="2"></td>
+        <th>Calorías:</th>
+        <th>2,000</th>
+        <th>2,500</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <th colspan="2">Grasa total</th>
+        <td>Menos que</td>
+        <td>65g</td>
+        <td>80g</td>
+      </tr>
+      <tr>
+        <td class="blank-cell"></td>
+        <th>Grasa saturada</th>
+        <td>Menos que</td>
+        <td>20g</td>
+        <td>25g</td>
+      </tr>
+      <tr>
+        <th colspan="2">Colesterol</th>
+        <td>Menos que</td>
+        <td>300mg</td>
+        <td>300 mg</td>
+      </tr>
+      <tr>
+        <th colspan="2">Sodio</th>
+        <td>Menos que</td>
+        <td>2,400mg</td>
+        <td>2,400mg</td>
+      </tr>
+      <tr>
+        <th colspan="3">Total Carbohidratos</th>
+        <td>300g</td>
+        <td>375g</td>
+      </tr>
+      <tr>
+        <td class="blank-cell"></td>
+        <th colspan="2">Fibra dietética</th>
+        <td>25g</td>
+        <td>30g</td>
+      </tr>
+      </tbody>
+    </table>
+    <p class="small-info">
+      Calorías por gramo:
+    </p>
+    <p class="small-info text-center">
+      Grasa 9
+      &bull;
+      Carbohidratos 4
+      &bull;
+      Proteína 4
+    </p>
   </section>
 </template>
 <script>
