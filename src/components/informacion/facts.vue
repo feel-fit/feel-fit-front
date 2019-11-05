@@ -62,7 +62,7 @@
       </template>
       </tbody>
     </table>
-    <table class="table performance-facts__table--grid">
+    <table class="table">
       <tbody>
       <tr :class="{'thin-end':inferior.length -1 == key}" v-for="(item,key) in inferior">
         <td colspan="2">
