@@ -3,17 +3,21 @@
     <volver></volver>
     <mercado :title="name"></mercado>
     <hoja></hoja>
-    <products :products="productos"></products>
+    <products :products="productos" id="productos"></products>
     <div class="col-12 justify-content-lg-end mb-5 p-2">
       <div class="d-flex justify-content-center" v-if="productos.length>0">
-        <font-awesome-icon
+        <a href="#productos">
+          <font-awesome-icon
           style="cursor:pointer"
           @click="to_prev"
           icon="angle-left"
           size="lg"
           class="separador mr-md-5"
         />
+        </a>
+        <a href="#productos">
         <font-awesome-icon style="cursor:pointer" class="ml-md-5" @click="to_next" icon="angle-right" size="lg" />
+        </a>
       </div>
     </div>
     <fresa></fresa>
