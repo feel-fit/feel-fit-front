@@ -225,5 +225,8 @@ export default new Router({
       // which is lazy-loaded when the route is visited.
       component: () => import(/* webpackChunkName: "about" */ './views/404-cajas.vue')
     }
-  ]
+  ],
+    scrollBehavior(to, from, savedPosition) {
+      return { x: 0, y: 0 }
+  }
 })

@@ -6,7 +6,7 @@
     <products :products="productos"></products>
     <div class="col-12 justify-content-lg-end mb-5 p-2">
       <div class="d-flex justify-content-center" v-if="productos.length>0">
-        <a href="#productos" class="pr-5">
+        <a href="#productos" class="px-5 caja">
           <font-awesome-icon
           style="cursor:pointer"
           @click="to_prev"
@@ -14,7 +14,7 @@
           size="lg"
         />
         </a>
-        <a href="#productos" class="pl-5 ml-4">
+        <a href="#productos" class="ml-5 px-5 caja">
         <font-awesome-icon style="cursor:pointer" @click="to_next" icon="angle-right" size="lg" />
         </a>
       </div>
