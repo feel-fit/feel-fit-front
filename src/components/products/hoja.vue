@@ -14,7 +14,6 @@ export default {
   data () {
     return {
       hoja: hoja
-
     }
   }
 }
@@ -24,5 +23,4 @@ export default {
 .hoja_product{
     left: 93%;
 }
-
 </style>

@@ -1,5 +1,6 @@
 <template>
   <div>
+    <hoja></hoja>
     <div class="container">
       <div class="mb-5 p-5 shadow cuerpo_border">
         <div class="row mb-5">
@@ -101,13 +102,20 @@
         </div>
       </div>
     </div>
+    <hoja2></hoja2>
   </div>
 </template>
 <script>
 import { cloneDeep } from 'lodash'
 import imageDefault from './../../assets/images/producto.png'
+import hoja from './../../components/products/hoja.vue'
+import hoja2 from './../../components/home/hoja.vue'
+
 export default {
   name: 'lista_deseos',
+  components: {
+    hoja,hoja2
+  },
   data () {
     return {
       imageDefault

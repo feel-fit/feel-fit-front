@@ -21,7 +21,7 @@ export default {
 
 <style scoped>
   .hoja_slide {
-    top: -10%;
+    margin-top: -6%; 
     z-index: 1000;
     width: 7%;
 }
