@@ -17,6 +17,10 @@
             </p>
            <div class="text-center">
              <p class="text-center text">¡Cont&aacute;ctenos!</p>
+             <p class="text-center text mt-5 text-danger">
+               Cuando el pago sea realizado por tarjeta de crédito o por PSE, enviar comprobante de pago al WhatsApp <br>(+57 3113745588) y número de teléfono.
+             </p>
+             <h2 class="font-weight-bold">{{value | money}}</h2>
              <p class="text-center text mt-5">Si su forma de pago es PSE o tarjeta de credito y no es redireccionado automaticamente</p>
              <p class="text-center text">por favor hacer click aquí</p>
             <p class="text-center text">
@@ -42,6 +46,11 @@
 import volver from '../components/products/volver.vue'
 export default {
   name: 'thankyou',
+  data(){
+    return {
+      value:this.$route.params.value
+    }
+  },
   metaInfo () {
     return {
       title: 'FEEL FIT | Gracias por su pago',

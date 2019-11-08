@@ -181,9 +181,9 @@ export default {
                   this.$store.state.me.discounts = this.me.discounts.filter(item => item.id != this.me.discounts[0].id)
                 })
               }
-              
+              let value = this.shopping.total;
               this.$store.state.cart.items = []
-              this.$router.push('thankyou')
+              this.$router.push('thankyou/'+value)
               if (this.metodoPago != '1') {
                 window.open('https://www.zonapagos.com/t_feelfit/', '_system')
               }

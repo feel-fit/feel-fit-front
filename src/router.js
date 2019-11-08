@@ -162,7 +162,7 @@ export default new Router({
       component: () => import(/* webpackChunkName: "about" */ './views/Login.vue')
     },
     {
-      path: '/thankyou',
+      path: '/thankyou/:value',
       name: 'thankyou',
       meta: {
         breadcrumb: [
