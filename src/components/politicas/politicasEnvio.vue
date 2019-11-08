@@ -30,6 +30,7 @@
                     Al momento de comprar tus productos ten en cuenta las siguientes recomendaciones:</p>
                     <ul>
                         <li>Compra minima de productos $15.000.</li>
+                        <li class="text-primary">Cuando el pago sea realizado por tarjeta de crédito o por PSE, enviar comprobante de pago al WhatsApp (+57 3113745588) y número de teléfono.</li>
                         <li>Espera tus productos aproximadamente 1 hora y media después de realizado tu pago.</li>
                         <li>Puedes realizar tus pedidos entre las 8 am y 8:30 pm. Si haces tu pedido por fuera de estos horarios nos comunicaremos contigo al día siguiente y programaremos la hora de entrega.</li>
                         <li>Los Domingos y festivos también te llevamos tu domicilio pero nos comunicamos contigo para programar la hora de entrega.</li>
@@ -37,7 +38,6 @@
                         <li>Si vives en uno de los siguientes municipios: Calarcá, Circasia, La Tebaida, Montenegro o Quimbaya el domicilio tendrá un costo de $8,000 y nos comunicaremos contigo después de realizado tu pago para programar la hora de entrega.</li>
                         <li>Puedes realizar tu compra desde cualquier lugar del país, te enviaremos tu pedido a través de empresa de mensajería y el pago del flete lo realizas contra entrega.</li>
                         <li>Por políticas de calidad no enviamos productos que requieren refrigeración en los pedidos despachados mediante empresas de mensajería.</li>
-                        <li>Cuando el pago sea realizado por tarjeta de crédito o por PSE, enviar comprobante de pago al WhatsApp y número de teléfono.</li>
                     </ul>
                 </div>
               </div>

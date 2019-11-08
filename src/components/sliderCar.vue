@@ -80,6 +80,7 @@
                   </p>
                   <ul>
                     <li>Compra minima de productos $15.000.</li>
+                    <li class="text-primary">Cuando el pago sea realizado por tarjeta de crédito o por PSE, enviar comprobante de pago al WhatsApp <br>(+57 3113745588) y número de teléfono.</li>
                     <li>Espera tus productos aproximadamente 1 hora y media después de realizado tu pago.</li>
                     <li>Puedes realizar tus pedidos entre las 8 am y 8:30 pm. Si haces tu pedido por fuera de estos
                       horarios nos comunicaremos contigo al día siguiente y programaremos la hora de entrega.
@@ -208,6 +209,7 @@ export default {
   .total {
     z-index: 1000;
   }
+
   #sidebarCar-wrapper {
     min-height: 100vh;
     margin-right: 0;

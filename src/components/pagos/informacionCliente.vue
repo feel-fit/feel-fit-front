@@ -50,17 +50,13 @@
             <div class="invalid-feedback">Se requiere de un tel&eacute;fono</div>
           </div>
           <div class="form-group col-md-12">
-            <div class="row">
-              <div class="col-sm-6  align-self-center ">
-                <a href="#" @click="back" class="text-dark text-decoration-none">
+            <div class="d-flex justify-content-between">
+              <a href="#" @click="back" class="text-dark text-decoration-none">
                   <font-awesome-icon icon="arrow-left" size="xs"/>
                   Regresa a comprar</a>
-              </div>
-              <div class="col-sm-6  text-right">
-                <button @click="next" type="button" class="btn btn-primary text-white  btn-lg w-md-100 font-italic font-weight-bold ">
+                  <button @click="next" type="button" class="btn btn-primary text-white  btn-lg w-md-100 font-italic font-weight-bold">
                   CONTINUA A ENVIO
                 </button>
-              </div>
             </div>
           </div>
         </div>
@@ -105,10 +101,12 @@ export default {
     }
   },
   mounted () {
-      if (!isEmpty(this.me) && this.me.addresses.length > 0) {
+      if (!isEmpty(this.me)) {
         this.cliente = this.me
-        this.address = this.me.addresses[0]
-        this.changeDepartment()
+        if(this.me.addresses.length > 0){
+          this.address = this.me.addresses[0]
+          this.changeDepartment()
+        }
       }
   },
   methods: {

@@ -177,8 +177,8 @@ export default {
     }
   },
   created () {
-    // this.$store.dispatch('getDepartments')
-    // this.$store.dispatch('getCities')
+    this.$store.dispatch('getDepartments')
+    this.$store.dispatch('getCities')
   },
   computed: {
     departments () {
@@ -215,15 +215,16 @@ export default {
         api.Addresses().create(this.address).then(response => {
           this.address = response.data.data
           this.address.city_id = this.address.city.id
+          this.$store.state.setCity = this.address.city_id
         })
       } else {
         api.Addresses().update(this.address.id, this.address).then(response => {
           this.address = response.data.data
           this.address.city_id = this.address.city.id
+          this.$store.state.setCity = this.address.city_id
         })
       }
       //
-
       api
         .Users()
         .update(this.me.id, this.cliente)
@@ -233,10 +234,14 @@ export default {
           $('#modalEditar').modal('hide')
         })
     },
+    changeCity(){
+      this.$store.state.setCity = this.address.city_id
+    },
     changeCiudades () {
       this.cities = this.departments.filter(
         item => item.id == this.cliente.department
       )[0].cities
+      this.$store.state.setDepartment = this.cliente.department
     },
     changeDepartment () {
       console.log(this.address)
