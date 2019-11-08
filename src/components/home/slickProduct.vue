@@ -12,7 +12,7 @@
   </div>
 </template>
 <script>
-import imageDefault from '../../assets/images/producto.png'
+import imageDefault from '../../assets/images/producto.jpeg'
 
 export default {
   name: 'product',

@@ -28,7 +28,7 @@
   </div>
 </template>
 <script>
-import imageDefault from '../../assets/images/producto.png'
+import imageDefault from '../../assets/images/producto.jpeg'
 import imgDeseoActivo from '../../assets/images/deseos/heart.svg'
 import imgDeseoNoActivo from '../../assets/images/fav.svg'
 export default {
