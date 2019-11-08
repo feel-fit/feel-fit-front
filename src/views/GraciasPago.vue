@@ -29,7 +29,7 @@
            </div>
             <p class="text-right text-primary text2 mt-5">Cuidarte, se siente bien</p>
            
-            <div class="text-right mt-5">
+            <div class="text-right my-5">
               <router-link to="/" class="text-muted text-decoration-none">
                 Continua en el inicio
                 <font-awesome-icon icon="arrow-right" size="xs" />

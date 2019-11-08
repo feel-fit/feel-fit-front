@@ -1,5 +1,5 @@
 <template>
-  <section class="volver mb-2">
+  <section class="volver pt-4 pb-2 mb-2">
     <div class="container">
       <div class="row d-flex justify-conted-around">
         <div class="col-12 mx-auto pl-4">

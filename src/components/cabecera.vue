@@ -1,5 +1,5 @@
 <template>
-  <section class="position-fixed w-100 shadow py-3 sticky-top">
+  <section class="position-fixed w-100 shadow py-3 mb-5 sticky-top">
     <div class="container">
       <div class="row">
         <div class="col-auto">
