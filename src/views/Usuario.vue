@@ -118,12 +118,12 @@
           </div>
           <div id="descuento" class="card-body collapse" data-parent="#accordion">
             <div class="container-fluid mt-5">
-              <div class="row">
+              <div class="row" v-if="me.discounts.length>0">
                 <div class="col-4">
                   <div class="row justify-content-end">
                     <div class="d-inline-block">
                       <h4 class="text-primary font-italic font-weight-bold text-uppercase">Descuento</h4>
-                      <h4 class="text-primary font-italic font-weight-bold text-uppercase">De {{me.discounts.length>0?me.discounts[0]:0}}%</h4>
+                      <h4 class="text-primary font-italic font-weight-bold text-uppercase">De {{me.discounts.length>0?me.discounts[0].name+": "+me.discounts[0].value:0}}%</h4>
                     </div>
                   </div>
                 </div>
