@@ -2,8 +2,8 @@
     <section id="registro">
       <div class="container-fluid fondo">
         <div class="row">
-          <div class="m-auto col-auto">
-            <form class="formulario">
+          <div class="m-auto col-12 col-sm-8 col-lg-4">
+            <form class="formulario" @keyup.enter="login">
               <h2
                 class="text-primary text-center font-weight-bold font-italic mb-md-5"
               >Inicio de Sesi&oacute;n</h2>
@@ -51,8 +51,10 @@
                   <div class="invalid-feedback">Se requiere de una contraseña valida</div>
                 </div>
               </div>
+              <div class="alert alert-danger text-center" role="alert" v-if="error">
+                  Las credenciales no son válidas
+                </div>
               <div class="row">
-
                 <div class="col-md-6 text-center">
                   <input
                     type="button"
@@ -123,7 +125,8 @@ export default {
         email: "",
         password: ""
       },
-      recordar:false
+      recordar:false,
+      error:false
     };
   },
   methods: {
@@ -136,11 +139,13 @@ export default {
           .then(response => {
             this.$store.state.loading = false;
             this.$store.dispatch("getLogin", response.data.data.access_token);
-            setTimeout(this.$router.back(), 9000);
+            setTimeout(this.$router.push("/usuario"), 9000);
             this.recordarMe();
+            this.error =false;
           })
           .catch(error => {
             this.$store.state.loading = false;
+            this.error =true;
           });
       });
     },
@@ -187,6 +192,7 @@ export default {
   border-bottom-right-radius: 1.3rem;
   font-size: 1rem;
 }
+
 
 .form-control:focus {
   color: #495057;
