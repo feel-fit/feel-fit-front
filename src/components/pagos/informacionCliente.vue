@@ -184,6 +184,7 @@ export default {
     changeCiudades () {
       this.cities = this.departments.filter(item => item.id == this.cliente.department)[0].cities
       this.$store.state.setDepartment = this.cliente.department
+      this.changeCity()
     },
     changeDepartment () {
       this.cliente.department = this.departments.filter(item => item.id == this.citiesall.filter(node => node.id == this.address.city_id)[0].department_id)[0].id
