@@ -1,52 +1,69 @@
 <template>
   <section>
-    <div class="container-fluid">
+    <div class="container-fluid p-0">
        <h1 class="title-recetas text-primary font-italic">Nuetras Recetas</h1>
-       <nav class="navbar navbar-expand-lg nav-pills">
+       <nav class="navbar navbar-expand-lg">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <font-awesome-icon icon="bars" class="icon"></font-awesome-icon>
             </button>
             <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">HOME</a>
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-toggle="tab" href="#home" role="tab">HOME</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#desayunos">BRUNCH Y DESAYUNOS</a>
+                        <a class="nav-link" href="#desayunos" data-toggle="tab" role="tab">BRUNCH Y DESAYUNOS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#entradas">ENTRADAS</a>
+                        <a class="nav-link" href="#entradas" data-toggle="tab" role="tab">ENTRADAS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#platos">PLATOS FUERTES</a>
+                        <a class="nav-link" href="#platos" data-toggle="tab" role="tab">PLATOS FUERTES</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">POSTRES</a>
+                        <a class="nav-link"  data-toggle="tab" href="#postres" role="tab">POSTRES</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">ENSALADAS</a>
+                        <a class="nav-link"  data-toggle="tab" href="#ensaladas" role="tab">ENSALADAS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">ARTICULOS DE INTERÉS</a>
+                        <a class="nav-link" data-toggle="tab" href="#interes" role="tab">ARTICULOS DE INTERÉS</a>
                     </li>
                 </ul>
             </div>
         </nav>
     
-        <div id="home">
-            home
-        </div>
+        <!-- Tab panels -->
+        <div class="tab-content mt-lg-4">
 
-        <div id="desayunos">
-            home
-        </div>
+            <!--Panel 1-->
+            <home/>
+            <!--/.Panel 1-->
 
-        <div id="entradas">
-            home
-        </div>
+            <!--Panel 2-->
+            <desayunos/>
+            <!--/.Panel 2-->
 
-        <div id="platos">
-            home
+            <!--Panel 3-->
+            <entradas/>
+            <!--/.Panel 3-->
+
+            <!--Panel 4-->
+            <interes/>
+            <!--/.Panel 4-->
+
+            <!--Panel 4-->
+            <ensaladas/>
+            <!--/.Panel 4-->
+
+            <!--Panel 4-->
+            <platos/>
+            <!--/.Panel 4-->
+
+            <!--Panel 4-->
+            <postres/>
+            <!--/.Panel 4-->
+
         </div>
 
     </div>
@@ -54,8 +71,16 @@
 </template>
 
 <script>
-export default {
+import home from '../components/recetas/home';
+import desayunos from '../components/recetas/desayunos';
+import entradas from '../components/recetas/entradas';
+import interes from '../components/recetas/interes';
+import ensaladas from '../components/recetas/ensaladas';
+import platos from '../components/recetas/platos';
+import postres from '../components/recetas/postres';
 
+export default {
+    components:{home,desayunos,entradas,interes,ensaladas,platos,postres}
 }
 </script>
 
@@ -63,20 +88,16 @@ export default {
 
 .title-recetas{
     font-size: 2.3rem;
-    margin-top:110px;
-    margin-bottom: 15px;
+    margin-top:120px;
+    margin-bottom: 18px;
     text-align: center;
     text-transform: uppercase;
     font-weight: bold;
 }
 
-.nav-item{
-    margin: 5px;
+.nav .nav-item a{
     font-size: 12px;
-    letter-spacing: 5px;
-}
-
-.nav-item{
+    letter-spacing: 0.7px;
     color: #7f7f7f;
 }
 
