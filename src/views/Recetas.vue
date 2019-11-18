@@ -21,20 +21,20 @@
                         <a class="nav-link" href="#platos" data-toggle="tab" role="tab">PLATOS FUERTES</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link"  data-toggle="tab" href="#postres" role="tab">POSTRES</a>
+                        <a class="nav-link" href="#postres" data-toggle="tab"  role="tab">POSTRES</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link"  data-toggle="tab" href="#ensaladas" role="tab">ENSALADAS</a>
+                        <a class="nav-link" href="#ensaladas" data-toggle="tab"  role="tab">ENSALADAS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#interes" role="tab">ARTICULOS DE INTERÉS</a>
+                        <a class="nav-link" href="#interes" data-toggle="tab"  role="tab">ARTICULOS DE INTERÉS</a>
                     </li>
                 </ul>
             </div>
         </nav>
     
         <!-- Tab panels -->
-        <div class="tab-content mt-lg-4">
+        <div class="tab-content">
 
             <!--Panel 1-->
             <home/>
@@ -80,7 +80,7 @@ import platos from '../components/recetas/platos';
 import postres from '../components/recetas/postres';
 
 export default {
-    components:{home,desayunos,entradas,interes,ensaladas,platos,postres}
+    components:{home,desayunos,entradas,interes,ensaladas,platos,postres},
 }
 </script>
 
@@ -88,8 +88,8 @@ export default {
 
 .title-recetas{
     font-size: 2.3rem;
-    margin-top:120px;
-    margin-bottom: 18px;
+    margin-top:90px;
+    margin-bottom: 8px;
     text-align: center;
     text-transform: uppercase;
     font-weight: bold;
