@@ -68,7 +68,7 @@ export default {
     width: 100%;
   }
   .open_cart {
-    margin-left: -20rem;
+    margin-left: -2rem;
   }
 
   .sliderCar{
