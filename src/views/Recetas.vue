@@ -96,12 +96,14 @@ export default {
 }
 
 .nav .nav-item a{
-    font-size: 12px;
+    font-size: 13px;
     letter-spacing: 0.7px;
+    font-family: "CircularStd-BookItalic";
     color: #7f7f7f;
+    font-weight: 900;
 }
 
-.active{
+.nav .nav-item .active{
     text-decoration: line-through ;
     color: #27D8DB !important;
 }
