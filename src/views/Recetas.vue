@@ -71,7 +71,7 @@
 </template>
 
 <script>
-import home from '../components/recetas/home';
+import home from '../components/recetas/home/home';
 import desayunos from '../components/recetas/desayunos';
 import entradas from '../components/recetas/entradas';
 import interes from '../components/recetas/interes';
