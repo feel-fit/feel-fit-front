@@ -16,51 +16,44 @@
     <!--fresa -->
     <fresa />
     <!--fresa -->
-
     <!--linea -->
     <linea class="margen-receta" :name="'mas ideas de feel fit'"/>
     <!--linea -->
-
     <!--doble recetas -->
     <doblereceta class="margen-receta my-5" />
     <!--doble recetas -->
-
-    <!--fresa -->
+    <!--galleta -->
     <galleta />
-    <!--fresa -->
-
+    <!--galleta -->
     <!-- mensaje positivo -->
     <mensajepositivo class="margen-receta my-5" />
     <!-- mensaje positivo -->
-
     <!--doble recetas -->
     <doblereceta class="margen-receta my-5" :inverso="true" />
     <!--doble recetas -->
-
     <!--fresa -->
-    <hoja />
+    <hoja/>
     <!--fresa -->
-
     <!--linea -->
     <linea class="margen-receta" :name="'articulos recientes'"/>
     <!--linea -->
-
-
-    <!--fresa -->
+    <!--galleta -->
     <galleta />
-    <!--fresa -->
-
+    <!--galleta -->
     <!--linea -->
     <linea class="margen-receta" :name="'entradas populares'"/>
     <!--linea -->
-
-
     <!--doble recetas -->
     <doblereceta class="margen-receta my-5" :inverso="false" />
     <!--doble recetas -->
-
-    <blog/>
-
+    <!--blog-->
+    <blog class="margen-receta my-5"/>
+    <!--blog-->
+    <!--fresa -->
+    <fresa />
+    <!--fresa -->
+    <suscribirte class="m-0"/>
+    <instagram class="margen-receta"/>
   </div>
 </template>
 <script>
@@ -74,6 +67,8 @@ import informacionAdmin from "./informacion-admin.vue";
 import galleta from './galleta.vue';
 import hoja from './hoja.vue';
 import blog from './blog.vue';
+import suscribirte from './suscribirte.vue';
+import instagram from './instagram.vue';
 export default {
   components: {
     doblereceta,
@@ -84,7 +79,9 @@ export default {
     informacionAdmin,
     galleta,
     hoja,
-    blog
+    blog,
+    suscribirte,
+    instagram
   },
   data() {
     return {
@@ -104,12 +101,12 @@ export default {
 }
 
 .margin-slider {
-    margin-bottom: 80px;
+    margin-bottom: 180px;
   }
 
-@media (max-width: 768px) {
+@media (max-width: 991px) {
   .margin-slider {
-    margin-bottom: 0px;
+    margin-bottom: 80px;
   }
 }
 </style>

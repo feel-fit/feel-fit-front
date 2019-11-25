@@ -1,6 +1,6 @@
 <template>
-  <div class="position-relative caja">
-    <img src="../../../assets/images/recetas/Part 2/person.png" class="enlace-blog">
+  <div class="position-relative">
+    <img src="../../../assets/images/recetas/Part 2/agriculture.png" class="enlace-blog rounded">
     <receta-default/>
   </div>
 </template>
@@ -15,7 +15,7 @@ export default {
 <style>
   .enlace-blog{
     width: 100%;
-    height: 400px;
+    height: 300px;
     object-fit: cover;
   }
 </style>

@@ -1,13 +1,14 @@
 <template>
-  <div class="receta-default d-none d-md-flex align-items-center">
+  <div class="receta-default d-flex align-items-center">
     <img
       src="../../../assets/images/recetas/pp.png"
-      class="img-fluid imagen-receta mr-5 d-none d-md-block"/>
+      class="img-fluid imagen-receta mr-5 d-none d-md-block"
+    />
     <div>
-      <button class="btn bg-white mb-3">Postres</button>
+      <label class="etiqueta my-3 p-2">Blog</label>
       <h3 class="text-white">Postre con OREO y SIN HORNO</h3>
       <h3 class="text-white">(Para los verdaderos amantes de las oreaos)</h3>
-      <h6 class="text-white">ESTEFANIA C. | PUBLICADO HACE 8 MINT</h6>
+      <p class="cite">ESTAFANIA | 2 MINT</p>
     </div>
   </div>
 </template>
@@ -20,29 +21,42 @@ export default {};
 .receta-default {
   position: absolute;
   z-index: 200;
-  top: 60%;
-  left: 10%;
+  margin: 0;
+  width: 80%;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  font-family: "CircularStd-Book";
+  h3 {
+    font-family: "CircularStd-Book";
+    font-size: 1.8rem;
+  }
+  h6 {
+    font-family: "CircularStd-Book";
+  }
+  .etiqueta {
+    background: #f7f6f6;
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-family: "CircularStd-Book";
+    font-size: 11px;
+    color: #2b2b2b;
+    letter-spacing: 5px;
+    font-weight: 900;
+  }
+  .cite {
+    font-family: "CircularStd-Bold";
+    color: white;
+    font-size: 12px;
+    letter-spacing: 1px;
+    margin: 0 auto;
+  }
 }
 
 .imagen-receta {
   width: 100px;
   height: 100px;
   object-fit: cover;
-}
-// Medium devices (tablets, 768px and up)
-@media (max-width: 768px) {
-  .receta-default {
-    position: absolute;
-    z-index: 200;
-    margin: 0;
-    width: 80%;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    h3 {
-      font-size: 1.2rem;
-    }
-  }
 }
 </style>

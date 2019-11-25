@@ -1,5 +1,5 @@
 <template>
-  <div class="fresa d-none d-sm-block caja">
+  <div class="hoja d-none d-sm-block">
     <img src="../../../assets/images/recetas/frutas/hoja copy 4.png" />
   </div>
 </template>
@@ -9,14 +9,14 @@ export default {};
 </script>
 
 <style scoped lang="scss">
-.fresa {
+.hoja {
   position: relative;
-  height:0px;
+  height: 0px;
   top: 0;
   left: 0;
   img {
     position: absolute;
-    top:0;
+    top: -100px;
     left: 0;
     width: auto;
     height: auto;
@@ -25,9 +25,9 @@ export default {};
 }
 // Large devices (desktops, 992px and up)
 @media (max-width: 992px) {
-  .fresa {
+  .hoja {
     img {
-      width: 200px;
+      width: 120px;
     }
   }
 }

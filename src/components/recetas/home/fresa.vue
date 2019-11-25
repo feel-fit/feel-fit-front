@@ -11,16 +11,16 @@ export default {};
 <style scoped lang="scss">
 .fresa {
   position: relative;
-  height:130px;
   top: 0;
   left: 0;
   img {
     position: absolute;
-    top: 0;
+    top: -120px;
     left: 0;
     width: auto;
     height: auto;
     object-fit: cover;
+    z-index: 100;
   }
 }
 // Large devices (desktops, 992px and up)
