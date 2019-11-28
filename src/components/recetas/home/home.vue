@@ -10,7 +10,7 @@
       <!-- informacion-admin -->
 
       <!-- receta-defaul-->
-
+      <receta-default/>
       <!-- receta-defaul -->
     </div>
     <!--fresa -->
@@ -37,6 +37,9 @@
     <!--linea -->
     <linea class="margen-receta" :name="'articulos recientes'"/>
     <!--linea -->
+    <!-- articulos blog -->
+    <carousel class="margen-receta my-5" identificador="home"/>
+    <!-- blog -->
     <!--galleta -->
     <galleta />
     <!--galleta -->
@@ -69,6 +72,8 @@ import hoja from './hoja.vue';
 import blog from './blog.vue';
 import suscribirte from './suscribirte.vue';
 import instagram from './instagram.vue';
+import carousel from './carouselBlog.vue';
+import recetaDefault from "./receta-default.vue";
 export default {
   components: {
     doblereceta,
@@ -81,7 +86,9 @@ export default {
     hoja,
     blog,
     suscribirte,
-    instagram
+    instagram,
+    carousel,
+    recetaDefault
   },
   data() {
     return {

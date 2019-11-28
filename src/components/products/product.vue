@@ -95,7 +95,23 @@ export default {
     margin-top: -4rem !important;
   }
   .card-img-top {
-    max-width: 100%;
-    min-height: 200px;
+  max-width: 100%;
+  height: 270px;
+  object-fit: cover;
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .card-img-top {
+    height: 200px;
   }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px){
+  .card-img-top {
+    height: 240px;
+  }
+}
+
 </style>

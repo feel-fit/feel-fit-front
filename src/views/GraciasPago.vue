@@ -18,7 +18,7 @@
            <div class="text-center">
              <p class="text-center text">¡Cont&aacute;ctenos!</p>
              <p class="text-center text mt-5 text-danger">
-               Cuando el pago sea realizado por tarjeta de crédito o por PSE, enviar comprobante de pago al WhatsApp <br>(+57 3113745588) y número de teléfono.
+               Cuando el pago sea realizado por tarjeta de crédito o por PSE, enviar comprobante de pago al WhatsApp <br>(+57 3113745588).
              </p>
              <h2 class="font-weight-bold">{{value | money}}</h2>
              <p class="text-center text mt-5">Si su forma de pago es PSE o tarjeta de credito y no es redireccionado automaticamente</p>

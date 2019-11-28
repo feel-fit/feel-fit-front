@@ -181,7 +181,7 @@ export default {
                   this.$store.state.me.discounts = this.me.discounts.filter(item => item.id != this.me.discounts[0].id)
                 })
               }
-              let value = this.shopping.total;
+              let value = response.data.total;
               this.$store.state.cart.items = []
               this.$router.push({
                 name:'thankyou',

@@ -232,6 +232,12 @@ Buscador
     width: 10%;
   }
 
+.style-imagen{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 /* Las medias queries  */
 
 @media(min-width: 992px) {

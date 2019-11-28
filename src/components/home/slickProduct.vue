@@ -1,5 +1,5 @@
 <template>
-  <div @click="link" class="card shadow bg-white link rounded d-flex card-product">
+  <div @click="link" class="card caja shadow bg-white link rounded d-flex card-product">
     <img :data-lazy="product.images.length > 0 ? product.images[0].url : imageDefault" :src="imageDefault" :alt="product.name"
          class="card-img-top">
     <div class="card-body">
@@ -40,6 +40,7 @@ export default {
 }
 </script>
 <style scoped lang="scss">
+  
   .card-product{
     max-width: 350px;
   }
@@ -49,4 +50,21 @@ export default {
     overflow:hidden;
     text-overflow: ellipsis;
   }
+
+  .card-img-top{
+    height: 230px;
+  }
+
+  .card-img-top {
+  max-width: 100%;
+  height: 260px;
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px)and (max-width: 1200px) {
+  .card-img-top {
+    height: 140px;
+  }
+}
+
 </style>

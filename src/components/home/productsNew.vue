@@ -81,7 +81,6 @@ export default {
 
     prev () {
       this.$refs.slick.prev()
-      this.$router.push('/product'),this.$refs.slick.prev()
     },
     reInitSlick (slick) {
       let currentIndex = slick.currentSlide()

@@ -1,12 +1,15 @@
 <template>
     <div class="tab-pane fade" id="postres" role="tabpanel">
-                <p>Contenido del postres</p>
+        <receta/>
     </div>
 </template>
 
 <script>
+import receta from './receta/receta.vue';
 export default {
-
+    components:{
+        receta
+    }
 }
 </script>
 
