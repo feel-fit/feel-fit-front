@@ -80,7 +80,6 @@ export default {
   },
   methods:{
     setImagen(){
-      console.log(this.imagen);
       switch (this.imagen) {
       case "aceites":
         this.imgDefault = this.aceites;
