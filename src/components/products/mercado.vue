@@ -9,7 +9,7 @@
             style="border-radius:1rem;"
           >
             <div class="col-6 col-md-6 p-0">
-              <img :src="getImagen" alt="food" class="img-fluid" />
+              <img :src="imgDefault" alt="food" class="img-fluid" />
             </div>
             <div class="col-6 col-md-6 mt-md-4">
               <div class="oval_mercado position-absolute d-none d-md-block">
@@ -56,7 +56,10 @@ import words from "lodash/words";
 
 export default {
   name: "mercado",
-  props: ["title"],
+  props: ["title","imagen"],
+  created(){
+    this.setImagen();
+  },
   data() {
     return {
       aceites,
@@ -77,39 +80,40 @@ export default {
   },
   methods:{
     setImagen(){
-      switch (this.first) {
+      console.log(this.imagen);
+      switch (this.imagen) {
       case "aceites":
-        this.getImagen = this.aceites;
+        this.imgDefault = this.aceites;
         break;
       case "chocolates":
-        this.getImagen = this.chocolates;
+        this.imgDefault = this.chocolates;
         break;
       case "granolas":
-        this.getImagen = this.granolas;
+        this.imgDefault = this.granolas;
         break;
       case "mercado":
-        this.getImagen = this.mercado;
+        this.imgDefault = this.mercado;
         break;
-      case "niños":
-        this.getImagen = this.ninos;
+      case "ninos":
+        this.imgDefault = this.ninos;
         break;
-      case "panadería":
-        this.getImagen = this.panaderia;
+      case "panaderia":
+        this.imgDefault = this.panaderia;
         break;
-      case "refrigerados":
-        this.getImagen = this.refrigerados;
+      case "refrigerados-congelados":
+        this.imgDefault = this.refrigerados;
         break;
       case "snacks":
-        this.getImagen = this.snacks;
+        this.imgDefault = this.snacks;
         break;
       case "suplementos":
-        this.getImagen = this.suplementos;
+        this.imgDefault = this.suplementos;
         break;
       case "vinagres":
-        this.getImagen = this.vinagres;
+        this.imgDefault = this.vinagres;
         break;
       default:
-        this.getImagen = this.imgDefault;
+        this.imgDefault = this.imgDefault;
     }
     }
   },
@@ -122,7 +126,6 @@ export default {
         this.second = names[1];
       }
       this.first = names[0];
-      this.setImagen();
       return value;
     }
   },

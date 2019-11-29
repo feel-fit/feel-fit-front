@@ -1,7 +1,7 @@
 <template>
   <div id="productos">
     <volver></volver>
-    <mercado :title="name"></mercado>
+    <mercado :title="name" :imagen="category"></mercado>
     <hoja></hoja>
     <products :products="productos"></products>
     <div class="col-12 justify-content-lg-end mb-5 p-2">
@@ -49,7 +49,7 @@ export default {
       productos: [],
       next: '',
       prev: '',
-      name: ''
+      name: '',
     }
   },
   props: {
