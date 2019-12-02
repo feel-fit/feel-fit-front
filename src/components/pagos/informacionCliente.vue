@@ -142,6 +142,12 @@ export default {
                   this.address = response.data.data
                   this.gotonext()
                 })
+              }else{
+                api.Addresses().update(this.address.id, this.address).then(response => {
+                  this.address = response.data.data
+                  this.address.city_id = this.address.city.id
+                  this.$store.state.setCity = this.address.city_id
+                })
               }
               // actualizar datos usuario.
 
