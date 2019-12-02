@@ -195,6 +195,7 @@ export default {
     },
     gotonext () {
       this.$store.commit('set_address', this.address)
+      this.$store.dispatch("getMe")
       $('#envios-tab').removeClass('disabled').tab('show')
     }
   }

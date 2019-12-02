@@ -218,6 +218,7 @@
   </section>
 </template>
 <script>
+import api from '../plugins/api'
 import volver from '../components/products/volver.vue'
 import editarUser from '../components/usuario/editarUser'
 
@@ -239,7 +240,9 @@ export default {
     volver,
     editarUser
   },
-  mounted () {},
+  mounted () {
+    this.$store.dispatch("getMe");
+  },
   computed: {
     me () {
       return this.$store.state.me
