@@ -52,11 +52,6 @@
     <!--blog-->
     <blog class="margen-receta my-5"/>
     <!--blog-->
-    <!--fresa -->
-    <fresa />
-    <!--fresa -->
-    <suscribirte class="m-0"/>
-    <instagram class="margen-receta"/>
   </div>
 </template>
 <script>
@@ -70,8 +65,6 @@ import informacionAdmin from "./informacion-admin.vue";
 import galleta from './galleta.vue';
 import hoja from './hoja.vue';
 import blog from './blog.vue';
-import suscribirte from './suscribirte.vue';
-import instagram from './instagram.vue';
 import carousel from './carouselBlog.vue';
 import recetaDefault from "./receta-default.vue";
 export default {
@@ -85,8 +78,6 @@ export default {
     galleta,
     hoja,
     blog,
-    suscribirte,
-    instagram,
     carousel,
     recetaDefault
   },

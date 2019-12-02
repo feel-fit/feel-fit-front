@@ -7,9 +7,7 @@
         <div class="card tarjeta">
           <img
             src="../../../assets/images/recetas/Miniaturas/bart-vermeiren-GGFMrUBJHY0-unsplash.png"
-            class="tarjeta-imagen"
-            alt="..."
-          />
+            class="tarjeta-imagen"/>
           <div class="card-body tarjeta-body">
             <h5 class="card-title tipo">postre</h5>
             <p
@@ -124,8 +122,6 @@
       </div>
     </div>
     <!-- card 2 recetas -->
-    <fresa />
-    <suscribirte />
   </div>
 </template>
 
@@ -133,13 +129,11 @@
 import fresa from "../home/fresa.vue";
 import galleta from "../home/galleta.vue";
 import hoja from "../home/hoja.vue";
-import suscribirte from "../home/suscribirte.vue";
 export default {
   components: {
     fresa,
     galleta,
-    hoja,
-    suscribirte
+    hoja
   }
 };
 </script>

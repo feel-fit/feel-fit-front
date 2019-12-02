@@ -1,5 +1,5 @@
 <template>
-  <div class="row suscribirte py-5 bg-primary">
+  <div class="row suscribirte bg-primary">
     <div class="col-12 col-lg-4 col-xl-5 col align-self-center">
       <h1>¡nunca te pierdas nada de lo que pase por aquí!</h1>
       <p>
@@ -35,9 +35,11 @@ export default {
 
 <style scoped lang="scss">
 .suscribirte {
-  width: 100%;
+  margin: 0;
   padding-left: 10%;
   padding-right: 10%;
+  padding-top: 70px;
+  padding-bottom: 70px;
   h1 {
     font-family: "CircularStd-Bold";
     color: black;

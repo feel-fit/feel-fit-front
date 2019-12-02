@@ -1,5 +1,5 @@
 <template>
-  <div class="py-5">
+  <div class="container py-5">
     <div class="row">
       <div class="col-2 text-uppercase">follow @instagram</div>
       <div class="col-10">
