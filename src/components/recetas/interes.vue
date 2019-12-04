@@ -1,9 +1,12 @@
 <template>
   <div class="tab-pane fade" id="interes" role="tabpanel">
     <div class="container-fluid py-5 my-3">
-      <div class="row">
-        <div class="col-12 p-0">
-          <img src="../../assets/images/recetas/blog/18.png" class="style-imagen cabecera" />
+      <div class="row header-interes align-items-center">
+        <div class="col-12">
+          <h1 class="header-text">
+            Nuestro
+            <br />Blog
+          </h1>
         </div>
       </div>
       <!--linea -->
@@ -15,10 +18,7 @@
       <!-- articulos -->
       <div class="row margen-receta my-5">
         <div class="col-6 p-0">
-          <img
-            src="../../assets/images/recetas/blog/18.png"
-            class="style-imagen"
-          />
+          <img src="../../assets/images/recetas/blog/18.png" class="style-imagen" />
         </div>
         <div class="col-6 articulo h-100">
           <div class="p-4">
@@ -53,8 +53,23 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.cabecera {
+.header-interes {
   height: 400px;
+  background: url("../../assets/images/recetas/blog/18.png") no-repeat center
+    center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.header-text{
+  text-transform: uppercase;
+  text-align: center;
+  color:white;
+  font-family: "CircularStd-BookItalic";
+  font-weight: bold;
+  font-size: 3rem;
+  letter-spacing: 0.7rem;
 }
 .margen-receta {
   margin-left: 10%;
@@ -69,24 +84,23 @@ export default {
     overflow: hidden;
     font-family: "CircularStd-Medium";
     font-size: 36px;
-    color:#000000;
+    color: #000000;
     line-height: 44px;
   }
   .articulo-city {
     height: 10px;
     font-size: 14px;
-    color:#666666;
+    color: #666666;
   }
   .articulo-text {
     height: 200px;
     overflow: hidden;
     text-overflow: ellipsis;
   }
-  .boton{
+  .boton {
     font-family: "CircularStd-Medium";
-    font-size:12px;
-    color:#f6f6f6;
+    font-size: 12px;
+    color: #f6f6f6;
   }
-  
 }
 </style>

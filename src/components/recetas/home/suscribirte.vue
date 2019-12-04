@@ -38,8 +38,8 @@ export default {
   margin: 0;
   padding-left: 10%;
   padding-right: 10%;
-  padding-top: 70px;
-  padding-bottom: 70px;
+  padding-top: 80px;
+  padding-bottom: 80px;
   h1 {
     font-family: "CircularStd-Bold";
     color: black;

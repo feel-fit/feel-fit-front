@@ -1,6 +1,6 @@
 <template>
   <div class="d-flex justify-content-between linea">
-    <span class="font-weight-bold">
+    <span class="font-weight-bold text-uppercase">
       {{name}}
     </span>
     <hr class="border border-dark mx-3 align-items-center" />

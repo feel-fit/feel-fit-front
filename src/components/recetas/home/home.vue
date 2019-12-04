@@ -43,43 +43,36 @@
     <!--galleta -->
     <galleta />
     <!--galleta -->
-    <!--linea -->
-    <linea class="margen-receta" :name="'entradas populares'"/>
-    <!--linea -->
-    <!--doble recetas -->
-    <doblereceta class="margen-receta my-5" :inverso="false" />
-    <!--doble recetas -->
-    <!--blog-->
-    <blog class="margen-receta my-5"/>
-    <!--blog-->
+    <!--populares -->
+    <populares class="margen-receta"/>
+    <!--populares -->
+
   </div>
 </template>
 <script>
 import imageDefault from "../../../assets/images/recetas/Part 2/person.png";
-import doblereceta from "./doblereceta.vue";
 import slider from "./slider.vue";
 import fresa from "./fresa.vue";
-import linea from "./linea.vue";
 import mensajepositivo from "./mensajepositivo.vue";
 import informacionAdmin from "./informacion-admin.vue";
 import galleta from './galleta.vue';
 import hoja from './hoja.vue';
-import blog from './blog.vue';
 import carousel from './carouselBlog.vue';
 import recetaDefault from "./receta-default.vue";
+import populares from './populares.vue';
+import doblereceta from "./doblereceta.vue";
 export default {
   components: {
-    doblereceta,
     slider,
     fresa,
-    linea,
     mensajepositivo,
     informacionAdmin,
     galleta,
     hoja,
-    blog,
     carousel,
-    recetaDefault
+    recetaDefault,
+    populares,
+    doblereceta
   },
   data() {
     return {
