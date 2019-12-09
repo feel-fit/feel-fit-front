@@ -13,14 +13,14 @@
           </ol>
 
           <!-- Carousel items -->
-          <div class="carousel-inner">
+          <div class="carousel-inner" v-if="articulos.lenght>2">
             <div class="carousel-item active">
               <div class="row">
                 <div class="col-md-4">
                   <a href="#">
                     <div class="card">
                       <div class="card-body order-1">
-                        <label class="etiqueta p-2">POSTRES</label>
+                        <label class="etiqueta p-2">{{articulos[0].category.name}}</label>
                         <h5
                           class="card-title title"
                         >Vuelta a la maravillosa rutina ¿Cual es la tuya?</h5>
@@ -59,7 +59,7 @@
                 <div class="col-md-4">
                   <a href="#">
                     <div class="card">
-                      <div class="card-body">
+                      <div class="card-body order-1">
                         <label class="etiqueta p-2">POSTRES</label>
                         <h5
                           class="card-title title"
@@ -158,13 +158,14 @@
 
 <script>
 export default {
-  props:[
-    'identificador'
-  ]
+  props: {
+    articulos: Array,
+    identificador: String
+  }
 };
 </script>
 <style scoped lang="scss">
-.padding-container{
+.padding-container {
   padding-bottom: 70px;
 }
 .blog .carousel-indicators li,

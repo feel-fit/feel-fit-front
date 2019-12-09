@@ -20,7 +20,7 @@
     <linea class="margen-receta" :name="'mas ideas de feel fit'"/>
     <!--linea -->
     <!--doble recetas -->
-    <doblereceta class="margen-receta my-5" />
+    <doblereceta class="margen-receta my-5" :receta1="recetas[0]?recetas[0]:null" :receta2="recetas[1]?recetas[1]:null"/>
     <!--doble recetas -->
     <!--galleta -->
     <galleta />
@@ -29,7 +29,7 @@
     <mensajepositivo class="margen-receta my-5" />
     <!-- mensaje positivo -->
     <!--doble recetas -->
-    <doblereceta class="margen-receta my-5" :inverso="true" />
+    <doblereceta class="margen-receta my-5" :inverso="true" :receta1="recetas[2]?recetas[2]:null" :receta2="recetas[3]?recetas[3]:null"/>
     <!--doble recetas -->
     <!--fresa -->
     <hoja/>
@@ -38,7 +38,7 @@
     <linea class="margen-receta" :name="'articulos recientes'"/>
     <!--linea -->
     <!-- articulos blog -->
-    <carousel class="margen-receta my-5" identificador="home"/>
+    <carousel class="margen-receta my-5" identificador="home" v-if="articulos.lenght" :articulos="articulos"/>
     <!-- blog -->
     <!--galleta -->
     <galleta />
@@ -50,7 +50,8 @@
   </div>
 </template>
 <script>
-import imageDefault from "../../../assets/images/recetas/Part 2/person.png";
+import api from '../../../plugins/api'
+import linea from "./linea.vue";
 import slider from "./slider.vue";
 import fresa from "./fresa.vue";
 import mensajepositivo from "./mensajepositivo.vue";
@@ -72,15 +73,25 @@ export default {
     carousel,
     recetaDefault,
     populares,
-    doblereceta
+    doblereceta,
+    linea
   },
   data() {
     return {
-      imageDefault
+      recetas:[],
+      articulos:[]
     };
   },
-  mounted() {
+  beforeMount() {
     $(".carousel").carousel();
+    api.Recipes().getAll().then(
+      response =>{
+        this.recetas = response.data.data;
+      }
+    );
+    api.Blog().getAll().then(response=>{
+      this.articulos = response.data.data;
+    });
   }
 };
 </script>

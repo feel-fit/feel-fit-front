@@ -188,6 +188,26 @@ function Sliders (url = 'sliders') {
   }
 }
 
+function Recipes(url = 'recipe') {
+  return {
+      getOne: (id) => axios.get(`${url}/${id}`),
+      getBySlug: (slug) => axios.get(`${url}?slug=${slug}`),
+      getAll: () => axios.get(`${url}?pagination=false`),
+      getPaginate: () => axios.get(url),
+      delete: (id) => axios.delete(`${url}/${id}`)
+  }
+}
+
+function Blog(url = 'blog') {
+  return {
+      getOne: (id) => axios.get(`${url}/${id}`),
+      getBySlug: (slug) => axios.get(`${url}?slug=${slug}`),
+      getAll: () => axios.get(`${url}?pagination=false`),
+      getPaginate: () => axios.get(url),
+      delete: (id) => axios.delete(`${url}/${id}`)
+  }
+}
+
 export default {
   Addresses,
   CheckUpdate,
@@ -205,5 +225,7 @@ export default {
   SuccessResponse,
   Token,
   Users,
-  ResetPassword
+  ResetPassword,
+  Recipes,
+  Blog
 }

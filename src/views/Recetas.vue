@@ -23,16 +23,13 @@
               <a class="nav-link" href="#desayunos" data-toggle="tab" role="tab">BRUNCH Y DESAYUNOS</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#entradas" data-toggle="tab" role="tab">ENTRADAS</a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link" href="#platos" data-toggle="tab" role="tab">PLATOS FUERTES</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#postres" data-toggle="tab" role="tab">POSTRES</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#ensaladas" data-toggle="tab" role="tab">ENSALADAS</a>
+              <a class="nav-link" href="#ensaladas" data-toggle="tab" role="tab">BATIDOS</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#interes" data-toggle="tab" role="tab">ARTICULOS DE INTERÉS</a>
@@ -50,10 +47,6 @@
         <!--Panel 2-->
         <desayunos />
         <!--/.Panel 2-->
-
-        <!--Panel 3-->
-        <entradas />
-        <!--/.Panel 3-->
 
         <!--Panel 4-->
         <interes />
