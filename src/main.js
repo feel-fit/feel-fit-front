@@ -44,6 +44,13 @@ Vue.use(VueBreadcrumbs)
 Vue.use(VLazyImagePlugin)
 Vue.use(VeeValidate)
 
+// formato de fecha
+const moment = require('moment')
+require('moment/locale/es')
+Vue.use(require('vue-moment'), {
+  moment
+})
+
 library.add(faArrowRight, faArrowLeft, faAngleLeft, faAngleRight, faBars, faTimes, faSearch, faAngleDoubleRight)
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)

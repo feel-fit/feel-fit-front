@@ -1,5 +1,11 @@
 <template>
-  <div class="padding-container">
+<div>
+
+  <!--linea -->
+    <linea class="mb-5" :name="'articulos recientes'"/>
+  <!--linea -->
+
+  <div class="padding-container" v-if="articulos.length>2">
     <div class="row blog">
       <div class="col-md-12">
         <div :id="'blogCarousel'+identificador" class="carousel slide" data-ride="carousel">
@@ -13,26 +19,22 @@
           </ol>
 
           <!-- Carousel items -->
-          <div class="carousel-inner" v-if="articulos.lenght>2">
+          <div class="carousel-inner">
             <div class="carousel-item active">
               <div class="row">
                 <div class="col-md-4">
                   <a href="#">
                     <div class="card">
                       <div class="card-body order-1">
-                        <label class="etiqueta p-2">{{articulos[0].category.name}}</label>
-                        <h5
-                          class="card-title title"
-                        >Vuelta a la maravillosa rutina ¿Cual es la tuya?</h5>
+                        <label class="etiqueta p-2 text-uppercase">Blog</label>
+                        <h5 class="card-title title">{{articulos[0].title}}</h5>
                         <p class="card-text">
-                          <small class="text-muted cite">Last updated 3 mins ago</small>
+                          <small
+                            class="text-muted cite"
+                          >{{articulos[0].author}} | {{ articulos[0].created_at}}</small>
                         </p>
                       </div>
-                      <img
-                        src="../../../assets/images/recetas/Part 2/Pollo.png"
-                        class="card-img-top order-0"
-                        alt="..."
-                      />
+                      <img :src="articulos[0].photo" class="card-img-top order-0" alt="..." />
                     </div>
                   </a>
                 </div>
@@ -40,19 +42,15 @@
                   <a href="#">
                     <div class="card">
                       <div class="card-body">
-                        <label class="etiqueta p-2">POSTRES</label>
-                        <h5
-                          class="card-title title"
-                        >Vuelta a la maravillosa rutina ¿Cual es la tuya?</h5>
+                        <label class="etiqueta p-2 text-uppercase">Blog</label>
+                        <h5 class="card-title title">{{articulos[1].title}}</h5>
                         <p class="card-text">
-                          <small class="text-muted cite">Last updated 3 mins ago</small>
+                          <small
+                            class="text-muted cite"
+                          >{{articulos[1].author}} | {{articulos[1].created_at}}</small>
                         </p>
                       </div>
-                      <img
-                        src="../../../assets/images/recetas/Part 2/Pollo.png"
-                        class="card-img-top"
-                        alt="..."
-                      />
+                      <img :src="articulos[1].photo" class="card-img-top order-0" alt="..." />
                     </div>
                   </a>
                 </div>
@@ -60,19 +58,15 @@
                   <a href="#">
                     <div class="card">
                       <div class="card-body order-1">
-                        <label class="etiqueta p-2">POSTRES</label>
-                        <h5
-                          class="card-title title"
-                        >Vuelta a la maravillosa rutina ¿Cual es la tuya?</h5>
+                        <label class="etiqueta p-2 text-uppercase">Blog</label>
+                        <h5 class="card-title title">{{articulos[2].title}}</h5>
                         <p class="card-text">
-                          <small class="text-muted cite">Last updated 3 mins ago</small>
+                          <small
+                            class="text-muted cite"
+                          >{{articulos[2].author}} | {{articulos[2].created_at}}</small>
                         </p>
                       </div>
-                      <img
-                        src="../../../assets/images/recetas/Part 2/Pollo.png"
-                        class="card-img-top"
-                        alt="..."
-                      />
+                      <img :src="articulos[2].photo" class="card-img-top order-0" alt="..." />
                     </div>
                   </a>
                 </div>
@@ -81,25 +75,21 @@
             </div>
             <!--.item-->
 
-            <div class="carousel-item">
+            <div class="carousel-item active" v-if="articulos.length>6">
               <div class="row">
                 <div class="col-md-4">
                   <a href="#">
                     <div class="card">
-                      <div class="card-body">
-                        <label class="etiqueta p-2">POSTRES</label>
-                        <h5
-                          class="card-title title"
-                        >Vuelta a la maravillosa rutina ¿Cual es la tuya?</h5>
+                      <div class="card-body order-1">
+                        <label class="etiqueta p-2 text-uppercase">Blog</label>
+                        <h5 class="card-title title">{{articulos[3].title}}</h5>
                         <p class="card-text">
-                          <small class="text-muted cite">Last updated 3 mins ago</small>
+                          <small
+                            class="text-muted cite"
+                          >{{articulos[3].author}} | {{articulos[3].created_at}}</small>
                         </p>
                       </div>
-                      <img
-                        src="../../../assets/images/recetas/Part 2/Pollo.png"
-                        class="card-img-top"
-                        alt="..."
-                      />
+                      <img :src="articulos[3].photo" class="card-img-top order-0" alt="..." />
                     </div>
                   </a>
                 </div>
@@ -107,39 +97,31 @@
                   <a href="#">
                     <div class="card">
                       <div class="card-body">
-                        <label class="etiqueta p-2">POSTRES</label>
-                        <h5
-                          class="card-title title"
-                        >Vuelta a la maravillosa rutina ¿Cual es la tuya?</h5>
+                        <label class="etiqueta p-2 text-uppercase">Blog</label>
+                        <h5 class="card-title title">{{articulos[4].title}}</h5>
                         <p class="card-text">
-                          <small class="text-muted cite">Last updated 3 mins ago</small>
+                          <small
+                            class="text-muted cite"
+                          >{{articulos[4].author}} | {{articulos[4].created_at}}</small>
                         </p>
                       </div>
-                      <img
-                        src="../../../assets/images/recetas/Part 2/Pollo.png"
-                        class="card-img-top"
-                        alt="..."
-                      />
+                      <img :src="articulos[4].photo" class="card-img-top order-0" alt="..." />
                     </div>
                   </a>
                 </div>
                 <div class="col-md-4">
                   <a href="#">
                     <div class="card">
-                      <div class="card-body">
-                        <label class="etiqueta p-2">POSTRES</label>
-                        <h5
-                          class="card-title title"
-                        >Vuelta a la maravillosa rutina ¿Cual es la tuya?</h5>
+                      <div class="card-body order-1">
+                        <label class="etiqueta p-2 text-uppercase">Blog</label>
+                        <h5 class="card-title title">{{articulos[5].title}}</h5>
                         <p class="card-text">
-                          <small class="text-muted cite">Last updated 3 mins ago</small>
+                          <small
+                            class="text-muted cite"
+                          >{{articulos[5].author}} | {{articulos[5].created_at}}</small>
                         </p>
                       </div>
-                      <img
-                        src="../../../assets/images/recetas/Part 2/Pollo.png"
-                        class="card-img-top"
-                        alt="..."
-                      />
+                      <img :src="articulos[5].photo" class="card-img-top order-0" alt="..." />
                     </div>
                   </a>
                 </div>
@@ -154,14 +136,28 @@
       </div>
     </div>
   </div>
+  </div>
 </template>
 
 <script>
+import api from "../../../plugins/api";
+import linea from "./linea.vue";
 export default {
+  components:{
+    linea
+  },
   props: {
-    articulos: Array,
-    identificador: String
-  }
+    identificador: String,
+    articulos:{
+      type:Array,
+      default:[]
+    }
+  },
+  data() {
+    return {
+      articulos: []
+    };
+  },
 };
 </script>
 <style scoped lang="scss">

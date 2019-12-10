@@ -34,11 +34,8 @@
     <!--fresa -->
     <hoja/>
     <!--fresa -->
-    <!--linea -->
-    <linea class="margen-receta" :name="'articulos recientes'"/>
-    <!--linea -->
     <!-- articulos blog -->
-    <carousel class="margen-receta my-5" identificador="home" v-if="articulos.lenght" :articulos="articulos"/>
+    <carousel class="margen-receta my-5" identificador="home" :articulos="articulos"/>
     <!-- blog -->
     <!--galleta -->
     <galleta />
@@ -89,9 +86,13 @@ export default {
         this.recetas = response.data.data;
       }
     );
-    api.Blog().getAll().then(response=>{
-      this.articulos = response.data.data;
-    });
+    api
+      .Blog()
+      .getAll()
+      .then(response => {
+        console.log(response.data.data);
+        this.articulos = response.data.data;
+      });
   }
 };
 </script>

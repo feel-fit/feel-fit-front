@@ -13,7 +13,7 @@
       <linea class="margen-receta my-5" :name="'articulos recientes'" />
       <!--linea -->
       <!-- articulos blog -->
-      <carousel class="margen-receta" identificador="interesados" />
+      
       <!-- blog -->
       <!-- articulos -->
       <div class="row margen-receta my-5">

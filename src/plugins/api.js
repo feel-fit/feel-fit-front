@@ -194,7 +194,6 @@ function Recipes(url = 'recipe') {
       getBySlug: (slug) => axios.get(`${url}?slug=${slug}`),
       getAll: () => axios.get(`${url}?pagination=false`),
       getPaginate: () => axios.get(url),
-      delete: (id) => axios.delete(`${url}/${id}`)
   }
 }
 
@@ -204,7 +203,17 @@ function Blog(url = 'blog') {
       getBySlug: (slug) => axios.get(`${url}?slug=${slug}`),
       getAll: () => axios.get(`${url}?pagination=false`),
       getPaginate: () => axios.get(url),
-      delete: (id) => axios.delete(`${url}/${id}`)
+      getLatest: () => axios.get(`${url}/latest`)
+  }
+}
+
+function PositiveMessage(url = 'positive-message') {
+  return {
+      getOne: (id) => axios.get(`${url}/${id}`),
+      getBySlug: (slug) => axios.get(`${url}?slug=${slug}`),
+      getAll: () => axios.get(`${url}?pagination=false`),
+      getPaginate: () => axios.get(url),
+      getLatest: () => axios.get(`${url}/latest`)
   }
 }
 
@@ -227,5 +236,6 @@ export default {
   Users,
   ResetPassword,
   Recipes,
-  Blog
+  Blog,
+  PositiveMessage
 }
