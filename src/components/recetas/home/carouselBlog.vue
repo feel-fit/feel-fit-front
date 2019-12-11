@@ -31,7 +31,7 @@
                         <p class="card-text">
                           <small
                             class="text-muted cite"
-                          >{{articulos[0].author}} | {{ articulos[0].created_at}}</small>
+                          >{{articulos[0].author}} | {{ articulos[0].created_at|moment("from", "now")}}</small>
                         </p>
                       </div>
                       <img :src="articulos[0].photo" class="card-img-top order-0" alt="..." />
@@ -47,7 +47,7 @@
                         <p class="card-text">
                           <small
                             class="text-muted cite"
-                          >{{articulos[1].author}} | {{articulos[1].created_at}}</small>
+                          >{{articulos[1].author}} | {{articulos[1].created_at|moment("from", "now")}}</small>
                         </p>
                       </div>
                       <img :src="articulos[1].photo" class="card-img-top order-0" alt="..." />
@@ -63,7 +63,7 @@
                         <p class="card-text">
                           <small
                             class="text-muted cite"
-                          >{{articulos[2].author}} | {{articulos[2].created_at}}</small>
+                          >{{articulos[2].author}} | {{articulos[2].created_at|moment("from", "now")}}</small>
                         </p>
                       </div>
                       <img :src="articulos[2].photo" class="card-img-top order-0" alt="..." />
@@ -86,7 +86,7 @@
                         <p class="card-text">
                           <small
                             class="text-muted cite"
-                          >{{articulos[3].author}} | {{articulos[3].created_at}}</small>
+                          >{{articulos[3].author}} | {{articulos[3].created_at|moment("from", "now")}}</small>
                         </p>
                       </div>
                       <img :src="articulos[3].photo" class="card-img-top order-0" alt="..." />
@@ -102,7 +102,7 @@
                         <p class="card-text">
                           <small
                             class="text-muted cite"
-                          >{{articulos[4].author}} | {{articulos[4].created_at}}</small>
+                          >{{articulos[4].author}} | {{articulos[4].created_at|moment("from", "now")}}</small>
                         </p>
                       </div>
                       <img :src="articulos[4].photo" class="card-img-top order-0" alt="..." />
@@ -118,7 +118,7 @@
                         <p class="card-text">
                           <small
                             class="text-muted cite"
-                          >{{articulos[5].author}} | {{articulos[5].created_at}}</small>
+                          >{{articulos[5].author}} | {{articulos[5].created_at|moment("from", "now")}}</small>
                         </p>
                       </div>
                       <img :src="articulos[5].photo" class="card-img-top order-0" alt="..." />
@@ -203,11 +203,13 @@ export default {
   color: #000000;
   letter-spacing: 0;
   line-height: 32px;
+  text-transform: capitalize;
 }
 .cite {
+  text-transform: uppercase;
   font-family: "CircularStd-Bold";
   color: rgba(0, 0, 0, 0.6);
-  font-size: 1rem;
+  font-size: 0.9rem;
   margin: 0 auto;
 }
 </style>

@@ -16,26 +16,20 @@
       
       <!-- blog -->
       <!-- articulos -->
-      <div class="row margen-receta my-5">
-        <div class="col-6 p-0">
-          <img src="../../assets/images/recetas/blog/18.png" class="style-imagen" />
+      <div class="row margen-receta my-5" v-for="(articulo,index) in articulos">
+        <div class="col-6 p-0" :class="[index%2 ? 'order-1' : '', errorClass]">
+          <img :src="articulo.photo" class="style-imagen-articulo" />
         </div>
-        <div class="col-6 articulo h-100">
+        <div class="col-6 articulo">
           <div class="p-4">
-            <h1>¿Y si probamos con comida de verdad?</h1>
-            <p class="articulo-city">Estefania C - Marzo 19,2019</p>
+            <h1>{{articulo.title}}</h1>
+            <p class="articulo-city">{{articulo.author}} - {{articulo.created_at|moment("from", "now")}}</p>
             <p class="articulo-text text-dark m-0">
-              Hoy abordamos un nuevo tema que esperamos que estremoas sea de interes y utlidad
-              Hoy abordamos un nuevo tema que esperamos que estremoas sea de interes y utlidad
-              Hoy abordamos un nuevo tema que esperamos que estremoas sea de interes y utlidad
-              Hoy abordamos un nuevo tema que esperamos que estremoas sea de interes y utlidad
-              Hoy abordamos un nuevo tema que esperamos que estremoas sea de interes y utlidad
-              Hoy abordamos un nuevo tema que esperamos que estremoas sea de interes y utlidad
+              {{articulo.text_header}}
             </p>
             <div class="text-right">
               <button class="btn btn-primary boton">Leer más -></button>
             </div>
-            <p>Tags: ejercicio,habitos,sano,brunch</p>
           </div>
         </div>
       </div>
@@ -45,10 +39,24 @@
 </template>
 
 <script>
+import api from '../../plugins/api'
 import linea from "./home/linea.vue";
 import carousel from "./home/carouselBlog.vue";
 export default {
-  components: { linea, carousel }
+  components: { linea, carousel },
+  data(){
+    return {
+      articulos:null
+    }
+  },
+  beforeMount(){
+    api
+      .Blog()
+      .getAll()
+      .then(response => {
+        this.articulos = response.data.data;
+      });
+  }
 };
 </script>
 
@@ -80,27 +88,37 @@ export default {
   background-color: #f7f6f6;
   h1 {
     display: block;
-    height: 100px;
+    max-height: 100px;
     overflow: hidden;
     font-family: "CircularStd-Medium";
     font-size: 36px;
     color: #000000;
     line-height: 44px;
+    text-transform: capitalize;
   }
   .articulo-city {
     height: 10px;
     font-size: 14px;
     color: #666666;
+    text-transform: uppercase;
+    
   }
   .articulo-text {
     height: 200px;
     overflow: hidden;
     text-overflow: ellipsis;
+    padding-top: 15px;
   }
   .boton {
     font-family: "CircularStd-Medium";
     font-size: 12px;
     color: #f6f6f6;
   }
+}
+
+.style-imagen-articulo{
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
 }
 </style>

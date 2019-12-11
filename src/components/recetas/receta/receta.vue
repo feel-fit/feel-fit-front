@@ -5,7 +5,7 @@
     <div class="row margen-receta">
       <div class="mb-5 col-4" v-for="item in 3">
         <div class="card tarjeta" v-if="recetas[item-1]">
-          <img v-if="recetas[item-1].photo"
+          <img
             :src="recetas[item-1].photo"
             class="tarjeta-imagen"/>
           <div class="card-body tarjeta-body">
@@ -13,27 +13,27 @@
             <p
               class="card-text title"
             >{{recetas[item-1].title}}</p>
-            <p class="card-text cite">Mayo 13, 2019 - {{recetas[item-1].author}}</p>
+            <p class="card-text cite">{{recetas[item-1].created_at|moment("from", "now")}} - {{recetas[item-1].author}}</p>
           </div>
         </div>
       </div>
     </div>
     <!-- card 3 recetas -->
     <!-- card 2 recetas -->
-    <div class="row margen-receta">
+    <div class="row margen-receta" v-if="recetas.length>2">
       <div class="mb-5 col-6" v-for="item in 2">
         <div class="card tarjeta">
           <img
-            src="../../../assets/images/recetas/Miniaturas/gabi-miranda-dxb_HSjoQ40-unsplash.png"
+            :src="recetas[item+2].photo"
             class="tarjeta-imagen"
             alt="..."
           />
           <div class="card-body">
-            <h5 class="card-title tipo2">postre</h5>
+            <h5 class="card-title tipo2">{{recetas[item+2].category.name}}</h5>
             <p
               class="card-text title2"
-            >Torta de manzana y canela, así recibimos la mejor época del año</p>
-            <p class="card-text cite2">Mayo 13, 2019 - Estefania C</p>
+            >{{recetas[item+2].title}}</p>
+            <p class="card-text cite2">{{recetas[item+2].created_at|moment("from", "now")}} - {{recetas[item+2].author}}</p>
           </div>
         </div>
       </div>
@@ -41,40 +41,38 @@
     <!-- card 2 recetas -->
     <galleta />
     <!-- card 3 recetas -->
-    <div class="row margen-receta">
+    <div class="row margen-receta" v-if="recetas.length>4">
       <div class="mb-5 col-4" v-for="item in 3">
-        <div class="card tarjeta">
+        <div class="card tarjeta" v-if="recetas[item+4]">
           <img
-            src="../../../assets/images/recetas/Miniaturas/bart-vermeiren-GGFMrUBJHY0-unsplash.png"
-            class="tarjeta-imagen"
-            alt="..."
-          />
+            :src="recetas[item+4].photo"
+            class="tarjeta-imagen"/>
           <div class="card-body tarjeta-body">
-            <h5 class="card-title tipo">postre</h5>
+            <h5 class="card-title tipo">{{recetas[item+4].category.name}}</h5>
             <p
               class="card-text title"
-            >Torta de manzana y canela, así recibimos la mejor época del año</p>
-            <p class="card-text cite">Mayo 13, 2019 - Estefania C</p>
+            >{{recetas[item+4].title}}</p>
+            <p class="card-text cite">{{recetas[item+4].created_at|moment("from", "now")}} - {{recetas[item+4].author}}</p>
           </div>
         </div>
       </div>
     </div>
     <!-- card 3 recetas -->
     <!-- card 2 recetas -->
-    <div class="row margen-receta">
+    <div class="row margen-receta" v-if="recetas.length>7">
       <div class="mb-5 col-6" v-for="item in 2">
         <div class="card tarjeta">
           <img
-            src="../../../assets/images/recetas/Miniaturas/gabi-miranda-dxb_HSjoQ40-unsplash.png"
+            :src="recetas[item+7].photo"
             class="tarjeta-imagen"
             alt="..."
           />
           <div class="card-body">
-            <h5 class="card-title tipo2">postre</h5>
+            <h5 class="card-title tipo2">{{recetas[item+7].category.name}}</h5>
             <p
               class="card-text title2"
-            >Torta de manzana y canela, así recibimos la mejor época del año</p>
-            <p class="card-text cite2">Mayo 13, 2019 - Estefania C</p>
+            >{{recetas[item+7].title}}</p>
+            <p class="card-text cite2">{{recetas[item+7].created_at|moment("from", "now")}} - {{recetas[item+7].author}}</p>
           </div>
         </div>
       </div>
@@ -82,20 +80,18 @@
     <!-- card 2 recetas -->
     <hoja />
     <!-- card 3 recetas -->
-    <div class="row margen-receta">
+    <div class="row margen-receta" v-if="recetas.length>9">
       <div class="mb-5 col-4" v-for="item in 3">
-        <div class="card tarjeta">
+        <div class="card tarjeta" v-if="recetas[item+9]">
           <img
-            src="../../../assets/images/recetas/Miniaturas/bart-vermeiren-GGFMrUBJHY0-unsplash.png"
-            class="tarjeta-imagen"
-            alt="..."
-          />
+            :src="recetas[item+9].photo"
+            class="tarjeta-imagen"/>
           <div class="card-body tarjeta-body">
-            <h5 class="card-title tipo">postre</h5>
+            <h5 class="card-title tipo">{{recetas[item+9].category.name}}</h5>
             <p
               class="card-text title"
-            >Torta de manzana y canela, así recibimos la mejor época del año</p>
-            <p class="card-text cite">Mayo 13, 2019 - Estefania C</p>
+            >{{recetas[item+9].title}}</p>
+            <p class="card-text cite">{{recetas[item+9].created_at|moment("from", "now")}} - {{recetas[item+9].author}}</p>
           </div>
         </div>
       </div>
@@ -103,20 +99,20 @@
     <!-- card 3 recetas -->
     <galleta />
     <!-- card 2 recetas -->
-    <div class="row margen-receta">
+    <div class="row margen-receta" v-if="recetas.length>12">
       <div class="mb-5 col-6" v-for="item in 2">
         <div class="card tarjeta">
           <img
-            src="../../../assets/images/recetas/Miniaturas/gabi-miranda-dxb_HSjoQ40-unsplash.png"
+            :src="recetas[item+12].photo"
             class="tarjeta-imagen"
             alt="..."
           />
           <div class="card-body">
-            <h5 class="card-title tipo2">postre</h5>
+            <h5 class="card-title tipo2">{{recetas[item+12].category.name}}</h5>
             <p
               class="card-text title2"
-            >Torta de manzana y canela, así recibimos la mejor época del año</p>
-            <p class="card-text cite2">Mayo 13, 2019 - Estefania C</p>
+            >{{recetas[item+12].title}}</p>
+            <p class="card-text cite2">{{recetas[item+12].created_at|moment("from", "now")}} - {{recetas[item+12].author}}</p>
           </div>
         </div>
       </div>
@@ -167,6 +163,7 @@ export default {
   object-fit: cover;
 }
 .tarjeta-body {
+  width: 90%;
   position: absolute;
   bottom: 0;
   background-color: white;
