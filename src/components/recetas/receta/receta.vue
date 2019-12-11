@@ -135,7 +135,7 @@ export default {
   },
   data(){
     return {
-      recetas:null
+      recetas:[]
     }
   },
   beforeMount(){

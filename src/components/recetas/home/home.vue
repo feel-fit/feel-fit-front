@@ -35,7 +35,7 @@
     <hoja/>
     <!--fresa -->
     <!-- articulos blog -->
-    <carousel class="margen-receta my-5" identificador="home" :articulos="articulos"/>
+    <carousel class="margen-receta my-5" identificador="home"/>
     <!-- blog -->
     <!--galleta -->
     <galleta />
@@ -76,7 +76,6 @@ export default {
   data() {
     return {
       recetas:[],
-      articulos:[]
     };
   },
   beforeMount() {
@@ -86,12 +85,6 @@ export default {
         this.recetas = response.data.data;
       }
     );
-    api
-      .Blog()
-      .getAll()
-      .then(response => {
-        this.articulos = response.data.data;
-      });
   }
 };
 </script>

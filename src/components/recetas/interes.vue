@@ -1,7 +1,7 @@
 <template>
   <div class="tab-pane fade" id="interes" role="tabpanel">
-    <div class="container-fluid py-5 my-3">
-      <div class="row header-interes align-items-center">
+    <div class="container-fluid py-5 my-3 px-0  ">
+      <div class="row header-interes align-items-center ">
         <div class="col-12">
           <h1 class="header-text">
             Nuestro
@@ -9,24 +9,31 @@
           </h1>
         </div>
       </div>
-      <!--linea -->
-      <linea class="margen-receta my-5" :name="'articulos recientes'" />
-      <!--linea -->
+
+      <!--fresa -->
+      <fresa />
+      <!--fresa -->
+
       <!-- articulos blog -->
-      
+      <carousel class="margen-receta my-5" identificador="blog" />
       <!-- blog -->
+
+      <!--linea -->
+      <linea class="margen-receta my-5" :name="'Te puede interesar'" />
+      <!--linea -->
+
       <!-- articulos -->
       <div class="row margen-receta my-5" v-for="(articulo,index) in articulos">
-        <div class="col-6 p-0" :class="[index%2 ? 'order-1' : '', errorClass]">
+        <div class="col-6 p-0" :class="[index%2 ? 'order-1' : '']">
           <img :src="articulo.photo" class="style-imagen-articulo" />
         </div>
         <div class="col-6 articulo">
           <div class="p-4">
             <h1>{{articulo.title}}</h1>
-            <p class="articulo-city">{{articulo.author}} - {{articulo.created_at|moment("from", "now")}}</p>
-            <p class="articulo-text text-dark m-0">
-              {{articulo.text_header}}
-            </p>
+            <p
+              class="articulo-city"
+            >{{articulo.author}} - {{articulo.created_at|moment("from", "now")}}</p>
+            <p class="articulo-text text-dark m-0">{{articulo.text_header}}</p>
             <div class="text-right">
               <button class="btn btn-primary boton">Leer más -></button>
             </div>
@@ -39,17 +46,18 @@
 </template>
 
 <script>
-import api from '../../plugins/api'
+import api from "../../plugins/api";
 import linea from "./home/linea.vue";
 import carousel from "./home/carouselBlog.vue";
+import fresa from "./home/fresa.vue";
 export default {
-  components: { linea, carousel },
-  data(){
+  components: { linea, carousel , fresa },
+  data() {
     return {
-      articulos:null
-    }
+      articulos: []
+    };
   },
-  beforeMount(){
+  beforeMount() {
     api
       .Blog()
       .getAll()
@@ -70,10 +78,10 @@ export default {
   -o-background-size: cover;
   background-size: cover;
 }
-.header-text{
+.header-text {
   text-transform: uppercase;
   text-align: center;
-  color:white;
+  color: white;
   font-family: "CircularStd-BookItalic";
   font-weight: bold;
   font-size: 3rem;
@@ -101,7 +109,6 @@ export default {
     font-size: 14px;
     color: #666666;
     text-transform: uppercase;
-    
   }
   .articulo-text {
     height: 200px;
@@ -116,7 +123,7 @@ export default {
   }
 }
 
-.style-imagen-articulo{
+.style-imagen-articulo {
   width: 100%;
   height: 400px;
   object-fit: cover;

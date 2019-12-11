@@ -146,18 +146,21 @@ export default {
   components:{
     linea
   },
-  props: {
-    identificador: String,
-    articulos:{
-      type:Array,
-      default:[]
+  props: ['identificador'],
+  data(){
+    return{
+      articulos:[]
     }
   },
-  data() {
-    return {
-      articulos: []
-    };
-  },
+  beforeMount(){
+    api
+      .Blog()
+      .getLatests()
+      .then(response => {
+        this.articulos = response.data.data;
+      });
+  }
+  
 };
 </script>
 <style scoped lang="scss">

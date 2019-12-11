@@ -209,7 +209,8 @@ function Blog(url = 'blog') {
       getBySlug: (slug) => axios.get(`${url}?slug=${slug}`),
       getAll: () => axios.get(`${url}?pagination=false`),
       getPaginate: () => axios.get(url),
-      getLatest: () => axios.get(`${url}/latest`)
+      getLatest: () => axios.get(`${url}/latest`),
+      getLatests: () => axios.get(`${url}/latests`)
   }
 }
 

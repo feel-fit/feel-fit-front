@@ -57,8 +57,6 @@ export default {
       let hora = parseInt(formaTime[0], 10);
       let minutos = parseInt(formaTime[1], 10);
       let segundos = parseInt(formaTime[2], 10);
-      console.log(hora+':'+minutos+':'+segundos);
-      console.log(hora*60*60+minutos*60+segundos);
       return hora*60*60+minutos*60+segundos*1000;
     }
   }

@@ -63,7 +63,9 @@
         <!--Panel 4-->
         <postres />
         <!--/.Panel 4-->
+         <router-view></router-view>
       </div>
+
 
       <div>
         <!--fresa -->
