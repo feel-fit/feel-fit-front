@@ -43,8 +43,8 @@ export default {
       type: Boolean,
       default: false
     },
-    receta1: {},
-    receta2: {}
+    receta1: null,
+    receta2: null
   },
   data() {
     return {

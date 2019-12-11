@@ -90,7 +90,6 @@ export default {
       .Blog()
       .getAll()
       .then(response => {
-        console.log(response.data.data);
         this.articulos = response.data.data;
       });
   }

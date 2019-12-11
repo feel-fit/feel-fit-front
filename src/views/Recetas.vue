@@ -29,7 +29,7 @@
               <a class="nav-link" href="#postres" data-toggle="tab" role="tab">POSTRES</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#ensaladas" data-toggle="tab" role="tab">BATIDOS</a>
+              <a class="nav-link" href="#batidos" data-toggle="tab" role="tab">BATIDOS</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#interes" data-toggle="tab" role="tab">ARTICULOS DE INTERÉS</a>
@@ -53,7 +53,7 @@
         <!--/.Panel 4-->
 
         <!--Panel 4-->
-        <ensaladas />
+        <batidos />
         <!--/.Panel 4-->
 
         <!--Panel 4-->
@@ -79,9 +79,8 @@
 <script>
 import home from "../components/recetas/home/home";
 import desayunos from "../components/recetas/desayunos";
-import entradas from "../components/recetas/entradas";
 import interes from "../components/recetas/interes";
-import ensaladas from "../components/recetas/ensaladas";
+import batidos from "../components/recetas/batidos";
 import platos from "../components/recetas/platos";
 import postres from "../components/recetas/postres";
 import suscribirte from "../components/recetas/home/suscribirte";
@@ -92,9 +91,8 @@ export default {
   components: {
     home,
     desayunos,
-    entradas,
     interes,
-    ensaladas,
+    batidos,
     platos,
     postres,
     suscribirte,

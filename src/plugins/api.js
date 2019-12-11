@@ -197,6 +197,12 @@ function Recipes(url = 'recipe') {
   }
 }
 
+function RecipeCategory(url = 'list-recipes') {
+  return {
+      getPaginate: (category) => axios.get(`${url}/${category}`),
+  }
+}
+
 function Blog(url = 'blog') {
   return {
       getOne: (id) => axios.get(`${url}/${id}`),
@@ -237,5 +243,6 @@ export default {
   ResetPassword,
   Recipes,
   Blog,
-  PositiveMessage
+  PositiveMessage,
+  RecipeCategory
 }

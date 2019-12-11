@@ -1,6 +1,6 @@
 <template>
-    <div class="tab-pane fade" id="desayunos" role="tabpanel">
-        <receta :category="'Desayunos'" />
+    <div class="tab-pane fade" id="batidos" role="tabpanel">
+        <receta :category="'Batidos'" />
     </div>
 </template>
 

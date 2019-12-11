@@ -1,5 +1,5 @@
 <template>
-  <div class="position-relative">
+  <div class="position-relative" v-if="blog">
     <img :src="blog.photo" class="enlace-blog rounded" />
     <div class="receta-default d-flex align-items-center">
       <img
@@ -20,7 +20,7 @@ import api from '../../../plugins/api'
 export default {
   data(){
     return {
-      blog:{}
+      blog:null
     }
   },
   beforeMount(){
@@ -28,7 +28,6 @@ export default {
       .Blog()
       .getLatest()
       .then(response => {
-        console.log(response.data.data);
         this.blog = response.data.data;
       });
   }

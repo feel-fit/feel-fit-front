@@ -1,19 +1,19 @@
 <template>
-  <div class="container-fluid p-0 m-0">
+  <div class="container-fluid p-0 m-0" v-if="recetas.length>0">
     <fresa class="mt-5" />
     <!-- card 3 recetas -->
     <div class="row margen-receta">
       <div class="mb-5 col-4" v-for="item in 3">
-        <div class="card tarjeta">
-          <img
-            src="../../../assets/images/recetas/Miniaturas/bart-vermeiren-GGFMrUBJHY0-unsplash.png"
+        <div class="card tarjeta" v-if="recetas[item-1]">
+          <img v-if="recetas[item-1].photo"
+            :src="recetas[item-1].photo"
             class="tarjeta-imagen"/>
           <div class="card-body tarjeta-body">
-            <h5 class="card-title tipo">postre</h5>
+            <h5 class="card-title tipo">{{recetas[item-1].category.name}}</h5>
             <p
               class="card-text title"
-            >Torta de manzana y canela, así recibimos la mejor época del año</p>
-            <p class="card-text cite">Mayo 13, 2019 - Estefania C</p>
+            >{{recetas[item-1].title}}</p>
+            <p class="card-text cite">Mayo 13, 2019 - {{recetas[item-1].author}}</p>
           </div>
         </div>
       </div>
@@ -126,14 +126,28 @@
 </template>
 
 <script>
+import api from '../../../plugins/api'
 import fresa from "../home/fresa.vue";
 import galleta from "../home/galleta.vue";
 import hoja from "../home/hoja.vue";
 export default {
+  props:['category'],
   components: {
     fresa,
     galleta,
     hoja
+  },
+  data(){
+    return {
+      recetas:null
+    }
+  },
+  beforeMount(){
+    api.RecipeCategory().getPaginate(this.category).then(
+      (response)=>{
+        this.recetas=response.data.data;
+      }
+    );
   }
 };
 </script>

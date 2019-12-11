@@ -1,7 +1,7 @@
 <template>
-  <div class="row mensaje-positivo">
+  <div class="row mensaje-positivo" v-if="message">
     <div class="col-md-7 order-md-1 p-0">
-      <img :src="message.image" class="rounded" />
+      <img :src="message.image" class="rounded img"/>
     </div>
     <div class="col-md-5 order-md-0 p-0">
       <div class="d-flex align-items-center h-100">
@@ -16,7 +16,7 @@ import api from '../../../plugins/api'
 export default {
   data(){
     return {
-      message:{}
+      message:null
     }
   },
   mounted(){
@@ -31,7 +31,7 @@ export default {
 .mensaje-positivo {
   img {
     width: 100%;
-    height: 100%;
+    height: 400px;
     object-fit: cover;
   }
 }
