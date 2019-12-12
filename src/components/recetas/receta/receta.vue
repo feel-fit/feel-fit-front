@@ -4,7 +4,7 @@
     <!-- card 3 recetas -->
     <div class="row margen-receta">
       <div class="mb-5 col-4" v-for="item in 3">
-        <div class="card tarjeta" v-if="recetas[item-1]">
+        <div class="card tarjeta link" @click="getReceta(recetas[item-1].id)" v-if="recetas[item-1]">
           <img
             :src="recetas[item-1].photo"
             class="tarjeta-imagen"/>
@@ -22,7 +22,7 @@
     <!-- card 2 recetas -->
     <div class="row margen-receta" v-if="recetas.length>2">
       <div class="mb-5 col-6" v-for="item in 2">
-        <div class="card tarjeta">
+        <div class="card tarjeta link" @click="getReceta(recetas[item+2].id)">
           <img
             :src="recetas[item+2].photo"
             class="tarjeta-imagen"
@@ -43,7 +43,7 @@
     <!-- card 3 recetas -->
     <div class="row margen-receta" v-if="recetas.length>4">
       <div class="mb-5 col-4" v-for="item in 3">
-        <div class="card tarjeta" v-if="recetas[item+4]">
+        <div class="card tarjeta link" @click="getReceta(recetas[item+4].id)" v-if="recetas[item+4]">
           <img
             :src="recetas[item+4].photo"
             class="tarjeta-imagen"/>
@@ -61,7 +61,7 @@
     <!-- card 2 recetas -->
     <div class="row margen-receta" v-if="recetas.length>7">
       <div class="mb-5 col-6" v-for="item in 2">
-        <div class="card tarjeta">
+        <div class="card tarjeta link" @click="getReceta(recetas[item+7].id)">
           <img
             :src="recetas[item+7].photo"
             class="tarjeta-imagen"
@@ -82,7 +82,7 @@
     <!-- card 3 recetas -->
     <div class="row margen-receta" v-if="recetas.length>9">
       <div class="mb-5 col-4" v-for="item in 3">
-        <div class="card tarjeta" v-if="recetas[item+9]">
+        <div class="card tarjeta link" @click="getReceta(recetas[item+9].id)" v-if="recetas[item+9]">
           <img
             :src="recetas[item+9].photo"
             class="tarjeta-imagen"/>
@@ -101,7 +101,7 @@
     <!-- card 2 recetas -->
     <div class="row margen-receta" v-if="recetas.length>12">
       <div class="mb-5 col-6" v-for="item in 2">
-        <div class="card tarjeta">
+        <div class="card tarjeta link" @click="getReceta(recetas[item+12].id)">
           <img
             :src="recetas[item+12].photo"
             class="tarjeta-imagen"
@@ -144,6 +144,11 @@ export default {
         this.recetas=response.data.data;
       }
     );
+  },
+  methods:{
+    getReceta(receta_id){
+      this.$router.push('/recetas/receta/'+receta_id);
+    }
   }
 };
 </script>

@@ -1,8 +1,8 @@
 <template>
   <!--doble recetas -->
   <div class="row receta">
-    <div class="col-lg-5 pr-lg-5" v-if="receta1">
-      <div class="row h-100 pb-5">
+    <div class="col-lg-5 pr-lg-5">
+      <div class="row h-100 pb-5 link" v-if="receta1" @click="getReceta(receta1.id)">
         <div class="col-12 p-0 alto" :class="{'order-lg-1':!inverso}">
           <img :src="receta1.photo" class="rounded" v-if="!receta1.url_video" />
           <iframe height="97%" width="100%" v-else
@@ -17,7 +17,7 @@
       </div>
     </div>
     <div class="col-lg-7" v-if="receta2">
-      <div class="row h-100 pb-5">
+      <div class="row h-100 pb-5 link" v-if="receta1" @click="getReceta(receta2.id)">
         <div class="col-12 p-0 alto" :class="{'order-lg-1':inverso}">
           <img :src="receta2.photo" class="rounded" v-if="!receta2.url_video" />
           <iframe height="100%" width="100%" v-else
@@ -58,6 +58,9 @@ export default {
       let minutos = parseInt(formaTime[1], 10);
       let segundos = parseInt(formaTime[2], 10);
       return hora*60*60+minutos*60+segundos*1000;
+    },
+    getReceta(receta_id){
+      this.$router.push('/recetas/receta/'+receta_id);
     }
   }
 };

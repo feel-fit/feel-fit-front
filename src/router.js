@@ -219,6 +219,7 @@ export default new Router({
         { path: 'batidos', component: () =>import(/* webpackChunkName: "about" */ './components/recetas/batidos') },
         { path: 'interes', component:() => import(/* webpackChunkName: "about" */ './components/recetas/interes') },
         { path: 'articulo/:id', component:() => import(/* webpackChunkName: "about" */ './components/recetas/informacion/blog') },
+        { path: 'receta/:id', component:() => import(/* webpackChunkName: "about" */ './components/recetas/informacion/receta') },
       ],
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route

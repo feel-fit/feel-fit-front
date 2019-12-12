@@ -2,7 +2,7 @@
   <div class="container-fluid py-5 my-3 px-0">
     <div class="row header-interes align-items-center">
       <div class="col-12">
-        <img :src="articulo.photo" alt class="header-image" />
+        <img src="../../../assets/images/recetas/blog/18.png" alt class="header-image" />
       </div>
       <div class="row margen-receta">
         <div class="col-12">

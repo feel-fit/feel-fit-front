@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div class="container-fluid py-5 my-3 px-0  ">
-      <div class="row header-interes align-items-center ">
+    <div class="container-fluid py-5 my-3 px-0">
+      <div class="row header-interes align-items-center m-0">
         <div class="col-12">
           <h1 class="header-text">
             Nuestro
@@ -23,7 +23,7 @@
       <!--linea -->
 
       <!-- articulos -->
-      <div class="row margen-receta my-5" v-for="(articulo,index) in articulos">
+      <div class="row margen-receta my-5 link" v-for="(articulo,index) in articulos" @click="getReceta(articulo.id)">
         <div class="col-6 p-0" :class="[index%2 ? 'order-1' : '']">
           <img :src="articulo.photo" class="style-imagen-articulo" />
         </div>
@@ -64,6 +64,11 @@ export default {
       .then(response => {
         this.articulos = response.data.data;
       });
+  },
+  methods:{
+    getReceta(articulos_id){
+      this.$router.push('/recetas/articulo/'+articulos_id);
+    }
   }
 };
 </script>

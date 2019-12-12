@@ -23,7 +23,7 @@
             <div class="carousel-item active">
               <div class="row">
                 <div class="col-md-4">
-                  <a href="#">
+                  <a @click="getReceta(articulos[0].id)" class="link">
                     <div class="card">
                       <div class="card-body order-1">
                         <label class="etiqueta p-2 text-uppercase">Blog</label>
@@ -39,7 +39,7 @@
                   </a>
                 </div>
                 <div class="col-md-4">
-                  <a href="#">
+                  <a @click="getReceta(articulos[1].id)" class="link">
                     <div class="card">
                       <div class="card-body">
                         <label class="etiqueta p-2 text-uppercase">Blog</label>
@@ -55,7 +55,7 @@
                   </a>
                 </div>
                 <div class="col-md-4">
-                  <a href="#">
+                  <a @click="getReceta(articulos[2].id)" class="link">
                     <div class="card">
                       <div class="card-body order-1">
                         <label class="etiqueta p-2 text-uppercase">Blog</label>
@@ -78,7 +78,7 @@
             <div class="carousel-item active" v-if="articulos.length>6">
               <div class="row">
                 <div class="col-md-4">
-                  <a href="#">
+                  <a @click="getReceta(articulos[3].id)" class="link">
                     <div class="card">
                       <div class="card-body order-1">
                         <label class="etiqueta p-2 text-uppercase">Blog</label>
@@ -94,7 +94,7 @@
                   </a>
                 </div>
                 <div class="col-md-4">
-                  <a href="#">
+                  <a @click="getReceta(articulos[4].id)" class="link">
                     <div class="card">
                       <div class="card-body">
                         <label class="etiqueta p-2 text-uppercase">Blog</label>
@@ -110,7 +110,7 @@
                   </a>
                 </div>
                 <div class="col-md-4">
-                  <a href="#">
+                  <a @click="getReceta(articulos[5].id)" class="link">
                     <div class="card">
                       <div class="card-body order-1">
                         <label class="etiqueta p-2 text-uppercase">Blog</label>
@@ -159,6 +159,11 @@ export default {
       .then(response => {
         this.articulos = response.data.data;
       });
+  },
+  methods:{
+    getReceta(articulo_id){
+      this.$router.push('/recetas/articulo/'+articulo_id);
+    }
   }
   
 };
