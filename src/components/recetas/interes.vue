@@ -1,5 +1,5 @@
 <template>
-  <div class="tab-pane fade" id="interes" role="tabpanel">
+  <div>
     <div class="container-fluid py-5 my-3 px-0  ">
       <div class="row header-interes align-items-center ">
         <div class="col-12">

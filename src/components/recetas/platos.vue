@@ -1,5 +1,5 @@
 <template>
-    <div class="tab-pane fade" id="platos" role="tabpanel">
+    <div>
         <receta :category="'Platos fuertes'" />
     </div>
 </template>

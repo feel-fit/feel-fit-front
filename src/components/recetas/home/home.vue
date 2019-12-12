@@ -1,5 +1,5 @@
 <template>
-  <div class="tab-pane fade show active" id="home" role="tabpanel">
+  <div class="">
     <div class="container-fluid p-0 position-relative d-none d-md-block mt-3 margin-slider">
       <!-- slider -->
       <slider />

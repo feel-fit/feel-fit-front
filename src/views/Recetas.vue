@@ -17,55 +17,29 @@
         <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
           <ul class="nav">
             <li class="nav-item">
-              <a class="nav-link active" data-toggle="tab" href="#home" role="tab">HOME</a>
+              <router-link class="nav-link" to="/recetas">HOME</router-link>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#desayunos" data-toggle="tab" role="tab">BRUNCH Y DESAYUNOS</a>
+              <router-link class="nav-link" to="/recetas/desayunos">BRUNCH Y DESAYUNOS</router-link>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#platos" data-toggle="tab" role="tab">PLATOS FUERTES</a>
+              <router-link class="nav-link" to="/recetas/platos">PLATOS FUERTES</router-link>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#postres" data-toggle="tab" role="tab">POSTRES</a>
+              <router-link class="nav-link" to="/recetas/postres">POSTRES</router-link>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#batidos" data-toggle="tab" role="tab">BATIDOS</a>
+              <router-link class="nav-link" to="/recetas/batidos">BATIDOS</router-link>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#interes" data-toggle="tab" role="tab">ARTICULOS DE INTERÉS</a>
+              <router-link class="nav-link" to="/recetas/interes">ARTICULOS DE INTERÉS</router-link>
             </li>
           </ul>
         </div>
       </nav>
 
-      <!-- Tab panels -->
-      <div class="tab-content">
-        <!--Panel 1-->
-        <home />
-        <!--/.Panel 1-->
-
-        <!--Panel 2-->
-        <desayunos />
-        <!--/.Panel 2-->
-
-        <!--Panel 4-->
-        <interes />
-        <!--/.Panel 4-->
-
-        <!--Panel 4-->
-        <batidos />
-        <!--/.Panel 4-->
-
-        <!--Panel 4-->
-        <platos />
-        <!--/.Panel 4-->
-
-        <!--Panel 4-->
-        <postres />
-        <!--/.Panel 4-->
-         <router-view></router-view>
-      </div>
-
+      <router-view></router-view>
+      
 
       <div>
         <!--fresa -->
@@ -79,24 +53,12 @@
 </template>
 
 <script>
-import home from "../components/recetas/home/home";
-import desayunos from "../components/recetas/desayunos";
-import interes from "../components/recetas/interes";
-import batidos from "../components/recetas/batidos";
-import platos from "../components/recetas/platos";
-import postres from "../components/recetas/postres";
 import suscribirte from "../components/recetas/home/suscribirte";
 import instagram from "../components/recetas/home/instagram.vue";
 import fresa from "../components/recetas/home/fresa.vue";
 
 export default {
   components: {
-    home,
-    desayunos,
-    interes,
-    batidos,
-    platos,
-    postres,
     suscribirte,
     instagram,
     fresa

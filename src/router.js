@@ -212,25 +212,18 @@ export default new Router({
         ]
       },
       children:[
-        { path: '/', component: import(/* webpackChunkName: "about" */ './components/recetas/home/home') },
-        { path: 'desayunos', component: import(/* webpackChunkName: "about" */ './components/recetas/desayunos') },
-        { path: 'platos', component: import(/* webpackChunkName: "about" */ './components/recetas/desayunos') },
-        { path: 'postres', component: import(/* webpackChunkName: "about" */ './components/recetas/desayunos') },
-        { path: 'batidos', component: import(/* webpackChunkName: "about" */ './components/recetas/desayunos') },
-        { path: 'interes', component: import(/* webpackChunkName: "about" */ './components/recetas/desayunos') },
+        { path: '/', component:() => import(/* webpackChunkName: "about" */ './components/recetas/home/home') },
+        { path: 'desayunos', component: () =>import(/* webpackChunkName: "about" */ './components/recetas/desayunos') },
+        { path: 'platos', component:() => import(/* webpackChunkName: "about" */ './components/recetas/platos') },
+        { path: 'postres', component:() => import(/* webpackChunkName: "about" */ './components/recetas/postres') },
+        { path: 'batidos', component: () =>import(/* webpackChunkName: "about" */ './components/recetas/batidos') },
+        { path: 'interes', component:() => import(/* webpackChunkName: "about" */ './components/recetas/interes') },
+        { path: 'articulo/:id', component:() => import(/* webpackChunkName: "about" */ './components/recetas/informacion/blog') },
       ],
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import(/* webpackChunkName: "about" */ './views/Recetas.vue')
-    },
-    {
-      path: '/blog/:id',
-      name: 'blog',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/InformacionBlog.vue')
     },
     {
       path: '*',
