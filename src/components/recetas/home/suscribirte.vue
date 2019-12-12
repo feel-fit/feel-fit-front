@@ -27,9 +27,8 @@
 </template>
 
 <script>
-import recetaDefault from "./receta-default.vue";
 export default {
-  components: { recetaDefault }
+  
 };
 </script>
 

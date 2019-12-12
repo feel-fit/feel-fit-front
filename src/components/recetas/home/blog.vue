@@ -9,7 +9,7 @@
       <div>
         <label class="etiqueta my-3 p-2">Blog</label>
         <h3 class="text-white">{{blog.title}}</h3>
-        <p class="cite text-uppercase">{{blog.author}} | {{blog.created_at}}</p>
+        <p class="cite text-uppercase">{{blog.author}} | | {{blog.created_at|moment("from", "now")}}</p>
       </div>
     </div>
   </div>
@@ -30,7 +30,7 @@ export default {
       .then(response => {
         this.blog = response.data.data;
       });
-  }
+  },
 };
 </script>
 

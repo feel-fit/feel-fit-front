@@ -6,12 +6,9 @@
       <!-- slider -->
 
       <!-- informacion-admin -->
-      <informacion-admin />
+      <informacion-admin v-if="recetas.length>0" />
       <!-- informacion-admin -->
 
-      <!-- receta-defaul-->
-      <receta-default/>
-      <!-- receta-defaul -->
     </div>
     <!--fresa -->
     <fresa />
@@ -56,7 +53,6 @@ import informacionAdmin from "./informacion-admin.vue";
 import galleta from './galleta.vue';
 import hoja from './hoja.vue';
 import carousel from './carouselBlog.vue';
-import recetaDefault from "./receta-default.vue";
 import populares from './populares.vue';
 import doblereceta from "./doblereceta.vue";
 export default {
@@ -68,7 +64,6 @@ export default {
     galleta,
     hoja,
     carousel,
-    recetaDefault,
     populares,
     doblereceta,
     linea

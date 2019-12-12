@@ -193,6 +193,7 @@ function Recipes(url = 'recipe') {
       getOne: (id) => axios.get(`${url}/${id}`),
       getBySlug: (slug) => axios.get(`${url}?slug=${slug}`),
       getAll: () => axios.get(`${url}?pagination=false`),
+      getLatests: () => axios.get(`${url}/latests`),
       getPaginate: () => axios.get(url),
   }
 }

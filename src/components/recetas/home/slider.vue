@@ -1,26 +1,34 @@
 <template>
-  <div>
+  <div v-if="recipes.length>0">
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators d-none d-lg-flex">
-        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active">
-          <img src="../../../assets/images/recetas/18.png" />
-        </li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="1">
-          <img :src="imageDefault" />
-        </li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="2">
-          <img src="../../../assets/images/recetas/18.png" />
+        <li
+          data-target="#carouselExampleIndicators"
+          :data-slide-to="index"
+          class="active"
+          v-for="recipe,index in recipes"
+        >
+          <img :src="recipe.photo" />
         </li>
       </ol>
       <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="../../../assets/images/recetas/18.png" class="d-block carousel-img" />
-        </div>
-        <div class="carousel-item">
-          <img :src="imageDefault" class="d-block carousel-img" />
-        </div>
-        <div class="carousel-item">
-          <img src="../../../assets/images/recetas/18.png" class="d-block carousel-img" />
+        <div
+          class="carousel-item"
+          :class="[index==0 ? 'active' : '']"
+          v-for="recipe,index in recipes"
+        >
+          <img :src="recipe.photo" class="d-block carousel-img" />
+          <div class="receta-default d-flex align-items-center">
+            <img
+              src="../../../assets/images/recetas/pp.png"
+              class="img-fluid imagen-receta mr-5 d-none d-md-block"
+            />
+            <div>
+              <label class="etiqueta my-3 p-2">{{recipe.category.name}}</label>
+              <h3 class="text-white">{{recipe.title}}</h3>
+              <p class="cite text-uppercase">{{recipe.author}} | | {{recipe.created_at|moment("from", "now")}}</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -28,16 +36,22 @@
 </template>
 
 <script>
-import imageDefault from "../../../assets/images/recetas/Part 2/person.png";
+import api from "../../../plugins/api";
 export default {
   data() {
     return {
-      imageDefault
+      recipes: []
     };
   },
   mounted() {
     $(".carousel").carousel();
-  }
+    api
+      .Recipes()
+      .getLatests()
+      .then(response => {
+        this.recipes = response.data.data;
+      });
+  },
 };
 </script>
 
@@ -106,5 +120,4 @@ export default {
     }
   }
 }
-
 </style>

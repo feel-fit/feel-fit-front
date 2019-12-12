@@ -4,7 +4,7 @@
     <linea :name="'entradas populares'" class="my-5" />
     <!--linea -->
     <!--doble recetas -->
-    <doblereceta class="my-5" :inverso="false"/>
+    <doblereceta class="my-5" :inverso="false" />
     <!--doble recetas -->
     <!--blog-->
     <blog class="my-5"/>
