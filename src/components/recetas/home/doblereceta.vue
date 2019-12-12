@@ -6,7 +6,7 @@
         <div class="col-12 p-0 alto" :class="{'order-lg-1':!inverso}">
           <img :src="receta1.photo" class="rounded" v-if="!receta1.url_video" />
           <iframe height="97%" width="100%" v-else
-            :src="receta1.url_video"
+            :src="'https://www.youtube.com/embed/'+receta1.url_video"
           ></iframe>
         </div>
         <div class="col-12 p-0 bajo" :class="{'order-lg-0':!inverso}">
@@ -21,7 +21,7 @@
         <div class="col-12 p-0 alto" :class="{'order-lg-1':inverso}">
           <img :src="receta2.photo" class="rounded" v-if="!receta2.url_video" />
           <iframe height="100%" width="100%" v-else
-            :src="receta2.url_video"
+            :src="'https://www.youtube.com/embed/'+receta2.url_video"
           ></iframe>
         </div>
         <div class="col-12 p-0 bajo" :class="{'order-lg-0':inverso}">

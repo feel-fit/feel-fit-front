@@ -62,6 +62,9 @@ export default {
     suscribirte,
     instagram,
     fresa
+  },
+  mounted(){
+    this.$store.commit('open_menu', false)
   }
 };
 </script>

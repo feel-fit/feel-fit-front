@@ -91,7 +91,7 @@
       <div class="col-12" v-if="recipe.url_video">
         <div class="container-fluid">
           <iframe 
-            :src="recipe.url_video"
+            :src="'https://www.youtube.com/embed/'+recipe.url_video"
           ></iframe>
         </div>
       </div>
