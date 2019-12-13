@@ -11,7 +11,7 @@
 
     </div>
     <!--fresa -->
-    <fresa />
+    <fresa v-if="recetas.length>0"/>
     <!--fresa -->
     <!--linea -->
     <linea class="margen-receta" :name="'mas ideas de feel fit'" v-if="recetas.length>0"/>
@@ -20,10 +20,10 @@
     <doblereceta class="margen-receta my-5" :receta1="recetas[0]?recetas[0]:null" :receta2="recetas[1]?recetas[1]:null"/>
     <!--doble recetas -->
     <!--galleta -->
-    <galleta />
+    <galleta v-if="recetas[0]?recetas[0]:null"/>
     <!--galleta -->
     <!-- mensaje positivo -->
-    <mensajepositivo class="margen-receta my-5" />
+    <mensajepositivo class="margen-receta my-5" v-if="recetas[2]?recetas[2]:null" />
     <!-- mensaje positivo -->
     <!--doble recetas -->
     <doblereceta class="margen-receta my-5" :inverso="true" :receta1="recetas[2]?recetas[2]:null" :receta2="recetas[3]?recetas[3]:null"/>

@@ -17,7 +17,7 @@
         <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
           <ul class="nav">
             <li class="nav-item">
-              <router-link class="nav-link" to="/recetas">HOME</router-link>
+              <router-link class="nav-link" to="/recetas" >HOME</router-link>
             </li>
             <li class="nav-item">
               <router-link class="nav-link" to="/recetas/desayunos">BRUNCH Y DESAYUNOS</router-link>

@@ -11,7 +11,7 @@
       </div>
 
       <!--fresa -->
-      <fresa />
+      <fresa v-if="articulos.length>0"/>
       <!--fresa -->
 
       <!-- articulos blog -->
@@ -19,7 +19,7 @@
       <!-- blog -->
 
       <!--linea -->
-      <linea class="margen-receta my-5" :name="'Te puede interesar'" />
+      <linea class="margen-receta my-5" :name="'Te puede interesar'" v-if="articulos.length>0" />
       <!--linea -->
 
       <!-- articulos -->
