@@ -16,21 +16,8 @@
 </template>
 
 <script>
-import api from '../../../plugins/api'
 export default {
-  data(){
-    return {
-      blog:null
-    }
-  },
-  beforeMount(){
-    api
-      .Blog()
-      .getLatest()
-      .then(response => {
-        this.blog = response.data.data;
-      });
-  },
+  props:['blog']
 };
 </script>
 

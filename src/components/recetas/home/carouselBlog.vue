@@ -2,7 +2,7 @@
 <div>
 
   <!--linea -->
-    <linea class="mb-5" :name="'articulos recientes'"/>
+    <linea class="mb-5" :name="'articulos recientes'" v-if="articulos.length>0"/>
   <!--linea -->
 
   <div class="padding-container" v-if="articulos.length>2">

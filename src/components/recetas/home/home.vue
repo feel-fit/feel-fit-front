@@ -14,7 +14,7 @@
     <fresa />
     <!--fresa -->
     <!--linea -->
-    <linea class="margen-receta" :name="'mas ideas de feel fit'"/>
+    <linea class="margen-receta" :name="'mas ideas de feel fit'" v-if="recetas.length>0"/>
     <!--linea -->
     <!--doble recetas -->
     <doblereceta class="margen-receta my-5" :receta1="recetas[0]?recetas[0]:null" :receta2="recetas[1]?recetas[1]:null"/>
