@@ -9,13 +9,7 @@
     <div class="row">
       <div class="col">
         <!-- LightWidget WIDGET -->
-        <iframe
-          src="//lightwidget.com/widgets/f7a16dcfa72856209afc560f9aaff9e4.html"
-          scrolling="no"
-          allowtransparency="true"
-          class="lightwidget-widget"
-          style="width:100%;border:0;overflow:hidden;"
-        ></iframe>
+        <div class="elfsight-app-4eeeea33-4d63-48a2-b526-9e2dc1d9e1c9"></div>
       </div>
     </div>
   </div>
