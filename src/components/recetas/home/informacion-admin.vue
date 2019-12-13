@@ -9,9 +9,9 @@
     </p>
     <img src="../../../assets/images/recetas/firma.png" class="img-fluid mt-4" />
     <div>
-      <img src="../../../assets/images/recetas/iconos_redes/group_12.svg" class="img-fluid" />
-      <img src="../../../assets/images/recetas/iconos_redes/group_13.svg" class="img-fluid mx-2" />
-      <img src="../../../assets/images/recetas/iconos_redes/group_18.svg" class="img-fluid" />
+      <img src="../../../assets/images/recetas/redessociales/fa.png" class="img-fluid" />
+      <img src="../../../assets/images/recetas/redessociales/ig.png" class="img-fluid mx-2" />
+      <img src="../../../assets/images/recetas/redessociales/tw.png" class="img-fluid" />
     </div>
   </div>
 </template>

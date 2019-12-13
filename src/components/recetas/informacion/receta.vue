@@ -84,21 +84,43 @@
       </div>
       <div class="col-12 pt-5 receta-preparacion" v-if="recipe.preparations.length>0">
         <h3>PREPARACIÓN:</h3>
-
         <div class="ml-5">
           <div v-for="item,index in recipe.preparations" class="d-flex">
             <div class="index">{{index+1}}</div>
-            <div class="ml-5">
-              <h2 v-if="item.title">{{item.title}}:</h2>
+            <div class="title">
+              <h2 v-if="item.title" class="m-0">{{item.title}}:</h2>
               <p>{{item.description}}</p>
             </div>
           </div>
         </div>
-        
+      </div>
+      <div class="col-12 mt-5 text-sugestion">
+        <h3>Sugerencias:</h3>
+        <p>{{recipe.suggestion}}</p>
       </div>
       <div class="col-12 pt-5" v-if="recipe.url_video">
         <div class="container-fluid">
           <iframe :src="'https://www.youtube.com/embed/'+recipe.url_video" class="video-receta"></iframe>
+        </div>
+      </div>
+      <div class="col-12 text-center mt-5">
+        <h5>Compártelo</h5>
+        <div class="mt-4">
+          <a :href="'https://www.facebook.com/sharer/sharer.php?u=https://feelfitmarket.com/recetas/receta/'+recipe.id">
+          <img src="../../../assets/images/recetas/redessociales/fa.png" class="img-fluid" />
+          </a>
+          <a :href="'https://twitter.com/home?status=https://feelfitmarket.com/recetas/receta/'+recipe.id+'/ '+recipe.title">
+            <img
+            src="../../../assets/images/recetas/redessociales/tw.png"
+            class="img-fluid mx-3"
+          />
+          </a>
+          <a :href="'https://plus.google.com/share?url=https://feelfitmarket.com/recetas/receta/'+recipe.id" class="mr-3">
+            <img src="../../../assets/images/recetas/redessociales/go.png" class="img-fluid" />
+          </a>
+          <a href="">
+            <img src="../../../assets/images/recetas/redessociales/ig.png" class="img-fluid" />
+          </a>
         </div>
       </div>
     </div>
@@ -225,6 +247,21 @@ p {
     font-weight: bold;
     font-size: 3rem;
     font-style: italic;
+  }
+  .title {
+    color: black;
+    margin-left: 40px;
+    h2 {
+      color: black;
+    }
+  }
+}
+
+.text-sugestion {
+  h3 {
+    font-weight: bold;
+    font-style: italic;
+    margin-bottom: 40px;
   }
 }
 </style>
