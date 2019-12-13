@@ -1,7 +1,7 @@
 <template>
   <div class="container-fluid py-5 my-3 px-0" v-if="recipe">
-    <div class="row">
-      <div class="col-12">
+    <div class="row m-0">
+      <div class="col-12 p-0">
         <img :src="recipe.photo" class="header-image" />
       </div>
     </div>
@@ -23,41 +23,42 @@
       </div>
     </div>
     <div class="row margen-receta">
-      <div class="col-12">
+      <div class="col-12 pt-5">
         <div class="row justify-content-center info-receta">
           <div class="col-2 text-center">
             <img src="../../../assets/images/recetas/elementosdetalle/fork.png" class="img-fluid" />
-            <h6>Tipo de Receta</h6>
-            <h6 class="text-uppercase font-weight-bold">{{recipe.category.name}}</h6>
+            <h6 class="my-2 text-body">Tipo de Receta</h6>
+            <h6 class="text-uppercase font-weight-bold text-body">{{recipe.category.name}}</h6>
           </div>
           <div class="col-2 text-center">
             <img src="../../../assets/images/recetas/elementosdetalle/clock.png" class="img-fluid" />
-            <h6>Duración</h6>
+            <h6 class="my-2 text-body">Duración</h6>
             <h6
-              class="text-uppercase font-weight-bold"
+              class="text-uppercase font-weight-bold text-body"
             >{{ 'PT'+createTime(recipe.duration)+'S' | duration('humanize') }}</h6>
           </div>
           <div class="col-2 text-center">
             <img src="../../../assets/images/recetas/elementosdetalle/layers.png" class="img-fluid" />
-            <h6>Porciones</h6>
-            <h6 class="text-uppercase font-weight-bold">{{recipe.portions}}</h6>
+            <h6 class="my-2 text-body">Porciones</h6>
+            <h6 class="text-uppercase font-weight-bold text-body">{{recipe.portions}}</h6>
           </div>
           <div class="col-2 text-center">
             <img src="../../../assets/images/recetas/elementosdetalle/chef.png" class="img-fluid" />
-            <h6>Dificultad</h6>
-            <h6 class="text-uppercase font-weight-bold">{{recipe.difficult}}</h6>
+            <h6 class="my-2 text-body">Dificultad</h6>
+            <h6 class="text-uppercase font-weight-bold text-body">{{recipe.difficult}}</h6>
           </div>
         </div>
       </div>
-      <div class="col-12">
-        <p>
-          {{recipe.description}}
-        </p>
+      <div class="col-12 pt-5">
+        <p>{{recipe.description}}</p>
       </div>
-      <div class="col-12">
-        <div class="row" v-if="recipe.ingredients.length>0">
+      <div class="col-12 pt-5">
+        <div class="row receta-lista" v-if="recipe.ingredients.length>0">
           <div class="col-6 p-0">
-            <img src="../../../assets/images/recetas/detallereceta/monika-grabkowska-neu4T59mTcY-unsplash.png" class="w-100">
+            <img
+              src="../../../assets/images/recetas/detallereceta/monika-grabkowska-neu4T59mTcY-unsplash.png"
+              class="w-100"
+            />
           </div>
           <div class="col-6 p-5">
             <h3>INGREDIENTES:</h3>
@@ -66,7 +67,7 @@
             </ul>
           </div>
         </div>
-        <div class="row" v-if="recipe.supplys.length>0">
+        <div class="row receta-lista" v-if="recipe.supplys.length>0">
           <div class="col-6 p-5">
             <h3>SUMINISTROS:</h3>
             <ul>
@@ -74,25 +75,30 @@
             </ul>
           </div>
           <div class="col-6 p-0">
-            <img src="../../../assets/images/recetas/detallereceta/gaelle-marcel-qMIGJmx41EM-unsplash.png" class="w-100">
+            <img
+              src="../../../assets/images/recetas/detallereceta/gaelle-marcel-qMIGJmx41EM-unsplash.png"
+              class="w-100"
+            />
           </div>
         </div>
       </div>
-      <div class="col-12" v-if="recipe.preparations.length>0">
-        <ol>
-          <li v-for="item in recipe.preparations">
-            <h2 v-if="item.title">{{item.title}}:</h2>
-            <p>
-              {{item.description}}
-            </p>
-          </li>
-        </ol>
+      <div class="col-12 pt-5 receta-preparacion" v-if="recipe.preparations.length>0">
+        <h3>PREPARACIÓN:</h3>
+
+        <div class="ml-5">
+          <div v-for="item,index in recipe.preparations" class="d-flex">
+            <div class="index">{{index+1}}</div>
+            <div class="ml-5">
+              <h2 v-if="item.title">{{item.title}}:</h2>
+              <p>{{item.description}}</p>
+            </div>
+          </div>
+        </div>
+        
       </div>
-      <div class="col-12" v-if="recipe.url_video">
+      <div class="col-12 pt-5" v-if="recipe.url_video">
         <div class="container-fluid">
-          <iframe 
-            :src="'https://www.youtube.com/embed/'+recipe.url_video"
-          ></iframe>
+          <iframe :src="'https://www.youtube.com/embed/'+recipe.url_video" class="video-receta"></iframe>
         </div>
       </div>
     </div>
@@ -155,6 +161,9 @@ h3 {
   color: black;
   font-family: "CircularStd-Book";
   font-size: 1.8rem;
+  &:first-letter {
+    text-transform: uppercase;
+  }
 }
 h6 {
   color: black;
@@ -183,5 +192,39 @@ p {
   font-size: 12px;
   letter-spacing: 1px;
   margin: 0 auto;
+}
+.video-receta {
+  width: 100%;
+  height: 450px;
+}
+
+.receta-lista {
+  height: 500px;
+  overflow: hidden;
+  background: #f7f6f6;
+  h3 {
+    font-weight: bold;
+    font-style: italic;
+    margin-bottom: 40px;
+  }
+  ul {
+    list-style-type: none;
+    li {
+      margin-bottom: 10px;
+    }
+  }
+}
+.receta-preparacion {
+  h3 {
+    font-weight: bold;
+    font-style: italic;
+    margin-bottom: 40px;
+  }
+  .index {
+    color: #20d6d9;
+    font-weight: bold;
+    font-size: 3rem;
+    font-style: italic;
+  }
 }
 </style>

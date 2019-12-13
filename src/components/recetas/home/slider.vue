@@ -25,8 +25,10 @@
             />
             <div>
               <label class="etiqueta my-3 p-2">{{recipe.category.name}}</label>
-              <h3 class="text-white">{{recipe.title}}</h3>
-              <p class="cite text-uppercase">{{recipe.author}} | | {{recipe.created_at|moment("from", "now")}}</p>
+              <h3 class="text-white text-uppercase font-weight-bold">{{recipe.title}}</h3>
+              <p
+                class="cite text-uppercase"
+              >{{recipe.author}} | | {{recipe.created_at|moment("from", "now")}}</p>
             </div>
           </div>
         </div>
@@ -51,11 +53,12 @@ export default {
       .then(response => {
         this.recipes = response.data.data;
       });
-  },
+  }
 };
 </script>
 
 <style scoped lang="scss">
+
 .carousel-img {
   width: 100%;
   height: 70vmin;
@@ -85,6 +88,7 @@ export default {
   height: 100%;
   top: 10;
   left: 0;
+  object-fit: cover;
 }
 
 // Large devices (desktops, 992px and up)

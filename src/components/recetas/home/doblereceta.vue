@@ -12,7 +12,7 @@
         <div class="col-12 p-0 bajo" :class="{'order-lg-0':!inverso}">
           <label class="etiqueta my-3 mt-lg-0 p-2 text-uppercase">{{receta1.category.name}}</label>
           <h4 class="title mb-3 text-capitalize">{{receta1.title}}</h4>
-          <p class="cite text-uppercase">{{receta1.author}} | {{ 'PT'+createTime(receta1.duration)+'S' | duration('humanize') }}</p>
+          <p class="cite text-uppercase">{{receta1.author}} | {{receta1.created_at|moment("from", "now")}}</p>
         </div>
       </div>
     </div>
@@ -27,7 +27,7 @@
         <div class="col-12 p-0 bajo" :class="{'order-lg-0':inverso}">
           <label class="etiqueta my-3 p-2 text-uppercase">{{receta2.category.name}}</label>
           <h4 class="title mb-3 text-capitalize">{{receta2.title}}</h4>
-          <p class="cite text-uppercase">{{receta2.author}} | {{ 'PT'+createTime(receta2.duration)+'S' | duration('humanize') }}</p>
+          <p class="cite text-uppercase">{{receta2.author}} | {{receta2.created_at|moment("from", "now")}}</p>
         </div>
       </div>
     </div>
@@ -52,13 +52,6 @@ export default {
     };
   },
   methods:{
-    createTime(time){
-      let formaTime = time.split(":");
-      let hora = parseInt(formaTime[0], 10);
-      let minutos = parseInt(formaTime[1], 10);
-      let segundos = parseInt(formaTime[2], 10);
-      return hora*60*60+minutos*60+segundos*1000;
-    },
     getReceta(receta_id){
       this.$router.push('/recetas/receta/'+receta_id);
     }
