@@ -215,6 +215,12 @@ function Blog(url = 'blog') {
   }
 }
 
+function Subscribe(url = 'subscribe') {
+  return {
+    create: (toCreate) => axios.post(url, toCreate),
+  }
+}
+
 function PositiveMessage(url = 'positive-message') {
   return {
       getOne: (id) => axios.get(`${url}/${id}`),
@@ -246,5 +252,6 @@ export default {
   Recipes,
   Blog,
   PositiveMessage,
-  RecipeCategory
+  RecipeCategory,
+  Subscribe
 }
