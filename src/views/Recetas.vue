@@ -1,7 +1,7 @@
 <template>
   <section>
-    <div class="container-fluid p-0 m-0">
-      <h1 class="title-recetas text-primary font-italic">Nuetras Recetas</h1>
+    <div class="container-fluid p-0 pt-5 m-0 mt-5">
+      <h1 class="title-recetas text-primary font-italic" v-if="titulo">Nuetras Recetas</h1>
       <nav class="navbar navbar-expand-lg">
         <button
           class="navbar-toggler"
@@ -63,8 +63,15 @@ export default {
     instagram,
     fresa
   },
+  props:{
+    titulo:{
+      type: Boolean,
+      default: true
+    }
+  },
   mounted(){
     this.$store.commit('open_menu', false)
+    console.log(this.$props);
   }
 };
 </script>
@@ -72,7 +79,7 @@ export default {
 <style scoped>
 .title-recetas {
   font-size: 2.3rem;
-  margin-top: 90px;
+  margin-top: 20px;
   margin-bottom: 8px;
   text-align: center;
   text-transform: uppercase;

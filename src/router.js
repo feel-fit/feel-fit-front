@@ -217,9 +217,9 @@ export default new Router({
         { path: 'platos', component:() => import(/* webpackChunkName: "about" */ './components/recetas/platos') },
         { path: 'postres', component:() => import(/* webpackChunkName: "about" */ './components/recetas/postres') },
         { path: 'batidos', component: () =>import(/* webpackChunkName: "about" */ './components/recetas/batidos') },
-        { path: 'interes', component:() => import(/* webpackChunkName: "about" */ './components/recetas/interes') },
+        { path: 'interes', component:() => import(/* webpackChunkName: "about" */ './components/recetas/interes')},
         { path: 'articulo/:id', component:() => import(/* webpackChunkName: "about" */ './components/recetas/informacion/blog') },
-        { path: 'receta/:id', component:() => import(/* webpackChunkName: "about" */ './components/recetas/informacion/receta') },
+        { path: 'receta/:id', component:() => import(/* webpackChunkName: "about" */ './components/recetas/informacion/receta')},
       ],
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
