@@ -55,7 +55,7 @@
                                   <button type="button" class="btn btn-outline-secondary">-</button>
                                 </div>
                                 <input type="text" v-model="item.quantity" class="form-control btn btn-outline-secondary">
-                                <div @click="item.quantity++" class="input-group-append">
+                                <div @click="sumItem(item)" class="input-group-append">
                                   <button class="btn btn-outline-secondary" type="button">+</button>
                                 </div>
                               </div>
@@ -123,6 +123,7 @@
   </div>
 </template>
 <script>
+import api from '../plugins/api'
 import logo from './../assets/images/logo_menu.svg'
 import sumBy from 'lodash/sumBy'
 import imageDefault from './../assets/images/producto.png'
@@ -176,6 +177,15 @@ export default {
         return x
       })
     
+    },
+    sumItem(item){
+      api.Products().getOne(item.id).then(
+        (response)=>{
+          if(response.data.data.stock.quantity>item.quantity){
+            item.quantity++;
+          }
+        }
+      );
     },
     open_menu () {
       this.$store.commit('open_cart', !this.open)
