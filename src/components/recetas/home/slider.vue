@@ -26,7 +26,7 @@
             />
             <div>
               <label class="etiqueta my-3 p-2">{{recipe.category.name}}</label>
-              <h3 class="text-white text-uppercase font-weight-bold">{{recipe.title}}</h3>
+              <h3 class="color-text text-uppercase font-weight-bold">{{recipe.title}}</h3>
               <p
                 class="cite text-uppercase"
               >{{recipe.author}} | | {{recipe.created_at|moment("from", "now")}}</p>
@@ -76,6 +76,12 @@ export default {
   margin: 0;
   margin-left: 2%;
   justify-content: center;
+}
+
+
+.color-text{
+  color: white;
+  font-family: "CircularStd-Medium";
 }
 
 .carousel-indicators li,
