@@ -5,7 +5,9 @@
         <img :src="recipe.photo" class="header-image" />
       </div>
     </div>
-    <div class="row margen-receta">
+
+    <div class="row p-0 m-0 blog">
+      <div class="row margen-receta">
       <div class="col-12">
         <div class="container-fluid my-5">
           <div class="d-flex">
@@ -22,6 +24,7 @@
         </div>
       </div>
     </div>
+
     <div class="row margen-receta">
       <div class="col-12 pt-5">
         <div class="row justify-content-center info-receta">
@@ -124,6 +127,8 @@
         </div>
       </div>
     </div>
+
+    </div>
   </div>
 </template>
 
@@ -159,6 +164,12 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.blog{
+  min-width: 700px;
+  background-image: url('../../../assets/images/recetas/blog/ffmda.png');
+  background-repeat: no-repeat;
+  background-position: top right;
+}
 .margen-receta {
   margin-left: 10%;
   margin-right: 10%;

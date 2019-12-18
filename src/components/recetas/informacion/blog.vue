@@ -1,10 +1,10 @@
 <template>
   <div class="container-fluid py-5 my-3 px-0">
-    <div class="row header-interes align-items-center">
+    <div class="row align-items-center" >
       <div class="col-12">
         <img src="../../../assets/images/recetas/blog/18.png" alt class="header-image" />
       </div>
-      <div class="row margen-receta">
+      <div class="row margen-receta articulo">
         <div class="col-12">
           <div class="container-fluid my-5">
             <div class="d-flex">
@@ -26,12 +26,10 @@
           <p>
             {{articulo.text_header}}
           </p>
-          </div>
-        <div class="col-4">
-          <h2>{{articulo.subtitle}}</h2>
         </div>
-        <div class="col-8">
-          <p>{{articulo.text_right}}</p>
+        <div class="col-12 p-0">
+          <h4 class="m-4 float-left">{{articulo.subtitle}}</h4>
+          <p class="m-0">{{articulo.text_right}}</p>
         </div>
         <div class="col-12">
           <p>{{articulo.text_body}}</p>
@@ -70,9 +68,15 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.articulo{
+  min-width: 700px;
+  background-image: url('../../../assets/images/recetas/blog/ffmda.png');
+  background-repeat: no-repeat;
+  background-position: center right;
+}
 .margen-receta {
-  margin-left: 10%;
-  margin-right: 10%;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 .header-image {
   width: 100%;
@@ -88,6 +92,11 @@ h3 {
   color: black;
   font-family: "CircularStd-Book";
   font-size: 1.8rem;
+}
+h4{
+  color: black;
+  font-family: "CircularStd-Book";
+  font-size: 1.5rem;
 }
 h6 {
   color: black;

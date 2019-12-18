@@ -9,9 +9,10 @@
     </p>
     <img src="../../../assets/images/recetas/firma.png" class="img-fluid mt-4" />
     <div>
-      <img src="../../../assets/images/recetas/redessociales/fa.png" class="img-fluid" />
-      <img src="../../../assets/images/recetas/redessociales/ig.png" class="img-fluid mx-2" />
-      <img src="../../../assets/images/recetas/redessociales/tw.png" class="img-fluid" />
+      <a target="_blank" href="https://facebook.com/feelfitmarket"><img src="../../../assets/images/recetas/redessociales/fa.png" class="img-fluid" /></a>
+      <a target="_blank" href="https://instagram.com/feelfitmarket"><img src="../../../assets/images/recetas/redessociales/ig.png" class="img-fluid mx-2" /></a>
+      <a target="_blank" href="mailto:feelfitmarket@gmail.com"><img src="../../../assets/images/recetas/redessociales/go.png" class="img-fluid mr-2" /></a>
+      <a target="_blank" href="#"><img src="../../../assets/images/recetas/redessociales/tw.png" class="img-fluid" /></a>
     </div>
   </div>
 </template>

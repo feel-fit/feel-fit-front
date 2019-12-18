@@ -17,6 +17,7 @@
           :class="[index==0 ? 'active' : '']"
           v-for="recipe,index in recipes"
         >
+        <a href="#" @click="navegarReceta(recipe.id)">
           <img :src="recipe.photo" class="d-block carousel-img" />
           <div class="receta-default d-flex align-items-center">
             <img
@@ -31,6 +32,7 @@
               >{{recipe.author}} | | {{recipe.created_at|moment("from", "now")}}</p>
             </div>
           </div>
+          </a>
         </div>
       </div>
     </div>
@@ -53,6 +55,11 @@ export default {
       .then(response => {
         this.recipes = response.data.data;
       });
+  },
+  methods:{
+    navegarReceta(id){
+      this.$router.push('recetas/receta/'+id);
+    }
   }
 };
 </script>
