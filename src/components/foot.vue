@@ -10,7 +10,7 @@
                     <h6 class="footer_h6 mb-0 text-dark"><strong>TELÉFONO:</strong></h6>
                     <p class="mb-0">(311) 374 55 88</p>
                     <h6 class="footer_h6 mb-0 text-dark"><strong>DIRECCIÓN:</strong></h6>
-                    <p>Calle 5ta A norte #18A-88 local 32</p>
+                    <p>Calle 5 norte #18A-88 local 32</p>
 
                 </div>
                 <div class="d-none d-md-block col-md-3 text-md-center my-auto">
