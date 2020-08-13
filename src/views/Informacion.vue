@@ -118,7 +118,7 @@ export default {
         { name: 'keywords', content: flatMap(this.product.tags, 'name') + ',' + flatMap(this.product.categories, 'name') + ', ' + this.product.name + ', ' + (this.product.brand ? this.product.brand.name : '') }
       ],
       link: [
-        { rel: 'canonical', href: 'https://feelfitmarket.com' + this.$route.fullPath }
+        { rel: 'canonical', href: 'https://feelfit.com.co' + this.$route.fullPath }
       ]
     }
   },

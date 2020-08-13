@@ -46,7 +46,7 @@ export default {
         { name: 'keywords', content: 'caja sorpresa, feelfit, venta de productos fitness' }
       ],
       link: [
-        { rel: 'canonical', href: 'https://feelfitmarket.com' + this.$route.fullPath }
+        { rel: 'canonical', href: 'https://feelfit.com.co' + this.$route.fullPath }
       ]
     }
   },

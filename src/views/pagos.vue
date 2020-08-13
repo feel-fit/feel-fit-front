@@ -63,7 +63,7 @@ export default {
         { name: 'keywords', content: 'pagos, venta de productos saludable' }
       ],
       link: [
-        { rel: 'canonical', href: 'https://feelfitmarket.com' + this.$route.fullPath }
+        { rel: 'canonical', href: 'https://feelfit.com.co' + this.$route.fullPath }
       ]
     }
   },

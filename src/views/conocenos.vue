@@ -68,7 +68,7 @@ export default {
       link: [
         {
           rel: "canonical",
-          href: "https://feelfitmarket.com" + this.$route.fullPath,
+          href: "https://feelfit.com.co" + this.$route.fullPath,
         },
       ],
     };

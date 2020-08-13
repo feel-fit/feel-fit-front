@@ -109,16 +109,16 @@
       <div class="col-12 text-center mt-5">
         <h5>Compártelo</h5>
         <div class="mt-4">
-          <a :href="'https://www.facebook.com/sharer/sharer.php?u=https://feelfitmarket.com/recetas/receta/'+recipe.id">
+          <a :href="'https://www.facebook.com/sharer/sharer.php?u=https://feelfit.com.co/recetas/receta/'+recipe.id">
           <img src="../../../assets/images/recetas/redessociales/fa.png" class="img-fluid" />
           </a>
-          <a :href="'https://twitter.com/home?status=https://feelfitmarket.com/recetas/receta/'+recipe.id+'/ '+recipe.title">
+          <a :href="'https://twitter.com/home?status=https://feelfit.com.co/recetas/receta/'+recipe.id+'/ '+recipe.title">
             <img
             src="../../../assets/images/recetas/redessociales/tw.png"
             class="img-fluid mx-3"
           />
           </a>
-          <a :href="'https://plus.google.com/share?url=https://feelfitmarket.com/recetas/receta/'+recipe.id" class="mr-3">
+          <a :href="'https://plus.google.com/share?url=https://feelfit.com.co/recetas/receta/'+recipe.id" class="mr-3">
             <img src="../../../assets/images/recetas/redessociales/go.png" class="img-fluid" />
           </a>
           <a href="">
