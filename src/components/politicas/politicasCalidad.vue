@@ -121,7 +121,7 @@
                     cliente <span class="font-weight-bold">311-374-5588.</span>
                   </p>
                   <h6>Lunes a viernes de 8:00 a.m. a 12:00 p.m. y de 2:00 p.m. a 6:00 p.m.</h6>
-                  <h6 class="font-weight-bolder"><u>Sábados de 7:00 a.m. a 12:00 p.m.</u></h6>
+                  <h6 class="font-weight-bolder"><u>Sábados de 9:00 a.m. a 12:00 p.m.</u></h6>
                   <p>
                     El objetivo de la presente Política es comunicarle el tipo de datos que se recogen,
                     las finalidades del tratamiento y uso de cada uno de ellos para hacer posible la
@@ -154,7 +154,7 @@
                   <h6>Definición.</h6>
                   <p>
                     <span class="font-weight-bold">Titular del Dato Personal:</span> Es la persona que se registra en un espacio de
-                    interacción de <span class="font-weight-bold">www.feelfitmarket.com,</span> y/o a través de alguna red social en donde
+                    interacción de <span class="font-weight-bold">feelfit.com.co,</span> y/o a través de alguna red social en donde
                     <span class="font-weight-bold">FEEL FIT MARKET</span> tenga presencia; de igual forma podrán ser titulares de los
                     datos personales quienes accedan a través de cualquiera de los portales que
                     FEEL FIT haga uso y/o quienes asistan y/o participan de los eventos en los que
@@ -573,10 +573,10 @@
                         atención al cliente <span class="font-weight-bold">311-374-5588</span> en el horario de:
                       </p>
                       <p>Lunes a viernes de 8:00 a.m. a 12:00 p.m y de 2:00 p.m a 6:00 p.m</p>
-                      <p>Sábados de 8:00 a.m. a 12:00 p.m</p>
+                      <p>Sábados de 9:00 a.m. a 12:00 p.m</p>
                       <p>Línea de atención a proveedores <span class="font-weight-bold">311-374-5588</span> en los horarios de:</p>
                       <p><u>Lunes a viernes de 8:00 a.m. a 12:00 p.m y de 2:00 p.m a 6:00 p.m<</u>/p>
-                      <p><u>Sábados de 8:00 a.m. a 12:00 p.m</u></p>
+                      <p><u>Sábados de 9:00 a.m. a 12:00 p.m</u></p>
 
                       <h6>Termino de respuesta de las P.Q.R.S.D</h6>
 
@@ -626,7 +626,7 @@
                         llamar a la línea de atención al cliente <span class="font-weight-bold">311-374-5588</span> en los siguientes horarios
                       </p>
                       <p><u>Lunes a viernes de 8:00 a.m. a 12:00 p.m y de 2:00 p.m a 6:00 p.m</u></p>
-                      <p><u>Sábados de 8:00 a.m. a 12:00 p.m</u></p>
+                      <p><u>Sábados de 9:00 a.m. a 12:00 p.m</u></p>
                       <p>
                         Línea de atención a proveedores <span class="font-weight-bold">311-374-5588</span> en los horarios de:
                       </p>
@@ -634,7 +634,7 @@
                         <u>Lunes a viernes de 8:00 a.m. a 12:00 p.m y de 2:00 p.m a 6:00 p.m</u>
                       </p>
                       <p>
-                        <u>Sábados de 8:00 a.m. a 12:00 p.m</u>
+                        <u>Sábados de 9:00 a.m. a 12:00 p.m</u>
                       </p>
                       <h6>Nuevos proveedores.</h6>
                       <p>
@@ -648,7 +648,7 @@
                         <u>Lunes a viernes de 8:00 a.m. a 12:00 p.m y de 2:00 p.m a 6:00 p.m</u>
                       </p>
                       <p>
-                        <u>Sábados de 8:00 a.m. a 12:00 p.m</u>
+                        <u>Sábados de 9:00 a.m. a 12:00 p.m</u>
                       </p>
                       <p>
                         A través del correo electrónico <span class="font-weight-bold">feelfitmarket@gmail.com</span>
