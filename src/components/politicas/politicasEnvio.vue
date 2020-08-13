@@ -44,8 +44,8 @@
                       (desde la calle 26 hasta la glorieta del hospital del sur)
                     </li>
                     <li>
-                      Si vives en uno de los siguientes municipios: calarcá, Circasia y el corregimiento del caimo
-                      tendrá un costo de $6,000. Para la tebaida tendrá un costo de $8,000.
+                      Si vives en uno de los siguientes municipios: calarcá, Circasia, el corregimiento del caimo 
+                      y via tebaida tendrá un costo de $6,000. Para la tebaida tendrá un costo de $8,000.
                     </li>
                     <li>
                       Para los demás municipios del departamento del Quindío, te enviaremos tu pedido a través de empresa
