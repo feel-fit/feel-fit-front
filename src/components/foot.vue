@@ -35,7 +35,7 @@
                     <a href="#"><img src="../assets/images/tarjetas.svg" class="w-50"></a>
                 </div>
                 <div class="col-12 col-md-3 d-flex justify-content-center justify-content-md-end mr-md-2">
-                    <p class="align-self-end text-dark"><small>Copyright 2019. LUSUAU S.A.S</small></p>
+                    
                 </div>
             </div>
             <img src="../assets/images/fresa_home.png" class="fresa_home_footer w-25  d-none position-absolute">
