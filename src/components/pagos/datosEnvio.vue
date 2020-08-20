@@ -179,11 +179,11 @@ export default {
       address: {
         address: null,
         city_id: null,
-        name: "segunda casa"
+        name: "segunda casa",
       },
       domicile: "otro",
       department: null,
-      cities: []
+      cities: [],
     };
   },
   computed: {
@@ -199,7 +199,7 @@ export default {
       return this.$store.state.cart;
     },
     total() {
-      return sumBy(this.cart.items, item => {
+      return sumBy(this.cart.items, (item) => {
         return item.quantity * item.price;
       });
     },
@@ -210,7 +210,7 @@ export default {
       return 0;
     },
     isArmenia() {
-      if (this.department == 24 && this.address.city_id == 875) {
+      if (this.department == 24 && this.address.city_id == 1113) {
         this.domicile = "armenia";
         this.$store.state.tool_paying.costSend = 1500;
         return true;
@@ -218,59 +218,76 @@ export default {
       return false;
     },
     isQuindio() {
-      if (this.department == 24 && this.address.city_id != 875) {
-        this.domicile = "quindio";
-        this.$store.state.tool_paying.costSend = 8000;
-        return true;
+      if (this.department == 24 && this.address.city_id != 1113) {
+        if (this.address.city_id == 875) {
+          this.domicile = "armenia";
+          this.$store.state.tool_paying.costSend = 3000;
+          return true;
+        } else if (
+          this.address.city_id == 1114 ||
+          this.address.city_id == 1115 ||
+          this.address.city_id == 877 ||
+          this.address.city_id == 878
+        ) {
+          this.domicile = "quindio";
+          this.$store.state.tool_paying.costSend = 6000;
+          return true;
+        } else if (this.address.city_id == 882) {
+          this.domicile = "quindio";
+          this.$store.state.tool_paying.costSend = 8000;
+          return true;
+        } else {
+          this.domicile = "quindio";
+          this.$store.state.tool_paying.costSend = 0;
+          return true;
+        }
       }
       return false;
     },
     isOther() {
-      if (this.department!= 24) {
+      if (this.department != 24) {
         this.domicile = "otro";
         this.$store.state.tool_paying.costSend = 0;
         return true;
       }
       return false;
-    }
+    },
   },
   methods: {
-    getNewAddress(){
-      if(this.otherAddress){
-        this.$store.state.oldDepartment = this.department
-        this.$store.state.oldCity = this.address.city_id
-        this.changeCiudades()
-      }else{
-        if(isEmpty(this.$store.state.oldDepartment)){
+    getNewAddress() {
+      if (this.otherAddress) {
+        this.$store.state.oldDepartment = this.department;
+        this.$store.state.oldCity = this.address.city_id;
+        this.changeCiudades();
+      } else {
+        if (isEmpty(this.$store.state.oldDepartment)) {
           this.department = this.$store.state.oldDepartment;
         }
-        if(isEmpty(this.$store.state.oldCity)){
+        if (isEmpty(this.$store.state.oldCity)) {
           this.address.city_id = this.$store.state.oldCity;
         }
       }
     },
     changeCiudades() {
       this.cities = this.departments.filter(
-        item => item.id == this.department
+        (item) => item.id == this.department
       )[0].cities;
-      this.$store.state.setDepartment = this.department
+      this.$store.state.setDepartment = this.department;
     },
     next() {
       this.$store.state.loading = true;
-      this.$validator.validateAll().then(result => {
+      this.$validator.validateAll().then((result) => {
         // cambiar por result al finalizar pruebas
         if (result) {
           if (this.otherAddress) {
             api
               .Addresses()
               .update(this.me.addresses[0].id, this.address)
-              .then(response => {
+              .then((response) => {
                 this.$store.state.me.addresses[0] = response.data.data;
               });
           }
-          $("#metodo-pago-tab")
-            .removeClass("disabled")
-            .tab("show");
+          $("#metodo-pago-tab").removeClass("disabled").tab("show");
           if (this.descuento > 0) {
             $("#modalDescuento").modal("show");
           }
@@ -281,7 +298,7 @@ export default {
     back() {
       $("#informacion-tab").tab("show");
     },
-  }
+  },
 };
 </script>
 <style scoped>
