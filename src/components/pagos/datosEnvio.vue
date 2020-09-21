@@ -170,7 +170,7 @@
 <script>
 import api from "../../plugins/api";
 import { sumBy, isEmpty } from "lodash";
-
+import { orderBy } from 'lodash';
 export default {
   name: "datosEnvio",
   data() {
@@ -272,6 +272,8 @@ export default {
       this.cities = this.departments.filter(
         (item) => item.id == this.department
       )[0].cities;
+      console.log(orderBy(cities,['name'],['asc']))
+      this.cities = orderBy(cities,['name'],['asc']);
       this.$store.state.setDepartment = this.department;
     },
     next() {

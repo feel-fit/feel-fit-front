@@ -67,6 +67,7 @@
 <script>
 import api from '../../plugins/api'
 import { isEmpty, map, flatMap } from 'lodash'
+import { orderBy } from 'lodash';
 
 export default {
   name: 'informacionCliente',
@@ -190,6 +191,8 @@ export default {
     changeCiudades () {
       this.cities = this.departments.filter(item => item.id == this.cliente.department)[0].cities
       this.$store.state.setDepartment = this.cliente.department
+      console.log(orderBy(this.cities,['name'],['asc']))
+      this.cities = orderBy(this.cities,['name'],['asc']);
       this.changeCity()
     },
     changeDepartment () {

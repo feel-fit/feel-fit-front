@@ -4,6 +4,7 @@ import api from './plugins/api'
 import { login, credentialsGuestToken, GuestToken, clearUserToken, clearGuestToken } from './plugins/auth'
 import createPersistedState from 'vuex-persistedstate'
 import sortBy from 'lodash/sortBy'
+import { orderBy } from 'lodash'
 
 Vue.use(Vuex)
 export default new Vuex.Store({
@@ -188,10 +189,10 @@ export default new Vuex.Store({
       state.slides = data
     },
     set_departments (state, data) {
-      state.departments = data
+      state.departments = orderBy(data,['name'],['asc'])
     },
     set_cities (state, data) {
-      state.cities = data
+      state.cities = orderBy(data,['name'],['asc'])
     },
     set_categories (state, data) {
       state.brands = sortBy(data.filter(item => item.type_category_id === 2), 'name')
