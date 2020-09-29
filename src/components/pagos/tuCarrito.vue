@@ -26,11 +26,11 @@
               <div class="col-auto div-va ">
                 <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
                   <button type="button" class="btn btn-outline-secondary rounded-0 br-left"
-                          @click="addItem(item)">
+                          @click="addItem(item)">-
                   </button>
                   <button class="btn btn-outline-secondary">{{item.quantity}}</button>
                   <button type="button" class="btn btn-outline-secondary rounded-0 br-right"
-                          @click="item.quantity++">+
+                          @click="sumItem(item)">+
                   </button>
                 </div>
               </div>
@@ -81,6 +81,7 @@
   </div>
 </template>
 <script>
+import api from "../../plugins/api";
 import imageDefault from '../../assets/images/producto.png'
 import { sumBy, isEmpty } from 'lodash'
 
@@ -135,7 +136,17 @@ export default {
     },
     remove_product_cart (item) {
       this.$store.commit('removeProductCart', item)
-    }
+    },
+    sumItem(item) {
+      api
+        .Products()
+        .getOne(item.id)
+        .then((response) => {
+          if (response.data.data.stock.quantity > item.quantity) {
+            item.quantity++;
+          }
+        });
+    },
     
   }
 }
