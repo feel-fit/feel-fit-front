@@ -1,7 +1,9 @@
 <template>
   <div class="container" id="informacion-cliente">
     <div class="row">
-      <span class="h3 font-italic text-primary font-weight-bold titulo">Datos de env&iacute;o</span>
+      <span class="h3 font-italic text-primary font-weight-bold titulo"
+        >Datos de env&iacute;o</span
+      >
     </div>
     <div class="row mb-2">
       <div class="container">
@@ -9,9 +11,10 @@
           <div class="col-12">Direccion</div>
           <div class="col-12 ml-3">
             <span
-              v-if="me!=null&&me.addresses && me.addresses.length > 0"
+              v-if="me != null && me.addresses && me.addresses.length > 0"
               class="text-dark font-weight-bold h4 text-capitalize"
-            >{{me.addresses[0].address }}</span>
+              >{{ me.addresses[0].address }}</span
+            >
           </div>
           <div class="col-12">
             <div class="form-group form-check">
@@ -22,7 +25,9 @@
                 v-model="otherAddress"
                 @change="getNewAddress()"
               />
-              <label class="form-check-label" for="otra-direccion">utilizar otra dirección</label>
+              <label class="form-check-label" for="otra-direccion"
+                >utilizar otra dirección</label
+              >
             </div>
           </div>
         </div>
@@ -39,7 +44,9 @@
                 :class="{ 'is-invalid': errors.first('direccion') }"
                 v-model="address.address"
               />
-              <div class="invalid-feedback">Se requiere de una direcci&oacute;n</div>
+              <div class="invalid-feedback">
+                Se requiere de una direcci&oacute;n
+              </div>
             </div>
           </div>
           <div class="form-group col-md-6">
@@ -47,12 +54,14 @@
             <select
               @change="changeCiudades"
               v-validate="'required'"
-              :class="{'is-invalid':errors.first('departamento')}"
+              :class="{ 'is-invalid': errors.first('departamento') }"
               name="departamento"
               class="form-control"
               v-model="department"
             >
-              <option v-for="item in departments" :value="item.id">{{item.name}}</option>
+              <option v-for="item in departments" :value="item.id">
+                {{ item.name }}
+              </option>
             </select>
             <div class="invalid-feedback">Se requiere de un departamento</div>
           </div>
@@ -60,12 +69,14 @@
             <label>CIUDAD</label>
             <select
               v-validate="'required'"
-              :class="{'is-invalid':errors.first('ciudad')}"
+              :class="{ 'is-invalid': errors.first('ciudad') }"
               name="ciudad"
               class="form-control"
               v-model="address.city_id"
             >
-              <option v-for="item in cities" :value="item.id">{{item.name}}</option>
+              <option v-for="item in cities" :value="item.id">
+                {{ item.name }}
+              </option>
             </select>
             <div class="invalid-feedback">Se requiere de una ciudad</div>
           </div>
@@ -90,9 +101,19 @@
                 <h4 class="text-primary">Domicilio en Armenia</h4>
                 <p class="text-muted"></p>
               </div>
-              <div class="col-sm-3 d-flex flex-column justify-content-center align-items-center">
+              <div
+                class="col-sm-3 d-flex flex-column justify-content-center align-items-center"
+              >
                 <small class="text-muted font-italic">Valor Env&iacute;o</small>
-                <h5 class="text-dark font-weight-bold font-italic">$1.500</h5>
+                <h5
+                  class="text-dark font-weight-bold font-italic"
+                  v-if="$store.state.tool_paying.costSend > 0"
+                >
+                  {{ $store.state.tool_paying.costSend }}
+                </h5>
+                <h5 class="text-dark font-weight-bold font-italic" v-else>
+                  Contraentrega
+                </h5>
               </div>
             </div>
           </div>
@@ -115,9 +136,19 @@
                 <h4 class="text-primary">Domicilio en Quindio</h4>
                 <p class="text-muted"></p>
               </div>
-              <div class="col-sm-3 d-flex flex-column justify-content-center align-items-center">
-                <small class="text-muted font-italic">Valor Env&iacute;o</small>
-                <h5 class="text-dark font-weight-bold font-italic">$8.000</h5>
+              <div
+                class="col-sm-3 d-flex flex-column justify-content-center align-items-center"
+              >
+                <small class="text-muted font-italic">Pago</small>
+                <h5
+                  class="text-dark font-weight-bold font-italic"
+                  v-if="$store.state.tool_paying.costSend > 0"
+                >
+                  {{ $store.state.tool_paying.costSend }}
+                </h5>
+                <h5 class="text-dark font-weight-bold font-italic" v-else>
+                  Contraentrega
+                </h5>
               </div>
             </div>
           </div>
@@ -138,13 +169,18 @@
               </div>
               <div class="col-sm-6">
                 <h4 class="text-primary">Domicilio fuera del Quindío</h4>
-                <p
-                  class="text-muted"
-                >Debe ser pagado en efectivo a la empresade mensajeria. Revise las politicas de envio.</p>
+                <p class="text-muted">
+                  Debe ser pagado en efectivo a la empresade mensajeria. Revise
+                  las politicas de envio.
+                </p>
               </div>
-              <div class="col-sm-3 d-flex flex-column justify-content-center align-items-center">
+              <div
+                class="col-sm-3 d-flex flex-column justify-content-center align-items-center"
+              >
                 <small class="text-muted font-italic">Pago</small>
-                <h5 class="text-dark font-weight-bold font-italic">Contraentrega</h5>
+                <h5 class="text-dark font-weight-bold font-italic">
+                  Contraentrega
+                </h5>
               </div>
             </div>
           </div>
@@ -152,7 +188,10 @@
         <div class="row p-5">
           <div class="col-sm-6 align-self-center">
             <a href="#" @click="back" class="text-dark text-decoration-none">
-              <font-awesome-icon icon="arrow-left" size="xs" />Informaci&oacute;n del cliente
+              <font-awesome-icon
+                icon="arrow-left"
+                size="xs"
+              />Informaci&oacute;n del cliente
             </a>
           </div>
           <div class="col-sm-6 text-right">
@@ -160,7 +199,9 @@
               @click="next"
               type="submit"
               class="btn btn-primary text-white btn-lg w-md-100 font-italic font-weight-bold"
-            >CONTINUA A PAGO</button>
+            >
+              CONTINUA A PAGO
+            </button>
           </div>
         </div>
       </div>
@@ -170,7 +211,7 @@
 <script>
 import api from "../../plugins/api";
 import { sumBy, isEmpty } from "lodash";
-import { orderBy } from 'lodash';
+import { orderBy } from "lodash";
 export default {
   name: "datosEnvio",
   data() {
@@ -210,15 +251,26 @@ export default {
       return 0;
     },
     isArmenia() {
-      if (this.department == 24 && this.address.city_id == 1113) {
+      if (
+        this.department == 24 &&
+        (this.address.city_id == 1113 || this.address.city_id == 875)
+      ) {
         this.domicile = "armenia";
-        this.$store.state.tool_paying.costSend = 1500;
+        if (this.address.city_id == 1113) {
+          this.$store.state.tool_paying.costSend = 1500;
+        } else {
+          this.$store.state.tool_paying.costSend = 3000;
+        }
+
         return true;
       }
       return false;
     },
     isQuindio() {
-      if (this.department == 24 && this.address.city_id != 1113) {
+      if (
+        this.department == 24 &&
+        !(this.address.city_id == 1113 || this.address.city_id == 875)
+      ) {
         if (this.address.city_id == 875) {
           this.domicile = "armenia";
           this.$store.state.tool_paying.costSend = 3000;
@@ -272,8 +324,7 @@ export default {
       this.cities = this.departments.filter(
         (item) => item.id == this.department
       )[0].cities;
-      console.log(orderBy(cities,['name'],['asc']))
-      this.cities = orderBy(cities,['name'],['asc']);
+      this.cities = orderBy(this.cities, ["name"], ["asc"]);
       this.$store.state.setDepartment = this.department;
     },
     next() {

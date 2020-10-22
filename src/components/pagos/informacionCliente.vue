@@ -191,7 +191,6 @@ export default {
     changeCiudades () {
       this.cities = this.departments.filter(item => item.id == this.cliente.department)[0].cities
       this.$store.state.setDepartment = this.cliente.department
-      console.log(orderBy(this.cities,['name'],['asc']))
       this.cities = orderBy(this.cities,['name'],['asc']);
       this.changeCity()
     },
